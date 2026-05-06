@@ -20,10 +20,15 @@ export const metadata: Metadata = {
   title: "Shiftlyx — A Personal OS for Shift Workers",
   description:
     "Shiftlyx helps NHS nurses and healthcare workers track fatigue, plan shifts around their life, and coordinate with partners.",
+  icons: {
+    icon: "/app-icon.jpg",
+    apple: "/app-icon.jpg",
+  },
   openGraph: {
     title: "Shiftlyx — A Personal OS for Shift Workers",
     description:
       "Shiftlyx helps NHS nurses and healthcare workers track fatigue, plan shifts around their life, and coordinate with partners.",
+    images: "/app-icon.jpg",
     type: "website",
   },
 };
