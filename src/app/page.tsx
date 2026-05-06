@@ -1,6 +1,5 @@
 "use client";
 
-
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
@@ -14,6 +13,18 @@ import {
   Rocket,
   ChevronRight,
   Quote,
+  Check,
+  X,
+  TrendingUp,
+  Clock,
+  Users,
+  Baby,
+  Sparkles,
+  BarChart3,
+  Zap,
+  Layers,
+  Banknote,
+  Lock,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -38,13 +49,82 @@ const featureIcons: Record<string, React.ReactNode> = {
   Rocket: <Rocket className="w-5 h-5" />,
 };
 
-function FeatureCard({
-  feature,
-  index,
-}: {
-  feature: (typeof siteConfig.features)[0];
-  index: number;
-}) {
+const proFeatureIcons: Record<string, React.ReactNode> = {
+  "Partner Sync": <Users className="w-5 h-5" />,
+  "Childcare-Aware": <Baby className="w-5 h-5" />,
+  "Fatigue Intelligence": <Activity className="w-5 h-5" />,
+  "Annual Leave Optimizer": <CalendarDays className="w-5 h-5" />,
+  "AI Shift Planning": <Sparkles className="w-5 h-5" />,
+  "Income Forecasting": <Banknote className="w-5 h-5" />,
+  "Smart Shift Stacking": <Layers className="w-5 h-5" />,
+  "Advanced Analytics": <BarChart3 className="w-5 h-5" />,
+};
+
+const beforeAfter = {
+  before: [
+    "Exhausting shift patterns",
+    "Broken recovery",
+    "Poor work-life balance",
+    "Wasted annual leave",
+    "Constant rota frustration",
+    "Opposite schedules with partner",
+    "Childcare conflicts",
+  ],
+  after: [
+    "Smarter schedules",
+    "Better recovery blocks",
+    "More shared time",
+    "Reduced burnout risk",
+    "Smarter leave planning",
+    "AI-assisted decisions",
+    "Better income visibility",
+  ],
+};
+
+const proFeaturesList = [
+  {
+    icon: "Partner Sync",
+    title: "Partner Sync",
+    desc: "See your partner's shifts alongside your own and plan more shared time together. Avoid constantly working opposite schedules.",
+  },
+  {
+    icon: "Childcare-Aware",
+    title: "Childcare-Aware Planning",
+    desc: "Plan shifts around school runs, nursery pickups, and family commitments. Less family stress, smarter shift placement.",
+  },
+  {
+    icon: "Fatigue Intelligence",
+    title: "Fatigue Intelligence",
+    desc: "See burnout risk before your rota becomes exhausting. Includes fatigue score, recovery analysis, night load tracking, and recovery gap warnings.",
+  },
+  {
+    icon: "Annual Leave Optimizer",
+    title: "Annual Leave Optimizer",
+    desc: "Turn small leave requests into longer recovery breaks automatically. Leave extension planning, smart recovery blocks, mini-holiday detection.",
+  },
+  {
+    icon: "AI Shift Planning",
+    title: "AI Shift Planning",
+    desc: "Generate smarter schedules based on recovery, fatigue, and work-life balance goals. Health Optimized, Balanced, Income Optimized, Shift Stacked.",
+  },
+  {
+    icon: "Income Forecasting",
+    title: "Income Forecasting",
+    desc: "Estimate earnings across different rota strategies and overtime combinations. Know the £ impact before you choose.",
+  },
+  {
+    icon: "Smart Shift Stacking",
+    title: "Smart Shift Stacking",
+    desc: "Automatically group shifts to create longer uninterrupted recovery periods — instead of fragmented LD OFF LD OFF, get LD LD LD OFF OFF OFF.",
+  },
+  {
+    icon: "Advanced Analytics",
+    title: "Advanced Planner Insights",
+    desc: "Understand schedule quality, stack score, recovery efficiency, fatigue trends, and recovery blocks over time.",
+  },
+];
+
+function FeatureCard({ feature, index }: { feature: (typeof siteConfig.features)[0]; index: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -56,7 +136,7 @@ function FeatureCard({
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <Link href={`/features#${feature.id}`} className="block group">
-        <div className="relative p-6 rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#2563eb]/30 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+        <div className="relative p-6 rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#2563eb]/30 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 h-full">
           <div className="flex items-start gap-4">
             <div className="w-10 h-10 rounded-xl bg-[#eff6ff] flex items-center justify-center text-[#2563eb] shrink-0 group-hover:bg-[#2563eb] group-hover:text-white transition-all duration-300">
               {featureIcons[feature.icon]}
@@ -65,9 +145,7 @@ function FeatureCard({
               <h3 className="font-heading text-base font-semibold text-foreground mb-1 group-hover:text-[#2563eb] transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-sm text-[#475569] leading-relaxed">
-                {feature.tagline} {feature.description}
-              </p>
+              <p className="text-sm text-[#475569] leading-relaxed">{feature.tagline} {feature.description}</p>
             </div>
             <ChevronRight className="w-4 h-4 text-[#94a3b8] mt-2 shrink-0 group-hover:text-[#2563eb] group-hover:translate-x-0.5 transition-all" />
           </div>
@@ -81,6 +159,8 @@ export default function HomePage() {
   const [quoteIndex, setQuoteIndex] = useState(0);
   const featuresRef = useRef(null);
   const featuresInView = useInView(featuresRef, { once: true, margin: "-100px" });
+  const proRef = useRef(null);
+  const proInView = useInView(proRef, { once: true, margin: "-100px" });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -93,24 +173,17 @@ export default function HomePage() {
 
   return (
     <div>
-      {/* Hero Section */}
+      {/* 1. Hero Section */}
       <section className="relative overflow-hidden">
-        {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#eff6ff] via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24 lg:pt-24 lg:pb-32">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Content */}
+            {/* Left */}
             <div>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <Badge
-                  variant="outline"
-                  className="mb-4 text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]"
-                >
+              <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <Badge variant="outline" className="mb-4 text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
                   {siteConfig.hero.badge}
                 </Badge>
               </motion.div>
@@ -121,21 +194,8 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                {siteConfig.hero.headline.split("\n").map((line, i) => (
-                  <span key={i}>
-                    {i === 1 ? (
-                      <>
-                        <span className="gradient-text">{line}</span>
-                        <br />
-                      </>
-                    ) : (
-                      <>
-                        {line}
-                        <br />
-                      </>
-                    )}
-                  </span>
-                ))}
+                Stop letting bad rotas <br />
+                <span className="text-[#2563eb]">run your life.</span>
               </motion.h1>
 
               <motion.p
@@ -143,8 +203,9 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                dangerouslySetInnerHTML={{ __html: siteConfig.hero.subheadline }}
-              />
+              >
+                Shiftlyx helps healthcare workers optimise shifts, reduce fatigue, improve recovery, and plan smarter schedules with AI-powered insights.
+              </motion.p>
 
               <motion.div
                 className="flex flex-wrap gap-4"
@@ -152,17 +213,13 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <Link href={siteConfig.hero.cta.href}>
-                  <Button
-                    size="lg"
-                    className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50"
-                  >
-                    {siteConfig.hero.cta.text}
+                <Link href="/waitlist">
+                  <Button size="lg" className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50">
+                    Join the waitlist →
                   </Button>
                 </Link>
               </motion.div>
 
-              {/* 2am Test line */}
               <motion.p
                 className="text-sm text-[#94a3b8] italic mt-8 border-l-2 border-[#e2e8f0] pl-4"
                 initial={{ opacity: 0 }}
@@ -173,24 +230,96 @@ export default function HomePage() {
               </motion.p>
             </div>
 
-            {/* Right Content - Gauge + iPhone */}
+            {/* Right */}
             <motion.div
               className="flex flex-col items-center gap-8 lg:gap-12"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              {/* Fatigue Score Gauge */}
               <FatigueGauge score={42} size={220} />
-
-              {/* iPhone Mockup */}
               <IPhoneMockup />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Feature Cards Section */}
+      {/* 2. Emotional Transformation: Before / After Shiftlyx */}
+      <section className="py-20 lg:py-28 bg-white border-y border-[#e2e8f0]/50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Before Shiftlyx.{" "}
+              <span className="text-[#2563eb]">With Shiftlyx Pro.</span>
+            </h2>
+            <p className="text-[#475569] text-lg max-w-2xl mx-auto">
+              Same rota. Different outcome. See what changes when you take control.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
+            {/* Before */}
+            <motion.div
+              className="space-y-3"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h3 className="font-heading text-lg font-semibold text-[#ef4444] mb-6 flex items-center gap-2">
+                <X className="w-5 h-5" /> BEFORE SHIFTLYX
+              </h3>
+              {beforeAfter.before.map((item, i) => (
+                <motion.div
+                  key={i}
+                  className="flex items-center gap-3 p-3 rounded-lg bg-[#fef2f2] text-[#991b1b]"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: i * 0.05 }}
+                >
+                  <X className="w-4 h-4 text-[#fca5a5] shrink-0" />
+                  <span className="text-sm">{item}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* After */}
+            <motion.div
+              className="space-y-3"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <h3 className="font-heading text-lg font-semibold text-[#16a34a] mb-6 flex items-center gap-2">
+                <Check className="w-5 h-5" /> WITH SHIFTLYX PRO
+              </h3>
+              {beforeAfter.after.map((item, i) => (
+                <motion.div
+                  key={i}
+                  className="flex items-center gap-3 p-3 rounded-lg bg-[#f0fdf4] text-[#166534]"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: i * 0.05 + 0.2 }}
+                >
+                  <Check className="w-4 h-4 text-[#86efac] shrink-0" />
+                  <span className="text-sm">{item}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Free Features Section */}
       <section ref={featuresRef} className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -199,11 +328,14 @@ export default function HomePage() {
             animate={featuresInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
           >
+            <Badge variant="outline" className="mb-4 text-xs font-medium text-[#16a34a] border-[#16a34a]/20 bg-[#f0fdf4]">
+              FREE — No subscription needed
+            </Badge>
             <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Everything you need to manage shift work
+              Most of Shiftlyx is free.
             </h2>
             <p className="text-[#475569] text-lg max-w-2xl mx-auto">
-              Seven features. One rule: two taps or fewer to get what you need.
+              No subscription trap. No hidden fees. Your fatigue score, planner, and recovery tools are yours free, forever.
             </p>
           </motion.div>
 
@@ -215,14 +347,155 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Research Quote Section */}
-      <section className="py-20 bg-[#f8fafc] border-y border-[#e2e8f0]/50">
+      {/* 4. Pro Features Section */}
+      <section ref={proRef} className="py-20 lg:py-28 bg-gradient-to-b from-[#f8fafc] to-white border-y border-[#e2e8f0]/50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={proInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+          >
+            <Badge variant="outline" className="mb-4 text-xs font-medium text-[#f59e0b] border-[#f59e0b]/20 bg-amber-50">
+              PREMIUM — £0.89/month
+            </Badge>
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Everything in Free, plus AI-powered intelligence.
+            </h2>
+            <p className="text-[#475569] text-lg max-w-2xl mx-auto">
+              Less than a hospital coffee. For the shifts that need a second brain.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {proFeaturesList.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={proInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="p-5 rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#f59e0b]/30 hover:shadow-lg hover:shadow-amber-500/5 transition-all duration-300"
+              >
+                <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-[#f59e0b] mb-3">
+                  {proFeatureIcons[feature.icon]}
+                </div>
+                <h3 className="font-heading text-sm font-semibold text-foreground mb-2">{feature.title}</h3>
+                <p className="text-xs text-[#475569] leading-relaxed">{feature.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Pricing Section */}
+      <section className="py-20 lg:py-28">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Badge variant="outline" className="mb-4 text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
+              PRICING
+            </Badge>
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Less than a hospital coffee.
+            </h2>
+            <p className="text-[#475569] text-lg mb-10 max-w-xl mx-auto">
+              Built for real healthcare life — not just rotas. Free core app. Premium at £0.89/month.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {/* Free Plan */}
+            <div className="p-8 rounded-2xl bg-white border border-[#e2e8f0] text-left">
+              <h3 className="font-heading text-lg font-semibold text-foreground mb-1">Free</h3>
+              <p className="text-3xl font-bold text-foreground mb-6">£0</p>
+              <ul className="space-y-3">
+                {siteConfig.pricing.free.features.map((f, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-[#475569]">
+                    <Check className="w-4 h-4 text-[#16a34a] mt-0.5 shrink-0" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Premium Plan */}
+            <div className="p-8 rounded-2xl bg-[#2563eb] text-white text-left relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <Badge className="bg-[#f59e0b] text-white border-0 text-xs font-semibold">POPULAR</Badge>
+              </div>
+              <h3 className="font-heading text-lg font-semibold mb-1">Premium</h3>
+              <p className="text-3xl font-bold mb-1">£0.89</p>
+              <p className="text-sm text-blue-200 mb-6">/month</p>
+              <ul className="space-y-3">
+                {siteConfig.pricing.premium.features.map((f, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-blue-100">
+                    <Check className="w-4 h-4 text-blue-300 mt-0.5 shrink-0" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 6. Trust Section */}
+      <section className="py-16 bg-[#f8fafc] border-y border-[#e2e8f0]/50">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="grid md:grid-cols-3 gap-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="text-center p-6">
+              <div className="w-12 h-12 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-6 h-6 text-[#2563eb]" />
+              </div>
+              <h3 className="font-heading text-sm font-semibold text-foreground mb-2">Works alongside your rota</h3>
+              <p className="text-xs text-[#475569] leading-relaxed">
+                Your hospital does not need to use Shiftlyx for you to benefit. It sits beside your existing system — yours alone.
+              </p>
+            </div>
+            <div className="text-center p-6">
+              <div className="w-12 h-12 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-4">
+                <Lock className="w-6 h-6 text-[#2563eb]" />
+              </div>
+              <h3 className="font-heading text-sm font-semibold text-foreground mb-2">Your data stays yours</h3>
+              <p className="text-xs text-[#475569] leading-relaxed">
+                No employer access. No NHS integration. No data selling. Your fatigue data is private by design.
+              </p>
+            </div>
+            <div className="text-center p-6">
+              <div className="w-12 h-12 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-4">
+                <Users className="w-6 h-6 text-[#2563eb]" />
+              </div>
+              <h3 className="font-heading text-sm font-semibold text-foreground mb-2">Built by shift workers</h3>
+              <p className="text-xs text-[#475569] leading-relaxed">
+                We've worked nights. We know short turnarounds. We built Shiftlyx for the person we were at 3am after a double.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 7. Research Quote Section */}
+      <section className="py-20 bg-white border-b border-[#e2e8f0]/50">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center gap-2 mb-6">
             <Quote className="w-5 h-5 text-[#2563eb]" />
-            <span className="text-sm font-medium text-[#475569] uppercase tracking-wider text-xs">
-              The Research
-            </span>
+            <span className="text-sm font-medium text-[#475569] uppercase tracking-wider text-xs">The Research</span>
           </div>
 
           <motion.div
@@ -239,16 +512,13 @@ export default function HomePage() {
             />
           </motion.div>
 
-          {/* Dots */}
           <div className="flex items-center justify-center gap-2 mt-8">
             {siteConfig.researchQuotes.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setQuoteIndex(i)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  i === quoteIndex
-                    ? "bg-[#2563eb] w-6"
-                    : "bg-[#cbd5e1] hover:bg-[#94a3b8]"
+                  i === quoteIndex ? "bg-[#2563eb] w-6" : "bg-[#cbd5e1] hover:bg-[#94a3b8]"
                 }`}
                 aria-label={`Show quote ${i + 1}`}
               />
@@ -257,48 +527,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* 8. FAQ Section */}
       <section id="faq" className="py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Questions? We&apos;ve got answers.
             </h2>
-            <p className="text-[#475569] text-lg">
-              Everything you need to know about Shiftlyx.
-            </p>
+            <p className="text-[#475569] text-lg">Everything you need to know about Shiftlyx.</p>
           </div>
 
           <Accordion className="space-y-2">
             {siteConfig.faq.map((item, i) => (
               <AccordionItem key={i} className="bg-white rounded-xl border border-[#e2e8f0] px-5">
-                <AccordionTrigger className="text-left font-medium text-foreground py-4">
-                  {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-[#475569] leading-relaxed">
-                  {item.a}
-                </AccordionContent>
+                <AccordionTrigger className="text-left font-medium text-foreground py-4">{item.q}</AccordionTrigger>
+                <AccordionContent className="text-[#475569] leading-relaxed">{item.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* 9. Final CTA */}
       <section className="py-20 bg-gradient-to-b from-[#eff6ff] to-transparent">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-4">
-            Two minutes to your first fatigue score.
-          </h2>
+          <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-4">Two minutes to your first fatigue score.</h2>
           <p className="text-[#475569] text-lg mb-8 max-w-xl mx-auto">
             Join the waitlist and be first to try Shiftlyx — free during early access.
           </p>
           <Link href="/waitlist">
-            <Button
-              size="lg"
-              className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50"
-            >
-              Join the waitlist →
+            <Button size="lg" className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50">
+              Take Control of Shift Work →
             </Button>
           </Link>
         </div>
