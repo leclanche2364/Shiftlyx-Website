@@ -262,7 +262,7 @@ export const siteConfig = {
     },
     {
       q: "How much does it cost?",
-      a: "The core Shiftlyx app is free — fatigue score, shift planner, partner sync, and recovery coach included. Only the <strong>AI Voice Planner</strong> and import/export features require a paid upgrade — £0.89/month. That's less than the cost of two teas at the hospital canteen. The Voice Planner alone is worth it — speak naturally to build your entire schedule. Join the waitlist and you'll get early access pricing.",
+      a: "The core Shiftlyx app is free — fatigue score, shift planner, partner sync, and recovery coach included. Only the <strong>Voice Planner</strong> and import/export features require a paid upgrade — £0.89/month. That's less than the cost of two teas at the hospital canteen. The Voice Planner alone is worth it — speak naturally to build your entire schedule. Join the waitlist and you'll get early access pricing.",
     },
     {
       q: "I'm not a nurse. Can I still use it?",
@@ -302,7 +302,7 @@ export const siteConfig = {
       },
       {
         q: "How much will it cost after early access?",
-        a: "The core app stays free — fatigue score, planner, partner sync, recovery coach. Premium (AI Voice Planner + import/export) is £0.89/month. The Voice Planner alone is the best way to plan your shifts — just speak what you want. Early access users get a discount on that rate. We'll be transparent before any changes.",
+        a: "The core app stays free — fatigue score, planner, partner sync, recovery coach. Premium (Voice Planner + import/export) is £0.89/month. The Voice Planner alone is the best way to plan your shifts — just speak what you want. Early access users get a discount on that rate. We'll be transparent before any changes.",
       },
     ],
     testimonials: [

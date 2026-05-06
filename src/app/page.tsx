@@ -76,7 +76,7 @@ const beforeAfter = {
     "More shared time",
     "Reduced burnout risk",
     "Smarter leave planning",
-    "AI-assisted decisions",
+    "Smarter decisions",
     "Better income visibility",
   ],
 };
@@ -104,7 +104,7 @@ const proFeaturesList = [
   },
   {
     icon: "AI Shift Planning",
-    title: "AI Shift Planning",
+    title: "Smart Shift Planning",
     desc: "Generate smarter schedules based on recovery, fatigue, and work-life balance goals. Health Optimized, Balanced, Income Optimized, Shift Stacked.",
   },
   {
@@ -189,7 +189,7 @@ export default function HomePage() {
               </motion.div>
 
               <motion.h1
-                className="font-heading text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] leading-[1.1] font-bold tracking-tight text-foreground mb-6"
+                className="font-heading text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] leading-[1.1] font-bold tracking-tight text-foreground mb-3"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -197,6 +197,15 @@ export default function HomePage() {
                 &ldquo;<span className="text-[#2563eb]">Hey Shiftlyx,</span><br />
                 plan my month.&rdquo;
               </motion.h1>
+
+              <motion.p
+                className="text-sm text-[#475569] font-medium mb-6"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+              >
+                A smarter way to organise life around shift work.
+              </motion.p>
 
               <motion.p
                 className="text-lg text-[#475569] leading-relaxed mb-3 max-w-lg"
@@ -213,7 +222,7 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.25 }}
               >
-                AI-powered fatigue tracking, partner sync, and shift planning for healthcare workers. All in one personal OS.
+                Fatigue tracking, partner sync, and shift planning for healthcare workers. All in one personal OS.
               </motion.p>
 
               <motion.div
@@ -312,7 +321,7 @@ export default function HomePage() {
                 2
               </div>
               <h3 className="font-heading text-base font-semibold text-foreground mb-2">
-                AI understands you
+                Gets you
               </h3>
               <p className="text-sm text-[#475569] leading-relaxed">
                 Powered by OpenAI Realtime Voice. Shiftlyx asks clarifying questions, remembers what you like, and learns from every conversation.
@@ -337,7 +346,7 @@ export default function HomePage() {
                 Plan is ready
               </h3>
               <p className="text-sm text-[#475569] leading-relaxed">
-                &ldquo;I&rsquo;ve got enough to build your plan.&rdquo; The AI generates an optimised schedule and shows it instantly.
+                &ldquo;I&rsquo;ve got enough to build your plan.&rdquo; Shiftlyx generates an optimised schedule and shows it instantly.
               </p>
             </motion.div>
           </div>
@@ -474,10 +483,10 @@ export default function HomePage() {
               PREMIUM — £0.89/month
             </Badge>
             <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Everything in Free, plus AI-powered intelligence.
+              Everything in Free, plus shift intelligence.
             </h2>
             <p className="text-[#475569] text-lg max-w-2xl mx-auto">
-              Less than a hospital coffee. For the shifts that need a second brain.
+              Less than a hospital coffee. For the shifts that need another pair of eyes.
             </p>
           </motion.div>
 
