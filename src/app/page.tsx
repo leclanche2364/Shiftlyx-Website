@@ -194,17 +194,26 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                Stop letting bad rotas <br />
-                <span className="text-[#2563eb]">run your life.</span>
+                &ldquo;<span className="text-[#2563eb]">Hey Shiftlyx,</span><br />
+                plan my month.&rdquo;
               </motion.h1>
 
               <motion.p
-                className="text-lg text-[#475569] leading-relaxed mb-8 max-w-lg"
+                className="text-lg text-[#475569] leading-relaxed mb-3 max-w-lg"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Shiftlyx helps healthcare workers optimise shifts, reduce fatigue, improve recovery, and plan smarter schedules with AI-powered insights.
+                Just speak. Shiftlyx listens, understands your preferences, and builds a smarter schedule that works around your life.
+              </motion.p>
+
+              <motion.p
+                className="text-sm text-[#64748b] leading-relaxed mb-8 max-w-lg"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+              >
+                AI-powered fatigue tracking, partner sync, and shift planning for healthcare workers. All in one personal OS.
               </motion.p>
 
               <motion.div
@@ -215,7 +224,7 @@ export default function HomePage() {
               >
                 <Link href="/waitlist">
                   <Button size="lg" className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50">
-                    Join the waitlist →
+                    Try Shiftlyx free →
                   </Button>
                 </Link>
               </motion.div>
@@ -232,15 +241,120 @@ export default function HomePage() {
 
             {/* Right */}
             <motion.div
-              className="flex flex-col items-center gap-8 lg:gap-12"
+              className="flex flex-col items-center gap-6 lg:gap-8"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <FatigueGauge score={42} size={220} />
               <IPhoneMockup />
+              <FatigueGauge score={42} size={200} />
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* 1.5 How Voice Planning Works */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Badge variant="outline" className="mb-4 text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
+              VOICE PLANNER
+            </Badge>
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Say it. Your schedule adjusts.
+            </h2>
+            <p className="text-[#475569] text-lg max-w-2xl mx-auto">
+              No menus. No forms. Just talk to Shiftlyx like you would a colleague.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Step 1 */}
+            <motion.div
+              className="text-center p-6"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+            >
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#5B8CFF] via-[#7C5CFF] to-[#42C8FF] flex items-center justify-center mx-auto mb-5 shadow-lg shadow-blue-500/20">
+                <Mic className="w-7 h-7 text-white" />
+              </div>
+              <div className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#eff6ff] text-[#2563eb] text-xs font-bold mb-3">
+                1
+              </div>
+              <h3 className="font-heading text-base font-semibold text-foreground mb-2">
+                Talk naturally
+              </h3>
+              <p className="text-sm text-[#475569] leading-relaxed">
+                &ldquo;Hey Shiftlyx, plan my month. I&rsquo;m on nights first week, then I want a long weekend off.&rdquo; Just say it.
+              </p>
+            </motion.div>
+
+            {/* Step 2 */}
+            <motion.div
+              className="text-center p-6"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+            >
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#5B8CFF] via-[#7C5CFF] to-[#42C8FF] flex items-center justify-center mx-auto mb-5 shadow-lg shadow-blue-500/20">
+                <Brain className="w-7 h-7 text-white" />
+              </div>
+              <div className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#eff6ff] text-[#2563eb] text-xs font-bold mb-3">
+                2
+              </div>
+              <h3 className="font-heading text-base font-semibold text-foreground mb-2">
+                AI understands you
+              </h3>
+              <p className="text-sm text-[#475569] leading-relaxed">
+                Powered by OpenAI Realtime Voice. Shiftlyx asks clarifying questions, remembers what you like, and learns from every conversation.
+              </p>
+            </motion.div>
+
+            {/* Step 3 */}
+            <motion.div
+              className="text-center p-6"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+            >
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#5B8CFF] via-[#7C5CFF] to-[#42C8FF] flex items-center justify-center mx-auto mb-5 shadow-lg shadow-blue-500/20">
+                <CalendarDays className="w-7 h-7 text-white" />
+              </div>
+              <div className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#eff6ff] text-[#2563eb] text-xs font-bold mb-3">
+                3
+              </div>
+              <h3 className="font-heading text-base font-semibold text-foreground mb-2">
+                Plan is ready
+              </h3>
+              <p className="text-sm text-[#475569] leading-relaxed">
+                &ldquo;I&rsquo;ve got enough to build your plan.&rdquo; The AI generates an optimised schedule and shows it instantly.
+              </p>
+            </motion.div>
+          </div>
+
+          <motion.div
+            className="text-center mt-10"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+          >
+            <Link href="/features">
+              <Button variant="outline" className="text-[#2563eb] border-[#2563eb]/30 hover:bg-[#eff6ff]">
+                See how voice planning works in detail →
+              </Button>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
