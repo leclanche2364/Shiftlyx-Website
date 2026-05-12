@@ -24,8 +24,16 @@ export const metadata: Metadata = {
   description:
     "Shiftlyx helps NHS nurses and healthcare workers track fatigue, plan shifts around their life, and coordinate with partners.",
   icons: {
-    icon: "/app-icon.jpg",
-    apple: "/app-icon.jpg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/app-icon.jpg", sizes: "1024x1024", type: "image/jpeg" },
+    ],
+    apple: [
+      { url: "/app-icon.jpg", sizes: "180x180" },
+    ],
+    shortcut: "/favicon.ico",
   },
   openGraph: {
     title: "Shiftlyx — A Personal OS for Shift Workers",
