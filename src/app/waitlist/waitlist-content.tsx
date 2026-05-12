@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Check, Sparkles, Mail, User, Briefcase } from "lucide-react";
+import { Check, Sparkles, Mail, User, Briefcase, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -51,154 +51,141 @@ export default function WaitlistPage() {
 
   return (
     <div>
-      {/* Page Header */}
-      <section className="pt-20 pb-12 bg-gradient-to-b from-[#eff6ff] to-transparent">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="mb-4 text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
-            Early Access
-          </Badge>
-          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-            Shiftlyx is free to download and use.
-          </h1>
-          <p className="text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed">
-            Fatigue score, shift planner, partner sync, and recovery coach — all included at no cost. Premium unlocks AI voice planning, fatigue intelligence, income forecasting, and more. From £3.99/month. That&apos;s less than a tea and a biscuit at the hospital canteen.
-          </p>
-        </div>
-      </section>
+      {/* Hero — email form front and centre */}
+      <section className="pt-24 pb-16 bg-gradient-to-b from-[#eff6ff] to-transparent">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          {/* Badge */}
+          <div className="text-center mb-6">
+            <Badge className="text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
+              Coming Soon
+            </Badge>
+          </div>
 
-      {/* Hero Conversion Copy */}
-      <section className="pb-8">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xl text-foreground font-medium">
-            You&apos;ve spent years working shifts without a tool that understands them.{" "}
-            <span className="text-[#2563eb]">Change that in 15 seconds.</span>
-          </p>
-        </div>
-      </section>
+          {/* Headline */}
+          <div className="text-center mb-8">
+            <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4">
+              Shiftlyx is free to download and use.
+            </h1>
+            <p className="text-base sm:text-lg text-[#475569] max-w-xl mx-auto leading-relaxed">
+              Fatigue score, shift planner, partner sync, and recovery coach — all included at no cost. Premium unlocks AI voice planning, fatigue intelligence, income forecasting, and more.
+            </p>
+          </div>
 
-      {/* Form Section */}
-      <section className="pb-12">
-        <div className="mx-auto max-w-lg px-4 sm:px-6 lg:px-8">
-          {submitted ? (
-            <motion.div
-              className="bg-white rounded-2xl border border-[#e2e8f0] p-8 text-center"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-            >
-              <div className="w-16 h-16 rounded-full bg-[#10b981]/10 flex items-center justify-center mx-auto mb-4">
-                <Check className="w-8 h-8 text-[#10b981]" />
-              </div>
-              <h2 className="font-heading text-xl font-bold text-foreground mb-2">
-                You&apos;re on the list!
-              </h2>
-              <p className="text-[#475569]">
-                Thanks for joining{name ? `, ${name}` : ""}. We&apos;ll email you at{" "}
-                <span className="font-medium text-foreground">{email}</span> when
-                Shiftlyx launches.
-              </p>
-            </motion.div>
-          ) : (
-            <motion.form
-              onSubmit={handleSubmit}
-              className="bg-white rounded-2xl border border-[#e2e8f0] p-6 sm:p-8 space-y-5"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="font-heading text-lg font-semibold text-foreground text-center">
-                Get notified when Shiftlyx launches
-              </h2>
-
-              {/* Name */}
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-foreground mb-1.5"
-                >
-                  Your name
-                </label>
-                <div className="relative">
-                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94a3b8]" />
-                  <input
-                    id="name"
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="e.g. Jane"
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white text-sm text-foreground placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/20 focus:border-[#2563eb]/30 transition-all"
-                  />
-                </div>
-              </div>
-
-              {/* Email */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-foreground mb-1.5"
-                >
-                  Email address <span className="text-red-500">*</span>
-                </label>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94a3b8]" />
-                  <input
-                    id="email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="e.g. jane@nhs.net"
-                    required
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white text-sm text-foreground placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/20 focus:border-[#2563eb]/30 transition-all"
-                  />
-                </div>
-              </div>
-
-              {/* Role */}
-              <div>
-                <label
-                  htmlFor="role"
-                  className="block text-sm font-medium text-foreground mb-1.5"
-                >
-                  Your role (optional)
-                </label>
-                <div className="relative">
-                  <Briefcase className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94a3b8] z-10" />
-                  <select
-                    id="role"
-                    value={role}
-                    onChange={(e) => setRole(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white text-sm text-foreground appearance-none focus:outline-none focus:ring-2 focus:ring-[#2563eb]/20 focus:border-[#2563eb]/30 transition-all"
-                  >
-                    <option value="">Select your role</option>
-                    <option value="nurse">Nurse</option>
-                    <option value="hca">HCA</option>
-                    <option value="midwife">Midwife</option>
-                    <option value="paramedic">Paramedic</option>
-                    <option value="other-healthcare">Other healthcare</option>
-                    <option value="not-healthcare">Not in healthcare</option>
-                  </select>
-                </div>
-              </div>
-
-              {error && (
-                <p className="text-sm text-center text-[#ef4444] mb-2">
-                  {error}
-                </p>
-              )}
-
-              <Button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-[#f59e0b] hover:bg-[#d97706] disabled:bg-[#fbbf24] disabled:cursor-not-allowed text-white font-semibold py-2.5"
-                size="lg"
+          {/* Email Form — right in the hero */}
+          <div className="max-w-md mx-auto">
+            {submitted ? (
+              <motion.div
+                className="bg-white rounded-2xl border border-[#e2e8f0] p-8 text-center shadow-sm"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
               >
-                {loading ? "Joining..." : "Get early access →"}
-              </Button>
+                <div className="w-16 h-16 rounded-full bg-[#10b981]/10 flex items-center justify-center mx-auto mb-4">
+                  <Check className="w-8 h-8 text-[#10b981]" />
+                </div>
+                <h2 className="font-heading text-xl font-bold text-foreground mb-2">
+                  You&apos;re on the list!
+                </h2>
+                <p className="text-[#475569]">
+                  Thanks for joining{name ? `, ${name}` : ""}. We&apos;ll email you at{" "}
+                  <span className="font-medium text-foreground">{email}</span> when
+                  Shiftlyx launches.
+                </p>
+              </motion.div>
+            ) : (
+              <motion.form
+                onSubmit={handleSubmit}
+                className="bg-white rounded-2xl border border-[#e2e8f0] p-6 sm:p-8 space-y-4 shadow-sm"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                {/* Email only — put it first */}
+                <div>
+                  <label htmlFor="email" className="sr-only">
+                    Email address
+                  </label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94a3b8]" />
+                    <input
+                      id="email"
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email address"
+                      required
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#e2e8f0] bg-white text-sm text-foreground placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/20 focus:border-[#2563eb]/30 transition-all"
+                      autoFocus
+                    />
+                  </div>
+                </div>
 
-              <p className="text-xs text-center text-[#94a3b8]">
-                No spam. We&apos;ll only email about Shiftlyx. Unsubscribe any time.
-              </p>
-            </motion.form>
-          )}
+                {/* Optional fields — expanded below email */}
+                <div className="space-y-3">
+                  <div>
+                    <label htmlFor="name" className="sr-only">
+                      Your name
+                    </label>
+                    <div className="relative">
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94a3b8]" />
+                      <input
+                        id="name"
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Your name (optional)"
+                        className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white text-sm text-foreground placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#2563eb]/20 focus:border-[#2563eb]/30 transition-all"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="role" className="sr-only">
+                      Your role
+                    </label>
+                    <div className="relative">
+                      <Briefcase className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94a3b8] z-10" />
+                      <select
+                        id="role"
+                        value={role}
+                        onChange={(e) => setRole(e.target.value)}
+                        className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white text-sm text-foreground appearance-none focus:outline-none focus:ring-2 focus:ring-[#2563eb]/20 focus:border-[#2563eb]/30 transition-all"
+                      >
+                        <option value="">Your role (optional)</option>
+                        <option value="nurse">Nurse</option>
+                        <option value="hca">HCA</option>
+                        <option value="midwife">Midwife</option>
+                        <option value="paramedic">Paramedic</option>
+                        <option value="other-healthcare">Other healthcare</option>
+                        <option value="not-healthcare">Not in healthcare</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                {error && (
+                  <p className="text-sm text-center text-[#ef4444]">{error}</p>
+                )}
+
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-[#2563eb] hover:bg-[#1d4ed8] disabled:bg-[#93c5fd] disabled:cursor-not-allowed text-white font-semibold py-3 rounded-xl"
+                  size="lg"
+                >
+                  {loading ? (
+                    "Joining..."
+                  ) : (
+                    <span className="flex items-center justify-center gap-2">
+                      Get early access <ArrowRight className="w-4 h-4" />
+                    </span>
+                  )}
+                </Button>
+
+                <p className="text-xs text-center text-[#94a3b8]">
+                  No spam. We&apos;ll only email about Shiftlyx. Unsubscribe any time.
+                </p>
+              </motion.form>
+            )}
+          </div>
         </div>
       </section>
 
@@ -317,7 +304,7 @@ export default function WaitlistPage() {
                 size="lg"
                 className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50"
               >
-                Get early access →
+                See pricing
               </Button>
             </Link>
           )}
