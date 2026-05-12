@@ -19,11 +19,33 @@ export default function WaitlistPage() {
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (!email) return;
+
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, name, role }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Something went wrong");
+      }
+
       setSubmitted(true);
+    } catch (err: any) {
+      setError(err.message || "Failed to join. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -157,12 +179,19 @@ export default function WaitlistPage() {
                 </div>
               </div>
 
+              {error && (
+                <p className="text-sm text-center text-[#ef4444] mb-2">
+                  {error}
+                </p>
+              )}
+
               <Button
                 type="submit"
-                className="w-full bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold py-2.5"
+                disabled={loading}
+                className="w-full bg-[#f59e0b] hover:bg-[#d97706] disabled:bg-[#fbbf24] disabled:cursor-not-allowed text-white font-semibold py-2.5"
                 size="lg"
               >
-                Get early access →
+                {loading ? "Joining..." : "Get early access →"}
               </Button>
 
               <p className="text-xs text-center text-[#94a3b8]">
