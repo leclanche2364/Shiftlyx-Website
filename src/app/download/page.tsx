@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 export default function DownloadPage() {
-  const { free, premium } = siteConfig.pricing;
+  const { free, monthly } = siteConfig.pricing;
 
   return (
     <div>
@@ -23,7 +23,7 @@ export default function DownloadPage() {
             Get Shiftlyx
           </h1>
           <p className="text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed">
-            Free on iOS and Android. Fatigue score, shift planner, partner sync, and recovery coach — all included. Premium features (AI Voice Planner, import/export) available as an optional upgrade.
+            Free on iOS and Android. Fatigue score, shift planner, partner sync, and recovery coach — all included. Premium unlocks AI Voice Planner, fatigue intelligence, income forecasting, and more. From £3.99/month with a free 1-month trial.
           </p>
         </div>
       </section>
@@ -71,7 +71,7 @@ export default function DownloadPage() {
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground text-center mb-10">
-            Free vs Premium
+            Free vs Premium plans
           </h2>
 
           <div className="bg-white rounded-2xl border border-[#e2e8f0] overflow-hidden">
@@ -84,17 +84,17 @@ export default function DownloadPage() {
                 <p className="text-xs text-[#475569] mt-1">£{free.price}</p>
               </div>
               <div className="p-4 sm:p-6 text-center bg-amber-50/50">
-                <span className="font-heading text-lg font-bold text-foreground">Premium</span>
-                <p className="text-xs text-[#475569] mt-1">{premium.price}</p>
+                <span className="font-heading text-lg font-bold text-foreground">Day One Annual</span>
+                <p className="text-xs text-[#475569] mt-1">£18.99/year</p>
               </div>
             </div>
 
             {/* Combine all features from both tiers */}
             {[
-              ...free.features.map((f) => ({ name: f, free: true, premium: true })),
-              ...premium.features
+              ...free.features.map((f) => ({ name: f, free: true, monthly: true })),
+              ...monthly.features
                 .filter((f) => !free.features.includes(f))
-                .map((f) => ({ name: f, free: false, premium: true })),
+                .map((f) => ({ name: f, free: false, monthly: true })),
             ].map((feature) => (
               <div
                 key={feature.name}
@@ -118,7 +118,7 @@ export default function DownloadPage() {
           </div>
 
           <p className="text-center text-sm text-[#94a3b8] mt-6">
-            Premium is £0.89/month. Early access waitlist members get preferred rates.
+            Premium Monthly: £3.99/month · Day One Annual: £18.99/year (60% off). Free 1-month trial included. Early access locks in your Day One price for life.
           </p>
         </div>
       </section>
@@ -130,14 +130,14 @@ export default function DownloadPage() {
             Not on mobile? No problem.
           </h2>
           <p className="text-[#475569] text-lg mb-8 max-w-xl mx-auto">
-            Join the waitlist and we&apos;ll email you the download link when Shiftlyx is ready.
+            Join early access and get Shiftlyx free — your Day One price is locked in.
           </p>
           <Link href="/waitlist">
             <Button
               size="lg"
               className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50"
             >
-              Join the waitlist →
+              Get early access →
             </Button>
           </Link>
         </div>

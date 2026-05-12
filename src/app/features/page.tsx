@@ -399,14 +399,14 @@ export default function FeaturesPage() {
             Two minutes to your first fatigue score.
           </h2>
           <p className="text-[#475569] text-lg mb-8 max-w-xl mx-auto">
-            Join the waitlist and be first to try Shiftlyx — free during early access.
+            Download Shiftlyx free during early access.
           </p>
-          <Link href="/waitlist">
+          <Link href="/download">
             <Button
               size="lg"
               className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50"
             >
-              Join the waitlist →
+              Get early access →
             </Button>
           </Link>
         </div>

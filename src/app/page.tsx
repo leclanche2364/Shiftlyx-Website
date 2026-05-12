@@ -249,9 +249,9 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <Link href="/waitlist">
+                <Link href="/download">
                   <Button size="lg" className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50">
-                    Try Shiftlyx free →
+                    Get Shiftlyx free →
                   </Button>
                 </Link>
               </motion.div>
@@ -397,7 +397,7 @@ export default function HomePage() {
           >
             <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Before Shiftlyx.{" "}
-              <span className="text-[#2563eb]">With Shiftlyx Pro.</span>
+              <span className="text-[#2563eb]">With Shiftlyx Premium.</span>
             </h2>
             <p className="text-[#475569] text-lg max-w-2xl mx-auto">
               Same rota. Different outcome. See what changes when you take control.
@@ -498,7 +498,7 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
           >
             <Badge variant="outline" className="mb-4 text-xs font-medium text-[#f59e0b] border-[#f59e0b]/20 bg-amber-50">
-              PREMIUM — £0.89/month
+              PREMIUM — From £3.99/month
             </Badge>
             <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Everything in Free, plus shift intelligence.
@@ -544,12 +544,12 @@ export default function HomePage() {
               Less than a hospital coffee.
             </h2>
             <p className="text-[#475569] text-lg mb-10 max-w-xl mx-auto">
-              Built for real healthcare life — not just rotas. Free core app. Premium at £0.89/month.
+              Free core app forever. Premium from £3.99/month — or lock in Day One Annual at £18.99/year (60% off).
             </p>
           </motion.div>
 
           <motion.div
-            className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto"
+            className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -559,6 +559,7 @@ export default function HomePage() {
             <div className="p-8 rounded-2xl bg-white border border-[#e2e8f0] text-left">
               <h3 className="font-heading text-lg font-semibold text-foreground mb-1">Free</h3>
               <p className="text-3xl font-bold text-foreground mb-6">£0</p>
+              <p className="text-xs text-[#16a34a] font-medium mb-4">Free forever</p>
               <ul className="space-y-3">
                 {freeFeatures.map((f, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-[#475569]">
@@ -569,18 +570,40 @@ export default function HomePage() {
               </ul>
             </div>
 
-            {/* Premium Plan */}
-            <div className="p-8 rounded-2xl bg-[#2563eb] text-white text-left relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <Badge className="bg-[#f59e0b] text-white border-0 text-xs font-semibold">POPULAR</Badge>
+            {/* Day One Annual - Best Value */}
+            <div className="p-8 rounded-2xl bg-[#2563eb] text-white text-left relative order-last md:order-none">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                <Badge className="bg-[#16a34a] text-white border-0 text-xs font-semibold">BEST VALUE</Badge>
               </div>
-              <h3 className="font-heading text-lg font-semibold mb-1">Premium</h3>
-              <p className="text-3xl font-bold mb-1">£0.89</p>
-              <p className="text-sm text-blue-200 mb-6">/month</p>
+              <h3 className="font-heading text-lg font-semibold mb-1">Day One Annual</h3>
+              <p className="text-3xl font-bold mb-1">£18.99</p>
+              <p className="text-sm text-blue-200 mb-1">/year</p>
+              <p className="text-xs text-amber-300 font-medium mb-4">Save 60% — lock in your price today</p>
               <ul className="space-y-3">
                 {premiumFeatures.map((f, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-blue-100">
                     <Check className="w-4 h-4 text-blue-300 mt-0.5 shrink-0" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-5 pt-4 border-t border-blue-400/30">
+                <p className="text-xs text-blue-200">✨ Free 1-month trial included</p>
+              </div>
+            </div>
+
+            {/* Premium Monthly */}
+            <div className="p-8 rounded-2xl bg-white border border-[#e2e8f0] text-left">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <Badge className="bg-[#f59e0b] text-white border-0 text-xs font-semibold">FLEXIBLE</Badge>
+              </div>
+              <h3 className="font-heading text-lg font-semibold text-foreground mb-1">Monthly</h3>
+              <p className="text-3xl font-bold text-foreground mb-1">£3.99</p>
+              <p className="text-sm text-[#475569] mb-6">/month</p>
+              <ul className="space-y-3">
+                {premiumFeatures.map((f, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-[#475569]">
+                    <Check className="w-4 h-4 text-[#16a34a] mt-0.5 shrink-0" />
                     {f}
                   </li>
                 ))}
@@ -694,7 +717,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-4">Two minutes to your first fatigue score.</h2>
           <p className="text-[#475569] text-lg mb-8 max-w-xl mx-auto">
-            Join the waitlist and be first to try Shiftlyx — free during early access.
+            Get Shiftlyx free during early access — your Day One price is locked in.
           </p>
           <Link href="/waitlist">
             <Button size="lg" className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50">

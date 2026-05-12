@@ -36,10 +36,10 @@ export default function WaitlistPage() {
             Early Access
           </Badge>
           <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-            Free app. Premium at £0.89/month.
+            Free app. Premium at £3.99/month.
           </h1>
           <p className="text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed">
-            Shiftlyx is free to download and use — fatigue score, shift planner, partner sync, and recovery coach are all included. The only paid features are the AI Voice Planner and import/export — £0.89/month. That&apos;s less than a tea and a biscuit at the hospital canteen.
+            Shiftlyx is free to download and use — fatigue score, shift planner, partner sync, and recovery coach are all included. The only paid features are the AI Voice Planner and import/export — £3.99/month. That&apos;s less than a tea and a biscuit at the hospital canteen.
           </p>
         </div>
       </section>
@@ -162,7 +162,7 @@ export default function WaitlistPage() {
                 className="w-full bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold py-2.5"
                 size="lg"
               >
-                Join the waitlist →
+                Get early access →
               </Button>
 
               <p className="text-xs text-center text-[#94a3b8]">
@@ -218,7 +218,7 @@ export default function WaitlistPage() {
               },
               {
                 title: "Core app stays free forever",
-                desc: "premium is £0.89/month after launch",
+                desc: "premium is £3.99/month after launch",
               },
               {
                 title: "Direct influence",
@@ -280,15 +280,15 @@ export default function WaitlistPage() {
             Free app. Premium for the price of a tea.
           </h2>
           <p className="text-[#475569] text-lg mb-8 max-w-xl mx-auto">
-            Core app stays free forever. Premium features at £0.89/month. Early access users get preferred rates.
+            Core app stays free forever. Premium features at £3.99/month. Early access users get preferred rates.
           </p>
           {!submitted && (
-            <Link href="/waitlist">
+            <Link href="/download">
               <Button
                 size="lg"
                 className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50"
               >
-                Join the waitlist →
+                Get early access →
               </Button>
             </Link>
           )}

@@ -135,7 +135,9 @@ export default function AboutPage() {
           </div>
 
           <p className="text-sm text-[#94a3b8] mt-6 text-center">
-            We&apos;ll publish a full privacy policy before launch. The short version: we don&apos;t want your data. We want you to use the app.
+            Read our <a href="/privacy" className="text-[#2563eb] hover:underline">Privacy Policy</a>,{" "}
+            <a href="/terms" className="text-[#2563eb] hover:underline">Terms of Service</a>, and{" "}
+            <a href="/delete-account" className="text-[#2563eb] hover:underline">Delete Account</a> page for details.
           </p>
         </div>
       </section>
