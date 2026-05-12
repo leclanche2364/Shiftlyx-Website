@@ -46,8 +46,34 @@ export default function BlogPostPage() {
     );
   }
 
+  const articleJsonLd = article
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: article.title,
+        description: article.excerpt,
+        datePublished: article.date,
+        author: {
+          "@type": "Organization",
+          name: "Shiftlyx",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Shiftlyx",
+          url: "https://shiftlyx.com",
+        },
+      }
+    : null;
+
   return (
     <div>
+      {articleJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        />
+      )}
+
       {/* Back link */}
       <div className="mx-auto max-w-3xl px-4 sm:px-6 pt-8">
         <Link
