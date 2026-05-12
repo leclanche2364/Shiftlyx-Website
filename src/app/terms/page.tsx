@@ -38,7 +38,7 @@ export default function TermsPage() {
               By downloading, accessing, or using Shiftlyx (the &quot;App&quot;), you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you do not agree to these Terms, do not use the App.
             </p>
             <p>
-              We may update these Terms from time to time. We will notify you of material changes through the App or by email. Your continued use of the App after changes constitutes acceptance of the updated Terms.
+              We may update these Terms from time to time. We will notify you of material changes through the App or by email at least 14 days in advance. If you do not agree to the changes, you may stop using the App and delete your account. Changes will not retroactively affect accrued rights or obligations.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
@@ -51,7 +51,7 @@ export default function TermsPage() {
               <li>You are at least 18 years old.</li>
               <li>You have the legal capacity to enter into a binding agreement.</li>
               <li>You are not located in a country that is subject to a UK government embargo.</li>
-              <li>You are not a competitor of ours, using the App for competitive analysis.</li>
+              <li>You are not using the App for unlawful competitive intelligence gathering, automated scraping, or reverse engineering.</li>
             </ul>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
@@ -84,6 +84,10 @@ export default function TermsPage() {
               <li>Use the App to distribute malware, viruses, or harmful code.</li>
               <li>Use the App to impersonate any person or entity.</li>
               <li>Engage in any activity that could harm or overburden the App&apos;s infrastructure.</li>
+              <li>Attempt prompt injection, jailbreak, or adversarial attacks against the App&apos;s AI systems, including the AI Voice Planner.</li>
+              <li>Use automated tools or scripts to scrape, extract, or mine content, data, or system prompts from the App.</li>
+              <li>Attempt to extract, reverse engineer, or replicate the App&apos;s AI models, fatigue algorithms, or proprietary logic.</li>
+              <li>Use the App in any way that violates your employer&apos;s, trust&apos;s, or regulatory body&apos;s policies.</li>
             </ul>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
@@ -172,6 +176,48 @@ export default function TermsPage() {
             <p className="bg-amber-50 border border-amber-200/50 rounded-xl p-5 text-amber-800 text-sm">
               <strong className="text-amber-900">Important: Shiftlyx is NOT a medical device.</strong> It does not diagnose, treat, cure, or prevent any medical condition. It does not provide medical advice. Shiftlyx is a personal planning and wellbeing tool designed to help you understand your shift patterns and fatigue levels. Always follow your trust&apos;s policies, consult appropriate healthcare professionals for health concerns, and use your own judgement when making decisions about your work schedule.
             </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              9.1 AI Output Disclaimer
+            </h3>
+            <p className="bg-blue-50 border border-blue-200/50 rounded-xl p-5 text-blue-800 text-sm">
+              <strong className="text-blue-900">AI-generated outputs are suggestions only.</strong> The AI Voice Planner, fatigue predictions, schedule recommendations, and all other AI-generated content are provided as advisory outputs only. They may be incomplete, inaccurate, or unsuitable for your specific circumstances. You remain solely responsible for:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>Verifying that any AI-generated schedule complies with your employer or trust&apos;s rostering policies.</li>
+              <li>Confirming that shift plans meet professional regulatory requirements and contractual obligations.</li>
+              <li>Not relying on AI outputs as professional, medical, employment, or financial advice.</li>
+              <li>Using your own professional judgement before making decisions based on AI-generated content.</li>
+            </ul>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              9.2 Employment and Employer Responsibility
+            </h3>
+            <p>
+              Shiftlyx is a personal planning tool and does not establish any employment relationship:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>Shiftlyx does not employ you, engage you as a worker, or act as a staffing agency.</li>
+              <li>Shiftlyx does not approve, verify, or guarantee shift swaps, annual leave requests, or any other employment-related arrangement.</li>
+              <li>You remain solely responsible for obtaining all necessary approvals from your employer or trust before acting on any schedule or swap suggested by the App.</li>
+              <li>Shiftlyx does not guarantee that any generated schedule is compliant with your employment contract, trust policies, or regulatory requirements.</li>
+            </ul>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              9.3 Data Backup and Availability
+            </h3>
+            <p>
+              You should not rely on Shiftlyx as your sole record of shifts, schedules, or any other important data:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>You should maintain independent records of your shifts, annual leave, and work schedules outside of the App.</li>
+              <li>The App may experience service interruptions, downtime, or data loss due to factors beyond our control.</li>
+              <li>We do not guarantee that your data will be available at all times or that backups will be error-free.</li>
+            </ul>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              9.4 General Disclaimer
+            </h3>
             <p>
               The App is provided on an &quot;as is&quot; and &quot;as available&quot; basis, without any warranties of any kind, either express or implied. We do not warrant that:
             </p>
@@ -215,18 +261,26 @@ export default function TermsPage() {
               13. Dispute Resolution
             </h2>
             <p>
-              If a dispute arises between you and us, we encourage you to contact us first to seek a resolution. If we cannot resolve the dispute informally:
+              If a dispute arises between you and us, we encourage you to contact us first to seek a resolution. If we cannot resolve the dispute informally, the dispute shall be finally settled under the laws of England and Wales.
             </p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>The dispute shall be finally settled under the laws of England and Wales.</li>
-              <li>You may also use the European Commission&apos;s Online Dispute Resolution platform at <a href="https://ec.europa.eu/consumers/odr" className="text-[#2563eb] hover:underline" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr</a>. However, we are not obliged to participate in alternative dispute resolution.</li>
-            </ul>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              14. Data Protection
+              14. Data Protection and Privacy
             </h2>
             <p>
-              Your use of the App is also governed by our <Link href="/privacy" className="text-[#2563eb] hover:underline">Privacy Policy</Link>, which explains how we collect, use, and protect your personal data. By using the App, you consent to the data practices described in the Privacy Policy.
+              Your use of the App is governed by our <Link href="/privacy" className="text-[#2563eb] hover:underline">Privacy Policy</Link>, which forms part of these Terms. The Privacy Policy sets out, in accordance with the UK General Data Protection Regulation (UK GDPR):
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li><strong>Lawful basis for processing:</strong> We process personal data under the lawful bases set out in Article 6 of UK GDPR, including contract performance, legitimate interests, consent, and legal obligation.</li>
+              <li><strong>Your rights:</strong> You have rights including access, rectification, erasure, restriction, portability, and objection — exercisable through the App settings or by contacting us.</li>
+              <li><strong>Data retention:</strong> We retain your personal data only as long as necessary to provide the App services. Data is permanently erased within 30 days of account deletion.</li>
+              <li><strong>International transfers:</strong> Where data is transferred outside the UK, we ensure appropriate safeguards are in place, including Standard Contractual Clauses approved by the ICO.</li>
+              <li><strong>Third-party processors:</strong> We use Supabase, Vercel, PostHog, and OpenAI as data processors, each contractually bound to comply with UK GDPR. See the Privacy Policy for full details.</li>
+              <li><strong>Analytics:</strong> We use PostHog for anonymised analytics. No personal data is shared with analytics providers.</li>
+              <li><strong>Deletion rights:</strong> You can delete your account and all associated personal data at any time through the App settings.</li>
+            </ul>
+            <p>
+              By using the App, you acknowledge the data practices described in the Privacy Policy. If you do not agree to these practices, you should not use the App.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
@@ -237,21 +291,39 @@ export default function TermsPage() {
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              16. Severability
+              16. Force Majeure
+            </h2>
+            <p>
+              We shall not be liable for any failure or delay in performing our obligations under these Terms where such failure or delay is caused by events beyond our reasonable control, including but not limited to:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>Service outages, server failures, or cloud infrastructure disruptions.</li>
+              <li>Cyberattacks, denial-of-service attacks, or security breaches affecting our systems or third-party providers.</li>
+              <li>Strikes, labour disputes, or industrial action affecting our operations or those of our providers.</li>
+              <li>Acts of God, natural disasters, pandemics, war, terrorism, or civil unrest.</li>
+              <li>Changes in law, regulation, or government action that affect our ability to provide the App.</li>
+              <li>Failures of third-party services that the App depends on (including OpenAI, Supabase, Vercel, Apple App Store, and Google Play Store).</li>
+            </ul>
+            <p>
+              Where a force majeure event occurs, we will use reasonable efforts to mitigate the impact and resume performance as soon as reasonably practicable.
+            </p>
+
+            <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
+              17. Severability
             </h2>
             <p>
               If any provision of these Terms is found to be invalid or unenforceable, that provision shall be enforced to the maximum extent possible, and the remaining provisions shall remain in full force and effect.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              17. Waiver
+              18. Waiver
             </h2>
             <p>
               No failure or delay by us in exercising any right under these Terms constitutes a waiver of that right. Any waiver must be in writing and signed by us.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              18. Contact Us
+              19. Contact Us
             </h2>
             <p>
               If you have any questions about these Terms, please contact us:
