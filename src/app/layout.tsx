@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, DM_Sans } from "next/font/google";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import GoogleAnalytics from "@/components/google-analytics";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -90,6 +91,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-noise bg-gradient-overlay">
+        <GoogleAnalytics />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
