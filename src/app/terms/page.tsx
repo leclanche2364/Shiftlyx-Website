@@ -27,8 +27,8 @@ export default function TermsPage() {
           <div className="prose prose-slate max-w-none space-y-6 text-[#475569] leading-relaxed">
             <p className="text-sm text-[#94a3b8] border-l-4 border-[#2563eb] pl-4 bg-[#f8fafc] py-3 pr-4 rounded-r-lg">
               <strong>Shiftlyx</strong> is a product of <strong>Beemal Innovation Ltd</strong>. When we say &quot;we&quot;, &quot;us&quot;, &quot;our&quot;, or &quot;Shiftlyx&quot; in these terms, we mean Beemal Innovation Ltd.
-              {/* TODO: Replace with actual registered address */}
-              Registered address: 123 Innovation House, London, UK.
+              Registered address: 29 Arden Place, Luton, LU2 7YE.
+              Company registration number: <strong>17048693</strong>.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
@@ -257,10 +257,10 @@ export default function TermsPage() {
               If you have any questions about these Terms, please contact us:
             </p>
             <ul className="list-disc pl-6 space-y-1">
-              <li>Email: <a href="mailto:privacy@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">privacy@beemalinnovation.co.uk</a></li>
+              <li>Email: <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a></li>
               <li>Company: Beemal Innovation Ltd</li>
-              {/* TODO: Replace {{REGISTERED_ADDRESS}} with actual registered address */}
-              <li>Address: 123 Innovation House, London, UK <span className="text-xs text-[#94a3b8]">(placeholder — update with actual registered address)</span></li>
+              <li>Company registration number: 17048693</li>
+              <li>Address: 29 Arden Place, Luton, LU2 7YE</li>
             </ul>
           </div>
         </div>

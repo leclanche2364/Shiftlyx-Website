@@ -200,11 +200,11 @@ export default function DeleteAccountPage() {
                 If you&apos;re unable to delete your account through the App settings, or if you have any questions about the deletion process, please email us at:
               </p>
               <a
-                href="mailto:privacy@beemalinnovation.co.uk"
+                href="mailto:admin@beemalinnovation.co.uk"
                 className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#2563eb] hover:bg-[#1d4ed8] text-white text-sm font-medium rounded-xl transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                privacy@beemalinnovation.co.uk
+                admin@beemalinnovation.co.uk
               </a>
               <p className="text-xs text-[#94a3b8]">
                 We will process your request within 30 days of receiving it. You may need to verify your identity before we can proceed.

@@ -26,8 +26,8 @@ export default function PrivacyPage() {
           <div className="prose prose-slate max-w-none space-y-6 text-[#475569] leading-relaxed">
             <p className="text-sm text-[#94a3b8] border-l-4 border-[#2563eb] pl-4 bg-[#f8fafc] py-3 pr-4 rounded-r-lg">
               <strong>Shiftlyx</strong> is a product of <strong>Beemal Innovation Ltd</strong>. When we say &quot;we&quot;, &quot;us&quot;, &quot;our&quot;, or &quot;Shiftlyx&quot; in this policy, we mean Beemal Innovation Ltd.
-              {/* TODO: Replace with actual registered address */}
-              Registered address: 123 Innovation House, London, UK.
+              Registered address: 29 Arden Place, Luton, LU2 7YE.
+              Company registration number: <strong>17048693</strong>.
             </p>
 
             <p>
@@ -47,9 +47,9 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-1">
               <li>Company: Beemal Innovation Ltd</li>
               <li>Website: <a href="https://beemalinnovation.co.uk" className="text-[#2563eb] hover:underline" target="_blank" rel="noopener noreferrer">beemalinnovation.co.uk</a></li>
-              {/* TODO: Replace {{REGISTERED_ADDRESS}} with actual registered address */}
-              <li>Registered address: 123 Innovation House, London, UK <span className="text-xs text-[#94a3b8]">(placeholder — update with actual registered address)</span></li>
-              <li>Contact email: <a href="mailto:privacy@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">privacy@beemalinnovation.co.uk</a></li>
+              <li>Registered address: 29 Arden Place, Luton, LU2 7YE</li>
+              <li>Company registration number: 17048693</li>
+              <li>Contact email: <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a></li>
             </ul>
             <p>
               We are the data controller for your personal data collected through the App.
@@ -289,7 +289,7 @@ export default function PrivacyPage() {
               </table>
             </div>
             <p>
-              To exercise any of these rights, contact us at <a href="mailto:privacy@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">privacy@beemalinnovation.co.uk</a>. We will respond within one month.
+              To exercise any of these rights, contact us at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a>. We will respond within one month.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
@@ -303,7 +303,7 @@ export default function PrivacyPage() {
               10. Children&apos;s Privacy
             </h2>
             <p>
-              Shiftlyx is not intended for use by individuals under the age of 18. We do not knowingly collect personal data from children. If you believe a child has provided us with personal data, please contact us immediately at <a href="mailto:privacy@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">privacy@beemalinnovation.co.uk</a>.
+              Shiftlyx is not intended for use by individuals under the age of 18. We do not knowingly collect personal data from children. If you believe a child has provided us with personal data, please contact us immediately at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a>.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
@@ -327,7 +327,7 @@ export default function PrivacyPage() {
               If you have concerns about how we handle your personal data, please contact us first — we will do our best to resolve the issue:
             </p>
             <ul className="list-disc pl-6 space-y-1">
-              <li>Email: <a href="mailto:privacy@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">privacy@beemalinnovation.co.uk</a></li>
+              <li>Email: <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a></li>
             </ul>
             <p>
               If you are not satisfied with our response, you have the right to lodge a complaint with the <strong>Information Commissioner&apos;s Office (ICO)</strong>, the UK&apos;s data protection regulator:
@@ -345,10 +345,10 @@ export default function PrivacyPage() {
               If you have any questions about this Privacy Policy or how we handle your data, please contact us:
             </p>
             <ul className="list-disc pl-6 space-y-1">
-              <li>Email: <a href="mailto:privacy@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">privacy@beemalinnovation.co.uk</a></li>
+              <li>Email: <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a></li>
               <li>Company: Beemal Innovation Ltd</li>
-              {/* TODO: Replace {{REGISTERED_ADDRESS}} with actual registered address */}
-              <li>Address: 123 Innovation House, London, UK <span className="text-xs text-[#94a3b8]">(placeholder — update with actual registered address)</span></li>
+              <li>Company registration number: 17048693</li>
+              <li>Address: 29 Arden Place, Luton, LU2 7YE</li>
             </ul>
           </div>
         </div>

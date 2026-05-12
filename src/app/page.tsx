@@ -98,11 +98,6 @@ const proFeaturesList = [
     desc: "Turn small leave requests into longer recovery breaks. Leave extension planning and mini-holiday detection.",
   },
   {
-    icon: "Partner Sync",
-    title: "Partner Sync",
-    desc: "See your partner's shifts alongside yours. Four coordination modes — Standard, Avoid Heavy Days, Childcare First, Shared Off First.",
-  },
-  {
     icon: "Childcare-Aware",
     title: "Childcare-Aware Planning",
     desc: "Plan around school runs, nursery pickups, and family commitments. Ensures one of you is always free for childcare.",
@@ -125,21 +120,22 @@ const proFeaturesList = [
 ];
 
 const freeFeatures = [
-  "Manual shift entry",
-  "Basic calendar",
-  "Basic insights",
-  "Notifications",
+  "Fatigue Score (0-100)",
+  "Shift Planner (5 strategies)",
+  "Partner Sync (4 modes)",
+  "Recovery Coach",
+  "Preference Learning",
 ];
 
 const premiumFeatures = [
   "AI schedule generation",
   "Fatigue intelligence / advanced risk analysis",
   "Annual leave optimiser",
-  "Partner sync",
   "Childcare-aware planning",
   "Income forecasting",
   "Smart shift stacking",
   "Candidate comparison",
+  "Import / Export",
 ];
 
 function FeatureCard({ feature, index }: { feature: (typeof siteConfig.features)[0]; index: number }) {
@@ -473,10 +469,10 @@ export default function HomePage() {
               FREE — No subscription needed
             </Badge>
             <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Most of Shiftlyx is free.
+              Shiftlyx is free to download and use.
             </h2>
             <p className="text-[#475569] text-lg max-w-2xl mx-auto">
-              No subscription trap. No hidden fees. Your fatigue score, planner, and recovery tools are yours free, forever.
+              Fatigue score, shift planner, partner sync, and recovery coach — all included at no cost. Premium unlocks AI voice planning, fatigue intelligence, income forecasting, and more. From £3.99/month.
             </p>
           </motion.div>
 
