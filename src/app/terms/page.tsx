@@ -1,7 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 
 const lastUpdated = "12 May 2026";
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description:
+    "Shiftlyx terms of service — rules and conditions for using the Shiftlyx app and website.",
+  openGraph: {
+    title: "Terms of Service — Shiftlyx",
+    description:
+      "Rules and conditions for using the Shiftlyx app and website.",
+  },
+};
 
 export default function TermsPage() {
   return (

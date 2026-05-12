@@ -1,6 +1,18 @@
+import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 
 const lastUpdated = "12 May 2026";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Shiftlyx privacy policy — how we collect, use, and protect your data in compliance with UK GDPR.",
+  openGraph: {
+    title: "Privacy Policy — Shiftlyx",
+    description:
+      "How Shiftlyx collects, uses, and protects your personal data.",
+  },
+};
 
 export default function PrivacyPage() {
   return (

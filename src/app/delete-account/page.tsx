@@ -1,7 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Trash2, Clock, ShieldCheck, Mail, Settings } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Delete Account",
+  description:
+    "How to delete your Shiftlyx account and associated data — step-by-step guide.",
+  openGraph: {
+    title: "Delete Account — Shiftlyx",
+    description: "Step-by-step guide to deleting your Shiftlyx account.",
+  },
+};
 
 export default function DeleteAccountPage() {
   return (
