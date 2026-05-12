@@ -53,6 +53,10 @@ export default function BlogPage() {
 
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
       {/* Page Header */}
       <section className="pt-20 pb-12 bg-gradient-to-b from-[#eff6ff] to-transparent">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
