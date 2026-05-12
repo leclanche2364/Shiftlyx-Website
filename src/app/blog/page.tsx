@@ -16,6 +16,19 @@ const categoryColors: Record<string, string> = {
   "Product & Updates": "bg-amber-50 text-amber-700 border-amber-200/50",
 };
 
+const blogJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  headline: "Shiftlyx Blog — Shift Worker Tips & Insights",
+  description:
+    "Practical advice for NHS shift workers on fatigue management, rota planning, and recovery.",
+  publisher: {
+    "@type": "Organization",
+    name: "Shiftlyx",
+    url: "https://shiftlyx.com",
+  },
+};
+
 export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
