@@ -1140,6 +1140,7 @@ Remember, seeking help isn't a sign of weakness - it's professional responsibili
         title: "Product",
         links: [
           { label: "Features", href: "/features" },
+          { label: "Partner Sync", href: "/partner-invite" },
           { label: "Download", href: "/download" },
           { label: "Blog", href: "/blog" },
           { label: "Get Shiftlyx", href: "/download" },
