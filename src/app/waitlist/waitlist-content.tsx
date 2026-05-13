@@ -51,7 +51,7 @@ export default function WaitlistPage() {
 
   return (
     <div>
-      {/* Hero — email form front and centre */}
+      {/* Hero — info-first waitlist page */}
       <section className="pt-24 pb-16 bg-gradient-to-b from-[#eff6ff] to-transparent">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           {/* Badge */}
@@ -64,14 +64,38 @@ export default function WaitlistPage() {
           {/* Headline */}
           <div className="text-center mb-8">
             <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4">
-              Shiftlyx is free to download and use.
+              Shiftlyx is free. Always.
             </h1>
-            <p className="text-base sm:text-lg text-[#475569] max-w-xl mx-auto leading-relaxed">
-              Fatigue score, shift planner, partner sync, and recovery coach — all included at no cost. Premium unlocks AI voice planning, fatigue intelligence, income forecasting, and more.
+            <p className="text-base sm:text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed">
+              Your shift, your app, your OS — fatigue score, shift planner, partner sync, and recovery coach all included at no cost. Premium unlocks AI Voice Planner, fatigue intelligence, income forecasting, and more.
             </p>
           </div>
 
-          {/* Email Form — right in the hero */}
+          {/* Key benefits preview — info before form */}
+          <div className="grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto mb-10">
+            <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 text-center">
+              <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
+                <span className="text-lg font-bold text-[#2563eb]">1</span>
+              </div>
+              <p className="text-sm font-medium text-foreground">Fatigue Score</p>
+              <p className="text-xs text-[#94a3b8] mt-0.5">4 dimensions, one number</p>
+            </div>
+            <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 text-center">
+              <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
+                <span className="text-lg font-bold text-[#2563eb]">2</span>
+              </div>
+              <p className="text-sm font-medium text-foreground">Voice Planner</p>
+              <p className="text-xs text-[#94a3b8] mt-0.5">Speak to plan your rota</p>
+            </div>
+            <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 text-center">
+              <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
+                <span className="text-lg font-bold text-[#2563eb]">3</span>
+              </div>
+              <p className="text-sm font-medium text-foreground">Partner Sync</p>
+              <p className="text-xs text-[#94a3b8] mt-0.5">Tap phones to connect</p>
+            </div>
+          </div>
+
           <div className="max-w-md mx-auto">
             {submitted ? (
               <motion.div

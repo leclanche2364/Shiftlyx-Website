@@ -22,7 +22,7 @@ export const siteConfig = {
     badge: "Early Access 2026",
     headline: "Just say:\n&ldquo;Hey Shiftlyx,\nplan my month.&rdquo;",
     subheadline:
-      "Shiftlyx is a personal operating system for shift workers. Speak naturally to build your schedule, understand your fatigue, and plan shifts that work for <em>you</em> — not just the rota. <strong>No typing required.</strong>",
+      "Shiftlyx is a personal operating system for shift workers. Speak naturally to build your schedule, understand your fatigue, and plan shifts that work for <em>you</em> — not just the rota. No typing required.",
     cta: { text: "Get early access →", href: "/download" },
     the2amTest: "Designed for the moment you're too tired to decide.",
   },
@@ -263,7 +263,7 @@ export const siteConfig = {
     },
     {
       q: "How much does it cost?",
-      a: "The core Shiftlyx app is <strong>free forever</strong> — fatigue score, shift planner, partner sync, and recovery coach included. Premium unlocks AI Voice Planner, fatigue intelligence, annual leave optimiser, income forecasting, and more. <strong>£3.99/month</strong> or <strong>£18.99/year</strong> with the Day One Annual plan — 60% off. New users get a <strong>free 1-month trial</strong> of Premium. That's less than one NHS parking ticket for a full year of smarter shifts.",
+      a: "The core Shiftlyx app is free forever — fatigue score, shift planner, partner sync, and recovery coach included. Premium unlocks AI Voice Planner, fatigue intelligence, annual leave optimiser, income forecasting, and more. £3.99/month or £18.99/year with the Day One Annual plan — 60% off. New users get a free 1-month trial of Premium. That's less than one NHS parking ticket for a full year of smarter shifts.",
     },
     {
       q: "I'm not a nurse. Can I still use it?",
@@ -303,7 +303,7 @@ export const siteConfig = {
       },
       {
         q: "How much will it cost after early access?",
-        a: "The core app stays <strong>free forever</strong> — fatigue score, planner, partner sync, recovery coach. Premium is <strong>£3.99/month</strong> or lock in the <strong>Day One Annual</strong> plan at <strong>£18.99/year</strong> (60% off). New users get a <strong>free 1-month trial</strong>. Early access users keep their Day One price for life.",
+        a: "The core app stays free forever — fatigue score, planner, partner sync, recovery coach. Premium is £3.99/month or lock in the Day One Annual plan at £18.99/year (60% off). New users get a free 1-month trial. Early access users keep their Day One price for life.",
       },
     ],
     testimonials: [
