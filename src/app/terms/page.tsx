@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "Shiftlyx terms of service — rules and conditions for using the Shiftlyx app and website.",
+    alternates: {
+    canonical: "https://www.shiftlyx.com/terms",
+  },
   openGraph: {
     title: "Terms of Service — Shiftlyx",
     description:

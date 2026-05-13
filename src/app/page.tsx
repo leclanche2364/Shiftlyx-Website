@@ -187,6 +187,11 @@ export default function HomePage() {
 
   return (
     <div>
+      {/* SEO H1 — visible to crawlers but hidden visually */}
+      <h1 className="sr-only">
+        Shiftlyx — Personal OS for Shift Workers: AI Voice Shift Planner, Fatigue Tracker &amp; Partner Sync
+      </h1>
+
       {/* 1. Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#eff6ff] via-transparent to-transparent pointer-events-none" />
@@ -213,10 +218,19 @@ export default function HomePage() {
               </motion.h1>
 
               <motion.p
-                className="text-sm text-[#475569] font-medium mb-6"
+                className="text-base text-[#6366f1] font-semibold mb-4"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.15 }}
+              >
+                Your shift, your app, your OS.
+              </motion.p>
+
+              <motion.p
+                className="text-sm text-[#475569] font-medium mb-6"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.18 }}
               >
                 A smarter way to organise life around shift work.
               </motion.p>
@@ -225,7 +239,7 @@ export default function HomePage() {
                 className="text-lg text-[#475569] leading-relaxed mb-3 max-w-lg"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.22 }}
               >
                 Just speak. Shiftlyx listens, understands your preferences, and builds a smarter schedule that works around your life.
               </motion.p>
@@ -234,7 +248,7 @@ export default function HomePage() {
                 className="text-sm text-[#64748b] leading-relaxed mb-8 max-w-lg"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.25 }}
+                transition={{ duration: 0.6, delay: 0.26 }}
               >
                 Fatigue tracking, partner sync, and shift planning for healthcare workers. All in one personal OS.
               </motion.p>

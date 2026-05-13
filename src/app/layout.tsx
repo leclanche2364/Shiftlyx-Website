@@ -23,23 +23,24 @@ export const metadata: Metadata = {
     default: "Shiftlyx — A Personal OS for Shift Workers",
   },
   description:
-    "Shiftlyx helps NHS nurses and healthcare workers track fatigue, plan shifts around their life, and coordinate with partners.",
+    "Your shift, your app, your OS — Shiftlyx helps NHS nurses plan smart shifts with voice AI, track fatigue across 4 dimensions, and sync with partners. Built for shift workers, not employers.",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/app-icon.jpg", sizes: "1024x1024", type: "image/jpeg" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
     apple: [
-      { url: "/app-icon.jpg", sizes: "180x180" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/favicon.ico",
+    shortcut: "/favicon-48x48.png",
   },
   openGraph: {
     title: "Shiftlyx — A Personal OS for Shift Workers",
     description:
-      "Shiftlyx helps NHS nurses and healthcare workers track fatigue, plan shifts around their life, and coordinate with partners.",
+      "Your shift, your app, your OS — Shiftlyx helps NHS nurses and healthcare workers track fatigue, plan shifts around their life, and coordinate with partners.",
     images: "/app-icon.jpg",
     type: "website",
     siteName: "Shiftlyx",
@@ -49,10 +50,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shiftlyx — A Personal OS for Shift Workers",
     description:
-      "Shiftlyx helps NHS nurses and healthcare workers track fatigue, plan shifts around their life, and coordinate with partners.",
+      "Your shift, your app, your OS — Shiftlyx helps NHS nurses and healthcare workers track fatigue, plan shifts around their life, and coordinate with partners.",
     images: "/app-icon.jpg",
   },
-  metadataBase: new URL("https://shiftlyx.com"),
+  metadataBase: new URL("https://www.shiftlyx.com"),
   alternates: {
     canonical: "/",
   },
@@ -71,7 +72,12 @@ const jsonLd = {
     email: "admin@beemalinnovation.co.uk",
     contactType: "customer support",
   },
-  sameAs: [],
+  sameAs: [
+    "https://x.com/shiftlyx",
+    "https://www.linkedin.com/company/shiftlyx",
+    "https://www.tiktok.com/@shiftlyx",
+    "https://www.instagram.com/shiftlyx/",
+  ],
 };
 
 export default function RootLayout({

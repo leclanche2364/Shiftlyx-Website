@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Shiftlyx privacy policy — how we collect, use, and protect your data in compliance with UK GDPR.",
+    alternates: {
+    canonical: "https://www.shiftlyx.com/privacy",
+  },
   openGraph: {
     title: "Privacy Policy — Shiftlyx",
     description:

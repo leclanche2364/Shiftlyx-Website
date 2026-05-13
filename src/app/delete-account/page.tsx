@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Delete Account",
   description:
     "How to delete your Shiftlyx account and associated data — step-by-step guide.",
+    alternates: {
+    canonical: "https://www.shiftlyx.com/delete-account",
+  },
   openGraph: {
     title: "Delete Account — Shiftlyx",
     description: "Step-by-step guide to deleting your Shiftlyx account.",
