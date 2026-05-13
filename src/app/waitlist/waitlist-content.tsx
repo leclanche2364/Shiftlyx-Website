@@ -96,6 +96,12 @@ export default function WaitlistPage() {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* Email form — below the fold, separate section */}
+      <section className="pb-16">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-md mx-auto">
             {submitted ? (
               <motion.div
