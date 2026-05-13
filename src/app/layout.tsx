@@ -26,7 +26,6 @@ export const metadata: Metadata = {
     "Your shift, your app, your OS — Shiftlyx helps NHS nurses plan smart shifts with voice AI, track fatigue across 4 dimensions, and sync with partners. Built for shift workers, not employers.",
   icons: {
     icon: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
       { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
     ],
