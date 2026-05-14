@@ -1038,6 +1038,98 @@ Contact your GP if you're experiencing physical symptoms that aren't improving, 
 
 Remember, seeking help isn't a sign of weakness - it's professional responsibility. Looking after yourself ensures you can continue providing excellent patient care throughout your career.
 `,
+      },
+      {
+        slug: "hse-fatigue-guide-2026",
+        title: "The HSE Fatigue Guide: What Every Shift Worker Needs to Know",
+        excerpt: "The HSE's 2026 best practice guide confirms fatigue is a 'systems-level hazard' — not a personal failing. Here's what it means for NHS shift workers and how to take control of your own fatigue.",
+        category: "Fatigue & Recovery",
+        date: "May 14, 2026",
+        readTime: "8 min read",
+        featured: false,
+        content: `
+# The HSE Fatigue Guide: What Every Shift Worker Needs to Know
+
+In 2026, the Health and Safety Executive (HSE) updated its best practice guidance on managing fatigue in shift workers, building on the framework established in HSG256. The message is stark — and it changes how we should think about tiredness at work.
+
+## Fatigue Is Not a Personality Flaw
+
+The single most important shift in the HSE's 2026 guidance is this: fatigue is now framed as a **systems-level hazard**, not a personal failing.
+
+For years, shift workers have internalised tiredness as a weakness. "I should be able to handle this." "Everyone else manages fine." "Maybe I'm just not cut out for nights."
+
+The HSE disagrees. Fatigue is an occupational hazard — like working at height or handling hazardous substances. It must be managed systematically, not shouldered individually.
+
+This aligns with what Shiftlyx was built on: that fatigue is measurable, predictable, and manageable when you treat it as a data problem, not a character flaw.
+
+## What the Numbers Say
+
+The HSE guide draws on NIOSH data that quantifies the real cost of fatigue in healthcare:
+
+- Night shifts increase injury risk by 30% compared to day work
+- 12-hour day shifts carry a 37% higher injury rate than shorter shifts
+- Evening shifts still add 18% risk above standard day work
+- Being awake for 17 hours produces cognitive impairment equivalent to a 0.05% blood alcohol concentration — that's over the drink-drive limit in Scotland
+
+Let that last one sink in. By the end of a 12-hour night shift with a commute, most nurses are functioning at a level the law would not allow behind the wheel. Yet we're expected to make clinical decisions, administer medications, and respond to emergencies.
+
+## The Hidden Fatigue Signal
+
+One of the most insightful findings in the HSE guide concerns shift-swap requests. The HSE notes that "shift-swap requests are spiking — often a proxy for fatigue from quick-returns."
+
+When a colleague asks to swap a shift, it's rarely about convenience. It's often about survival. A short turnaround (finishing at 8pm and starting again at 7am the next day) creates a physiological debt that compounds over time.
+
+Shiftlyx calls this the Short Recovery dimension — one of four measurable factors in the Fatigue Score. When turnaround time between shifts falls below 16 hours, your body doesn't have enough time for proper recovery. Stack enough of these, and you're carrying a fatigue debt that no amount of coffee can fix.
+
+## The Four Dimensions of Fatigue (Validated by the HSE)
+
+The HSE guidance independently validates the same fatigue dimensions that Shiftlyx measures:
+
+### 1. Consecutive Work Days
+
+Injury rates climb sharply after 4 consecutive shifts. The HSE recommends limiting consecutive work days and building in adequate recovery days. Shiftlyx scores this dimension from 0-100 based on your actual rota.
+
+### 2. Night Clustering
+
+Nights packed closely together produce a bigger circadian disruption than spaced-out night shifts. The HSE's guidance on minimising circadian disruption mirrors exactly what Shiftlyx measures in its Circadian Disruption dimension.
+
+### 3. Short Recovery (Quick Returns)
+
+The HSE specifically flags quick-return shifts (fewer than 16 hours between shifts) as a major fatigue contributor. Shiftlyx tracks every short turnaround and factors them into your overall score.
+
+### 4. Circadian Disruption
+
+Frequent flipping between day and night shifts is one of the most damaging patterns. The HSE recommends stabilising shift patterns where possible — something Shiftlyx measures in real-time.
+
+## What the HSE Guidance Means for You
+
+As an NHS shift worker, you cannot redesign the entire rostering system. But you can take control of what's in your hands.
+
+The HSE guidance makes it clear that managers have a duty to assess and manage fatigue risk. But the reality on most wards is that the system is stretched, and the individual bears the cost.
+
+This is where a personal tool changes the game. You don't need to wait for your trust to adopt better fatigue management. You can:
+
+- See your fatigue score before confirming a shift pattern
+- Compare different strategies — income-optimised vs health-optimised vs shift-stacked
+- Know when to say no to a swap that pushes you into the red zone
+- Coordinate with your partner so you're not both running on empty
+
+## The Takeaway
+
+The HSE's 2026 guidance is a milestone. It validates what shift workers have known for decades: that fatigue is not a personal weakness but a systemic problem requiring systemic solutions.
+
+But systems change slowly. Your next rota comes out next week.
+
+Shiftlyx bridges that gap — giving you the tools to understand and manage your fatigue today, while the broader system catches up.
+
+---
+
+**Ready to take control of your fatigue?**
+
+Join the waitlist at shiftlyx.com/waitlist
+Lock in your Day One Annual price (£18.99/year, 60% off) and get a free 1-month trial.
+Core app is free forever — no credit card required.
+`,
       }
     ],
   },
