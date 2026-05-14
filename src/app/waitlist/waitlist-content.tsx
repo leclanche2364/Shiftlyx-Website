@@ -67,7 +67,7 @@ export default function WaitlistPage() {
               Shiftlyx is free. Always.
             </h1>
             <p className="text-base sm:text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed">
-              Your shift, your app, your OS — fatigue score, shift planner, partner sync, and recovery coach all included at no cost. Premium unlocks AI Voice Planner, fatigue intelligence, income forecasting, and more.
+              Your shift, your app, your OS — fatigue score, shift planner, and recovery coach all included at no cost. Premium unlocks AI Voice Planner, fatigue intelligence, income forecasting, and more.
             </p>
           </div>
 
@@ -91,7 +91,7 @@ export default function WaitlistPage() {
               <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
                 <span className="text-lg font-bold text-[#2563eb]">3</span>
               </div>
-              <p className="text-sm font-medium text-foreground">Partner Sync</p>
+              <p className="text-sm font-medium text-foreground">Partner Sync (Premium)</p>
               <p className="text-xs text-[#94a3b8] mt-0.5">Tap phones to connect</p>
             </div>
           </div>
@@ -264,7 +264,7 @@ export default function WaitlistPage() {
               },
               {
                 title: "Free to download and use",
-                desc: "fatigue score, shift planner, partner sync, recovery coach included at no cost — premium from £3.99/month",
+                desc: "fatigue score, shift planner, recovery coach included at no cost — premium from £3.99/month",
               },
               {
                 title: "Direct influence",
@@ -326,7 +326,7 @@ export default function WaitlistPage() {
             Shiftlyx is free to download and use.
           </h2>
           <p className="text-[#475569] text-lg mb-8 max-w-xl mx-auto">
-            Free fatigue score, planner, partner sync, recovery coach included. Premium from £3.99/month. Early access users lock in their Day One price for life.
+            Free fatigue score, planner, recovery coach included. Premium from £3.99/month. Early access users lock in their Day One price for life.
           </p>
           {!submitted && (
             <Link href="/download">

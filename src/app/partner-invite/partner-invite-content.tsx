@@ -83,7 +83,7 @@ export default function PartnerInvitePage() {
           >
             <Badge className="mb-4 text-xs font-medium text-pink-600 border-pink-200 bg-pink-50 gap-1.5">
               <Heart className="w-3 h-3 fill-pink-400" />
-              Partner Sync
+              Partner Sync (Premium)
             </Badge>
 
             <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
@@ -134,7 +134,7 @@ export default function PartnerInvitePage() {
                   className="bg-gradient-to-r from-pink-500 to-violet-500 hover:from-pink-600 hover:to-violet-600 text-white text-base gap-2 px-8 h-14 shadow-lg shadow-pink-200/50"
                 >
                   <Zap className="w-5 h-5" />
-                  {inviteToken ? "Accept invite →" : "Get Partner Sync →"}
+                  {inviteToken ? "Accept invite →" : "Get Partner Sync (Premium) →"}
                 </Button>
               </Link>
               {!inviteToken && (
@@ -369,7 +369,7 @@ export default function PartnerInvitePage() {
                   },
                   {
                     label: "Free forever",
-                    desc: "Partner Sync is included in the free tier. No premium needed.",
+                    desc: "Partner Sync (Premium) is a premium feature. Subscribe to unlock coordination modes.",
                   },
                   {
                     label: "Works mid-cycle",
@@ -405,7 +405,7 @@ export default function PartnerInvitePage() {
               Free forever
             </Badge>
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-4">
-              Partner Sync is free
+              Partner Sync (Premium) — Premium
             </h2>
             <p className="text-[#475569] text-lg mb-6 max-w-lg mx-auto">
               No premium, no paywall, no limits. Sync with your partner and
@@ -418,7 +418,7 @@ export default function PartnerInvitePage() {
                   className="bg-gradient-to-r from-pink-500 to-violet-500 hover:from-pink-600 hover:to-violet-600 text-white text-base gap-2 px-8 h-14 shadow-lg shadow-pink-200/50"
                 >
                   <ArrowRight className="w-5 h-5" />
-                  Get Partner Sync — free
+                  Get Partner Sync (Premium) — Premium
                 </Button>
               </Link>
             </div>

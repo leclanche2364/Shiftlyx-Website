@@ -27,7 +27,7 @@ NHS nurses and healthcare workers use Shiftlyx to manage the physical and mental
 ## Core Features
 - **Fatigue Score (0-100)**: Quantifies cumulative fatigue from consecutive work days, night clustering, short recoveries, and circadian disruption
 - **Shift Planner**: Generates plans across 5 strategies (Income Optimized, Balanced, Health Optimized, Shift Stacked, Annual Leave Maximised) — deterministic and reproducible
-- **Partner Sync**: 4 coordination modes (Standard, Avoid Same Heavy Days, Childcare First, Shared Off First) for couples managing rosters
+- **Partner Sync (Premium)**: 4 coordination modes (Standard, Avoid Same Heavy Days, Childcare First, Shared Off First) for couples managing rosters
 - **Recovery Coach**: Adaptive notification system that learns when you engage and respects shift/night/recovery windows
 - **AI Voice Planning**: Natural language shift planning via Realtime WebRTC voice interface (Premium)
 - **Income Estimator**: Calculates pay including night (+30%), Saturday (+30%), Sunday (+60%) enhancements (Premium)
@@ -35,7 +35,7 @@ NHS nurses and healthcare workers use Shiftlyx to manage the physical and mental
 - **Preference Learning**: Adapts to your schedule preferences over time with affinity scoring
 
 ## Pricing
-- **Free**: Fatigue Score, Shift Planner, Partner Sync, Recovery Coach, Preference Learning
+- **Free**: Fatigue Score, Shift Planner, Recovery Coach, Preference Learning
 - **Monthly**: £3.99/month — all Premium features
 - **Day One Annual**: £18.99/year (60% off) — locks in launch price for life
 

@@ -50,7 +50,7 @@ const featureIcons: Record<string, React.ReactNode> = {
 };
 
 const proFeatureIcons: Record<string, React.ReactNode> = {
-  "Partner Sync": <Users className="w-5 h-5" />,
+  "Partner Sync (Premium)": <Users className="w-5 h-5" />,
   "Childcare-Aware": <Baby className="w-5 h-5" />,
   "Fatigue Intelligence": <Activity className="w-5 h-5" />,
   "Annual Leave Optimizer": <CalendarDays className="w-5 h-5" />,
@@ -122,7 +122,7 @@ const proFeaturesList = [
 const freeFeatures = [
   "Fatigue Score (0-100)",
   "Shift Planner (5 strategies)",
-  "Partner Sync (4 modes)",
+  
   "Recovery Coach",
   "Preference Learning",
 ];
@@ -189,7 +189,7 @@ export default function HomePage() {
     <div>
       {/* SEO H1 — visible to crawlers but hidden visually */}
       <h1 className="sr-only">
-        Shiftlyx — Personal OS for Shift Workers: AI Voice Shift Planner, Fatigue Tracker &amp; Partner Sync
+        Shiftlyx — Personal OS for Shift Workers: AI Voice Shift Planner, Fatigue Tracker &amp; Partner Sync (Premium)
       </h1>
 
       {/* 1. Hero Section */}
@@ -486,7 +486,7 @@ export default function HomePage() {
               Shiftlyx is free to download and use.
             </h2>
             <p className="text-[#475569] text-lg max-w-2xl mx-auto">
-              Fatigue score, shift planner, partner sync, and recovery coach — all included at no cost. Premium unlocks AI voice planning, fatigue intelligence, income forecasting, and more. From £3.99/month.
+              Fatigue score, shift planner, and recovery coach — all included at no cost. Premium unlocks AI voice planning, fatigue intelligence, income forecasting, and more. From £3.99/month.
             </p>
           </motion.div>
 

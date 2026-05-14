@@ -263,7 +263,7 @@ export const siteConfig = {
     },
     {
       q: "How much does it cost?",
-      a: "The core Shiftlyx app is free forever — fatigue score, shift planner, partner sync, and recovery coach included. Premium unlocks AI Voice Planner, fatigue intelligence, annual leave optimiser, income forecasting, and more. £3.99/month or £18.99/year with the Day One Annual plan — 60% off. New users get a free 1-month trial of Premium. That's less than one NHS parking ticket for a full year of smarter shifts.",
+      a: "The core Shiftlyx app is free forever — fatigue score, shift planner, and recovery coach included. Premium unlocks AI Voice Planner, fatigue intelligence, annual leave optimiser, income forecasting, and more. £3.99/month or £18.99/year with the Day One Annual plan — 60% off. New users get a free 1-month trial of Premium. That's less than one NHS parking ticket for a full year of smarter shifts.",
     },
     {
       q: "I'm not a nurse. Can I still use it?",
@@ -271,7 +271,7 @@ export const siteConfig = {
     },
     {
       q: "Do I need to invite my employer or colleagues?",
-      a: "No. Shiftlyx is personal. You can use it entirely alone. Partner Sync is optional and only with people you choose.",
+      a: "No. Shiftlyx is personal. You can use it entirely alone. Partner Sync (Premium) is optional and only with people you choose.",
     },
     {
       q: "Will it tell me not to work a shift?",
@@ -303,7 +303,7 @@ export const siteConfig = {
       },
       {
         q: "How much will it cost after early access?",
-        a: "The core app stays free forever — fatigue score, planner, partner sync, recovery coach. Premium is £3.99/month or lock in the Day One Annual plan at £18.99/year (60% off). New users get a free 1-month trial. Early access users keep their Day One price for life.",
+        a: "The core app stays free forever — fatigue score, planner, recovery coach. Premium is £3.99/month or lock in the Day One Annual plan at £18.99/year (60% off). New users get a free 1-month trial. Early access users keep their Day One price for life.",
       },
     ],
     testimonials: [
@@ -515,7 +515,7 @@ Voice removes all of that. You just talk. The AI handles the rest.
 
 ## Is It Available?
 
-The AI Voice Planner is a **premium feature** at £3.99/month or £18.99/year (Day One Annual — 60% off) with a free 1-month trial. The free app includes fatigue score, shift planner, partner sync, and recovery coach.
+The AI Voice Planner is a **premium feature** at £3.99/month or £18.99/year (Day One Annual — 60% off) with a free 1-month trial. The free app includes fatigue score, shift planner, and recovery coach.
 
 [Get early access →] to try it free.`,
       },
@@ -1140,7 +1140,6 @@ Core app is free forever — no credit card required.
       features: [
         "Fatigue Score (0-100)",
         "Shift Planner (5 strategies)",
-        "Partner Sync (4 modes)",
         "Recovery Coach",
         "Preference Learning",
       ],
@@ -1212,7 +1211,7 @@ Core app is free forever — no credit card required.
       },
       {
         q: "Can my partner see everything?",
-        a: "Only what you choose to share via Partner Sync.",
+        a: "Only what you choose to share via Partner Sync (Premium).",
       },
       {
         q: "What happens if I delete my account?",
@@ -1270,7 +1269,7 @@ Core app is free forever — no credit card required.
     features: {
       title: "Shiftlyx Features — AI Voice Planner, Fatigue Score & Shift Strategies for UK Nurses",
       description:
-        "Explore every Shiftlyx feature: AI Voice Planner (just speak to plan your month), Fatigue Score (0-100), 5 Shift Strategies, Partner Sync, Recovery Coach, and Preference Learning. The voice shift planning app built for tired healthcare workers.",
+        "Explore every Shiftlyx feature: AI Voice Planner (just speak to plan your month), Fatigue Score (0-100), 5 Shift Strategies, Partner Sync (Premium), Recovery Coach, and Preference Learning. The voice shift planning app built for tired healthcare workers.",
     },
     about: {
       title: "Why Shiftlyx — AI Voice Shift Planner Built by NHS Workers | Our Story",
@@ -1290,7 +1289,7 @@ Core app is free forever — no credit card required.
     download: {
       title: "Download Shiftlyx — Free AI Voice Shift Planner for iOS & Android",
       description:
-        "Download Shiftlyx free on iOS and Android. Use the AI Voice Planner to build your rota by speaking — just say 'Hey Shiftlyx, plan my month'. Fatigue score, shift planner, partner sync — all included. Premium from £3.99/month with free trial.",
+        "Download Shiftlyx free on iOS and Android. Use the AI Voice Planner to build your rota by speaking — just say 'Hey Shiftlyx, plan my month'. Fatigue score and shift planner included at no cost. Partner Sync is a Premium feature. From £3.99/month with free trial.",
     },
     privacy: {
       title: "Shiftlyx Privacy Policy — Your Data Stays Yours",
