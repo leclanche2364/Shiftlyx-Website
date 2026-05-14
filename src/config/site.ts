@@ -1112,7 +1112,7 @@ This is where a personal tool changes the game. You don't need to wait for your 
 - See your fatigue score before confirming a shift pattern
 - Compare different strategies — income-optimised vs health-optimised vs shift-stacked
 - Know when to say no to a swap that pushes you into the red zone
-- Coordinate with your partner so you're not both running on empty
+- Coordinate with your partner so you're not both running on empty (Premium)
 
 ## The Takeaway
 
