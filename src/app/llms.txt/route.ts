@@ -35,6 +35,7 @@ NHS nurses and healthcare workers use Shiftlyx to manage the physical and mental
 - **Preference Learning**: Adapts to your schedule preferences over time with affinity scoring
 
 ## Pricing
+See [pricing.md](https://www.shiftlyx.com/pricing.md) for full structured pricing.
 - **Free**: Fatigue Score, Shift Planner, Recovery Coach, Preference Learning
 - **Monthly**: £3.99/month — all Premium features
 - **Day One Annual**: £18.99/year (60% off) — locks in launch price for life

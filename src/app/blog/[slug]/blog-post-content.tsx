@@ -50,14 +50,23 @@ export default function BlogPostContent({ slug }: { slug: string }) {
         headline: article.title,
         description: article.excerpt,
         datePublished: article.date,
+        image: "https://shiftlyx.com/app-icon.jpg",
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `https://shiftlyx.com/blog/${article.slug}`,
+        },
         author: {
           "@type": "Organization",
           name: "Shiftlyx",
+          url: "https://shiftlyx.com",
         },
         publisher: {
           "@type": "Organization",
           name: "Shiftlyx",
-          url: "https://shiftlyx.com",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://shiftlyx.com/app-icon.jpg",
+          },
         },
       }
     : null;

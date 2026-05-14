@@ -3,13 +3,13 @@ import FeaturesContent from "./features-content";
 
 export const metadata: Metadata = {
   title: "Features",
-  description: "Shiftlyx features — fatigue tracking, AI shift planner, partner sync, recovery coach, and income estimator for shift workers.",
-    alternates: {
+  description: "Shiftlyx features — AI Voice Planner, Fatigue Score (0-100), 5 Shift Strategies, Partner Sync (Premium), Recovery Coach, and Income Estimator for NHS shift workers. The voice shift planning app.",
+  alternates: {
     canonical: "https://www.shiftlyx.com/features",
   },
   openGraph: {
-    title: "Features — Shiftlyx",
-    description: "Full breakdown of Shiftlyx features — from fatigue scoring to AI voice planning.",
+    title: "Shiftlyx Features — AI Voice Shift Planner, Fatigue Score & More",
+    description: "Full breakdown of every Shiftlyx feature: just speak to plan your month, track fatigue across 4 dimensions, coordinate with your partner, and recover smarter.",
   },
 };
 

@@ -58,22 +58,78 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Shiftlyx",
-  url: "https://shiftlyx.com",
-  logo: "https://shiftlyx.com/app-icon.jpg",
-  description:
-    "Shiftlyx is a personal operating system for shift workers — track fatigue, plan shifts around your life, and coordinate with your partner.",
-  contactPoint: {
-    "@type": "ContactPoint",
-    email: "admin@beemalinnovation.co.uk",
-    contactType: "customer support",
-  },
-  sameAs: [
-    "https://x.com/shiftlyx",
-    "https://www.linkedin.com/company/shiftlyx",
-    "https://www.tiktok.com/@shiftlyx",
-    "https://www.instagram.com/shiftlyx/",
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: "Shiftlyx",
+      url: "https://shiftlyx.com",
+      logo: "https://shiftlyx.com/app-icon.jpg",
+      description:
+        "Shiftlyx is a personal operating system for shift workers — track fatigue, plan shifts around your life, and coordinate with your partner.",
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "admin@beemalinnovation.co.uk",
+        contactType: "customer support",
+      },
+      sameAs: [
+        "https://x.com/shiftlyx",
+        "https://www.linkedin.com/company/shiftlyx",
+        "https://www.tiktok.com/@shiftlyx",
+        "https://www.instagram.com/shiftlyx/",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      name: "Shiftlyx",
+      url: "https://shiftlyx.com",
+      description:
+        "A personal operating system for shift workers — track fatigue, plan shifts, and coordinate with your partner.",
+      inLanguage: "en-GB",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "Shiftlyx",
+      operatingSystem: "iOS 16+, Android 10+",
+      applicationCategory: "HealthApplication",
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "GBP",
+        lowPrice: 0,
+        highPrice: 18.99,
+        offerCount: 3,
+        offers: [
+          {
+            "@type": "Offer",
+            name: "Free",
+            price: 0,
+            priceCurrency: "GBP",
+            description:
+              "Fatigue Score, Shift Planner, Recovery Coach, Preference Learning",
+          },
+          {
+            "@type": "Offer",
+            name: "Premium Monthly",
+            price: 3.99,
+            priceCurrency: "GBP",
+            priceInterval: "Monthly",
+            description:
+              "All features including AI Voice Planner, Partner Sync, Income Estimator",
+          },
+          {
+            "@type": "Offer",
+            name: "Day One Annual",
+            price: 18.99,
+            priceCurrency: "GBP",
+            priceInterval: "Yearly",
+            description:
+              "All Premium features at 60% off — locks in launch price for life",
+          },
+        ],
+      },
+      description:
+        "Shiftlyx is a personal operating system for shift workers — track fatigue, plan shifts around your life, and coordinate with your partner.",
+      url: "https://shiftlyx.com",
+    },
   ],
 };
 

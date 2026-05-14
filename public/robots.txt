@@ -1,0 +1,44 @@
+# robots.txt for Shiftlyx
+# https://www.shiftlyx.com
+
+# Allow all AI crawlers — we want to be cited by AI search tools
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Allow standard search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Block Common Crawl (no benefit — data used for training, not search)
+User-agent: CCBot
+Disallow: /
+
+# Allow all other crawlers
+User-agent: *
+Allow: /
+
+Sitemap: https://www.shiftlyx.com/sitemap.xml
