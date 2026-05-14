@@ -368,8 +368,8 @@ export default function PartnerInvitePage() {
                     desc: "One tap to unlink. No questions asked.",
                   },
                   {
-                    label: "Free forever",
-                    desc: "Partner Sync (Premium) is a premium feature. Subscribe to unlock coordination modes.",
+                    label: "Premium feature",
+                    desc: "Partner Sync is included with any Premium subscription. Free trial available.",
                   },
                   {
                     label: "Works mid-cycle",
@@ -401,24 +401,24 @@ export default function PartnerInvitePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Badge className="mb-4 text-xs font-medium text-amber-600 border-amber-200 bg-amber-50">
-              Free forever
+            <Badge className="mb-4 text-xs font-medium text-pink-600 border-pink-200 bg-pink-50">
+              Premium
             </Badge>
             <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-4">
-              Partner Sync (Premium) — Premium
+              Get Partner Sync
             </h2>
             <p className="text-[#475569] text-lg mb-6 max-w-lg mx-auto">
-              No premium, no paywall, no limits. Sync with your partner and
-              coordinate your schedules — included in the free tier.
+              Part of the Shiftlyx Premium subscription at £3.99/month or £18.99/year.
+              Free 1-month trial included for new users. No commitment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/download">
+              <Link href="/waitlist">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-pink-500 to-violet-500 hover:from-pink-600 hover:to-violet-600 text-white text-base gap-2 px-8 h-14 shadow-lg shadow-pink-200/50"
                 >
                   <ArrowRight className="w-5 h-5" />
-                  Get Partner Sync (Premium) — Premium
+                  Join the waitlist
                 </Button>
               </Link>
             </div>

@@ -407,13 +407,127 @@ The power of the score isn't the number itself — it's understanding *why* it's
       },
       {
         slug: "partner-sync-guide",
-        title: "Partner Sync: A Guide",
+        title: "Partner Sync for NHS Couples: How to Coordinate Shifts with Your Partner",
         excerpt:
-          "How to coordinate rotas with your partner without losing your mind. Four coordination modes explained with real examples.",
+          "Both work shifts? Here's how Partner Sync helps NHS couples coordinate rotas, avoid overlapping heavy days, manage childcare, and maximise time off together.",
         category: "Product & Updates",
-        date: "May 20, 2026",
-        readTime: "5 min read",
+        date: "May 14, 2026",
+        readTime: "7 min read",
         featured: false,
+        content: `
+# Partner Sync for NHS Couples: How to Coordinate Shifts with Your Partner
+
+If you and your partner both work shifts in the NHS, you know the pain. Two unpredictable schedules. Childcare to organise. Time together that feels like it disappears.
+
+You've probably had the conversation: "What are you working next week?" — followed by the calendar Tetris of trying to figure out who's on nights, who's got the kids, and whether you'll see each other before the weekend.
+
+Shiftlyx Partner Sync solves this. One sync, four coordination modes, and the algorithm does the hard work.
+
+## Why Shift Coordination Matters for NHS Couples
+
+Nearly 1.2 million people work in the NHS. A significant portion are in relationships with other shift workers — nurses with nurses, paramedics with midwives, HCAs with theatre staff.
+
+The challenge is unique. Unlike 9-to-5 couples, you can't assume evenings are free or weekends are sacrosanct. Your rhythm is determined by a rota that changes every month.
+
+When both partners work shifts without coordination, the result is:
+
+- Both of you on nights in the same week — empty house, exhausted parents
+- Childcare gaps because nobody checked the rota overlap
+- Fewer shared days off than the rotas actually allow
+- More negotiation, more texts, more stress
+
+The solution isn't to stop working shifts. It's to coordinate them intelligently.
+
+## How Partner Sync Works
+
+Partner Sync connects your Shiftlyx account with your partner's in seconds. No forms, no setup, no back-and-forth texts.
+
+### NFC Tap or QR Code
+
+Hold your phones together for an NFC tap, or scan your partner's QR code. Instant connection. That's it.
+
+### Four Coordination Modes
+
+Once connected, choose how you want to coordinate:
+
+**Standard** — A combined calendar view. No special rules, but you can see both schedules at a glance. Helpful for basic awareness.
+
+**Avoid Same Heavy Days** — The algorithm automatically reranks plans so you and your partner aren't both working punishing shifts on the same day. No more coming home after a 12-hour night to an empty house.
+
+**Childcare First** — Ensures one of you is always available for the kids. Select this mode and Shiftlyx makes sure your schedules aren't overlapping in a way that leaves childcare gaps. No late texts asking "Can you cover Thursday?"
+
+**Shared Off First** — Plans that give you both the same day off are ranked higher. More weekends together. More evenings free. The algorithm works for your relationship, not against it.
+
+### Real-Time Sync
+
+Your partner's shifts appear in your calendar grid (names blurred for privacy). When you generate plans, the system considers both schedules simultaneously. You never plan blind.
+
+## The Problem with Manual Coordination
+
+Before Partner Sync, coordinating rotas meant:
+
+- Screenshotting your rota and sending it in a WhatsApp message
+- Comparing two screens side by side
+- Manually checking for overlaps
+- Texting back and forth when a new rota drops
+
+This takes 20-30 minutes every month. More when rotas change mid-cycle. And it's prone to mistakes — a missed overlap means an uncovered childcare day or a lost evening together.
+
+Partner Sync turns 30 minutes of calendar Tetris into 3 taps. The first time you use it, you'll wonder why you ever did it the old way.
+
+## Shared Events: The Feature Nobody Knows They Need
+
+One of the most powerful features in Partner Sync rarely gets the attention it deserves: shared events.
+
+Birthday parties, anniversaries, school plays, parent evenings — add these as shared events and the planner automatically avoids scheduling either of you to work. A heart emoji appears on the calendar. The day stays free.
+
+For NHS couples with kids, this is transformative. No more realising too late that it's sports day and both of you are on earlies. No more asking your manager to swap because nobody checked the rota.
+
+## Privacy and Control
+
+Partner Sync is designed for couples who trust each other but still want boundaries:
+
+- **No data shared with employers.** Your schedules stay between you and your partner.
+- **Blurred names.** Your partner sees your shifts, not your specific assignments.
+- **Disconnect any time.** One tap to unlink. No questions asked. Your data stays yours.
+- **Works mid-cycle.** Sync any time — it picks up from today and adjusts going forward.
+
+## Real Example: The Busy Nurse Couple
+
+Sarah (ICU Nurse, Liverpool) and James (Paramedic, Merseyside) both work 12-hour shifts. They have two children under 5.
+
+Before Partner Sync: Every month was a negotiation. Sarah would get her rota, James would get his, and they'd sit at the kitchen table trying to figure out who could do school drop-off. They'd often end up both working tough shifts on the same day, running on caffeine and guilt.
+
+With Partner Sync (Childcare First mode): Sarah shares her rota. James shares his. The system presents them with plans that ensure one of them is always available for the kids. They see shared days off highlighted. School events are marked as shared events — neither gets scheduled.
+
+Sarah says: "It doesn't eliminate the tiredness. But it eliminates the arguments. That's worth more than any shift premium."
+
+## Is Partner Sync Right for You?
+
+Partner Sync works best for:
+
+- **NHS couples** — both working shifts, whether in the same hospital or different trusts
+- **Shift workers with children** — childcare coordination is the killer use case
+- **Any two shift workers** — flatmates, siblings, or even two friends who want to coordinate schedules
+
+It's less useful if you're the only shift worker in your relationship, or if your partner doesn't use Shiftlyx. But even then, you can use the app solo — Partner Sync is optional, not required.
+
+## The Bottom Line
+
+Coordinating two shift schedules doesn't have to be a monthly negotiation. Partner Sync does the hard work so you can focus on what matters — your patients, your family, and the time you get together.
+
+Three taps to sync. Four coordination modes. Shared events. Real-time updates.
+
+That's the difference between negotiating your rota and living it.
+
+---
+
+**Get started with Partner Sync**
+
+Partner Sync is a Premium feature at £3.99/month or £18.99/year (Day One Annual, 60% off) with a free 1-month trial.
+
+👉 [Visit the Partner Sync landing page](/partner-invite) for details and to get started.
+`,
       },
       {
         slug: "recovery-beyond-the-coffee",
