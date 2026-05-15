@@ -110,7 +110,7 @@ export const siteConfig = {
         },
         {
           name: "Shift Stacked",
-          description: "Clusters shifts into blocks for longer uninterrupted breaks. Work hard, then rest hard. Popular with nurses who commute or want extended time with family.",
+          description: "Clusters shifts into blocks for longer uninterrupted breaks. Work hard, then rest hard. Popular with shift workers who commute or want extended time with family.",
         },
         {
           name: "Annual Leave Maximised",
@@ -206,7 +206,7 @@ export const siteConfig = {
       benefit:
         "Shiftlyx asks what it needs to be useful — and nothing more.",
       captures: [
-        "Profession: Nurse / Other healthcare",
+        "Profession: Nurse, Doctor, Midwife, Paramedic, HCA, ODP, Other healthcare",
         "Band: 2–9",
         "Work model: Assigned rota / Self-rostering",
         "Region: UK NHS",
@@ -1244,7 +1244,189 @@ Join the waitlist at shiftlyx.com/waitlist
 Lock in your Day One Annual price (£18.99/year, 60% off) and get a free 1-month trial.
 Core app is free forever — no credit card required.
 `,
-      }
+      },
+      {
+        slug: "this-is-bigger-than-burnout",
+        title: '"This Is Bigger Than Burnout" — A Nocturnist on Fatigue-Informed Scheduling',
+        excerpt:
+          "A practicing nocturnist is calling for fatigue-informed scheduling, protected recovery time, and an end to the 'culture of silent endurance.' Here's what it means for shift workers — and how to take control before the system catches up.",
+        category: "Fatigue & Recovery",
+        date: "May 15, 2026",
+        readTime: "7 min read",
+        featured: false,
+        content: `
+"Hospitals may operate around the clock. But human biology still matters."
+
+Those words come from Dr. Chinyelu Oraedu, a nocturnist hospitalist writing on KevinMD — one of the most-read platforms in American medicine. Her piece, "How to redesign night shift in health care" (May 2026), is getting attention because it says something many shift workers have known for years:
+
+This isn't about resilience. It's about systems.
+
+## The Argument That Changes Everything
+
+Dr. Oraedu reframes night shift work not as an individual struggle but as a systems-design failure. Her key claim:
+
+> "Night shift health care is not merely a scheduling issue. It is increasingly becoming a patient safety issue, a workforce retention issue, a metabolic health issue, a health care systems design issue."
+
+This is a shift in framing that matters. For years, exhausted nurses and doctors have been told to build resilience, practise self-care, and drink more water. The underlying message: the problem is you.
+
+Dr. Oraedu says the opposite: the problem is that hospitals are designed around 24/7 operations but nobody designed the human side.
+
+## The Culture of Silent Endurance
+
+Perhaps the most striking section of her article cuts straight to the heart of healthcare culture:
+
+> "Exhaustion becomes a badge of honour. Skipping breaks becomes professionalism. Functioning on minimal sleep becomes expected rather than alarming."
+
+Read that again. Exhaustion = badge of honour. Skipping breaks = professionalism.
+
+Sound familiar? Every shift worker reading this has felt the pressure. The colleague who works five nights in a row without complaint. The unspoken rule that asking for a lighter rota means you can't handle the job. The guilt of taking your full break while everyone else is drowning.
+
+Dr. Oraedu draws the crucial comparison:
+
+> "We would never accept these conditions in aviation, transportation, or other high-risk industries without discussing fatigue mitigation and human performance systems. Why, then, is health care different?"
+
+She's right. Aviation mandates rest. Transportation tracks hours. Healthcare crosses its fingers and hopes for the best.
+
+## What 'Fatigue-Informed Scheduling' Actually Looks Like
+
+Dr. Oraedu lists the changes hospitals need to make:
+
+- Fatigue-informed scheduling
+- Protected recovery time
+- Minimising excessive consecutive night shifts
+- Circadian-informed lighting
+- Protected breaks
+- Recovery-centred workplace culture
+
+These are all necessary. And none of them are happening at scale.
+
+## The Gap: What to Do While You Wait for Systems to Change
+
+Here's the honest truth: hospitals are not going to implement fatigue-informed scheduling overnight. They have budget constraints, staffing shortages, and decades of inertia. The systems-level redesign Dr. Oraedu calls for is years away in most organisations.
+
+So what do you do in the meantime?
+
+This is where the individual has to take over what the system won't provide.
+
+You need tools that give you:
+
+1. **Visibility into your own fatigue** — not a vague "I'm tired" feeling, but a measurable understanding of what's driving it. Is it consecutive days? Night clustering? Short turnarounds? Circadian disruption? Each has a different solution.
+
+2. **A way to compare your options** — when you're deciding whether to pick up an extra shift, you need to see the fatigue cost alongside the financial benefit. Not a guess. A number.
+
+3. **Planning that respects your biology** — the ability to generate shift patterns that work with your circadian rhythm, not against it. To see options ranked by how they affect your recovery.
+
+## How Shiftlyx Fills This Gap
+
+Shiftlyx was built for exactly this moment. It's a personal operating system for shift workers — not a hospital tool, not an employer system, but a tool that puts the shift worker in control.
+
+The Fatigue Score tracks the four dimensions Dr. Oraedu's article implicitly validates: consecutive days, night clustering, short recovery gaps, and circadian disruption. One number, four drivers, full transparency.
+
+When your manager asks if you can pick up a fifth night or a short turnaround, you open Shiftlyx, see the +18 fatigue points it would cost, and make an informed decision. No guesswork. No guilt.
+
+The Shift Planner generates options across five strategies — from Income Optimised to Health Optimised — so you can choose the pattern that matches your priorities. Every candidate scored for fatigue impact, earnings, and schedule fit.
+
+Dr. Oraedu calls for "fatigue-informed scheduling." Shiftlyx delivers it — at the individual level, right now, without waiting for hospital systems to catch up.
+
+## The Bottom Line
+
+Dr. Oraedu is right: this is bigger than burnout. It's a systems issue, a patient safety issue, and a workforce retention issue. But systems change slowly.
+
+You don't have to wait.
+
+Shiftlyx gives you the fatigue data, the planning tools, and the personal control that the system won't provide. It's one shift worker, one decision, one recovery at a time.
+
+> "The solution is not shame," Dr. Oraedu writes. "The solution is intelligent design."
+
+Shiftlyx is that intelligent design — for you.
+
+Ready to take control of your fatigue before the system catches up? [Join the Shiftlyx waitlist](/waitlist).
+        `,
+      },
+      {
+        slug: "why-shift-scheduling-tools-ignore-fatigue",
+        title: "Why Every Major Shift Scheduling Tool Ignores Fatigue (And What to Do About It)",
+        excerpt:
+          "WhenIWork has 500,000+ users. Workforce.com powers Domino's. Sling, Connecteam, Dayforce — zero have fatigue scoring. Here's why the shift work industry has a blind spot, and what it means for you.",
+        category: "Rota Planning",
+        date: "May 15, 2026",
+        readTime: "8 min read",
+        featured: false,
+        content: `
+There are dozens of shift scheduling tools on the market. WhenIWork (500,000+ users). Workforce.com (enterprise, powers Domino's and major retailers). Sling, Connecteam, Ceridian Dayforce. Each one helps employers manage rotas, track time, forecast labour needs.
+
+None of them track fatigue.
+
+Not one has a fatigue score. Not one factors in circadian disruption. Not one helps the individual shift worker understand their recovery needs. Every single tool in the market is built for the employer — to optimise cost, coverage, and compliance. The person working the shift is invisible.
+
+## The Employer Blind Spot
+
+This isn't an accident. Scheduling tools are sold to managers, not workers. Their metrics are:
+
+- Coverage gaps filled?
+- Labour costs optimised?
+- Overtime controlled?
+
+Nobody asks: "Is this rota safe for the person working it?" Because the buyer doesn't care. The buyer is the person trying to staff a 24/7 operation on a budget.
+
+WhenIWork's feature list is typical: auto-scheduling, time tracking, team messaging, labour forecasting. Zero wellness features. Zero fatigue awareness. The algorithm optimises for "right person, right place, right time" — but it never asks "is this pattern destroying that person's health?"
+
+Workforce.com uses AI to forecast labour demand based on sales, foot traffic, and weather. It's sophisticated. It also has no circadian awareness, no recovery tracking, and no partner coordination features. The AI optimises for the business, not the human.
+
+## The Hidden Assumption
+
+Here's the assumption under every employer-facing scheduling tool:
+
+**The worker is infinitely adaptable.**
+
+You can work days, nights, or rotating shifts. You can handle short turnarounds. You can work five, six, seven days in a row if the rota requires it. Your biology doesn't matter — only your availability.
+
+We know this is false. Every shift worker knows this is false. Circadian biology is real. Cumulative fatigue is real. The metabolic, cardiovascular, and mental health impacts of chronic circadian disruption are well-documented.
+
+But the tools don't reflect this because they're designed by people who've never worked nights, sold to people who manage shift workers, and used by people who have no choice.
+
+## What a Shift Worker Actually Needs
+
+If you were designing a scheduling tool for the person working the shift — not the person managing the rota — what would it have?
+
+**Fatigue tracking.** A way to see, in numbers, how your schedule affects your body. Four dimensions: consecutive days, night clustering, short recovery windows, circadian disruption. Each one measurable, each one actionable.
+
+**Recovery awareness.** Not just "you worked X hours" but "your pattern is creating Y level of cumulative fatigue." A system that knows when you need rest and when to stay quiet.
+
+**Planning that puts you first.** The ability to say: "I want to maximise income this month" or "I need a health-optimised pattern" and see options ranked accordingly.
+
+**Life coordination.** A way to sync with your partner's schedule. To know when you're both on heavy days, or when one of you needs to be available for childcare.
+
+None of this exists in the employer tools.
+
+## The Opportunity You Have Right Now
+
+Here's the good news: because every major tool ignores the individual, there's no competition for the personal shift worker OS. Shiftlyx is building exactly that.
+
+A tool that:
+- **Tracks your fatigue** with a transparent 0-100 score based on four real dimensions
+- **Plans your schedule** across five strategies so you can choose what matters most this month
+- **Coordinates with your partner** so you stop playing calendar Tetris
+- **Coaches your recovery** with smart notifications that know when to nudge and when to stay silent
+- **Learns your preferences** over time so the suggestions get better without you doing extra work
+
+The employer tools will eventually add fatigue features — they have the distribution advantage. But they're optimised for coverage and cost. They will never put the individual's wellbeing first because that's not who they serve.
+
+Shiftlyx is built for one person: you.
+
+## What You Can Do Today
+
+While the industry catches up (if it ever does), you don't have to wait for your employer to care about your fatigue.
+
+1. **Track your fatigue manually** — note your consecutive days, night clusters, and turnaround times. Look for patterns.
+2. **Question the assumptions** — when someone says "can you pick up this shift?", you can now ask: "what does this do to my cumulative fatigue this week?"
+3. **Use a tool that works for you** — Shiftlyx is in early access and built specifically for this. Fatigue-informed scheduling shouldn't be a feature you hope your employer adds. It should be something you control.
+
+The shift work industry has a blind spot. But you don't have to be blind.
+
+[Join the Shiftlyx waitlist](/waitlist) and get early access to the personal OS for shift workers.
+        `,
+      },
     ],
   },
 
@@ -1303,7 +1485,7 @@ Core app is free forever — no credit card required.
       },
       {
         title: "Simple because tired people are using it",
-        body: "Every interaction in Shiftlyx is tested against one standard: Would a nurse on their 5th consecutive night shift understand this in under 3 seconds? If the answer is no, it doesn't ship. No complex dashboards. No multi-step flows. Two taps max for anything essential.",
+        body: "Every interaction in Shiftlyx is tested against one standard: Would a healthcare worker on their 5th consecutive night shift understand this in under 3 seconds? If the answer is no, it doesn't ship. No complex dashboards. No multi-step flows. Two taps max for anything essential.",
       },
       {
         title: "Science-grounded, not pseudoscience",
@@ -1376,12 +1558,12 @@ Core app is free forever — no credit card required.
 
   seo: {
     homepage: {
-      title: "Shiftlyx — AI Voice Shift Planner for NHS Workers | Voice Shift Planning",
+      title: "Shiftlyx — AI Voice Shift Planner for Healthcare Shift Workers | Voice Shift Planning",
       description:
-        "Shiftlyx is the AI voice shift planner for NHS nurses and healthcare workers. Just say 'Hey Shiftlyx, plan my month' to build your rota, track fatigue, and coordinate with your partner. Join the waitlist.",
+        "Shiftlyx is the AI voice shift planner for healthcare shift workers. Just say 'Hey Shiftlyx, plan my month' to build your rota, track fatigue, and coordinate with your partner. Join the waitlist.",
     },
     features: {
-      title: "Shiftlyx Features — AI Voice Planner, Fatigue Score & Shift Strategies for UK Nurses",
+      title: "Shiftlyx Features — AI Voice Planner, Fatigue Score Shiftlyx Features — AI Voice Planner, Fatigue Score & Shift Strategies for UK Nurses Shift Strategies for UK Healthcare Workers",
       description:
         "Explore every Shiftlyx feature: AI Voice Planner (just speak to plan your month), Fatigue Score (0-100), 5 Shift Strategies, Partner Sync (Premium), Recovery Coach, and Preference Learning. The voice shift planning app built for tired healthcare workers.",
     },

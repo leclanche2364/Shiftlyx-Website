@@ -12,12 +12,12 @@ export async function GET() {
   const content = `# Shiftlyx
 > A personal operating system for shift workers — track fatigue, plan shifts, and coordinate with your partner.
 
-NHS nurses and healthcare workers use Shiftlyx to manage the physical and mental toll of shift work. Free to download and use. AI-powered features unlock at £3.99/month.
+Healthcare shift workers use Shiftlyx to manage the physical and mental toll of shift work. Free to download and use. AI-powered features unlock at £3.99/month.
 
 ## Pages
 - [Home](https://shiftlyx.com/): Landing page — fatigue gauge, shift planner preview, waitlist signup
 - [Features](https://shiftlyx.com/features): Full feature breakdown — fatigue tracking, AI voice planning, partner sync, recovery coach, income estimator, preference learning
-- [About](https://shiftlyx.com/about): Built by an ICU nurse who understands the problem firsthand
+- [About](https://shiftlyx.com/about): Built by shift workers who understand the problem firsthand
 - [Blog](https://shiftlyx.com/blog): Shift worker guides on fatigue, rotas, recovery, night shifts
 - [Download](https://shiftlyx.com/download): App store links, waitlist signup
 - [Privacy](https://shiftlyx.com/privacy): UK GDPR-compliant privacy policy
@@ -45,7 +45,7 @@ See [pricing.md](https://www.shiftlyx.com/pricing.md) for full structured pricin
 - Registered address: 29 Arden Place, Luton, LU2 7YE
 - Contact: admin@beemalinnovation.co.uk
 - Platform: iOS + Android (Flutter/Supabase)
-- Target audience: NHS nurses, healthcare assistants, paramedics, and rotating shift workers
+- Target audience: Nurses, doctors, paramedics, HCAs, midwives, and all healthcare shift workers
 - App launch: Late May 2026
 
 ## Blog Articles

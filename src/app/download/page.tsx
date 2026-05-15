@@ -3,7 +3,7 @@ import DownloadContent from "./download-content";
 
 export const metadata: Metadata = {
   title: "Download",
-  description: "Download Shiftlyx free on iOS and Android — AI voice shift planner, fatigue tracking, and recovery coach for NHS nurses and shift workers. Premium features from £3.99/month with free trial.",
+  description: "Download Shiftlyx free on iOS and Android — AI voice shift planner, fatigue tracking, and recovery coach for NHS staff and shift workers. Premium features from £3.99/month with free trial.",
   alternates: {
     canonical: "https://www.shiftlyx.com/download",
   },

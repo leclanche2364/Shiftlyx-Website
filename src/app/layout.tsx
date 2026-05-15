@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     default: "Shiftlyx — A Personal OS for Shift Workers",
   },
   description:
-    "Your shift, your app, your OS — Shiftlyx helps NHS nurses plan smart shifts with voice AI, track fatigue across 4 dimensions, and sync with partners. Built for shift workers, not employers.",
+    "Your shift, your app, your OS — Shiftlyx helps healthcare shift workers plan smart shifts with voice AI, track fatigue across 4 dimensions, and sync with partners. Built for shift workers, not employers.",
   icons: {
     icon: [
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Shiftlyx — A Personal OS for Shift Workers",
     description:
-      "Your shift, your app, your OS — Shiftlyx helps NHS nurses and healthcare workers track fatigue, plan shifts around their life, and coordinate with partners.",
+      "Your shift, your app, your OS — Shiftlyx helps healthcare shift workers track fatigue, plan shifts around their life, and coordinate with partners.",
     images: "/app-icon.jpg",
     type: "website",
     siteName: "Shiftlyx",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shiftlyx — A Personal OS for Shift Workers",
     description:
-      "Your shift, your app, your OS — Shiftlyx helps NHS nurses and healthcare workers track fatigue, plan shifts around their life, and coordinate with partners.",
+      "Your shift, your app, your OS — Shiftlyx helps healthcare shift workers track fatigue, plan shifts around their life, and coordinate with partners.",
     images: "/app-icon.jpg",
   },
   metadataBase: new URL("https://www.shiftlyx.com"),
