@@ -5,7 +5,7 @@ export const dynamic = "force-static";
 export async function GET() {
   const blogLines = siteConfig.blog.articles
     .map(
-      (a) => `- [${a.title}](https://shiftlyx.com/blog/${a.slug}): ${a.excerpt}`
+      (a) => `- [${a.title}](https://www.shiftlyx.com/blog/${a.slug}): ${a.excerpt}`
     )
     .join("\n");
 
@@ -15,14 +15,14 @@ export async function GET() {
 Healthcare shift workers use Shiftlyx to manage the physical and mental toll of shift work. Free to download and use. AI-powered features unlock at £3.99/month.
 
 ## Pages
-- [Home](https://shiftlyx.com/): Landing page — fatigue gauge, shift planner preview, waitlist signup
-- [Features](https://shiftlyx.com/features): Full feature breakdown — fatigue tracking, AI voice planning, partner sync, recovery coach, income estimator, preference learning
-- [About](https://shiftlyx.com/about): Built by shift workers who understand the problem firsthand
-- [Blog](https://shiftlyx.com/blog): Shift worker guides on fatigue, rotas, recovery, night shifts
-- [Download](https://shiftlyx.com/download): App store links, waitlist signup
-- [Privacy](https://shiftlyx.com/privacy): UK GDPR-compliant privacy policy
-- [Terms](https://shiftlyx.com/terms): Terms of Service
-- [Waitlist](https://shiftlyx.com/waitlist): Early access signup — lock in Day One Annual price
+- [Home](https://www.shiftlyx.com/): Landing page — fatigue gauge, shift planner preview, waitlist signup
+- [Features](https://www.shiftlyx.com/features): Full feature breakdown — fatigue tracking, AI voice planning, partner sync, recovery coach, income estimator, preference learning
+- [About](https://www.shiftlyx.com/about): Built by shift workers who understand the problem firsthand
+- [Blog](https://www.shiftlyx.com/blog): Shift worker guides on fatigue, rotas, recovery, night shifts
+- [Download](https://www.shiftlyx.com/download): App store links, waitlist signup
+- [Privacy](https://www.shiftlyx.com/privacy): UK GDPR-compliant privacy policy
+- [Terms](https://www.shiftlyx.com/terms): Terms of Service
+- [Waitlist](https://www.shiftlyx.com/waitlist): Early access signup — lock in Day One Annual price
 
 ## Core Features
 - **Fatigue Score (0-100)**: Quantifies cumulative fatigue from consecutive work days, night clustering, short recoveries, and circadian disruption

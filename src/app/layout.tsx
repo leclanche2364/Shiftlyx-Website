@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://www.shiftlyx.com"),
   alternates: {
-    canonical: "/",
+    canonical: "https://www.shiftlyx.com/",
   },
 };
 
@@ -62,8 +62,8 @@ const jsonLd = {
     {
       "@type": "Organization",
       name: "Shiftlyx",
-      url: "https://shiftlyx.com",
-      logo: "https://shiftlyx.com/app-icon.jpg",
+      url: "https://www.shiftlyx.com",
+      logo: "https://www.shiftlyx.com/app-icon.jpg",
       description:
         "Shiftlyx is a personal operating system for shift workers — track fatigue, plan shifts around your life, and coordinate with your partner.",
       contactPoint: {
@@ -81,7 +81,7 @@ const jsonLd = {
     {
       "@type": "WebSite",
       name: "Shiftlyx",
-      url: "https://shiftlyx.com",
+      url: "https://www.shiftlyx.com",
       description:
         "A personal operating system for shift workers — track fatigue, plan shifts, and coordinate with your partner.",
       inLanguage: "en-GB",
@@ -128,7 +128,7 @@ const jsonLd = {
       },
       description:
         "Shiftlyx is a personal operating system for shift workers — track fatigue, plan shifts around your life, and coordinate with your partner.",
-      url: "https://shiftlyx.com",
+      url: "https://www.shiftlyx.com",
     },
   ],
 };

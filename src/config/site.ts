@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: "Your shift, your app, your OS.",
   description:
     "Shiftlyx is a personal operating system for shift workers. Your shift, your app, your OS — just speak your preferences with the AI Voice Planner, understand your fatigue, and plan shifts that work for you, not just the rota.",
-  url: "https://shiftlyx.com",
+  url: "https://www.shiftlyx.com",
 
   nav: {
     links: [
