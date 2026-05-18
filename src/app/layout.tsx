@@ -3,6 +3,7 @@ import { Outfit, DM_Sans } from "next/font/google";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import GoogleAnalytics from "@/components/google-analytics";
+import { siteConfig } from "@/config/site";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -38,8 +39,14 @@ export const metadata: Metadata = {
     title: "Shiftlyx — A Personal OS for Shift Workers",
     description:
       "Your shift, your app, your OS — Shiftlyx helps healthcare shift workers track fatigue, plan shifts around their life, and coordinate with partners.",
-    images: "/app-icon.jpg",
-    type: "website",
+    images: [
+      {
+        url: "/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Shiftlyx — A Personal OS for Shift Workers",
+      },
+    ],
     siteName: "Shiftlyx",
     locale: "en_GB",
   },
@@ -48,7 +55,7 @@ export const metadata: Metadata = {
     title: "Shiftlyx — A Personal OS for Shift Workers",
     description:
       "Your shift, your app, your OS — Shiftlyx helps healthcare shift workers track fatigue, plan shifts around their life, and coordinate with partners.",
-    images: "/app-icon.jpg",
+    images: ["/og-default.jpg"],
   },
   metadataBase: new URL("https://www.shiftlyx.com"),
   alternates: {
@@ -133,6 +140,21 @@ const jsonLd = {
   ],
 };
 
+const faqLd = siteConfig.faq.map((item) => ({
+  "@type": "Question",
+  name: item.q,
+  acceptedAnswer: {
+    "@type": "Answer",
+    text: item.a,
+  },
+}));
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqLd,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -147,6 +169,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
         />
       </head>
       <body className="min-h-full flex flex-col bg-noise bg-gradient-overlay">

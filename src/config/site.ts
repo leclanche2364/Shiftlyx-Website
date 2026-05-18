@@ -12,7 +12,6 @@ export const siteConfig = {
       { label: "Blog", href: "/blog" },
       { label: "Download", href: "/download" },
       { label: "About", href: "/about" },
-      { label: "Get Shiftlyx", href: "/download" },
       { label: "Privacy", href: "/privacy" },
     ],
     cta: { label: "Get Early Access", href: "/download" },
@@ -348,7 +347,7 @@ export const siteConfig = {
         excerpt:
           "A walkthrough of the four dimensions: consecutive days, night clustering, short recovery, circadian disruption. What each number means and why it matters.",
         category: "Fatigue & Recovery",
-        date: "June 15, 2026",
+        date: "May 15, 2026",
         readTime: "8 min read",
         featured: true,
         content: `
@@ -391,7 +390,7 @@ The power of the score isn't the number itself — it's understanding *why* it's
         excerpt:
           "The neuroscience of circadian disruption, why it hits harder over 40, and what actually helps.",
         category: "Fatigue & Recovery",
-        date: "June 5, 2026",
+        date: "May 16, 2026",
         readTime: "10 min read",
         featured: false,
       },
@@ -401,7 +400,7 @@ The power of the score isn't the number itself — it's understanding *why* it's
         excerpt:
           "How night pay, weekend enhancements, and unsocial hours add up. A calculator walkthrough using NHS rates.",
         category: "NHS Life",
-        date: "May 28, 2026",
+        date: "May 10, 2026",
         readTime: "7 min read",
         featured: false,
       },
@@ -545,7 +544,7 @@ Partner Sync is a Premium feature at £3.99/month or £18.99/year (Day One Annua
         excerpt:
           "No typing. No forms. Just speak naturally and the AI voice planner builds your rota. Here's exactly how voice shift planning works and why it's a game-changer for tired healthcare workers.",
         category: "Product & Updates",
-        date: "August 1, 2026",
+        date: "May 17, 2026",
         readTime: "6 min read",
         featured: true,
         content: `

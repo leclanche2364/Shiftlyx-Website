@@ -207,7 +207,7 @@ export default function HomePage() {
                 </Badge>
               </motion.div>
 
-              <motion.h1
+              <motion.h2
                 className="font-heading text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] leading-[1.1] font-bold tracking-tight text-foreground mb-3"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -215,7 +215,7 @@ export default function HomePage() {
               >
                 &ldquo;<span className="text-[#2563eb]">Hey Shiftlyx,</span><br />
                 plan my month.&rdquo;
-              </motion.h1>
+              </motion.h2>
 
               <motion.p
                 className="text-base text-[#6366f1] font-semibold mb-4"
