@@ -63,7 +63,7 @@ export default function AboutPage() {
               Because shift work isn&apos;t a 9-to-5 with overtime. It&apos;s a whole different way of living. Your body clock runs on a separate schedule. Your relationships require negotiation. Your health needs active management.
             </p>
             <p className="text-[#475569] leading-relaxed mt-4">
-              Shiftlyx sits at the centre of all that. It&apos;s where fatigue data, planning, recovery, and coordination meet. Not a rota app. Not a calendar. A personal OS.
+              Shiftlyx sits at the centre of all that. It&apos;s where fatigue data, planning, recovery, and coordination meet. An AI shift planner designed for your life.
             </p>
           </motion.div>
         </div>

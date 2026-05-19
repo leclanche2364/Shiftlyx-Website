@@ -3,7 +3,7 @@ import AboutContent from "./about-content";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Shiftlyx was built by shift workers who understand the toll — a personal OS for healthcare shift workers, by people who live it. Fatigue tracking and AI voice planning.",
+  description: "Shiftlyx was built by shift workers who understand the toll — an AI shift planner for healthcare shift workers, by people who live it. Fatigue tracking and AI voice planning.",
   alternates: {
     canonical: "https://www.shiftlyx.com/about",
   },

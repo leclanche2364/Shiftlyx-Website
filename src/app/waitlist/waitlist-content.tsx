@@ -67,7 +67,7 @@ export default function WaitlistPage() {
               Shiftlyx is free. Always.
             </h1>
             <p className="text-base sm:text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed">
-              Your shift, your app, your OS — fatigue score, shift planner, and recovery coach all included at no cost. Premium unlocks AI Voice Planner, fatigue intelligence, income forecasting, and more.
+              AI shift planner — fatigue score, shift planner, and recovery coach all included at no cost. Premium unlocks AI Voice Planner, fatigue intelligence, income forecasting, and more.
             </p>
           </div>
 

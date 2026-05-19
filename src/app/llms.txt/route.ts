@@ -10,7 +10,7 @@ export async function GET() {
     .join("\n");
 
   const content = `# Shiftlyx
-> A personal operating system for shift workers — track fatigue, plan shifts, and coordinate with your partner.
+> An AI shift planner for shift workers — track fatigue, plan shifts, and coordinate with your partner.
 
 Healthcare shift workers use Shiftlyx to manage the physical and mental toll of shift work. Free to download and use. AI-powered features unlock at £3.99/month.
 
@@ -52,7 +52,7 @@ See [pricing.md](https://www.shiftlyx.com/pricing.md) for full structured pricin
 ${blogLines}
 
 ## Common Questions
-- **Q: Is Shiftlyx a rota/hospital tool?** No. It's a personal OS for the shift worker — it doesn't replace NHS rostering systems like HealthRota or Loop. It sits on your phone and helps you make better decisions about your schedule.
+- **Q: Is Shiftlyx a rota/hospital tool?** No. It's an AI shift planner for the shift worker — it doesn't replace NHS rostering systems like HealthRota or Loop. It sits on your phone and helps you make better decisions about your schedule.
 - **Q: Can it swap shifts?** Currently shift swapping is planned but not available at launch. The focus is on choosing the right shifts and managing fatigue.
 - **Q: How is fatigue calculated?** From 4 dimensions: consecutive work days, night shift clustering, short recoveries (<16h turnaround), and circadian disruption. It's deterministic and explainable — not a black box.
 - **Q: Does it integrate with my NHS trust?** No. Shiftlyx works independently. You add your shifts manually or import from your calendar/rota.

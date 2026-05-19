@@ -21,10 +21,10 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: {
     template: "%s — Shiftlyx",
-    default: "Shiftlyx — A Personal OS for Shift Workers",
+    default: "Shiftlyx — AI Shift Planner for Shift Workers",
   },
   description:
-    "Your shift, your app, your OS — Shiftlyx helps healthcare shift workers plan smart shifts with voice AI, track fatigue across 4 dimensions, and sync with partners. Built for shift workers, not employers.",
+    "Shiftlyx is an AI shift planner that analyses your rota, scores your fatigue, and helps you build safer work patterns. Plan smarter shifts with the AI Voice Planner.",
   icons: {
     icon: [
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
@@ -36,15 +36,15 @@ export const metadata: Metadata = {
     shortcut: "/favicon-48x48.png",
   },
   openGraph: {
-    title: "Shiftlyx — A Personal OS for Shift Workers",
+    title: "Shiftlyx — AI Shift Planner for Shift Workers",
     description:
-      "Your shift, your app, your OS — Shiftlyx helps healthcare shift workers track fatigue, plan shifts around their life, and coordinate with partners.",
+      "Shiftlyx is an AI shift planner — analyse your rota, track fatigue, and plan smarter shifts with the AI Voice Planner.",
     images: [
       {
         url: "/og-default.jpg",
         width: 1200,
         height: 630,
-        alt: "Shiftlyx — A Personal OS for Shift Workers",
+        alt: "Shiftlyx — AI Shift Planner for Shift Workers",
       },
     ],
     siteName: "Shiftlyx",
@@ -52,9 +52,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shiftlyx — A Personal OS for Shift Workers",
+    title: "Shiftlyx — AI Shift Planner for Shift Workers",
     description:
-      "Your shift, your app, your OS — Shiftlyx helps healthcare shift workers track fatigue, plan shifts around their life, and coordinate with partners.",
+      "Shiftlyx is an AI shift planner — analyse your rota, track fatigue, and plan smarter shifts with the AI Voice Planner.",
     images: ["/og-default.jpg"],
   },
   metadataBase: new URL("https://www.shiftlyx.com"),
@@ -72,7 +72,7 @@ const jsonLd = {
       url: "https://www.shiftlyx.com",
       logo: "https://www.shiftlyx.com/app-icon.jpg",
       description:
-        "Shiftlyx is a personal operating system for shift workers — track fatigue, plan shifts around your life, and coordinate with your partner.",
+        "Shiftlyx is an AI shift planner for shift workers — track fatigue, plan shifts around your life, and coordinate with your partner.",
       contactPoint: {
         "@type": "ContactPoint",
         email: "admin@beemalinnovation.co.uk",
@@ -90,7 +90,7 @@ const jsonLd = {
       name: "Shiftlyx",
       url: "https://www.shiftlyx.com",
       description:
-        "A personal operating system for shift workers — track fatigue, plan shifts, and coordinate with your partner.",
+        "An AI shift planner for shift workers — track fatigue, plan shifts, and coordinate with your partner.",
       inLanguage: "en-GB",
     },
     {
@@ -134,7 +134,7 @@ const jsonLd = {
         ],
       },
       description:
-        "Shiftlyx is a personal operating system for shift workers — track fatigue, plan shifts around your life, and coordinate with your partner.",
+        "Shiftlyx is an AI shift planner for shift workers — track fatigue, plan shifts around your life, and coordinate with your partner.",
       url: "https://www.shiftlyx.com",
     },
   ],

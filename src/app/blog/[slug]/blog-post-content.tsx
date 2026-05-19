@@ -182,7 +182,7 @@ export default function BlogPostContent({ slug }: { slug: string }) {
             Try Shiftlyx for free
           </h2>
           <p className="text-[#475569] mb-6 max-w-lg mx-auto">
-            Join the waitlist and be first to try the personal OS for shift workers.
+            Join the waitlist and be first to try the AI shift planner for shift workers.
           </p>
           <Link href="/waitlist">
             <Button

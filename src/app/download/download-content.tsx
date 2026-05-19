@@ -23,7 +23,7 @@ export default function DownloadPage() {
             Get Shiftlyx
           </h1>
           <p className="text-base text-[#6366f1] font-semibold mb-4">
-            Your shift, your app, your OS.
+            AI Shift Planner — Your shift, your app.
           </p>
           <p className="text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed">
             Free on iOS and Android. Fatigue score, shift planner, and recovery coach — all included. Premium unlocks AI Voice Planner, fatigue intelligence, income forecasting, and more. From £3.99/month with a free 1-month trial.

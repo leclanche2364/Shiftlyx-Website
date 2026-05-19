@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Shiftlyx",
-  tagline: "Your shift, your app, your OS.",
+  tagline: "AI Shift Planner — Your shift, your app.",
   description:
-    "Shiftlyx is a personal operating system for shift workers. Your shift, your app, your OS — just speak your preferences with the AI Voice Planner, understand your fatigue, and plan shifts that work for you, not just the rota.",
+    "Shiftlyx is an AI shift planner for shift workers. Plan smarter shifts with the AI Voice Planner, understand your fatigue, and reclaim your work-life balance.",
   url: "https://www.shiftlyx.com",
 
   nav: {
@@ -21,7 +21,7 @@ export const siteConfig = {
     badge: "Early Access 2026",
     headline: "Just say:\n&ldquo;Hey Shiftlyx,\nplan my month.&rdquo;",
     subheadline:
-      "Shiftlyx is a personal operating system for shift workers. Speak naturally to build your schedule, understand your fatigue, and plan shifts that work for <em>you</em> — not just the rota. No typing required.",
+      "Shiftlyx is an AI shift planner for shift workers. Speak naturally to build your schedule, understand your fatigue, and plan shifts that work for <em>you</em> — not just the rota. No typing required.",
     cta: { text: "Get early access →", href: "/download" },
     the2amTest: "Designed for the moment you're too tired to decide.",
   },
@@ -1317,7 +1317,7 @@ You need tools that give you:
 
 ## How Shiftlyx Fills This Gap
 
-Shiftlyx was built for exactly this moment. It's a personal operating system for shift workers — not a hospital tool, not an employer system, but a tool that puts the shift worker in control.
+Shiftlyx was built for exactly this moment. It's an AI shift planner for shift workers — not a hospital tool, not an employer system, but a tool that puts the shift worker in control.
 
 The Fatigue Score tracks the four dimensions Dr. Oraedu's article implicitly validates: consecutive days, night clustering, short recovery gaps, and circadian disruption. One number, four drivers, full transparency.
 
@@ -1423,7 +1423,7 @@ While the industry catches up (if it ever does), you don't have to wait for your
 
 The shift work industry has a blind spot. But you don't have to be blind.
 
-[Join the Shiftlyx waitlist](/waitlist) and get early access to the personal OS for shift workers.
+[Join the Shiftlyx waitlist](/waitlist) and get early access to the AI shift planner for shift workers.
         `,
       },
     ],
@@ -1520,7 +1520,7 @@ The shift work industry has a blind spot. But you don't have to be blind.
   },
 
   footer: {
-    tagline: "Your shift, your app, your OS.",
+    tagline: "AI Shift Planner — Your shift, your app.",
     columns: [
       {
         title: "Product",

@@ -223,7 +223,7 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                Your shift, your app, your OS.
+                AI Shift Planner — Your shift, your app.
               </motion.p>
 
               <motion.p
@@ -250,7 +250,7 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.26 }}
               >
-                Fatigue tracking, partner sync, and shift planning for healthcare workers. All in one personal OS.
+                Fatigue tracking, partner sync, and AI-powered shift planning for shift workers. All in one app.
               </motion.p>
 
               <motion.div
