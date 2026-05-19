@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 
-const lastUpdated = "12 May 2026";
+const lastUpdated = "19 May 2026";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -288,7 +288,7 @@ export default function TermsPage() {
             <ul className="list-disc pl-6 space-y-1">
               <li><strong>Lawful basis for processing:</strong> We process personal data under the lawful bases set out in Article 6 of UK GDPR, including contract performance, legitimate interests, consent, and legal obligation.</li>
               <li><strong>Your rights:</strong> You have rights including access, rectification, erasure, restriction, portability, and objection — exercisable through the App settings or by contacting us.</li>
-              <li><strong>Data retention:</strong> We retain your personal data only as long as necessary to provide the App services. Data is permanently erased within 30 days of account deletion.</li>
+              <li><strong>Data retention:</strong> We retain your personal data only as long as necessary to provide the App services. Data is permanently erased within 15 business days of account deletion.</li>
               <li><strong>International transfers:</strong> Where data is transferred outside the UK, we ensure appropriate safeguards are in place, including Standard Contractual Clauses approved by the ICO.</li>
               <li><strong>Third-party processors:</strong> We use Supabase, Vercel, PostHog, and OpenAI as data processors, each contractually bound to comply with UK GDPR. See the Privacy Policy for full details.</li>
               <li><strong>Analytics:</strong> We use PostHog for anonymised analytics. No personal data is shared with analytics providers.</li>

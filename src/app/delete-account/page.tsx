@@ -178,7 +178,7 @@ export default function DeleteAccountPage() {
                   <p className="text-xs text-[#475569] mt-1">Account deactivated</p>
                 </div>
                 <div className="bg-[#f8fafc] rounded-xl p-4 border border-[#e2e8f0] text-center">
-                  <p className="text-2xl font-bold font-heading text-[#2563eb]">30 days</p>
+                  <p className="text-2xl font-bold font-heading text-[#2563eb]">15 business days</p>
                   <p className="text-xs text-[#475569] mt-1">Full data erasure completed</p>
                 </div>
                 <div className="bg-[#f8fafc] rounded-xl p-4 border border-[#e2e8f0] text-center">
@@ -221,7 +221,7 @@ export default function DeleteAccountPage() {
                 admin@beemalinnovation.co.uk
               </a>
               <p className="text-xs text-[#94a3b8]">
-                We will process your request within 30 days of receiving it. You may need to verify your identity before we can proceed.
+                We will process your request within 15 business days of receiving it. You may need to verify your identity before we can proceed.
               </p>
             </div>
           </div>

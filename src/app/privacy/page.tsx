@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 
-const lastUpdated = "12 May 2026";
+const lastUpdated = "19 May 2026";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -93,6 +93,9 @@ export default function PrivacyPage() {
             </h3>
             <ul className="list-disc pl-6 space-y-1">
               <li><strong>Analytics data:</strong> We use <strong>PostHog</strong> (self-hosted or cloud) to collect anonymised usage data. This includes: app opens, feature interactions, crash reports, and device type. This data is anonymised and cannot be linked back to you personally.</li>
+              <li><strong>Session recordings:</strong> We use <strong>UXCam</strong> to record user sessions (screen taps, navigation flows, and interactions) for the purpose of improving app usability. Session recordings may capture what you see and interact with on screen, but do not capture passwords, payment card details, or any data entered into secure text fields. You can opt out of session recording at any time through the App settings.</li>
+              <li><strong>Advertising analytics:</strong> We use <strong>Meta (Facebook) App Events</strong> to measure the effectiveness of our advertising campaigns and attribute app installs and in-app actions to specific ad campaigns. This involves sharing anonymised event data (e.g., app opens, sign-ups, premium feature usage) with Meta. No personal data (name, email, shift data) is shared with Meta for advertising purposes.</li>
+              <li><strong>Firebase Analytics &amp; Crashlytics:</strong> We use <strong>Google Firebase</strong> for analytics and crash reporting. This collects: app usage events, session duration, device model, operating system version, and crash stack traces. Firebase Analytics data is anonymised. Crash reports may include device state at the time of crash but no personal data.</li>
               <li><strong>Technical data:</strong> Device model, operating system version, app version, and basic diagnostic logs for troubleshooting.</li>
             </ul>
 
@@ -160,6 +163,16 @@ export default function PrivacyPage() {
                     <td className="border border-[#e2e8f0] p-3">Account data</td>
                     <td className="border border-[#e2e8f0] p-3">Legal obligation (Art. 6(1)(c))</td>
                   </tr>
+                  <tr>
+                    <td className="border border-[#e2e8f0] p-3">Advertising analytics &amp; attribution</td>
+                    <td className="border border-[#e2e8f0] p-3">Anonymised app event data</td>
+                    <td className="border border-[#e2e8f0] p-3">Consent (Art. 6(1)(a))</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-[#e2e8f0] p-3">Session recording &amp; usability analysis</td>
+                    <td className="border border-[#e2e8f0] p-3">Screen recordings (no sensitive data)</td>
+                    <td className="border border-[#e2e8f0] p-3">Consent (Art. 6(1)(a)) / Legitimate interests (Art. 6(1)(f))</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -186,7 +199,7 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-disc pl-6 space-y-1">
               <li><strong>Active accounts:</strong> We retain your data for the duration of your account. Backup retention cycles may add up to 30 days beyond account deletion.</li>
-              <li><strong>Deleted accounts:</strong> When you delete your account, we permanently erase your personal data within 30 days. We may retain anonymised analytics data indefinitely as this cannot be linked to you.</li>
+              <li><strong>Deleted accounts:</strong> When you delete your account, we permanently erase your personal data within 15 business days. We may retain anonymised analytics data indefinitely as this cannot be linked to you.</li>
               <li><strong>Diagnostic logs:</strong> Retained for a maximum of 90 days.</li>
             </ul>
 
@@ -236,6 +249,24 @@ export default function PrivacyPage() {
                     <td className="border border-[#e2e8f0] p-3">In-app purchases &amp; subscriptions</td>
                     <td className="border border-[#e2e8f0] p-3">Varies by platform</td>
                     <td className="border border-[#e2e8f0] p-3">Apple/Google manage payment data; we never see card details</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-[#e2e8f0] p-3 font-medium">UXCam</td>
+                    <td className="border border-[#e2e8f0] p-3">Session recording &amp; usability analytics</td>
+                    <td className="border border-[#e2e8f0] p-3">EU (Germany)</td>
+                    <td className="border border-[#e2e8f0] p-3">GDPR compliant, data encrypted, opt-out available in-app</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-[#e2e8f0] p-3 font-medium">Google Firebase</td>
+                    <td className="border border-[#e2e8f0] p-3">Analytics &amp; crash reporting</td>
+                    <td className="border border-[#e2e8f0] p-3">US / EU</td>
+                    <td className="border border-[#e2e8f0] p-3">SOC 2 certified, SCCs in place, data anonymised</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-[#e2e8f0] p-3 font-medium">Meta (Facebook)</td>
+                    <td className="border border-[#e2e8f0] p-3">Ad attribution &amp; campaign measurement</td>
+                    <td className="border border-[#e2e8f0] p-3">US / EU</td>
+                    <td className="border border-[#e2e8f0] p-3">SCCs in place, limited to anonymised event data, no personal data shared</td>
                   </tr>
                 </tbody>
               </table>
@@ -308,10 +339,20 @@ export default function PrivacyPage() {
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              9. Cookies and Similar Technologies
+              9. Cookies, Tracking, and Analytics
             </h2>
             <p>
-              The App itself does not use cookies. The Shiftlyx website (shiftlyx.com) may use essential cookies for functionality (e.g., session management). We use PostHog for analytics on the website, which sets cookies with anonymised identifiers. You can opt out of analytics cookies through your browser settings or our cookie preferences.
+              The App itself does not use cookies, but we use the following tracking and analytics technologies:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li><strong>PostHog:</strong> Anonymised product analytics — tracks app opens, feature usage, and navigation flows. Data is anonymised and cannot be linked to you. The Shiftlyx website also uses PostHog, which sets cookies with anonymised identifiers. You can opt out through your browser settings or our cookie preferences.</li>
+              <li><strong>UXCam:</strong> Session recording for usability improvement — records screen interactions (taps, navigation) during your app sessions. Does <em>not</em> record passwords, payment data, or secure text fields. You can disable UXCam at any time from the App settings.</li>
+              <li><strong>Firebase (Google):</strong> App analytics and crash reporting — collects anonymised usage events and crash stack traces to help us fix bugs and improve performance.</li>
+              <li><strong>Meta (Facebook) App Events:</strong> Advertising measurement — tracks anonymised app events (e.g., install, sign-up, purchase) to help us measure ad campaign effectiveness and optimise marketing spend. No personal data (name, email, shift data) is shared with Meta.</li>
+              <li><strong>Firebase Crashlytics:</strong> Crash reporting — automatically captures crash logs and device state when the app crashes. No personal data is included in crash reports.</li>
+            </ul>
+            <p>
+              You can opt out of analytics tracking at any time through the App settings or by contacting us at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a>. Opting out will not affect your ability to use the App.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
