@@ -19,6 +19,9 @@ const spacingOptions = ["Close together (stack)", "Spread out", "No preference"]
 const priorityOptions = ["Maximise income", "Protect health", "Balanced"] as const;
 const maxNightsOptions = ["1", "2", "3", "4", "5+"] as const;
 const recoveryOptions = ["Bounce back quick", "Need proper rest", "Takes me a while"] as const;
+const incomeTrackOptions = ["Track every penny", "General idea is fine", "Don't care about £"] as const;
+const sleepHabitOptions = ["Track sleep & get nudges", "Just basic sleep window", "Not interested"] as const;
+const recoveryHabitOptions = ["Structured routine", "Go with the flow", "I push through"] as const;
 
 export default function WaitlistPage() {
   const [email, setEmail] = useState("");
@@ -38,8 +41,11 @@ export default function WaitlistPage() {
   const [incomeVsRecovery, setIncomeVsRecovery] = useState<string | null>(null);
   const [maxNights, setMaxNights] = useState<string | null>(null);
   const [fatigueResilience, setFatigueResilience] = useState<string | null>(null);
+  const [incomeTrack, setIncomeTrack] = useState<string | null>(null);
+  const [sleepCoach, setSleepCoach] = useState<string | null>(null);
+  const [recoveryHabit, setRecoveryHabit] = useState<string | null>(null);
 
-  const allProbesAnswered = nightAffinity && stackingPref && incomeVsRecovery && maxNights && fatigueResilience;
+  const allProbesAnswered = nightAffinity && stackingPref && incomeVsRecovery && maxNights && fatigueResilience && incomeTrack && sleepCoach && recoveryHabit;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -86,6 +92,9 @@ export default function WaitlistPage() {
             income_vs_recovery: incomeVsRecovery,
             max_nights: maxNights,
             fatigue_resilience: fatigueResilience,
+            income_track: incomeTrack,
+            sleep_coach: sleepCoach,
+            recovery_habit: recoveryHabit,
           },
         }),
       });
@@ -127,7 +136,7 @@ export default function WaitlistPage() {
           </div>
 
           {/* Key benefits preview — info before form */}
-          <div className="grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto mb-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-2xl mx-auto mb-10">
             <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 text-center">
               <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
                 <span className="text-lg font-bold text-[#2563eb]">1</span>
@@ -139,15 +148,36 @@ export default function WaitlistPage() {
               <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
                 <span className="text-lg font-bold text-[#2563eb]">2</span>
               </div>
-              <p className="text-sm font-medium text-foreground">Voice Planner</p>
-              <p className="text-xs text-[#94a3b8] mt-0.5">Speak to plan your rota</p>
+              <p className="text-sm font-medium text-foreground">Income Estimator</p>
+              <p className="text-xs text-[#94a3b8] mt-0.5">See the £ of rota choices</p>
             </div>
             <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 text-center">
               <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
                 <span className="text-lg font-bold text-[#2563eb]">3</span>
               </div>
+              <p className="text-sm font-medium text-foreground">Voice Planner</p>
+              <p className="text-xs text-[#94a3b8] mt-0.5">Speak to plan your rota</p>
+            </div>
+            <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 text-center">
+              <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
+                <span className="text-lg font-bold text-[#2563eb]">4</span>
+              </div>
+              <p className="text-sm font-medium text-foreground">Recovery Coach</p>
+              <p className="text-xs text-[#94a3b8] mt-0.5">Adaptive rest nudges</p>
+            </div>
+            <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 text-center">
+              <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
+                <span className="text-lg font-bold text-[#2563eb]">5</span>
+              </div>
+              <p className="text-sm font-medium text-foreground">Sleep Coach</p>
+              <p className="text-xs text-[#94a3b8] mt-0.5">Window timers &amp; wind-down</p>
+            </div>
+            <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 text-center">
+              <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
+                <span className="text-lg font-bold text-[#2563eb]">6</span>
+              </div>
               <p className="text-sm font-medium text-foreground">Partner Sync (Premium)</p>
-              <p className="text-xs text-[#94a3b8] mt-0.5">Tap phones to connect</p>
+              <p className="text-xs text-[#94a3b8] mt-0.5">Two rotas, one calendar</p>
             </div>
           </div>
 
@@ -188,7 +218,7 @@ export default function WaitlistPage() {
                           🧠 Help us personalise Shiftlyx
                         </p>
                         <p className="text-xs text-[#94a3b8] mt-0.5">
-                          5 quick questions — match the app to your needs
+                          8 quick questions — match the app to your needs
                         </p>
                       </div>
                       <ChevronDown
@@ -282,6 +312,72 @@ export default function WaitlistPage() {
                                 onClick={() => setMaxNights(opt)}
                                 className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
                                   maxNights === opt
+                                    ? "bg-[#2563eb] text-white border-[#2563eb]"
+                                    : "bg-white text-[#475569] border-[#e2e8f0] hover:border-[#2563eb]/30"
+                                }`}
+                              >
+                                {opt}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Q6: Income tracking */}
+                        <div>
+                          <p className="text-xs font-medium text-[#475569] mb-2">
+                            💰 How closely do you track your shift earnings?
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {incomeTrackOptions.map((opt) => (
+                              <button
+                                key={opt}
+                                onClick={() => setIncomeTrack(opt)}
+                                className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
+                                  incomeTrack === opt
+                                    ? "bg-[#2563eb] text-white border-[#2563eb]"
+                                    : "bg-white text-[#475569] border-[#e2e8f0] hover:border-[#2563eb]/30"
+                                }`}
+                              >
+                                {opt}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Q7: Sleep coaching */}
+                        <div>
+                          <p className="text-xs font-medium text-[#475569] mb-2">
+                            😴 Would you like sleep window reminders and wind-down nudges?
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {sleepHabitOptions.map((opt) => (
+                              <button
+                                key={opt}
+                                onClick={() => setSleepCoach(opt)}
+                                className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
+                                  sleepCoach === opt
+                                    ? "bg-[#2563eb] text-white border-[#2563eb]"
+                                    : "bg-white text-[#475569] border-[#e2e8f0] hover:border-[#2563eb]/30"
+                                }`}
+                              >
+                                {opt}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Q8: Recovery habits */}
+                        <div>
+                          <p className="text-xs font-medium text-[#475569] mb-2">
+                            🛌 How do you handle recovery between shifts?
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {recoveryHabitOptions.map((opt) => (
+                              <button
+                                key={opt}
+                                onClick={() => setRecoveryHabit(opt)}
+                                className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
+                                  recoveryHabit === opt
                                     ? "bg-[#2563eb] text-white border-[#2563eb]"
                                     : "bg-white text-[#475569] border-[#e2e8f0] hover:border-[#2563eb]/30"
                                 }`}

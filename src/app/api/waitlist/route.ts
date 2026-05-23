@@ -106,6 +106,9 @@ export async function PATCH(request: NextRequest) {
     if (probes.income_vs_recovery) attributes.INCOME_VS_RECOVERY = probes.income_vs_recovery;
     if (probes.max_nights) attributes.MAX_NIGHTS = probes.max_nights;
     if (probes.fatigue_resilience) attributes.FATIGUE_RESILIENCE = probes.fatigue_resilience;
+    if (probes.income_track) attributes.INCOME_TRACK = probes.income_track;
+    if (probes.sleep_coach) attributes.SLEEP_COACH = probes.sleep_coach;
+    if (probes.recovery_habit) attributes.RECOVERY_HABIT = probes.recovery_habit;
 
     await upsertBrevoContact(email, attributes);
 
