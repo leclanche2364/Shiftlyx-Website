@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Check, Sparkles, Mail, User, Briefcase, ArrowRight } from "lucide-react";
+import { Check, Sparkles, Mail, User, Briefcase, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -14,13 +14,32 @@ import {
 } from "@/components/ui/accordion";
 import { siteConfig } from "@/config/site";
 
+const nightOptions = ["Days", "Nights", "Mixed"] as const;
+const spacingOptions = ["Close together (stack)", "Spread out", "No preference"] as const;
+const priorityOptions = ["Maximise income", "Protect health", "Balanced"] as const;
+const maxNightsOptions = ["1", "2", "3", "4", "5+"] as const;
+const recoveryOptions = ["Bounce back quick", "Need proper rest", "Takes me a while"] as const;
+
 export default function WaitlistPage() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [probesExpanded, setProbesExpanded] = useState(false);
+  const [probesCollected, setProbesCollected] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [probeLoading, setProbeLoading] = useState(false);
   const [error, setError] = useState("");
+  const [probeError, setProbeError] = useState("");
+
+  // Probe answers — null = not answered
+  const [nightAffinity, setNightAffinity] = useState<string | null>(null);
+  const [stackingPref, setStackingPref] = useState<string | null>(null);
+  const [incomeVsRecovery, setIncomeVsRecovery] = useState<string | null>(null);
+  const [maxNights, setMaxNights] = useState<string | null>(null);
+  const [fatigueResilience, setFatigueResilience] = useState<string | null>(null);
+
+  const allProbesAnswered = nightAffinity && stackingPref && incomeVsRecovery && maxNights && fatigueResilience;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,6 +65,42 @@ export default function WaitlistPage() {
       setError(err.message || "Failed to join. Please try again.");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleProbeSubmit = async () => {
+    if (!allProbesAnswered) return;
+
+    setProbeLoading(true);
+    setProbeError("");
+
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          probes: {
+            night_affinity: nightAffinity,
+            stacking_pref: stackingPref,
+            income_vs_recovery: incomeVsRecovery,
+            max_nights: maxNights,
+            fatigue_resilience: fatigueResilience,
+          },
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Failed to save preferences");
+      }
+
+      setProbesCollected(true);
+      setProbesExpanded(false);
+    } catch (err: any) {
+      setProbeError(err.message || "Failed to save. You can do this later in the app.");
+    } finally {
+      setProbeLoading(false);
     }
   };
 
@@ -120,6 +175,180 @@ export default function WaitlistPage() {
                   <span className="font-medium text-foreground">{email}</span> when
                   Shiftlyx launches.
                 </p>
+
+                {/* Cold-start probes — shown after successful signup */}
+                {!probesCollected && (
+                  <div className="mt-6 pt-6 border-t border-[#e2e8f0]">
+                    <button
+                      onClick={() => setProbesExpanded(!probesExpanded)}
+                      className="flex items-center justify-between w-full text-left"
+                    >
+                      <div>
+                        <p className="font-heading text-sm font-semibold text-foreground">
+                          🧠 Help us personalise Shiftlyx
+                        </p>
+                        <p className="text-xs text-[#94a3b8] mt-0.5">
+                          5 quick questions — match the app to your needs
+                        </p>
+                      </div>
+                      <ChevronDown
+                        className={`w-4 h-4 text-[#94a3b8] transition-transform ${
+                          probesExpanded ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    {probesExpanded && (
+                      <motion.div
+                        className="mt-4 space-y-4 text-left"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                      >
+                        {/* Q1: Night affinity */}
+                        <div>
+                          <p className="text-xs font-medium text-[#475569] mb-2">
+                            🌞 Do you mostly do days, nights, or mixed?
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {nightOptions.map((opt) => (
+                              <button
+                                key={opt}
+                                onClick={() => setNightAffinity(opt)}
+                                className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
+                                  nightAffinity === opt
+                                    ? "bg-[#2563eb] text-white border-[#2563eb]"
+                                    : "bg-white text-[#475569] border-[#e2e8f0] hover:border-[#2563eb]/30"
+                                }`}
+                              >
+                                {opt}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Q2: Stacking preference */}
+                        <div>
+                          <p className="text-xs font-medium text-[#475569] mb-2">
+                            📋 Shifts close together or spread out?
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {spacingOptions.map((opt) => (
+                              <button
+                                key={opt}
+                                onClick={() => setStackingPref(opt)}
+                                className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
+                                  stackingPref === opt
+                                    ? "bg-[#2563eb] text-white border-[#2563eb]"
+                                    : "bg-white text-[#475569] border-[#e2e8f0] hover:border-[#2563eb]/30"
+                                }`}
+                              >
+                                {opt}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Q3: Income vs recovery */}
+                        <div>
+                          <p className="text-xs font-medium text-[#475569] mb-2">
+                            ⚖️ When choosing shifts — money or energy for life?
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {priorityOptions.map((opt) => (
+                              <button
+                                key={opt}
+                                onClick={() => setIncomeVsRecovery(opt)}
+                                className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
+                                  incomeVsRecovery === opt
+                                    ? "bg-[#2563eb] text-white border-[#2563eb]"
+                                    : "bg-white text-[#475569] border-[#e2e8f0] hover:border-[#2563eb]/30"
+                                }`}
+                              >
+                                {opt}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Q4: Max nights */}
+                        <div>
+                          <p className="text-xs font-medium text-[#475569] mb-2">
+                            🌙 How many nights in a row feel okay?
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {maxNightsOptions.map((opt) => (
+                              <button
+                                key={opt}
+                                onClick={() => setMaxNights(opt)}
+                                className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
+                                  maxNights === opt
+                                    ? "bg-[#2563eb] text-white border-[#2563eb]"
+                                    : "bg-white text-[#475569] border-[#e2e8f0] hover:border-[#2563eb]/30"
+                                }`}
+                              >
+                                {opt}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Q5: Fatigue resilience */}
+                        <div>
+                          <p className="text-xs font-medium text-[#475569] mb-2">
+                            💪 How well do you bounce back after heavy runs?
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {recoveryOptions.map((opt) => (
+                              <button
+                                key={opt}
+                                onClick={() => setFatigueResilience(opt)}
+                                className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
+                                  fatigueResilience === opt
+                                    ? "bg-[#2563eb] text-white border-[#2563eb]"
+                                    : "bg-white text-[#475569] border-[#e2e8f0] hover:border-[#2563eb]/30"
+                                }`}
+                              >
+                                {opt}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        {probeError && (
+                          <p className="text-xs text-center text-[#ef4444]">{probeError}</p>
+                        )}
+
+                        <button
+                          onClick={handleProbeSubmit}
+                          disabled={!allProbesAnswered || probeLoading}
+                          className={`w-full text-xs font-semibold py-2 rounded-lg transition-all ${
+                            allProbesAnswered
+                              ? "bg-[#2563eb]/10 text-[#2563eb] hover:bg-[#2563eb]/20 border border-[#2563eb]/20"
+                              : "bg-[#f1f5f9] text-[#94a3b8] cursor-not-allowed"
+                          }`}
+                        >
+                          {probeLoading ? "Saving..." : "Save my preferences →"}
+                        </button>
+
+                        <p className="text-[10px] text-center text-[#94a3b8]">
+                          Won&apos;t share your data. You can change these anytime in the app.
+                        </p>
+                      </motion.div>
+                    )}
+                  </div>
+                )}
+
+                {probesCollected && (
+                  <motion.div
+                    className="mt-4 text-center"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    <p className="text-xs text-[#10b981] font-medium">
+                      ✅ Preferences saved — Shiftlyx will tailor your experience from Day One.
+                    </p>
+                  </motion.div>
+                )}
               </motion.div>
             ) : (
               <motion.form
