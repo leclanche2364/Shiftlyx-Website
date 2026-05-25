@@ -63,10 +63,12 @@ CRITICAL RULES — FOLLOW THESE EXACTLY:
 1. ONLY mark a day as "AL" if the rota explicitly says "AL", "Annual Leave", "A/L" or similar leave notation. Empty cells are "OFF", NOT "AL".
 2. ONLY mark a day as "SL" if the rota explicitly says "SL", "Sick", "Sick Leave" or similar. Empty cells are "OFF", NOT "SL".
 3. If a cell is empty or blank, it is "OFF". Empty = OFF.
-4. If you cannot read a specific cell clearly, SKIP that day entirely — do not guess.
-5. Days before the 1st or after the last day of the month should be OMITTED from the JSON (not marked as OFF).
-6. Do NOT include any days that are not visible in the photo.
-7. If the entire rota is illegible (blurry, too small, wrong angle), return {"shifts": {}, "error": "Could not read rota"}.
+4. "DO", "D.O", "Day Off", "D Off", or anything meaning "Day Off" should be coded as "OFF", NOT as "LD" or "N".
+5. If the rota uses "D" for Day shift, treat ONLY "DO"/"D.O"/"Day Off" variants as OFF — do not confuse "D" with "DO".
+6. If you cannot read a specific cell clearly, SKIP that day entirely — do not guess.
+7. Days before the 1st or after the last day of the month should be OMITTED from the JSON (not marked as OFF).
+8. Do NOT include any days that are not visible in the photo.
+9. If the entire rota is illegible (blurry, too small, wrong angle), return {"shifts": {}, "error": "Could not read rota"}.
 
 Remember: MONTH is 0-indexed. So month 4 = May, month 5 = June.`;
 
