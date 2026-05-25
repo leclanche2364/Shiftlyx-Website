@@ -217,6 +217,10 @@ export default function FatigueScoreContent() {
 
       setShifts(parsedShifts);
 
+      // Auto-navigate calendar to the parsed month/year
+      setCalendarMonth(data.month);
+      setCalendarYear(data.year);
+
       // Small delay so user sees the status message, then show calendar grid to review
       setTimeout(() => {
         setAiLoading(false);
@@ -260,6 +264,15 @@ export default function FatigueScoreContent() {
       }
 
       setShifts(result.shifts);
+
+      // Auto-navigate calendar to the first shift's month/year
+      if (result.shifts.length > 0) {
+        const firstDate = result.shifts[0].date;
+        const [y, m] = firstDate.split('-').map(Number);
+        setCalendarYear(y);
+        setCalendarMonth(m - 1); // 0-indexed
+      }
+
       setTab('manual');
       setParseSummary({ total: result.totalEvents, parsed: result.parsed, failed: result.failed });
       setIcsErrors(result.errors);
