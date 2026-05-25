@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
 
     const prompt = `You are analysing a UK NHS shift rota photo.
 
-This rota is for month ${targetMonth + 1}, year ${targetYear}.
+This rota is for MONTH ${targetMonth + 1}, YEAR ${targetYear}.
 
 Extract every day's shift from this rota image. Return ONLY valid JSON with no markdown, no code fences, no explanation.
 
@@ -51,22 +51,24 @@ The JSON must be:
 }
 
 Where the key is the date (year, 0-indexed month, day) and the value is one of:
-- "LD" for Long Day (12h)
-- "MLD" for Mid Long Day (11h)
-- "TW" for Twilight (8h)
-- "N" for Night (12h)
-- "OFF" for day off
-- "AL" for Annual Leave
-- "SL" for Sick Leave
+- "LD" for Long Day shift (12h)
+- "MLD" for Mid Long Day shift (11h)
+- "TW" for Twilight shift (8h)
+- "N" for Night shift (12h)
+- "OFF" for a blank/empty day with no work
+- "AL" for Annual Leave (only if explicitly marked as annual leave on the rota)
+- "SL" for Sick Leave (only if explicitly marked as sick leave on the rota)
 
-Rules:
-- If a day has no shift marked, use "OFF"
-- Only include days that are visible/legible in the rota
-- Days before the 1st or after the last day of the month should be marked as "OFF" if shown as empty, or omitted if not visible
-- If you cannot read a specific day, skip it
-- If the rota is completely illegible, return {"shifts": {}, "error": "Could not read rota"}
+CRITICAL RULES — FOLLOW THESE EXACTLY:
+1. ONLY mark a day as "AL" if the rota explicitly says "AL", "Annual Leave", "A/L" or similar leave notation. Empty cells are "OFF", NOT "AL".
+2. ONLY mark a day as "SL" if the rota explicitly says "SL", "Sick", "Sick Leave" or similar. Empty cells are "OFF", NOT "SL".
+3. If a cell is empty or blank, it is "OFF". Empty = OFF.
+4. If you cannot read a specific cell clearly, SKIP that day entirely — do not guess.
+5. Days before the 1st or after the last day of the month should be OMITTED from the JSON (not marked as OFF).
+6. Do NOT include any days that are not visible in the photo.
+7. If the entire rota is illegible (blurry, too small, wrong angle), return {"shifts": {}, "error": "Could not read rota"}.
 
-Remember: month is 0-indexed. So month 4 = May.`;
+Remember: MONTH is 0-indexed. So month 4 = May, month 5 = June.`;
 
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",

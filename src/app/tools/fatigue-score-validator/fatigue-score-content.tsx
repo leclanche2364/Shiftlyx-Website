@@ -62,25 +62,66 @@ export default function FatigueScoreContent() {
   const [icsErrors, setIcsErrors] = useState<string[]>([]);
   const [parseSummary, setParseSummary] = useState<{ total: number; parsed: number; failed: number } | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [manualDate, setManualDate] = useState(() => new Date().toISOString().split('T')[0]);
-  const [manualShift, setManualShift] = useState<ShiftInput['shiftCode']>('LD');
+  const now = new Date();
+  const [calendarMonth, setCalendarMonth] = useState(now.getMonth());
+  const [calendarYear, setCalendarYear] = useState(now.getFullYear());
+  const [selectedShiftType, setSelectedShiftType] = useState<ShiftInput['shiftCode']>('LD');
   const [aiLoading, setAiLoading] = useState(false);
   const [aiStatus, setAiStatus] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const imageInputRef = useRef<HTMLInputElement>(null);
   const dropRef = useRef<HTMLDivElement>(null);
 
-  // Add manual shift
-  const addManualShift = useCallback(() => {
-    const newShift: ShiftInput = { date: manualDate, shiftCode: manualShift };
+  // Toggle shift on a calendar day
+  const toggleDayShift = useCallback((day: number) => {
+    const dateStr = `${calendarYear}-${String(calendarMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
     setShifts(prev => {
-      const exists = prev.some(s => s.date === manualDate);
-      if (exists) {
-        return prev.map(s => s.date === manualDate ? newShift : s);
+      const existing = prev.find(s => s.date === dateStr);
+      // If same shift type exists, remove it; otherwise set/override
+      if (existing && existing.shiftCode === selectedShiftType) {
+        return prev.filter(s => s.date !== dateStr);
       }
-      return [...prev, newShift].sort((a, b) => a.date.localeCompare(b.date));
+      // If different shift type exists, override
+      if (existing) {
+        return prev.map(s => s.date === dateStr ? { date: dateStr, shiftCode: selectedShiftType as ShiftInput['shiftCode'] } : s);
+      }
+      return [...prev, { date: dateStr, shiftCode: selectedShiftType as ShiftInput['shiftCode'] }].sort((a, b) => a.date.localeCompare(b.date));
     });
-  }, [manualDate, manualShift]);
+  }, [calendarYear, calendarMonth, selectedShiftType]);
+
+  // Get shift for a date
+  const getShiftForDay = useCallback((day: number): ShiftInput | undefined => {
+    const dateStr = `${calendarYear}-${String(calendarMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    return shifts.find(s => s.date === dateStr);
+  }, [shifts, calendarYear, calendarMonth]);
+
+  // Calendar helpers
+  const daysInMonth = new Date(calendarYear, calendarMonth + 1, 0).getDate();
+  const firstDayOfWeek = new Date(calendarYear, calendarMonth, 1).getDay(); // 0=Sun
+  // Convert to Mon-start: Sun=6, Mon=0, Tue=1, etc.
+  const startOffset = firstDayOfWeek === 0 ? 6 : firstDayOfWeek - 1;
+  const today = new Date();
+  const isCurrentMonth = today.getFullYear() === calendarYear && today.getMonth() === calendarMonth;
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const dayHeaders = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+  const prevMonth = useCallback(() => {
+    if (calendarMonth === 0) {
+      setCalendarMonth(11);
+      setCalendarYear(prev => prev - 1);
+    } else {
+      setCalendarMonth(prev => prev - 1);
+    }
+  }, [calendarMonth]);
+
+  const nextMonth = useCallback(() => {
+    if (calendarMonth === 11) {
+      setCalendarMonth(0);
+      setCalendarYear(prev => prev + 1);
+    } else {
+      setCalendarMonth(prev => prev + 1);
+    }
+  }, [calendarMonth]);
 
   // Remove shift
   const removeShift = useCallback((date: string) => {
@@ -453,48 +494,127 @@ export default function FatigueScoreContent() {
             </Button>
           </div>
 
-          {/* Manual Entry */}
+          {/* Manual Entry — Calendar Grid */}
           {tab === 'manual' && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="max-w-md mx-auto mb-8"
+              className="max-w-xl mx-auto mb-8"
             >
-              <div className="bg-white rounded-xl border border-[#e2e8f0] p-4">
-                <h3 className="font-semibold text-foreground text-sm mb-3">Add a shift</h3>
-                <div className="flex gap-2 items-end mb-3">
-                  <div className="flex-1">
-                    <label className="text-xs text-[#64748b] mb-1 block">Date</label>
-                    <input
-                      type="date"
-                      value={manualDate}
-                      onChange={(e) => setManualDate(e.target.value)}
-                      className="w-full px-3 py-2 rounded-lg border border-[#e2e8f0] text-sm focus:outline-none focus:ring-2 focus:ring-[#2563eb]/20"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <label className="text-xs text-[#64748b] mb-1 block">Shift type</label>
-                    <div className="flex gap-1">
-                      {SHIFT_TYPES.filter(s => ['LD', 'MLD', 'TW', 'N'].includes(s.code)).map(opt => (
-                        <button
-                          key={opt.code}
-                          onClick={() => setManualShift(opt.code)}
-                          className={`px-2.5 py-2 rounded-lg text-xs font-medium border transition-all ${
-                            manualShift === opt.code
-                              ? 'border-[#2563eb] bg-[#eff6ff] text-[#2563eb]'
-                              : 'border-[#e2e8f0] text-[#64748b] hover:border-[#94a3b8]'
-                          }`}
-                        >
-                          {opt.short}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                  <Button size="sm" onClick={addManualShift} className="shrink-0">
-                    <Plus className="w-3.5 h-3.5" />
-                  </Button>
+              {/* Shift type legend */}
+              <div className="bg-white rounded-xl border border-[#e2e8f0] p-3 mb-3">
+                <p className="text-[11px] font-medium text-[#64748b] mb-2">Select a shift type, then tap days on the calendar:</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {SHIFT_TYPES.filter(s => ['LD', 'MLD', 'TW', 'N', 'OFF', 'AL', 'SL'].includes(s.code)).map(opt => (
+                    <button
+                      key={opt.code}
+                      onClick={() => setSelectedShiftType(opt.code)}
+                      className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
+                        selectedShiftType === opt.code
+                          ? 'ring-2 ring-offset-1 ring-[#2563eb]'
+                          : 'opacity-70 hover:opacity-100'
+                      }`}
+                      style={{
+                        backgroundColor: opt.color + '20',
+                        borderColor: opt.color + '40',
+                        color: opt.color,
+                      }}
+                    >
+                      {opt.short} — {opt.label}
+                    </button>
+                  ))}
                 </div>
               </div>
+
+              {/* Month navigation */}
+              <div className="flex items-center justify-between bg-white rounded-xl border border-[#e2e8f0] px-4 py-2 mb-3">
+                <button
+                  onClick={prevMonth}
+                  className="w-8 h-8 rounded-lg hover:bg-[#f1f5f9] flex items-center justify-center text-[#64748b] transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+                </button>
+                <span className="font-semibold text-foreground text-sm">
+                  {monthNames[calendarMonth]} {calendarYear}
+                </span>
+                <button
+                  onClick={nextMonth}
+                  className="w-8 h-8 rounded-lg hover:bg-[#f1f5f9] flex items-center justify-center text-[#64748b] transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                </button>
+              </div>
+
+              {/* Calendar grid */}
+              <div className="bg-white rounded-xl border border-[#e2e8f0] overflow-hidden">
+                {/* Day headers */}
+                <div className="grid grid-cols-7 border-b border-[#e2e8f0]">
+                  {dayHeaders.map(d => (
+                    <div key={d} className="py-2 text-center text-[11px] font-medium text-[#94a3b8] uppercase tracking-wider">
+                      {d}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Day cells */}
+                <div className="grid grid-cols-7">
+                  {/* Empty cells before 1st */}
+                  {Array.from({ length: startOffset }).map((_, i) => (
+                    <div key={`empty-${i}`} className="aspect-square p-1" />
+                  ))}
+
+                  {/* Day cells */}
+                  {Array.from({ length: daysInMonth }).map((_, i) => {
+                    const day = i + 1;
+                    const shift = getShiftForDay(day);
+                    const isToday = isCurrentMonth && day === today.getDate();
+                    const st = shift ? SHIFT_TYPES.find(t => t.code === shift.shiftCode) : null;
+                    return (
+                      <button
+                        key={day}
+                        onClick={() => toggleDayShift(day)}
+                        className={`aspect-square p-1 relative group transition-colors
+                          ${isToday ? 'bg-[#eff6ff]' : 'hover:bg-[#f8fafc]'}
+                        `}
+                        title={`${day} ${monthNames[calendarMonth]} — ${st?.label || 'No shift'}`}
+                      >
+                        <div className="w-full h-full rounded-lg flex flex-col items-center justify-center relative">
+                          {/* Date number */}
+                          <span className={`text-xs font-medium ${
+                            isToday ? 'text-[#2563eb]' : 'text-[#475569]'
+                          }`}>
+                            {day}
+                          </span>
+
+                          {/* Shift badge */}
+                          {st && st.code !== 'OFF' ? (
+                            <span
+                              className="mt-0.5 px-1.5 py-0.5 rounded text-[9px] font-bold text-white leading-tight"
+                              style={{ backgroundColor: st.color }}
+                            >
+                              {st.short}
+                            </span>
+                          ) : st?.code === 'OFF' ? (
+                            <span className="mt-0.5 text-[9px] text-[#94a3b8] font-medium">
+                              OFF
+                            </span>
+                          ) : null}
+
+                          {/* Today dot */}
+                          {isToday && !st && (
+                            <span className="absolute bottom-1 w-1 h-1 rounded-full bg-[#2563eb]" />
+                          )}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Legend help */}
+              <p className="text-[10px] text-[#94a3b8] mt-2 text-center">
+                Tap a day to assign the selected shift type. Tap again to remove.
+              </p>
             </motion.div>
           )}
 
