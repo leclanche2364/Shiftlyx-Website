@@ -769,12 +769,12 @@ export default function FatigueScoreContent() {
                 <p className="text-sm text-[#475569] mb-4 max-w-sm mx-auto">
                   Shiftlyx tracks your fatigue over time, suggests optimisations, and helps coordinate with your partner.
                 </p>
-                <Link href="/download">
+                <Link href="/waitlist">
                   <Button
                     size="lg"
                     className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50"
                   >
-                    Get Shiftlyx free →
+                    Register for early access →
                   </Button>
                 </Link>
               </div>
@@ -790,14 +790,14 @@ export default function FatigueScoreContent() {
             Two minutes to your first fatigue score.
           </h2>
           <p className="text-[#475569] text-lg mb-8 max-w-xl mx-auto">
-            Get the full app — fatigue tracking, AI shift planning, partner sync, and more. Free during early access.
+            Fatigue tracking, AI shift planning, partner sync, and more. Enter your email below to register for early access.
           </p>
-          <Link href="/download">
+          <Link href="/waitlist">
             <Button
               size="lg"
               className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50"
             >
-              Get early access →
+              Register for early access →
             </Button>
           </Link>
         </div>
