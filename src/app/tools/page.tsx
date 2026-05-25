@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Activity, Brain, ChevronRight } from "lucide-react";
+import { Activity, Image, ChevronRight } from "lucide-react";
 
 const tools = [
   {
@@ -14,6 +14,17 @@ const tools = [
     color: "text-[#2563eb]",
     bg: "bg-[#eff6ff]",
     border: "border-[#2563eb]/20",
+  },
+  {
+    title: "Store Asset Studio",
+    href: "/tools/store-asset-studio",
+    icon: Image,
+    description:
+      "Generate App Store and Play Store screenshots with correct sizing, ASO-optimised layouts, and one-click export. Built for indie developers.",
+    tag: "Free",
+    color: "text-[#f59e0b]",
+    bg: "bg-[#fffbeb]",
+    border: "border-[#f59e0b]/20",
   },
 ];
 
