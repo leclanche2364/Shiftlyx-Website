@@ -209,17 +209,26 @@ export default function FatigueScoreContent() {
 
       setAiStatus(`AI parsed ${data.shiftCount} shifts from your rota photo`);
 
-      // Convert to ShiftInput[]
+      // Normalise dates (AI returns unpadded like "2026-5-15") then convert to ShiftInput[]
       const parsedShifts: ShiftInput[] = Object.entries(data.shifts)
         .filter(([_, code]) => code !== 'OFF')
-        .map(([date, code]) => ({ date, shiftCode: code as ShiftInput['shiftCode'] }))
+        .map(([date, code]) => {
+          const parts = date.split('-');
+          const y = parts[0];
+          const m = String(parseInt(parts[1])).padStart(2, '0');
+          const d = String(parseInt(parts[2])).padStart(2, '0');
+          return { date: `${y}-${m}-${d}`, shiftCode: code as ShiftInput['shiftCode'] };
+        })
         .sort((a, b) => a.date.localeCompare(b.date));
 
       setShifts(parsedShifts);
 
-      // Auto-navigate calendar to the parsed month/year
-      setCalendarMonth(data.month);
-      setCalendarYear(data.year);
+      // Auto-navigate calendar to the first parsed shift's month/year
+      if (parsedShifts.length > 0) {
+        const firstParts = parsedShifts[0].date.split('-');
+        setCalendarYear(parseInt(firstParts[0]));
+        setCalendarMonth(parseInt(firstParts[1]) - 1);
+      }
 
       // Small delay so user sees the status message, then show calendar grid to review
       setTimeout(() => {
