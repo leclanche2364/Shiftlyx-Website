@@ -217,14 +217,11 @@ export default function FatigueScoreContent() {
 
       setShifts(parsedShifts);
 
-      // Small delay so user sees the status message
+      // Small delay so user sees the status message, then show calendar grid to review
       setTimeout(() => {
         setAiLoading(false);
         setAiStatus(null);
-
-        const analysis = analyzeShifts(parsedShifts);
-        setResults(analysis);
-        setTab('results');
+        setTab('manual');
       }, 1200);
 
     } catch (err) {
@@ -263,13 +260,10 @@ export default function FatigueScoreContent() {
       }
 
       setShifts(result.shifts);
+      setTab('manual');
       setParseSummary({ total: result.totalEvents, parsed: result.parsed, failed: result.failed });
       setIcsErrors(result.errors);
-
-      const analysis = analyzeShifts(result.shifts);
-      setResults(analysis);
       setError(null);
-      setTab('results');
     };
     reader.onerror = () => setError('Failed to read file. Try again.');
     reader.readAsText(file);
@@ -873,6 +867,80 @@ export default function FatigueScoreContent() {
         </div>
       </section>
 
+      {/* ===== SELL THE APP ===== */}
+      <section className="py-20 bg-white border-t border-[#e2e8f0]">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
+              THE FULL APP
+            </Badge>
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-4">
+              This is just the score. The app does everything else.
+            </h2>
+            <p className="text-[#475569] max-w-2xl mx-auto">
+              The fatigue score validator is a free tool. The Shiftlyx app takes your rota and turns it into 
+              a complete shift management system — built specifically for NHS and shift workers.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            {/* AI Voice Planner */}
+            <div className="bg-[#f8fafc] rounded-xl p-5 border border-[#e2e8f0]">
+              <div className="w-10 h-10 rounded-lg bg-[#eff6ff] flex items-center justify-center text-lg mb-3">🎤</div>
+              <h3 className="font-semibold text-foreground text-sm mb-1">AI Voice Planner</h3>
+              <p className="text-xs text-[#64748b] leading-relaxed">
+                Speak naturally: &ldquo;Plan my month with more nights.&rdquo; AI generates ranked shift patterns. Two taps to choose.
+              </p>
+            </div>
+
+            {/* Fatigue Tracking */}
+            <div className="bg-[#f8fafc] rounded-xl p-5 border border-[#e2e8f0]">
+              <div className="w-10 h-10 rounded-lg bg-[#fef2f2] flex items-center justify-center text-lg mb-3">📊</div>
+              <h3 className="font-semibold text-foreground text-sm mb-1">Long-term Fatigue Tracking</h3>
+              <p className="text-xs text-[#64748b] leading-relaxed">
+                Your fatigue score over time. See trends, spot patterns, and know when you&apos;re pushing too hard.
+              </p>
+            </div>
+
+            {/* Partner Sync */}
+            <div className="bg-[#f8fafc] rounded-xl p-5 border border-[#e2e8f0]">
+              <div className="w-10 h-10 rounded-lg bg-[#fdf2f8] flex items-center justify-center text-lg mb-3">💑</div>
+              <h3 className="font-semibold text-foreground text-sm mb-1">Partner Sync</h3>
+              <p className="text-xs text-[#64748b] leading-relaxed">
+                Link with your partner. Coordinate childcare, avoid overlapping heavy shifts, protect your time together.
+              </p>
+            </div>
+
+            {/* Shift Strategies */}
+            <div className="bg-[#f8fafc] rounded-xl p-5 border border-[#e2e8f0]">
+              <div className="w-10 h-10 rounded-lg bg-[#fffbeb] flex items-center justify-center text-lg mb-3">🎯</div>
+              <h3 className="font-semibold text-foreground text-sm mb-1">5 Shift Strategies</h3>
+              <p className="text-xs text-[#64748b] leading-relaxed">
+                Income Optimised, Health First, Shift Stacked, Balanced, Annual Leave Maximised. Pick your priority.
+              </p>
+            </div>
+
+            {/* Recovery Coach */}
+            <div className="bg-[#f8fafc] rounded-xl p-5 border border-[#e2e8f0]">
+              <div className="w-10 h-10 rounded-lg bg-[#f0fdf4] flex items-center justify-center text-lg mb-3">😴</div>
+              <h3 className="font-semibold text-foreground text-sm mb-1">Recovery Coach</h3>
+              <p className="text-xs text-[#64748b] leading-relaxed">
+                Smart notifications for sleep, hydration, and rest. Never buzzes during shifts or after nights.
+              </p>
+            </div>
+
+            {/* Preference Learning */}
+            <div className="bg-[#f8fafc] rounded-xl p-5 border border-[#e2e8f0]">
+              <div className="w-10 h-10 rounded-lg bg-[#f5f3ff] flex items-center justify-center text-lg mb-3">🧠</div>
+              <h3 className="font-semibold text-foreground text-sm mb-1">Preference Learning</h3>
+              <p className="text-xs text-[#64748b] leading-relaxed">
+                Every rota you accept teaches Shiftlyx what matters to you. It gets better the more you use it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Bottom CTA */}
       <section className="py-20 bg-gradient-to-b from-[#eff6ff] to-transparent">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
@@ -880,7 +948,7 @@ export default function FatigueScoreContent() {
             Two minutes to your first fatigue score.
           </h2>
           <p className="text-[#475569] text-lg mb-8 max-w-xl mx-auto">
-            Fatigue tracking, AI shift planning, partner sync, and more. Enter your email below to register for early access.
+            AI voice planning, partner sync, recovery coaching, fatigue tracking — all in one app. Enter your email to register for early access.
           </p>
           <Link href="/waitlist">
             <Button
