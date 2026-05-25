@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -71,6 +71,19 @@ export default function FatigueScoreContent() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const imageInputRef = useRef<HTMLInputElement>(null);
   const dropRef = useRef<HTMLDivElement>(null);
+
+  // Auto-navigate calendar to month of first shift whenever shifts are loaded externally
+  useEffect(() => {
+    if (shifts.length > 0) {
+      const parts = shifts[0].date.split('-');
+      const shiftYear = parseInt(parts[0]);
+      const shiftMonth = parseInt(parts[1]) - 1; // 0-indexed
+      if (shiftYear !== calendarYear || shiftMonth !== calendarMonth) {
+        setCalendarYear(shiftYear);
+        setCalendarMonth(shiftMonth);
+      }
+    }
+  }, [shifts]);
 
   // Toggle shift on a calendar day
   const toggleDayShift = useCallback((day: number) => {
