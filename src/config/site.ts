@@ -8,6 +8,7 @@ export const siteConfig = {
   nav: {
     links: [
       { label: "Home", href: "/" },
+      { label: "Tools", href: "/tools" },
       { label: "Features", href: "/features" },
       { label: "Blog", href: "/blog" },
       { label: "Download", href: "/download" },
