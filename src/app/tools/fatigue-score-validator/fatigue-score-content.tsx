@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import {
   Upload, Plus, Trash2, Activity, Moon, Clock, Sun,
   AlertTriangle, CheckCircle2, ChevronRight, BarChart3,
-  TrendingUp, Zap, Brain, Download, Camera, Loader2,
+  TrendingUp, Zap, Brain, Download, Loader2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -262,42 +262,17 @@ export default function FatigueScoreContent() {
             and circadian disruption — combine into one clear 0-100 score. Upload your rota 
             and see yours in seconds.
           </p>
-          <div className="flex flex-wrap gap-3 justify-center mb-8">
+          <div className="flex justify-center mb-8">
             <Button
-              onClick={() => fileInputRef.current?.click()}
+              onClick={() => {
+                document.getElementById('fatigue-validator')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               size="lg"
-              className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold text-base px-6 shadow-lg shadow-blue-200/50"
+              className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold text-base px-8 shadow-lg shadow-blue-200/50"
             >
-              <Upload className="w-4 h-4 mr-2" />
-              Upload your rota
-            </Button>
-            <Button
-              onClick={() => setTab('manual')}
-              size="lg"
-              variant="outline"
-              className="font-semibold text-base px-6"
-            >
-              <Plus className="w-4 h-4 mr-2" />
-              Add shifts manually
+              Try the fatigue score calculator →
             </Button>
           </div>
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept=".ics,text/calendar,image/*,.jpg,.jpeg,.png,.webp"
-            className="hidden"
-            onChange={(e) => e.target.files?.[0] && handleFileUpload(e.target.files[0])}
-          />
-          <input
-            ref={imageInputRef}
-            type="file"
-            accept="image/*,.jpg,.jpeg,.png,.webp"
-            className="hidden"
-            onChange={(e) => e.target.files?.[0] && handleImageUpload(e.target.files[0])}
-          />
-          <p className="text-xs text-[#94a3b8]">
-            ICS files are processed entirely in your browser. Photo upload uses AI (shifts only, nothing saved).
-          </p>
         </div>
       </section>
 
@@ -423,8 +398,23 @@ export default function FatigueScoreContent() {
         </div>
       </section>
 
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept=".ics,text/calendar,image/*,.jpg,.jpeg,.png,.webp"
+        className="hidden"
+        onChange={(e) => e.target.files?.[0] && handleFileUpload(e.target.files[0])}
+      />
+      <input
+        ref={imageInputRef}
+        type="file"
+        accept="image/*,.jpg,.jpeg,.png,.webp"
+        className="hidden"
+        onChange={(e) => e.target.files?.[0] && handleImageUpload(e.target.files[0])}
+      />
+
       {/* ===== INTERACTIVE TOOL SECTION ===== */}
-      <section className="py-20">
+      <section id="fatigue-validator" className="py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <Badge className="mb-4 text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
@@ -434,8 +424,7 @@ export default function FatigueScoreContent() {
               See your fatigue score
             </h2>
             <p className="text-[#475569] max-w-xl mx-auto text-sm">
-              Upload your rota (photo or ICS from HealthRota/Rotamaster) or add shifts manually.
-              ICS runs in-browser. Photo uses AI via OpenRouter — shifts only, nothing saved.
+              Upload your rota file or a photo of your rota. ICS runs in-browser. Photo uses AI — shifts only, nothing saved.
             </p>
           </div>
 
@@ -449,15 +438,6 @@ export default function FatigueScoreContent() {
             >
               <Upload className="w-3.5 h-3.5 mr-1.5" />
               Upload file
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => imageInputRef.current?.click()}
-              className="text-[#2563eb] border-[#2563eb]/30"
-            >
-              <Camera className="w-3.5 h-3.5 mr-1.5" />
-              Photo (AI)
             </Button>
             <Button
               variant={tab === 'manual' ? 'default' : 'outline'}
@@ -537,17 +517,7 @@ export default function FatigueScoreContent() {
               </div>
 
               {/* Photo Upload Button (separate, more explicit) */}
-              <div className="text-center">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => imageInputRef.current?.click()}
-                  className="text-xs border-[#2563eb]/30"
-                >
-                  <Camera className="w-3.5 h-3.5 mr-1.5" />
-                  Upload a photo of your rota instead
-                </Button>
-              </div>
+
             </div>
             </div>
           )}
