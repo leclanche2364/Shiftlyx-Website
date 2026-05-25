@@ -35,6 +35,24 @@ const TEMPLATES = [
     desc: "iPhone 8 Plus, 7 Plus",
   },
   {
+    id: "ipad-13",
+    label: "iPad 13\" Display",
+    device: "iOS",
+    width: 2064,
+    height: 2752,
+    ratio: "3:4",
+    desc: "iPad Pro M5/M4, iPad Air M4, iPad Pro 6th gen+",
+  },
+  {
+    id: "ipad-11",
+    label: "iPad 11\" Display",
+    device: "iOS",
+    width: 1488,
+    height: 2266,
+    ratio: "~2:3",
+    desc: "iPad Pro M5/M4, iPad Air, iPad (A16), iPad mini",
+  },
+  {
     id: "android-phone",
     label: "Android Phone",
     device: "Android",
@@ -101,6 +119,17 @@ const ASO_TIPS: Record<string, string[]> = {
     "Must be recognizable at 16px. Simple shapes, high contrast.",
     "Avoid text on app icon — it becomes illegible at small sizes.",
     "Use brand colors consistently across all store assets.",
+  ],
+  "ipad-13": [
+    "iPad screenshots required if your app supports iPad — use 13\" Display as primary.",
+    "2064×2752 is landscape-friendly — consider side-by-side UI mockups.",
+    "iPad users expect richer layouts. Show multi-pane or split-screen views.",
+    "Keep text readable at arm's length distance — bigger font sizes.",
+  ],
+  "ipad-11": [
+    "11\" iPad is the most popular iPad size — don't skip this if you support iPad.",
+    "1488×2266 — same 3:4 ratio as 13\". Can reuse layouts with margin adjustments.",
+    "Consider showing Apple Pencil or keyboard integration if applicable.",
   ],
 };
 
