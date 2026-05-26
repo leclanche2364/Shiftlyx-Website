@@ -324,8 +324,8 @@ export default function FatigueScoreContent() {
             Fatigue Score
           </Badge>
           <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-            Your fatigue isn&apos;t a feeling. <br />
-            <span className="text-[#f59e0b]">It&apos;s physics.</span>
+            Fatigue is accumulation. <br />
+            <span className="text-[#f59e0b]">Every shift builds on the last.</span>
           </h1>
           <p className="text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed mb-8">
             Four measurable dimensions — consecutive days, night clusters, short turnarounds, 
@@ -357,7 +357,7 @@ export default function FatigueScoreContent() {
               How fatigue adds up
             </h2>
             <p className="text-[#475569] max-w-2xl mx-auto">
-              Every shift has a hidden cost. We measure the four factors that matter most to your body and brain.
+              Fatigue doesn&apos;t vanish when your shift ends. It accumulates — every long day, tight turnaround, and stacked night adds to the load. Your body&apos;s recovery works in rhythms, and each disruption compounds the next.
             </p>
           </div>
 
