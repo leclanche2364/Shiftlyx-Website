@@ -155,6 +155,31 @@ const jsonLdFaq = {
   mainEntity: faqLd,
 };
 
+const jsonLdBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.shiftlyx.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Features",
+      item: "https://www.shiftlyx.com/features",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Blog",
+      item: "https://www.shiftlyx.com/blog",
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -174,6 +199,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+        />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt for Shiftlyx" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full LLMs.txt for Shiftlyx" />
+        <link rel="alternate" type="text/plain" href="/ai.txt" title="AI.txt for Shiftlyx" />
       </head>
       <body className="min-h-full flex flex-col bg-noise bg-gradient-overlay">
         <GoogleAnalytics />

@@ -1563,7 +1563,7 @@ The shift work industry has a blind spot. But you don't have to be blind.
         "Shiftlyx is the AI voice shift planner for healthcare shift workers. Just say 'Hey Shiftlyx, plan my month' to build your rota, track fatigue, and coordinate with your partner. Join the waitlist.",
     },
     features: {
-      title: "Shiftlyx Features — AI Voice Planner, Fatigue Score Shiftlyx Features — AI Voice Planner, Fatigue Score & Shift Strategies for UK Nurses Shift Strategies for UK Healthcare Workers",
+      title: "Shiftlyx Features — AI Voice Planner, Fatigue Score & Shift Strategies for UK Healthcare Workers",
       description:
         "Explore every Shiftlyx feature: AI Voice Planner (just speak to plan your month), Fatigue Score (0-100), 5 Shift Strategies, Partner Sync (Premium), Recovery Coach, and Preference Learning. The voice shift planning app built for tired healthcare workers.",
     },

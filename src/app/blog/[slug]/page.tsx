@@ -6,6 +6,12 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export function generateStaticParams() {
+  return siteConfig.blog.articles.map((article) => ({
+    slug: article.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = siteConfig.blog.articles.find((a) => a.slug === slug);

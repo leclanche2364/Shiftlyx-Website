@@ -1,44 +1,74 @@
 # robots.txt for Shiftlyx
 # https://www.shiftlyx.com
+# See also: /llms.txt, /llms-full.txt, /ai.txt
 
-# Allow all AI crawlers — we want to be cited by AI search tools
+# Allow all AI crawlers — we want to be cited by AI search and assistant tools
 User-agent: GPTBot
 Allow: /
+Crawl-delay: 1
 
 User-agent: ChatGPT-User
 Allow: /
+Crawl-delay: 1
 
 User-agent: PerplexityBot
 Allow: /
+Crawl-delay: 1
 
 User-agent: ClaudeBot
 Allow: /
+Crawl-delay: 1
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 1
 
 User-agent: anthropic-ai
 Allow: /
+Crawl-delay: 1
 
 User-agent: Google-Extended
 Allow: /
+Crawl-delay: 1
 
 # Allow standard search engines
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Applebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: DuckDuckBot
 Allow: /
+Crawl-delay: 1
 
-# Block Common Crawl (no benefit — data used for training, not search)
+User-agent: cohere-ai
+Allow: /
+Crawl-delay: 1
+
+User-agent: ImagesiftBot
+Allow: /
+Crawl-delay: 1
+
+# Block Common Crawl (data used for training, not search)
 User-agent: CCBot
 Disallow: /
 
 # Allow all other crawlers
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
+# Sitemaps
 Sitemap: https://www.shiftlyx.com/sitemap.xml
+
+# AI-readable content files
+# /llms.txt — AI-optimised site summary
+# /llms-full.txt — Full site content for deep AI indexing
+# /ai.txt — AI crawling preferences

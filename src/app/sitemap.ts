@@ -65,6 +65,49 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.2,
     },
+    {
+      url: `${BASE_URL}/tools`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/tools/fatigue-score-validator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/tools/store-asset-studio`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    // AI crawling endpoints
+    {
+      url: `${BASE_URL}/llms.txt`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/llms-full.txt`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/ai.txt`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/pricing.md`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
 
   const blogArticles: MetadataRoute.Sitemap = siteConfig.blog.articles.map(
@@ -72,7 +115,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/blog/${article.slug}`,
       lastModified: new Date(article.date),
       changeFrequency: "monthly" as const,
-      priority: 0.6,
+      priority: 0.7,
     })
   );
 
