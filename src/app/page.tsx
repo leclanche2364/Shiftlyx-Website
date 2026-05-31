@@ -187,10 +187,23 @@ export default function HomePage() {
 
   return (
     <div>
-      {/* SEO H1 — visible to crawlers but hidden visually */}
-      <h1 className="sr-only">
-        Shiftlyx — Personal OS for Shift Workers: AI Voice Shift Planner, Fatigue Tracker &amp; Partner Sync (Premium)
-      </h1>
+      {/* SEO — server-rendered content for crawlers (visually hidden with sr-only) */}
+      <div className="sr-only" aria-hidden="false">
+        <h1>Shiftlyx — AI Shift Planner for NHS Nurses, Paramedics, Midwives and Healthcare Shift Workers</h1>
+        <h2>AI Voice Shift Planning</h2>
+        <p>Shiftlyx uses AI voice planning to help shift workers plan their schedule. Just say "Hey Shiftlyx, plan my month" and the app generates optimised shift patterns. The voice planner lets you speak naturally — "Plan my month with more nights" or "Show me the healthiest option" — and ranks shift patterns by how well they match your goal.</p>
+        <h2>Fatigue Score</h2>
+        <p>Shiftlyx tracks fatigue across four dimensions: consecutive work days, night clustering, short recovery between shifts, and circadian disruption. Each dimension is scored and combined into an overall fatigue score from 0 to 100. Colours indicate severity: Danger (red), Warning (amber), Positive (green), and Neutral (grey).</p>
+        <h2>Shift Planner with Five Strategies</h2>
+        <p>Generate shift plans using five different strategies: Income Optimised (maximises night and weekend pay), Balanced (best mix of income and health), Health Optimised (recovery first), Shift Stacked (clusters shifts for longer breaks), and Annual Leave Maximised (strategic leave placement). Compare plans side by side and choose what works for you.</p>
+        <h2>Partner Sync</h2>
+        <p>Link with your partner to see both rotas in one view. Four coordination modes: Standard (combined view), Avoid Same Heavy Days, Childcare First, and Shared Off First. Essential for couples who both work shifts and need to coordinate childcare and time together.</p>
+        <h2>Recovery Coach</h2>
+        <p>Adaptive nudges for sleep, hydration, and rest. Smart suppression: never during shifts, never in the 3 hours after a night shift, never between 9pm and 9am. Categories include sleep prep, hydration reminders, rest reminders, wind-down, and check-ins.</p>
+        <h2>Onboarding</h2>
+        <p>Set up in under 2 minutes. Tell us your profession (nurse, doctor, midwife, paramedic, HCA, ODP), band (2-9), work model (assigned rota or self-rostering), region, contracted hours, commute time, and years of service.</p>
+        <p>Shiftlyx is free to download and use. Premium costs £3.99 per month or £18.99 per year. Waitlist members lock in their Day One price for life. Designed for UK and US shift workers. Launching July 2026.</p>
+      </div>
 
       {/* 1. Hero Section */}
       <section className="relative overflow-hidden">
