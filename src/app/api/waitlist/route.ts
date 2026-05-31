@@ -127,11 +127,6 @@ async function sendDiscordNotification(data: {
     color: 0x2563eb, // blue
     fields: [
       {
-        name: "Email",
-        value: data.email,
-        inline: true,
-      },
-      {
         name: "Name",
         value: data.name || "Not provided",
         inline: true,
