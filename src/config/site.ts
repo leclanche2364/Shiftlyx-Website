@@ -15,7 +15,7 @@ export const siteConfig = {
       { label: "About", href: "/about" },
       { label: "Privacy", href: "/privacy" },
     ],
-    cta: { label: "Get Early Access", href: "/download" },
+    cta: { label: "Join waitlist", href: "/download" },
   },
 
   hero: {
@@ -23,7 +23,7 @@ export const siteConfig = {
     headline: "Just say:\n&ldquo;Hey Shiftlyx,\nplan my month.&rdquo;",
     subheadline:
       "Shiftlyx is an AI shift planner for shift workers. Speak naturally to build your schedule, understand your fatigue, and plan shifts that work for <em>you</em> — not just the rota. No typing required.",
-    cta: { text: "Get early access →", href: "/download" },
+    cta: { text: "Join waitlist →", href: "/download" },
     the2amTest: "Designed for the moment you're too tired to decide.",
   },
 
@@ -302,7 +302,7 @@ export const siteConfig = {
         a: "Possibly. If you're on the waitlist, you'll be first to hear about beta testing opportunities.",
       },
       {
-        q: "How much will it cost after early access?",
+        q: "How much will it cost after launch?",
         a: "The core app stays free forever — fatigue score, planner, recovery coach. Premium is £3.99/month or lock in the Day One Annual plan at £18.99/year (60% off). New users get a free 1-month trial. Early access users keep their Day One price for life.",
       },
     ],
@@ -631,7 +631,7 @@ Voice removes all of that. You just talk. The AI handles the rest.
 
 The AI Voice Planner is a **premium feature** at £3.99/month or £18.99/year (Day One Annual — 60% off) with a free 1-month trial. The free app includes fatigue score, shift planner, and recovery coach.
 
-[Get early access →] to try it free.`,
+[Join waitlist →] to try it free.`,
       },
       {
         slug: "maximise-annual-leave-shift-workers-2026",
@@ -1573,9 +1573,9 @@ The shift work industry has a blind spot. But you don't have to be blind.
         "Shiftlyx was built by NHS shift workers who couldn't find a tool that understood fatigue. The AI Voice Planner lets you speak naturally to plan your rota. Learn our story, philosophy, and privacy-first commitment.",
     },
     waitlist: {
-      title: "Shiftlyx Early Access — AI Voice Shift Planner for NHS Workers",
+      title: "Join the Shiftlyx Waitlist — AI Voice Shift Planner for Shift Workers",
       description:
-        "Get Shiftlyx early access. Try the AI Voice Shift Planner — just speak to plan your rota. Core app is free forever. Premium from £3.99/month with a free 1-month trial. For NHS nurses, paramedics, midwives, and all healthcare shift workers.",
+        "Join the Shiftlyx waitlist. Fatigue score, AI voice shift planner, recovery coach, income estimator, partner sync. Free to download and use. Premium from £3.99/month. For NHS nurses, paramedics, midwives, and all healthcare shift workers.",
     },
     blog: {
       title: "Shiftlyx Blog — Voice Shift Planning, Fatigue Tips & NHS Rota Guides",

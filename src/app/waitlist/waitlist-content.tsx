@@ -3,7 +3,23 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Check, Sparkles, Mail, User, Briefcase, ArrowRight, ChevronDown } from "lucide-react";
+import {
+  Check,
+  Sparkles,
+  Mail,
+  User,
+  Briefcase,
+  ArrowRight,
+  ChevronDown,
+  Brain,
+  Mic,
+  PiggyBank,
+  Heart,
+  Moon,
+  Repeat,
+  Scale,
+  Users,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -19,14 +35,77 @@ const spacingOptions = ["Close together (stack)", "Spread out", "No preference"]
 const priorityOptions = ["Maximise income", "Protect health", "Balanced"] as const;
 const maxNightsOptions = ["1", "2", "3", "4", "5+"] as const;
 const recoveryOptions = ["Bounce back quick", "Need proper rest", "Takes me a while"] as const;
+const featureOptions = [
+  "Fatigue Score",
+  "AI Voice Planning",
+  "Partner Sync",
+  "Recovery Coaching",
+  "Shift Swap Preview",
+  "Sleep Tracking",
+  "Paycheck vs Fatigue",
+] as const;
+
 const incomeTrackOptions = ["Track every penny", "General idea is fine", "Don't care about £"] as const;
 const sleepHabitOptions = ["Track sleep & get nudges", "Just basic sleep window", "Not interested"] as const;
 const recoveryHabitOptions = ["Structured routine", "Go with the flow", "I push through"] as const;
+
+// ── Detailed features data ──
+const FEATURES = [
+  {
+    icon: Brain,
+    title: "Fatigue Score",
+    desc: "Your shift pattern scored across 4 dimensions — sleep debt, circadian strain, recovery gaps, and workload. One clear number, not a puzzle.",
+    tag: "Free",
+  },
+  {
+    icon: Mic,
+    title: "AI Voice Planner",
+    desc: "Just say 'Hey Shiftlyx, plan my month'. Speak your preferences, the app builds your rota. No drag-and-drop. No typing.",
+    tag: "Free",
+  },
+  {
+    icon: PiggyBank,
+    title: "Income Estimator",
+    desc: "See the pound signs of every rota choice. Night premiums, weekend enhancements, overtime — know what you'll earn before you agree.",
+    tag: "Free",
+  },
+  {
+    icon: Heart,
+    title: "Recovery Coach",
+    desc: "Adaptive rest nudges based on your actual shift pattern. When your body needs it, the app adjusts — no generic advice.",
+    tag: "Free",
+  },
+  {
+    icon: Moon,
+    title: "Sleep Coach",
+    desc: "Smart sleep windows that shift with your rota. Countdown timer, wind-down nudges, and sleep opportunity tracking for night workers.",
+    tag: "Free",
+  },
+  {
+    icon: Repeat,
+    title: "Shift Swap Preview",
+    desc: "See how a swap changes your fatigue score before you agree. No more guessing if that trade will wreck your week.",
+    tag: "Free",
+  },
+  {
+    icon: Scale,
+    title: "Paycheck vs Fatigue",
+    desc: "Visual trade-off between earnings and recovery. See the real cost of that extra night shift in fatigue, not just pounds.",
+    tag: "Free",
+  },
+  {
+    icon: Users,
+    title: "Partner Sync",
+    desc: "Two rotas, one calendar. Colour-coded coverage view for childcare, shared events, and knowing who's free when. Premium feature.",
+    tag: "Premium",
+  },
+];
 
 export default function WaitlistPage() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
+  const [features, setFeatures] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [probesExpanded, setProbesExpanded] = useState(false);
   const [probesCollected, setProbesCollected] = useState(false);
@@ -45,7 +124,15 @@ export default function WaitlistPage() {
   const [sleepCoach, setSleepCoach] = useState<string | null>(null);
   const [recoveryHabit, setRecoveryHabit] = useState<string | null>(null);
 
-  const allProbesAnswered = nightAffinity && stackingPref && incomeVsRecovery && maxNights && fatigueResilience && incomeTrack && sleepCoach && recoveryHabit;
+  const allProbesAnswered =
+    nightAffinity &&
+    stackingPref &&
+    incomeVsRecovery &&
+    maxNights &&
+    fatigueResilience &&
+    incomeTrack &&
+    sleepCoach &&
+    recoveryHabit;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -58,7 +145,7 @@ export default function WaitlistPage() {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, name, role }),
+        body: JSON.stringify({ email, name, role, features }),
       });
 
       if (!res.ok) {
@@ -115,77 +202,67 @@ export default function WaitlistPage() {
 
   return (
     <div>
-      {/* Hero — info-first waitlist page */}
-      <section className="pt-24 pb-16 bg-gradient-to-b from-[#eff6ff] to-transparent">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          {/* Badge */}
-          <div className="text-center mb-6">
-            <Badge className="text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
-              Coming Soon
-            </Badge>
-          </div>
-
-          {/* Headline */}
-          <div className="text-center mb-8">
-            <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4">
-              Shiftlyx is free. Always.
-            </h1>
-            <p className="text-base sm:text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed">
-              AI shift planner — fatigue score, shift planner, and recovery coach all included at no cost. Premium unlocks AI Voice Planner, fatigue intelligence, income forecasting, and more.
-            </p>
-          </div>
-
-          {/* Key benefits preview — info before form */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-2xl mx-auto mb-10">
-            <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 text-center">
-              <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
-                <span className="text-lg font-bold text-[#2563eb]">1</span>
-              </div>
-              <p className="text-sm font-medium text-foreground">Fatigue Score</p>
-              <p className="text-xs text-[#94a3b8] mt-0.5">4 dimensions, one number</p>
-            </div>
-            <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 text-center">
-              <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
-                <span className="text-lg font-bold text-[#2563eb]">2</span>
-              </div>
-              <p className="text-sm font-medium text-foreground">Income Estimator</p>
-              <p className="text-xs text-[#94a3b8] mt-0.5">See the £ of rota choices</p>
-            </div>
-            <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 text-center">
-              <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
-                <span className="text-lg font-bold text-[#2563eb]">3</span>
-              </div>
-              <p className="text-sm font-medium text-foreground">Voice Planner</p>
-              <p className="text-xs text-[#94a3b8] mt-0.5">Speak to plan your rota</p>
-            </div>
-            <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 text-center">
-              <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
-                <span className="text-lg font-bold text-[#2563eb]">4</span>
-              </div>
-              <p className="text-sm font-medium text-foreground">Recovery Coach</p>
-              <p className="text-xs text-[#94a3b8] mt-0.5">Adaptive rest nudges</p>
-            </div>
-            <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 text-center">
-              <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
-                <span className="text-lg font-bold text-[#2563eb]">5</span>
-              </div>
-              <p className="text-sm font-medium text-foreground">Sleep Coach</p>
-              <p className="text-xs text-[#94a3b8] mt-0.5">Window timers &amp; wind-down</p>
-            </div>
-            <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 text-center">
-              <div className="w-10 h-10 rounded-full bg-[#eff6ff] flex items-center justify-center mx-auto mb-2">
-                <span className="text-lg font-bold text-[#2563eb]">6</span>
-              </div>
-              <p className="text-sm font-medium text-foreground">Partner Sync (Premium)</p>
-              <p className="text-xs text-[#94a3b8] mt-0.5">Two rotas, one calendar</p>
-            </div>
-          </div>
-
+      {/* ── HERO ── */}
+      <section className="pt-24 pb-12 bg-gradient-to-b from-[#eff6ff] to-transparent">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+          <Badge className="mb-4 text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
+            Coming Soon
+          </Badge>
+          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4">
+            Shiftlyx is free. Always.
+          </h1>
+          <p className="text-base sm:text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed">
+            For shift workers tired of guessing. Fatigue score, voice planner, recovery coach — all included at no cost.
+            Premium from £3.99/month. Enter your email and be first to try it.
+          </p>
         </div>
       </section>
 
-      {/* Email form — below the fold, separate section */}
-      <section className="pb-16">
+      {/* ── DETAILED FEATURES ── */}
+      <section className="pb-12">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground">
+              Everything you need to manage shift work
+            </h2>
+            <p className="text-[#475569] mt-2">
+              One app. Your rota. No employer access. No hidden costs.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {FEATURES.map((feature, i) => (
+              <motion.div
+                key={feature.title}
+                className="bg-white rounded-xl border border-[#e2e8f0] p-5 hover:border-[#2563eb]/20 hover:shadow-sm transition-all"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.04 }}
+              >
+                <feature.icon className="w-6 h-6 text-[#2563eb] mb-3" />
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <h3 className="font-heading font-semibold text-foreground text-sm">
+                    {feature.title}
+                  </h3>
+                  <span
+                    className={`text-[10px] font-medium px-2 py-0.5 rounded-full shrink-0 ${
+                      feature.tag === "Free"
+                        ? "bg-[#10b981]/10 text-[#10b981]"
+                        : "bg-[#f59e0b]/10 text-[#f59e0b]"
+                    }`}
+                  >
+                    {feature.tag}
+                  </span>
+                </div>
+                <p className="text-xs text-[#64748b] leading-relaxed">{feature.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FORM ── */}
+      <section className="pb-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-md mx-auto">
             {submitted ? (
@@ -454,7 +531,15 @@ export default function WaitlistPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                {/* Email only — put it first */}
+                <div className="text-center mb-2">
+                  <h2 className="font-heading text-lg font-bold text-foreground">
+                    Join the waitlist
+                  </h2>
+                  <p className="text-xs text-[#64748b] mt-1">
+                    Enter your email and be first to try Shiftlyx.
+                  </p>
+                </div>
+
                 <div>
                   <label htmlFor="email" className="sr-only">
                     Email address
@@ -474,7 +559,6 @@ export default function WaitlistPage() {
                   </div>
                 </div>
 
-                {/* Optional fields — expanded below email */}
                 <div className="space-y-3">
                   <div>
                     <label htmlFor="name" className="sr-only">
@@ -514,6 +598,37 @@ export default function WaitlistPage() {
                       </select>
                     </div>
                   </div>
+
+                  <div>
+                    <p className="text-xs text-[#64748b] mb-2 font-medium">
+                      Most anticipated features
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {featureOptions.map((f) => {
+                        const selected = features.includes(f);
+                        return (
+                          <button
+                            key={f}
+                            type="button"
+                            onClick={() =>
+                              setFeatures((prev) =>
+                                prev.includes(f)
+                                  ? prev.filter((x) => x !== f)
+                                  : [...prev, f]
+                              )
+                            }
+                            className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
+                              selected
+                                ? "bg-[#2563eb] text-white border-[#2563eb]"
+                                : "bg-white text-[#475569] border-[#e2e8f0] hover:border-[#2563eb]/30"
+                            }`}
+                          >
+                            {f}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
 
                 {error && (
@@ -530,7 +645,7 @@ export default function WaitlistPage() {
                     "Joining..."
                   ) : (
                     <span className="flex items-center justify-center gap-2">
-                      Get early access <ArrowRight className="w-4 h-4" />
+                      Join waitlist <ArrowRight className="w-4 h-4" />
                     </span>
                   )}
                 </Button>
@@ -544,7 +659,7 @@ export default function WaitlistPage() {
         </div>
       </section>
 
-      {/* Social Proof */}
+      {/* ── SOCIAL PROOF ── */}
       <section className="py-12 bg-[#f8fafc] border-y border-[#e2e8f0]/50">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6">
@@ -571,11 +686,11 @@ export default function WaitlistPage() {
         </div>
       </section>
 
-      {/* What Early Access Means */}
+      {/* ── WHAT YOU GET AS A WAITLIST MEMBER ── */}
       <section className="py-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground text-center mb-8">
-            What you get as an early user
+            What you get as a waitlist member
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
@@ -620,7 +735,7 @@ export default function WaitlistPage() {
         </div>
       </section>
 
-      {/* Waitlist FAQ */}
+      {/* ── FAQ ── */}
       <section className="py-16 bg-[#f8fafc] border-y border-[#e2e8f0]/50">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground text-center mb-8">
@@ -644,14 +759,14 @@ export default function WaitlistPage() {
         </div>
       </section>
 
-      {/* Pricing CTA */}
+      {/* ── PRICING CTA ── */}
       <section className="py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-4">
             Shiftlyx is free to download and use.
           </h2>
           <p className="text-[#475569] text-lg mb-8 max-w-xl mx-auto">
-            Free fatigue score, planner, recovery coach included. Premium from £3.99/month. Early access users lock in their Day One price for life.
+            Free fatigue score, planner, recovery coach included. Premium from £3.99/month. Waitlist members lock in their Day One price for life.
           </p>
           {!submitted && (
             <Link href="/download">

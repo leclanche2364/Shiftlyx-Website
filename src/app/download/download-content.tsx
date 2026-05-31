@@ -140,7 +140,7 @@ export default function DownloadPage() {
               size="lg"
               className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50"
             >
-              Get early access →
+              Join waitlist →
             </Button>
           </Link>
         </div>
