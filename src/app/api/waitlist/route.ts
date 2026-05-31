@@ -115,7 +115,10 @@ async function sendDiscordNotification(data: {
   role?: string;
   features?: string[];
 }) {
-  if (!DISCORD_WEBHOOK_URL) return;
+  if (!DISCORD_WEBHOOK_URL) {
+    console.warn("DISCORD_WEBHOOK_URL not set — skipping Discord notification");
+    return;
+  }
 
   const featuresList =
     data.features && data.features.length > 0
@@ -144,11 +147,22 @@ async function sendDiscordNotification(data: {
     timestamp: new Date().toISOString(),
   };
 
-  await fetch(DISCORD_WEBHOOK_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ embeds: [embed] }),
-  }).catch((err) => console.error("Discord webhook error:", err));
+  try {
+    const discordResponse = await fetch(DISCORD_WEBHOOK_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ embeds: [embed] }),
+    });
+
+    if (!discordResponse.ok) {
+      const errorText = await discordResponse.text();
+      console.error("Discord webhook returned", discordResponse.status, errorText);
+    } else {
+      console.log("Discord notification sent successfully");
+    }
+  } catch (err) {
+    console.error("Discord webhook error:", err);
+  }
 }
 
 // ── POST: Sign up to waitlist ──
