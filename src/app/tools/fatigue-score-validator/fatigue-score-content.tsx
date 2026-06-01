@@ -4,7 +4,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  Upload, Plus, Trash2, Activity, Moon, Clock, Sun,
+  Upload, Plus, Trash2, Activity, Moon, Clock, Sun, Calendar,
   AlertTriangle, CheckCircle2, ChevronRight, BarChart3,
   TrendingUp, Zap, Brain, Download, Loader2,
 } from "lucide-react";
@@ -55,8 +55,8 @@ function generateSampleShifts(): ShiftInput[] {
 // ---------- Component ----------
 
 export default function FatigueScoreContent() {
-  // Tabs: "explainer" | "upload" | "manual" | "results"
-  const [tab, setTab] = useState<'explainer' | 'upload' | 'manual' | 'results'>('explainer');
+  // Phase: 'input' (choose method) → 'review' (calendar + shifts) → 'results'
+  const [phase, setPhase] = useState<'input' | 'review' | 'results'>('input');
   const [shifts, setShifts] = useState<ShiftInput[]>([]);
   const [results, setResults] = useState<FatigueAnalysis | null>(null);
   const [icsErrors, setIcsErrors] = useState<string[]>([]);
@@ -144,7 +144,7 @@ export default function FatigueScoreContent() {
   // Load sample
   const loadSample = useCallback(() => {
     setShifts(generateSampleShifts());
-    setTab('results');
+    setPhase('results');
   }, []);
 
   // Calculate
@@ -156,7 +156,7 @@ export default function FatigueScoreContent() {
     setError(null);
     const analysis = analyzeShifts(shifts);
     setResults(analysis);
-    setTab('results');
+    setPhase('results');
   }, [shifts]);
 
   // Handle image upload + AI parsing
@@ -247,7 +247,7 @@ export default function FatigueScoreContent() {
       setTimeout(() => {
         setAiLoading(false);
         setAiStatus(null);
-        setTab('manual');
+        setPhase('review');
       }, 1200);
 
     } catch (err) {
@@ -295,7 +295,7 @@ export default function FatigueScoreContent() {
         setCalendarMonth(m - 1); // 0-indexed
       }
 
-      setTab('manual');
+      setPhase('review');
       setParseSummary({ total: result.totalEvents, parsed: result.parsed, failed: result.failed });
       setIcsErrors(result.errors);
       setError(null);
@@ -317,156 +317,25 @@ export default function FatigueScoreContent() {
 
   return (
     <div>
-      {/* ===== HERO / EXPLAINER ===== */}
-      <section className="pt-20 pb-12 bg-gradient-to-b from-[#eff6ff] to-transparent">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="mb-4 text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
-            Fatigue Score
+      {/* ===== COMPACT HERO ===== */}
+      <section className="pt-16 pb-4 bg-gradient-to-b from-[#eff6ff] to-white">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <Badge className="mb-3 text-[11px] font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff] uppercase tracking-wider">
+            Free Tool
           </Badge>
-          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-            Your fatigue isn&apos;t a feeling. <br />
-            <span className="text-[#f59e0b]">It&apos;s a risk score.</span>
+          <h1 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 leading-tight">
+            Check your rota&apos;s fatigue score
           </h1>
-          <p className="text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed mb-8">
-            Four measurable dimensions — consecutive days, night clusters, short turnarounds, 
-            and circadian disruption — combine into one clear 0-100 score. Upload your rota 
-            and see yours in seconds.
+          <p className="text-base text-[#475569] max-w-lg mx-auto leading-relaxed mb-6">
+            Upload your rota file, snap a photo, or enter shifts manually.
+            Four dimensions combine into one clear score. All in-browser — nothing stored.
           </p>
-          <div className="flex justify-center mb-8">
-            <Button
-              onClick={() => {
-                document.getElementById('fatigue-validator')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              size="lg"
-              className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold text-base px-8 shadow-lg shadow-blue-200/50"
-            >
-              Try the fatigue score calculator →
-            </Button>
-          </div>
         </div>
       </section>
 
-      {/* ===== THE FOUR DIMENSIONS ===== */}
-      <section className="py-16 bg-white">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4 text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
-              THE FOUR DIMENSIONS
-            </Badge>
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-4">
-              How fatigue adds up
-            </h2>
-            <p className="text-[#475569] max-w-2xl mx-auto">
-              Like a weather forecast for your body. Four measurable dimensions — consecutive days, night clusters, short turnarounds, and circadian disruption — combine into one clear 0-100 risk score.
-            </p>
-          </div>
+      {/* (4 dimensions + colour zones moved into results section below) */}
 
-          <div className="grid sm:grid-cols-2 gap-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0 }}
-              className="bg-white border border-[#e2e8f0] rounded-xl p-6 hover:border-[#2563eb]/30 transition-colors"
-            >
-              <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center text-lg mb-3">📅</div>
-              <h3 className="font-semibold text-foreground mb-1">Consecutive Work Days</h3>
-              <p className="text-sm text-[#475569] leading-relaxed">
-                How many shifts in a row without a proper reset. Each extra day compounds fatigue exponentially — not linearly.
-              </p>
-              <p className="text-xs text-[#94a3b8] mt-2">Penalty starts after day 3</p>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="bg-white border border-[#e2e8f0] rounded-xl p-6 hover:border-[#2563eb]/30 transition-colors"
-            >
-              <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-lg mb-3">🌙</div>
-              <h3 className="font-semibold text-foreground mb-1">Night Clustering</h3>
-              <p className="text-sm text-[#475569] leading-relaxed">
-                How tightly nights are packed. Multiple nights in a row mess with your circadian rhythm harder than spread-out nights.
-              </p>
-              <p className="text-xs text-[#94a3b8] mt-2">Penalty starts after night 2</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="bg-white border border-[#e2e8f0] rounded-xl p-6 hover:border-[#2563eb]/30 transition-colors"
-            >
-              <div className="w-10 h-10 rounded-lg bg-yellow-50 flex items-center justify-center text-lg mb-3">⏱️</div>
-              <h3 className="font-semibold text-foreground mb-1">Short Recovery</h3>
-              <p className="text-sm text-[#475569] leading-relaxed">
-                Shifts with fewer than 11 hours between finish and next start. Less than 11 hours is insufficient for proper sleep and recovery.
-              </p>
-              <p className="text-xs text-[#94a3b8] mt-2">Penalty per incident: +10 points</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-              className="bg-white border border-[#e2e8f0] rounded-xl p-6 hover:border-[#2563eb]/30 transition-colors"
-            >
-              <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-lg mb-3">🔄</div>
-              <h3 className="font-semibold text-foreground mb-1">Circadian Disruption</h3>
-              <p className="text-sm text-[#475569] leading-relaxed">
-                Night-to-day transitions happening too quickly. Each flip between night and day patterns forces your body clock to reset.
-              </p>
-              <p className="text-xs text-[#94a3b8] mt-2">Penalty per flip: +9 points</p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== COLOUR ZONES ===== */}
-      <section className="py-16 bg-[#f8fafc]">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-4">
-              What your score means
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-3 gap-4">
-            <div className="bg-white rounded-xl border border-[#e2e8f0] p-5 text-center">
-              <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-3">
-                <span className="w-8 h-8 rounded-full bg-[#10b981]" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-1">Low (0–30)</h3>
-              <p className="text-sm text-[#475569]">
-                Recovery-friendly. Your pattern is sustainable. Keep doing what you&apos;re doing.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl border border-[#e2e8f0] p-5 text-center">
-              <div className="w-16 h-16 rounded-full bg-amber-50 flex items-center justify-center mx-auto mb-3">
-                <span className="w-8 h-8 rounded-full bg-[#f59e0b]" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-1">Moderate (31–60)</h3>
-              <p className="text-sm text-[#475569]">
-                High demand. Your body is working harder. Consider adjustments for long-term recovery.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl border border-[#e2e8f0] p-5 text-center">
-              <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-3">
-                <span className="w-8 h-8 rounded-full bg-[#ef4444]" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-1">High (61–100)</h3>
-              <p className="text-sm text-[#475569]">
-                Critical strain. This pattern carries significant risk. Prioritise recovery and review your schedule.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <input
         ref={fileInputRef}
@@ -486,274 +355,328 @@ export default function FatigueScoreContent() {
       {/* ===== INTERACTIVE TOOL SECTION ===== */}
       <section id="fatigue-validator" className="py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <Badge className="mb-4 text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
-              TRY IT
-            </Badge>
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-4">
-              See your fatigue score
-            </h2>
-            <p className="text-[#475569] max-w-xl mx-auto text-sm">
-              Upload your rota file or a photo of your rota. ICS runs in-browser. Photo uses AI — shifts only, nothing saved.
-            </p>
-          </div>
+          {/* Section is at the top with the hero — user flows directly into the cards */}
 
-          {/* Tab Bar */}
-          <div className="flex justify-center gap-2 mb-8">
-            <Button
-              variant={tab === 'upload' ? 'default' : 'outline'}
-              size="sm"
-              onClick={() => { setTab('upload'); fileInputRef.current?.click(); }}
-              className={tab === 'upload' ? 'bg-[#2563eb] text-white' : ''}
-            >
-              <Upload className="w-3.5 h-3.5 mr-1.5" />
-              Upload file
-            </Button>
-            <Button
-              variant={tab === 'manual' ? 'default' : 'outline'}
-              size="sm"
-              onClick={() => setTab('manual')}
-              className={tab === 'manual' ? 'bg-[#2563eb] text-white' : ''}
-            >
-              <Plus className="w-3.5 h-3.5 mr-1.5" />
-              Manual entry
-            </Button>
-            <Button variant="outline" size="sm" onClick={loadSample}>
-              Load sample
-            </Button>
-          </div>
-
-          {/* Manual Entry — Calendar Grid */}
-          {tab === 'manual' && (
+          {/* ===== PHASE 1: INPUT METHODS ===== */}
+          {phase === 'input' && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="max-w-xl mx-auto mb-8"
+              className="max-w-3xl mx-auto mb-8"
             >
-              {/* Shift type legend */}
-              <div className="bg-white rounded-xl border border-[#e2e8f0] p-3 mb-3">
-                <p className="text-[11px] font-medium text-[#64748b] mb-2">Select a shift type, then tap days on the calendar:</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {SHIFT_TYPES.filter(s => ['LD', 'MLD', 'TW', 'N', 'OFF', 'AL', 'SL'].includes(s.code)).map(opt => (
+              {/* 3 Big Cards */}
+              <div className="grid md:grid-cols-3 gap-4">
+
+                {/* Card 1: Upload ICS */}
+                <div
+                  ref={dropRef}
+                  onDrop={handleDrop}
+                  onDragOver={handleDragOver}
+                  onClick={() => fileInputRef.current?.click()}
+                  className="bg-white rounded-2xl border-2 border-dashed border-[#cbd5e1] p-6 text-center hover:border-[#2563eb] hover:bg-[#f8fafc] transition-all cursor-pointer group"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-[#eff6ff] flex items-center justify-center mx-auto mb-4 group-hover:bg-[#dbeafe] transition-colors">
+                    <Upload className="w-8 h-8 text-[#2563eb]" />
+                  </div>
+                  <h3 className="font-semibold text-foreground text-base mb-1">Upload rota file</h3>
+                  <p className="text-sm text-[#64748b] mb-4">ICS export from HealthRota, Rotamaster, or Loop</p>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[#2563eb] bg-[#eff6ff] px-3 py-1.5 rounded-full">
+                    <Upload className="w-3.5 h-3.5" />
+                    Browse or drop
+                  </span>
+                  <p className="text-[10px] text-[#94a3b8] mt-4">Parses in-browser. Nothing leaves your device.</p>
+                </div>
+
+                {/* Card 2: Upload Photo */}
+                <div
+                  onClick={() => imageInputRef.current?.click()}
+                  className="bg-white rounded-2xl border-2 border-dashed border-[#cbd5e1] p-6 text-center hover:border-[#2563eb] hover:bg-[#f8fafc] transition-all cursor-pointer group"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-[#fdf2f8] flex items-center justify-center mx-auto mb-4 group-hover:bg-[#fce7f3] transition-colors">
+                    <svg className="w-8 h-8 text-[#db2777]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="font-semibold text-foreground text-base mb-1">Take a photo</h3>
+                  <p className="text-sm text-[#64748b] mb-4">Snap your printed rota or screenshot</p>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[#db2777] bg-[#fdf2f8] px-3 py-1.5 rounded-full">
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Browse photo
+                  </span>
+                  <p className="text-[10px] text-[#94a3b8] mt-4">AI powered by Gemini Vision. Shifts only, nothing saved.</p>
+                </div>
+
+                {/* Card 3: Manual / Sample */}
+                <div className="bg-white rounded-2xl border-2 border-[#e2e8f0] p-6 text-center hover:border-[#2563eb] hover:bg-[#f8fafc] transition-all group">
+                  <div className="w-16 h-16 rounded-2xl bg-[#f0fdf4] flex items-center justify-center mx-auto mb-4 group-hover:bg-[#dcfce7] transition-colors">
+                    <Plus className="w-8 h-8 text-[#16a34a]" />
+                  </div>
+                  <h3 className="font-semibold text-foreground text-base mb-1">Enter manually</h3>
+                  <p className="text-sm text-[#64748b] mb-4">Tap shifts on a calendar — or try a sample rota</p>
+                  <div className="flex flex-col gap-2">
                     <button
-                      key={opt.code}
-                      onClick={() => setSelectedShiftType(opt.code)}
-                      className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
-                        selectedShiftType === opt.code
-                          ? 'ring-2 ring-offset-1 ring-[#2563eb]'
-                          : 'opacity-70 hover:opacity-100'
-                      }`}
-                      style={{
-                        backgroundColor: opt.color + '20',
-                        borderColor: opt.color + '40',
-                        color: opt.color,
-                      }}
+                      onClick={() => setPhase('review')}
+                      className="text-xs font-medium text-[#16a34a] bg-[#f0fdf4] px-3 py-1.5 rounded-full hover:bg-[#dcfce7] transition-colors"
                     >
-                      {opt.short} — {opt.label}
+                      <Plus className="w-3.5 h-3.5 inline mr-1" />
+                      Open calendar
                     </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Month navigation */}
-              <div className="flex items-center justify-between bg-white rounded-xl border border-[#e2e8f0] px-4 py-2 mb-3">
-                <button
-                  onClick={prevMonth}
-                  className="w-8 h-8 rounded-lg hover:bg-[#f1f5f9] flex items-center justify-center text-[#64748b] transition-colors"
-                >
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-                </button>
-                <span className="font-semibold text-foreground text-sm">
-                  {monthNames[calendarMonth]} {calendarYear}
-                </span>
-                <button
-                  onClick={nextMonth}
-                  className="w-8 h-8 rounded-lg hover:bg-[#f1f5f9] flex items-center justify-center text-[#64748b] transition-colors"
-                >
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                </button>
-              </div>
-
-              {/* Calendar grid */}
-              <div className="bg-white rounded-xl border border-[#e2e8f0] overflow-hidden">
-                {/* Day headers */}
-                <div className="grid grid-cols-7 border-b border-[#e2e8f0]">
-                  {dayHeaders.map(d => (
-                    <div key={d} className="py-2 text-center text-[11px] font-medium text-[#94a3b8] uppercase tracking-wider">
-                      {d}
-                    </div>
-                  ))}
+                    <button
+                      onClick={loadSample}
+                      className="text-xs font-medium text-[#64748b] bg-[#f8fafc] px-3 py-1.5 rounded-full hover:bg-[#f1f5f9] transition-colors"
+                    >
+                      Load sample rota
+                    </button>
+                  </div>
                 </div>
 
-                {/* Day cells */}
-                <div className="grid grid-cols-7">
-                  {/* Empty cells before 1st */}
-                  {Array.from({ length: startOffset }).map((_, i) => (
-                    <div key={`empty-${i}`} className="aspect-square p-1" />
-                  ))}
-
-                  {/* Day cells */}
-                  {Array.from({ length: daysInMonth }).map((_, i) => {
-                    const day = i + 1;
-                    const shift = getShiftForDay(day);
-                    const isToday = isCurrentMonth && day === today.getDate();
-                    const st = shift ? SHIFT_TYPES.find(t => t.code === shift.shiftCode) : null;
-                    return (
-                      <button
-                        key={day}
-                        onClick={() => toggleDayShift(day)}
-                        className={`aspect-square p-1 relative group transition-colors
-                          ${isToday ? 'bg-[#eff6ff]' : 'hover:bg-[#f8fafc]'}
-                        `}
-                        title={`${day} ${monthNames[calendarMonth]} — ${st?.label || 'No shift'}`}
-                      >
-                        <div className="w-full h-full rounded-lg flex flex-col items-center justify-center relative">
-                          {/* Date number */}
-                          <span className={`text-xs font-medium ${
-                            isToday ? 'text-[#2563eb]' : 'text-[#475569]'
-                          }`}>
-                            {day}
-                          </span>
-
-                          {/* Shift badge */}
-                          {st && st.code !== 'OFF' ? (
-                            <span
-                              className="mt-0.5 px-1.5 py-0.5 rounded text-[9px] font-bold text-white leading-tight"
-                              style={{ backgroundColor: st.color }}
-                            >
-                              {st.short}
-                            </span>
-                          ) : st?.code === 'OFF' ? (
-                            <span className="mt-0.5 text-[9px] text-[#94a3b8] font-medium">
-                              OFF
-                            </span>
-                          ) : null}
-
-                          {/* Today dot */}
-                          {isToday && !st && (
-                            <span className="absolute bottom-1 w-1 h-1 rounded-full bg-[#2563eb]" />
-                          )}
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
               </div>
 
-              {/* Legend help */}
-              <p className="text-[10px] text-[#94a3b8] mt-2 text-center">
-                Tap a day to assign the selected shift type. Tap again to remove.
-              </p>
+              {/* Error display in input phase */}
+              {error && (
+                <div className="mt-6 p-4 bg-red-50 border border-red-200/50 rounded-xl text-sm text-red-700 text-center">
+                  {error}
+                </div>
+              )}
             </motion.div>
           )}
 
-          {/* Upload area */}
-          {tab === 'upload' && (
-            <div className="max-w-md mx-auto mb-8">
-              <div className="space-y-4">
-              {/* ICS Upload Box */}
-              <div
-                ref={dropRef}
-                onDrop={handleDrop}
-                onDragOver={handleDragOver}
-                className="border-2 border-dashed border-[#e2e8f0] rounded-xl p-8 text-center hover:border-[#2563eb]/40 transition-colors cursor-pointer"
-                onClick={() => fileInputRef.current?.click()}
-              >
-                <Upload className="w-8 h-8 text-[#94a3b8] mx-auto mb-3" />
-                <p className="text-sm text-[#475569] font-medium">Drop your rota file here</p>
-                <p className="text-xs text-[#94a3b8] mt-1">ICS file or photo — or click to browse</p>
-                <p className="text-[10px] text-[#cbd5e1] mt-3">HealthRota, Rotamaster, or a screenshot of your rota</p>
-              </div>
-
-              {/* Photo Upload Button (separate, more explicit) */}
-
-            </div>
-            </div>
-          )}
-
-          {/* AI processing indicator */}
+          {/* ===== AI processing indicator ===== */}
           {aiLoading && (
-            <div className="max-w-md mx-auto mb-6 p-6 bg-[#eff6ff] border border-[#2563eb]/20 rounded-xl text-center">
+            <div className="max-w-md mx-auto mb-8 p-8 bg-[#eff6ff] border border-[#2563eb]/20 rounded-2xl text-center">
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 2, ease: 'linear' }}
-                className="w-10 h-10 mx-auto mb-3"
+                className="w-12 h-12 mx-auto mb-4"
               >
-                <Loader2 className="w-10 h-10 text-[#2563eb]" />
+                <Loader2 className="w-12 h-12 text-[#2563eb]" />
               </motion.div>
-              <p className="text-sm font-medium text-[#2563eb]">{aiStatus || 'Reading your rota with AI...'}</p>
-              <p className="text-xs text-[#64748b] mt-1">Your photo is sent to OpenRouter (Gemini Vision). No data is stored.</p>
+              <p className="text-base font-semibold text-[#2563eb]">{aiStatus || 'Reading your rota with AI...'}</p>
+              <p className="text-xs text-[#64748b] mt-2">Your photo is sent to OpenRouter (Gemini Vision). No data is stored.</p>
             </div>
           )}
 
-          {/* Shift list */}
-          {!aiLoading && shifts.length > 0 && (tab === 'manual' || tab === 'results' || tab === 'upload') && (
-            <div className="max-w-lg mx-auto mb-8">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-semibold text-foreground">
-                  Your shifts ({shifts.length})
-                </h3>
-                {shifts.length > 0 && (
-                  <Button size="sm" variant="outline" onClick={calculate} className="text-xs">
-                    <Activity className="w-3.5 h-3.5 mr-1.5" />
-                    Calculate fatigue score
-                  </Button>
+          {/* ===== PHASE 2: REVIEW (Calendar + Shift List) ===== */}
+          {(phase === 'review' || phase === 'results') && !aiLoading && (
+            <>
+              {/* Step indicator */}
+              <div className="max-w-xl mx-auto mb-8">
+                <div className="flex items-center justify-center gap-2 text-xs font-medium">
+                  <span className={`px-3 py-1.5 rounded-full ${phase === 'review' ? 'bg-[#2563eb] text-white' : 'bg-[#eff6ff] text-[#2563eb]'}`}>1. Get shifts</span>
+                  <ChevronRight className="w-3.5 h-3.5 text-[#94a3b8]" />
+                  <span className={`px-3 py-1.5 rounded-full ${phase === 'review' ? 'bg-[#2563eb] text-white' : 'bg-[#eff6ff] text-[#2563eb]'}`}>2. Review</span>
+                  <ChevronRight className="w-3.5 h-3.5 text-[#94a3b8]" />
+                  <span className={`px-3 py-1.5 rounded-full ${phase === 'results' ? 'bg-[#2563eb] text-white' : 'bg-[#f8fafc] text-[#94a3b8]'}`}>3. Score</span>
+                </div>
+              </div>
+
+              {/* Back to input button */}
+              <div className="max-w-xl mx-auto mb-4">
+                <button
+                  onClick={() => setPhase('input')}
+                  className="text-xs font-medium text-[#64748b] hover:text-[#2563eb] transition-colors flex items-center gap-1"
+                >
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+                  Choose a different input method
+                </button>
+              </div>
+
+              {/* Calendar and shift list */}
+              <div className="max-w-xl mx-auto mb-8">
+                {/* Shift type legend */}
+                <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 mb-3">
+                  <p className="text-xs font-medium text-[#64748b] mb-3">Select a shift type, then tap days on the calendar:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {SHIFT_TYPES.filter(s => ['LD', 'MLD', 'TW', 'N', 'OFF', 'AL', 'SL'].includes(s.code)).map(opt => (
+                      <button
+                        key={opt.code}
+                        onClick={() => setSelectedShiftType(opt.code)}
+                        className={`px-3 py-2 rounded-lg text-sm font-semibold border transition-all ${
+                          selectedShiftType === opt.code
+                            ? 'ring-2 ring-offset-2 ring-[#2563eb] scale-105 shadow-sm'
+                            : 'opacity-80 hover:opacity-100 hover:shadow-sm'
+                        }`}
+                        style={{
+                          backgroundColor: opt.color + '20',
+                          borderColor: opt.color + '40',
+                          color: opt.color,
+                        }}
+                      >
+                        {opt.short} — {opt.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Month navigation */}
+                <div className="flex items-center justify-between bg-white rounded-xl border border-[#e2e8f0] px-4 py-2 mb-3">
+                  <button
+                    onClick={prevMonth}
+                    className="w-10 h-10 rounded-lg hover:bg-[#f1f5f9] flex items-center justify-center text-[#64748b] transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+                  </button>
+                  <span className="font-semibold text-foreground text-sm">
+                    {monthNames[calendarMonth]} {calendarYear}
+                  </span>
+                  <button
+                    onClick={nextMonth}
+                    className="w-10 h-10 rounded-lg hover:bg-[#f1f5f9] flex items-center justify-center text-[#64748b] transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </button>
+                </div>
+
+                {/* Calendar grid */}
+                <div className="bg-white rounded-xl border border-[#e2e8f0] overflow-hidden">
+                  <div className="grid grid-cols-7 border-b border-[#e2e8f0]">
+                    {dayHeaders.map(d => (
+                      <div key={d} className="py-2 text-center text-[11px] font-medium text-[#94a3b8] uppercase tracking-wider">
+                        {d}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="grid grid-cols-7">
+                    {Array.from({ length: startOffset }).map((_, i) => (
+                      <div key={`empty-${i}`} className="aspect-square p-1.5" />
+                    ))}
+                    {Array.from({ length: daysInMonth }).map((_, i) => {
+                      const day = i + 1;
+                      const shift = getShiftForDay(day);
+                      const isToday = isCurrentMonth && day === today.getDate();
+                      const st = shift ? SHIFT_TYPES.find(t => t.code === shift.shiftCode) : null;
+                      return (
+                        <button
+                          key={day}
+                          onClick={() => toggleDayShift(day)}
+                          className={`aspect-square p-1 relative group transition-colors
+                            ${isToday ? 'bg-[#eff6ff]' : 'hover:bg-[#f8fafc]'}
+                          `}
+                          title={`${day} ${monthNames[calendarMonth]} — ${st?.label || 'No shift'}`}
+                        >
+                          <div className="w-full h-full rounded-lg flex flex-col items-center justify-center relative">
+                            <span className={`text-xs font-medium ${
+                              isToday ? 'text-[#2563eb]' : 'text-[#475569]'
+                            }`}>
+                              {day}
+                            </span>
+                            {st && st.code !== 'OFF' ? (
+                              <span
+                                className="mt-0.5 px-1.5 py-0.5 rounded text-[9px] font-bold text-white leading-tight"
+                                style={{ backgroundColor: st.color }}
+                              >
+                                {st.short}
+                              </span>
+                            ) : st?.code === 'OFF' ? (
+                              <span className="mt-0.5 text-[9px] text-[#94a3b8] font-medium">
+                                OFF
+                              </span>
+                            ) : null}
+                            {isToday && !st && (
+                              <span className="absolute bottom-1 w-1 h-1 rounded-full bg-[#2563eb]" />
+                            )}
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <p className="text-xs text-[#94a3b8] mt-2 text-center">
+                  Tap a day to assign the selected shift type. Tap again to remove.
+                </p>
+              </div>
+
+              {/* Shift List + Calculate */}
+              <div className="max-w-xl mx-auto mb-8">
+                {/* Header with shift count + big calc button */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
+                  <h3 className="text-base font-bold text-foreground">
+                    Your shifts
+                    {shifts.length > 0 && (
+                      <span className="ml-1.5 text-sm font-normal text-[#64748b]">({shifts.length})</span>
+                    )}
+                  </h3>
+                </div>
+
+                {/* Shift items */}
+                {shifts.length > 0 ? (
+                  <>
+                    <div className="bg-white rounded-xl border border-[#e2e8f0] max-h-48 overflow-y-auto mb-4">
+                      {shifts.map((s) => {
+                        const st = SHIFT_TYPES.find(t => t.code === s.shiftCode);
+                        return (
+                          <div key={s.date} className="flex items-center justify-between px-4 py-2.5 border-b border-[#e2e8f0] last:border-b-0 text-sm">
+                            <div className="flex items-center gap-3">
+                              <span className="text-xs text-[#64748b] w-24">{s.date}</span>
+                              <span
+                                className="px-2 py-0.5 rounded text-[11px] font-semibold text-white"
+                                style={{ backgroundColor: st?.color || '#64748b' }}
+                              >
+                                {st?.short || s.shiftCode}
+                              </span>
+                            </div>
+                            <button
+                              onClick={() => removeShift(s.date)}
+                              className="text-[#94a3b8] hover:text-red-500 transition-colors"
+                            >
+                              <Trash2 className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* BIG Calculate button */}
+                    <Button
+                      onClick={calculate}
+                      size="lg"
+                      className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold text-base px-8 w-full shadow-lg shadow-blue-200/50"
+                    >
+                      <Activity className="w-5 h-5 mr-2" />
+                      Calculate my fatigue score
+                    </Button>
+                  </>
+                ) : (
+                  <div className="bg-[#f8fafc] rounded-xl border border-[#e2e8f0] p-8 text-center">
+                    <Calendar className="w-8 h-8 text-[#94a3b8] mx-auto mb-2" />
+                    <p className="text-sm text-[#64748b]">No shifts yet. Tap dates on the calendar above to build your rota.</p>
+                  </div>
+                )}
+
+                {icsErrors.length > 0 && (
+                  <div className="mt-3 p-3 bg-amber-50 border border-amber-200/50 rounded-lg">
+                    <p className="text-xs font-semibold text-amber-600 mb-1">Parse warnings</p>
+                    <ul className="text-xs text-amber-700 space-y-0.5">
+                      {icsErrors.slice(0, 5).map((e, i) => (
+                        <li key={i}>{e}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {parseSummary && (
+                  <div className="mt-2 text-xs text-[#64748b] text-center">
+                    Parsed {parseSummary.parsed} shifts from rota file
+                    {parseSummary.failed > 0 && ` (${parseSummary.failed} skipped)`}
+                  </div>
+                )}
+
+                {error && (
+                  <div className="mt-4 p-4 bg-red-50 border border-red-200/50 rounded-xl text-sm text-red-700 text-center">
+                    {error}
+                  </div>
                 )}
               </div>
-
-              <div className="bg-white rounded-xl border border-[#e2e8f0] max-h-60 overflow-y-auto">
-                {shifts.map((s) => {
-                  const st = SHIFT_TYPES.find(t => t.code === s.shiftCode);
-                  return (
-                    <div key={s.date} className="flex items-center justify-between px-4 py-2.5 border-b border-[#e2e8f0] last:border-b-0 text-sm">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs text-[#64748b] w-24">{s.date}</span>
-                        <span
-                          className="px-2 py-0.5 rounded text-[11px] font-semibold text-white"
-                          style={{ backgroundColor: st?.color || '#64748b' }}
-                        >
-                          {st?.short || s.shiftCode}
-                        </span>
-                      </div>
-                      <button
-                        onClick={() => removeShift(s.date)}
-                        className="text-[#94a3b8] hover:text-red-500 transition-colors"
-                      >
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {icsErrors.length > 0 && (
-                <div className="mt-3 p-3 bg-amber-50 border border-amber-200/50 rounded-lg">
-                  <p className="text-xs font-semibold text-amber-600 mb-1">Parse warnings</p>
-                  <ul className="text-xs text-amber-700 space-y-0.5">
-                    {icsErrors.slice(0, 5).map((e, i) => (
-                      <li key={i}>{e}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {parseSummary && (
-                <div className="mt-2 text-xs text-[#64748b] text-center">
-                  Parsed {parseSummary.parsed} shifts from rota file
-                  {parseSummary.failed > 0 && ` (${parseSummary.failed} skipped)`}
-                </div>
-              )}
-            </div>
+            </>
           )}
 
-          {error && (
-            <div className="max-w-md mx-auto mb-6 p-3 bg-red-50 border border-red-200/50 rounded-lg text-sm text-red-700 text-center">
-              {error}
-            </div>
-          )}
-
-          {/* ===== RESULTS ===== */}
-          {results && tab === 'results' && shifts.length > 0 && (
+          {/* ===== PHASE 3: RESULTS ===== */}
+          {results && phase === 'results' && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -880,20 +803,79 @@ export default function FatigueScoreContent() {
                 </div>
               </div>
 
-              {/* CTA */}
-              <div className="text-center bg-gradient-to-br from-[#eff6ff] to-white rounded-2xl border border-[#e2e8f0] p-8 mb-8">
-                <h3 className="font-heading text-xl font-bold text-foreground mb-2">
-                  Want the full picture?
-                </h3>
-                <p className="text-sm text-[#475569] mb-4 max-w-sm mx-auto">
-                  Shiftlyx tracks your fatigue over time, suggests optimisations, and helps coordinate with your partner.
-                </p>
-                <Link href="/waitlist">
+              {/* How this score works (collapsible) */}
+              <details className="bg-white rounded-2xl border border-[#e2e8f0] overflow-hidden mb-4 group">
+                <summary className="px-6 py-4 font-semibold text-sm text-foreground cursor-pointer hover:bg-[#f8fafc] transition-colors list-none flex items-center justify-between">
+                  <span>How this score works</span>
+                  <ChevronRight className="w-4 h-4 text-[#94a3b8] group-open:rotate-90 transition-transform" />
+                </summary>
+                <div className="px-6 pb-6 space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    <div className="bg-[#f8fafc] rounded-lg p-4 border border-[#e2e8f0]">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-base">📅</span>
+                        <h4 className="font-semibold text-sm text-foreground">Consecutive Work Days</h4>
+                      </div>
+                      <p className="text-xs text-[#64748b]">Penalty after day 3. Each extra day compounds fatigue.</p>
+                    </div>
+                    <div className="bg-[#f8fafc] rounded-lg p-4 border border-[#e2e8f0]">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-base">🌙</span>
+                        <h4 className="font-semibold text-sm text-foreground">Night Clustering</h4>
+                      </div>
+                      <p className="text-xs text-[#64748b]">Penalty after night 2. Packed nights disrupt circadian rhythm.</p>
+                    </div>
+                    <div className="bg-[#f8fafc] rounded-lg p-4 border border-[#e2e8f0]">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-base">⏱️</span>
+                        <h4 className="font-semibold text-sm text-foreground">Short Recovery</h4>
+                      </div>
+                      <p className="text-xs text-[#64748b]">&lt;11h between shifts = +10 per incident.</p>
+                    </div>
+                    <div className="bg-[#f8fafc] rounded-lg p-4 border border-[#e2e8f0]">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-base">🔄</span>
+                        <h4 className="font-semibold text-sm text-foreground">Circadian Disruption</h4>
+                      </div>
+                      <p className="text-xs text-[#64748b]">Night→day flips. +9 per flip.</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="rounded-lg p-3 text-center bg-green-50 border border-green-200/50">
+                      <div className="w-5 h-5 rounded-full bg-[#10b981] mx-auto mb-1" />
+                      <p className="font-semibold text-xs text-foreground">Low 0–30</p>
+                      <p className="text-[10px] text-[#64748b]">Sustainable</p>
+                    </div>
+                    <div className="rounded-lg p-3 text-center bg-amber-50 border border-amber-200/50">
+                      <div className="w-5 h-5 rounded-full bg-[#f59e0b] mx-auto mb-1" />
+                      <p className="font-semibold text-xs text-foreground">Moderate 31–60</p>
+                      <p className="text-[10px] text-[#64748b]">High demand</p>
+                    </div>
+                    <div className="rounded-lg p-3 text-center bg-red-50 border border-red-200/50">
+                      <div className="w-5 h-5 rounded-full bg-[#ef4444] mx-auto mb-1" />
+                      <p className="font-semibold text-xs text-foreground">High 61–100</p>
+                      <p className="text-[10px] text-[#64748b]">Critical strain</p>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              {/* Check another + App CTA */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
+                <Button
+                  onClick={() => { setPhase('input'); setResults(null); setShifts([]); setIcsErrors([]); setParseSummary(null); }}
+                  variant="outline"
+                  size="lg"
+                  className="border-[#cbd5e1] text-[#475569] w-full sm:w-auto"
+                >
+                  Check another rota
+                </Button>
+                <Link href="/waitlist" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50"
+                    className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50 w-full sm:w-auto"
                   >
-                    Join waitlist →
+                    Get the app — join waitlist →
                   </Button>
                 </Link>
               </div>
@@ -901,100 +883,6 @@ export default function FatigueScoreContent() {
           )}
         </div>
       </section>
-
-      {/* ===== SELL THE APP ===== */}
-      <section className="py-20 bg-white border-t border-[#e2e8f0]">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
-              THE FULL APP
-            </Badge>
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-4">
-              This is just the score. The app does everything else.
-            </h2>
-            <p className="text-[#475569] max-w-2xl mx-auto">
-              The fatigue score validator is a free tool. The Shiftlyx app takes your rota and turns it into 
-              a complete shift management system — built specifically for NHS and shift workers.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {/* AI Voice Planner */}
-            <div className="bg-[#f8fafc] rounded-xl p-5 border border-[#e2e8f0]">
-              <div className="w-10 h-10 rounded-lg bg-[#eff6ff] flex items-center justify-center text-lg mb-3">🎤</div>
-              <h3 className="font-semibold text-foreground text-sm mb-1">AI Voice Planner</h3>
-              <p className="text-xs text-[#64748b] leading-relaxed">
-                Speak naturally: &ldquo;Plan my month with more nights.&rdquo; AI generates ranked shift patterns. Two taps to choose.
-              </p>
-            </div>
-
-            {/* Fatigue Tracking */}
-            <div className="bg-[#f8fafc] rounded-xl p-5 border border-[#e2e8f0]">
-              <div className="w-10 h-10 rounded-lg bg-[#fef2f2] flex items-center justify-center text-lg mb-3">📊</div>
-              <h3 className="font-semibold text-foreground text-sm mb-1">Long-term Fatigue Tracking</h3>
-              <p className="text-xs text-[#64748b] leading-relaxed">
-                Your fatigue score over time. See trends, spot patterns, and know when you&apos;re pushing too hard.
-              </p>
-            </div>
-
-            {/* Partner Sync */}
-            <div className="bg-[#f8fafc] rounded-xl p-5 border border-[#e2e8f0]">
-              <div className="w-10 h-10 rounded-lg bg-[#fdf2f8] flex items-center justify-center text-lg mb-3">💑</div>
-              <h3 className="font-semibold text-foreground text-sm mb-1">Partner Sync</h3>
-              <p className="text-xs text-[#64748b] leading-relaxed">
-                Link with your partner. Coordinate childcare, avoid overlapping heavy shifts, protect your time together.
-              </p>
-            </div>
-
-            {/* Shift Strategies */}
-            <div className="bg-[#f8fafc] rounded-xl p-5 border border-[#e2e8f0]">
-              <div className="w-10 h-10 rounded-lg bg-[#fffbeb] flex items-center justify-center text-lg mb-3">🎯</div>
-              <h3 className="font-semibold text-foreground text-sm mb-1">5 Shift Strategies</h3>
-              <p className="text-xs text-[#64748b] leading-relaxed">
-                Income Optimised, Health First, Shift Stacked, Balanced, Annual Leave Maximised. Pick your priority.
-              </p>
-            </div>
-
-            {/* Recovery Coach */}
-            <div className="bg-[#f8fafc] rounded-xl p-5 border border-[#e2e8f0]">
-              <div className="w-10 h-10 rounded-lg bg-[#f0fdf4] flex items-center justify-center text-lg mb-3">😴</div>
-              <h3 className="font-semibold text-foreground text-sm mb-1">Recovery Coach</h3>
-              <p className="text-xs text-[#64748b] leading-relaxed">
-                Smart notifications for sleep, hydration, and rest. Never buzzes during shifts or after nights.
-              </p>
-            </div>
-
-            {/* Preference Learning */}
-            <div className="bg-[#f8fafc] rounded-xl p-5 border border-[#e2e8f0]">
-              <div className="w-10 h-10 rounded-lg bg-[#f5f3ff] flex items-center justify-center text-lg mb-3">🧠</div>
-              <h3 className="font-semibold text-foreground text-sm mb-1">Preference Learning</h3>
-              <p className="text-xs text-[#64748b] leading-relaxed">
-                Every rota you accept teaches Shiftlyx what matters to you. It gets better the more you use it.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bottom CTA */}
-      <section className="py-20 bg-gradient-to-b from-[#eff6ff] to-transparent">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-4">
-            Two minutes to your first fatigue score.
-          </h2>
-          <p className="text-[#475569] text-lg mb-8 max-w-xl mx-auto">
-            AI voice planning, partner sync, recovery coaching, fatigue tracking — all in one app. Enter your email to register for early access.
-          </p>
-          <Link href="/waitlist">
-            <Button
-              size="lg"
-              className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 shadow-lg shadow-amber-200/50"
-            >
-              Join waitlist →
-            </Button>
-          </Link>
-        </div>
-      </section>
-    </div>
+</div>
   );
 }
