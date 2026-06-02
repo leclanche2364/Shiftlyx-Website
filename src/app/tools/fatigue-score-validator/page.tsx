@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       },
     ],
     siteName: "Shiftlyx",
-    locale: "en_GB",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
@@ -50,8 +50,8 @@ const features = [
     desc: "After a night shift stretch, Shiftlyx builds a sleep window and counts down your recovery hours. Persona-aware, tailored to your shift type.",
   },
   {
-    title: "💬 Voice Entries",
-    desc: "'Had a rough night, felt exhausted by hour 10' — log feelings with your voice. Shiftlyx connects the dots between how you feel and your shift patterns.",
+    title: "😴 Sleep Window Countdown",
+    desc: "After night shifts, Shiftlyx sets a personalised sleep window. A live countdown timer shows you exactly when to rest and how much recovery time you have left.",
   },
   {
     title: "📊 Swap Preview",
@@ -100,7 +100,7 @@ export default function FatigueScorePage() {
               </Button>
             </Link>
             <p className="text-xs text-[#94a3b8] mt-3">
-              iOS and Android. NHS-facing and built for shift workers, by shift workers.
+              iOS and Android. Built for shift workers, by shift workers.
             </p>
           </div>
         </div>

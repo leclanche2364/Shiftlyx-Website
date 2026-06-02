@@ -281,7 +281,7 @@ export default function FatigueScoreContent() {
       const result = parseICS(content);
 
       if (result.shifts.length === 0 && result.parsed === 0) {
-        setError(`Couldn't find any shifts in that file. ${result.errors[0] || 'Make sure it\'s a valid NHS rota export.'}`);
+        setError(`Couldn't find any shifts in that file. ${result.errors[0] || 'Make sure it\'s a valid rota export (e.g. from HealthRota or your scheduling system).'}`);
         return;
       }
 
