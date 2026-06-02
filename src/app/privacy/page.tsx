@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 
-const lastUpdated = "19 May 2026";
+const lastUpdated = "02 June 2026";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Shiftlyx privacy policy — how we collect, use, and protect your data in compliance with UK GDPR.",
+    "Shiftlyx privacy policy — how we collect, use, and protect your data in compliance with UK GDPR, CCPA, and other applicable privacy laws.",
     alternates: {
     canonical: "https://www.shiftlyx.com/privacy",
   },
@@ -51,6 +51,10 @@ export default function PrivacyPage() {
 
             <p>
               We take your privacy seriously. Shiftlyx was built with privacy by design and by default. We collect only what we need to make the App work, and we never sell your data.
+            </p>
+
+            <p>
+              If you are a resident of California, Virginia, Colorado, Connecticut, Utah, or another US state with privacy laws, please see <a href="#us-privacy-rights" className="text-[#2563eb] hover:underline">Section 9 (US Privacy Rights)</a> for additional information about your rights.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
@@ -111,6 +115,13 @@ export default function PrivacyPage() {
               <li>Contacts list (we do not access your device contacts)</li>
               <li>Biometric data (fingerprint, face recognition data)</li>
             </ul>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              2.4 Health Data You Choose to Connect
+            </h3>
+            <p>
+              With your permission, we may read <strong>sleep data</strong> from Apple Health (HealthKit) on iOS devices for the purpose of improving your fatigue and recovery analysis. This is entirely optional and you control this access at all times through your device Health settings. See <a href="#apple-healthkit" className="text-[#2563eb] hover:underline">Section 6 (Apple HealthKit &amp; Health Data)</a> for full details.
+            </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
               3. Why We Collect Your Data and Our Lawful Basis
@@ -204,7 +215,56 @@ export default function PrivacyPage() {
             </ul>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              6. Third-Party Processors
+              6. Apple HealthKit &amp; Health Data
+            </h2>
+            <p id="apple-healthkit">
+              Shiftlyx optionally reads <strong>sleep data</strong> from <strong>Apple HealthKit (Apple Health)</strong> to improve the accuracy of your fatigue and recovery analysis. This section explains how we handle health data in compliance with Apple&apos;s App Store Review Guidelines (Section 5.1.3), UK GDPR, and applicable US privacy laws.
+            </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              6.1 Health Data We Read
+            </h3>
+            <ul className="list-disc pl-6 space-y-1">
+              <li><strong>Sleep data only:</strong> We read time-in-bed and asleep time intervals. We do <strong>not</strong> read heart rate, blood pressure, blood glucose, or any other health metrics.</li>
+              <li><strong>Read-only access:</strong> Shiftlyx requests read-only permission. We never write, modify, or delete data from Apple Health or Health Connect.</li>
+              <li><strong>Optional and revocable:</strong> You control this permission at any time through your device&apos;s Health settings. Revoking access has no impact on other App features.</li>
+              <li><strong>Prior explanation:</strong> Before the system HealthKit permission prompt appears, we explain exactly what data we read and why, so you can make an informed choice.</li>
+            </ul>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              6.2 How We Use Health Data
+            </h3>
+            <ul className="list-disc pl-6 space-y-1">
+              <li><strong>Fatigue and recovery analysis only:</strong> Sleep data is used exclusively to personalise your fatigue score and recovery context calculations.</li>
+              <li><strong>No advertising or marketing:</strong> Health data is <strong>never</strong> used for advertising, marketing, data mining, or any other purpose.</li>
+              <li><strong>No third-party sharing:</strong> Health data read from Apple HealthKit is processed on-device where possible. Aggregated metrics (e.g., sleep efficiency) may be synced to our servers for cross-device use, but raw sleep timestamps remain on-device. Health data is <strong>never</strong> sold, shared, or disclosed to third parties for any purpose.</li>
+              <li><strong>No iCloud backup:</strong> Health data accessed through HealthKit is not stored in iCloud.</li>
+              <li><strong>No analytics:</strong> Health data is not included in analytics, session recordings, or crash reports.</li>
+            </ul>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              6.3 Data Integrity
+            </h3>
+            <p>
+              We process health data as provided by Apple HealthKit. We do not fabricate, alter, or write inaccurate data to HealthKit. Our fatigue analysis is transparent and explainable — you can review how sleep data affects your scores within the App.
+            </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              6.4 Compliance with Apple Guidelines (5.1.3)
+            </h3>
+            <p>
+              Shiftlyx complies with Apple&apos;s App Store Review Guidelines for HealthKit and health data:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>Health data is not used for advertising, marketing, or data mining.</li>
+              <li>Health data is not sold or disclosed to third parties.</li>
+              <li>Health data is not stored in iCloud.</li>
+              <li>We do not write false or inaccurate data to Apple HealthKit.</li>
+              <li>HealthKit access is not gated behind a paywall — the permission prompt is available to all users. Enhanced fatigue analysis using sleep data is a Premium feature.</li>
+            </ul>
+
+            <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
+              7. Third-Party Processors
             </h2>
             <p>
               We use the following third-party service providers who process your data on our behalf. Each processor is contractually bound to comply with UK GDPR and may only process data for the purposes we specify:
@@ -273,7 +333,7 @@ export default function PrivacyPage() {
             </div>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              7. International Data Transfers
+              8. International Data Transfers
             </h2>
             <p>
               Where we transfer your data to processors outside the UK, we ensure appropriate safeguards are in place. Specifically:
@@ -285,7 +345,7 @@ export default function PrivacyPage() {
             </ul>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              8. Your Rights Under UK GDPR
+              9. Your Rights Under UK GDPR
             </h2>
             <p>
               You have the following rights regarding your personal data. You can exercise most of these directly through the App settings, or by contacting us:
@@ -338,8 +398,68 @@ export default function PrivacyPage() {
               To exercise any of these rights, contact us at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a>. We will respond within one month.
             </p>
 
+            <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4" id="us-privacy-rights">
+              10. US Privacy Rights (CCPA/CPRA &amp; US State Laws)
+            </h2>
+            <p>
+              If you are a resident of <strong>California</strong>, <strong>Virginia</strong>, <strong>Colorado</strong>, <strong>Connecticut</strong>, or <strong>Utah</strong>, you may have additional rights under your state&apos;s privacy laws. This section describes those rights and how to exercise them.
+            </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              10.1 California Consumer Privacy Act (CCPA/CPRA)
+            </h3>
+            <p>
+              If you are a California resident, the California Consumer Privacy Act (CCPA), as amended by the California Privacy Rights Act (CPRA), provides you with the following rights:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li><strong>Right to Know:</strong> You have the right to request that we disclose the categories and specific pieces of personal information we have collected about you, the sources of that information, the business purpose for collecting it, and the categories of third parties with whom we share it.</li>
+              <li><strong>Right to Delete:</strong> You have the right to request the deletion of personal information we have collected from you, subject to certain exceptions.</li>
+              <li><strong>Right to Correct:</strong> You have the right to request correction of inaccurate personal information.</li>
+              <li><strong>Right to Opt-Out:</strong> We do <strong>not</strong> sell your personal information as defined by the CCPA. We do <strong>not</strong> share personal information for cross-context behavioural advertising. You may opt out of analytics tracking at any time through the App settings.</li>
+              <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising any of your CCPA rights.</li>
+              <li><strong>Right to Limit Use of Sensitive Personal Information:</strong> We only collect sleep data (a category of sensitive personal information under California law) with your explicit consent via Apple HealthKit&apos;s permission prompt. This data is used solely for fatigue analysis and is not subject to profiling that produces legal or similarly significant effects.</li>
+            </ul>
+            <p>
+              To exercise any of these rights, please contact us at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a>. We will respond within 45 days as required by the CCPA. You may also designate an authorised agent to make a request on your behalf.
+            </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              10.2 Virginia Consumer Data Protection Act (VCDPA)
+            </h3>
+            <p>
+              Virginia residents have the right to:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>Confirm whether we process their personal data and access that data.</li>
+              <li>Correct inaccuracies in their personal data.</li>
+              <li>Delete personal data provided by or obtained about them.</li>
+              <li>Obtain a copy of their personal data in a portable format.</li>
+              <li>Opt out of the processing of personal data for targeted advertising, sale of personal data, or profiling in furtherance of decisions that produce legal or similarly significant effects. We do not engage in these activities.</li>
+            </ul>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              10.3 Colorado, Connecticut, and Utah Privacy Rights
+            </h3>
+            <p>
+              Residents of Colorado, Connecticut, and Utah have similar rights under their respective privacy laws (CPA, CTDPA, and UCPA), including the right to access, correct, delete, and obtain a copy of their personal data. These rights can be exercised by contacting us at the email address below.
+            </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              10.4 California &quot;Shine the Light&quot; Law (Civil Code Section 1798.83)
+            </h3>
+            <p>
+              California residents may also request information regarding our disclosure of personal information to third parties for their direct marketing purposes. We do not disclose personal information to third parties for direct marketing purposes.
+            </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              10.5 Do Not Track
+            </h3>
+            <p>
+              We do not currently respond to browser &quot;Do Not Track&quot; (DNT) signals. On the App, we only use analytics with your consent via the App Tracking Transparency prompt on iOS and through your App settings on Android.
+            </p>
+
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              9. Cookies, Tracking, and Analytics
+              11. Cookies, Tracking, and Analytics
             </h2>
             <p>
               The App itself does not use cookies, but we use the following tracking and analytics technologies:
@@ -356,28 +476,28 @@ export default function PrivacyPage() {
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              10. Children&apos;s Privacy
+              12. Children&apos;s Privacy
             </h2>
             <p>
               Shiftlyx is not intended for use by individuals under the age of 18. We do not knowingly collect personal data from children. If you believe a child has provided us with personal data, please contact us immediately at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a>.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              11. AI Voice Planner and OpenAI
+              13. AI Voice Planner and OpenAI
             </h2>
             <p>
               The AI Voice Planner feature uses OpenAI&apos;s Realtime API via WebRTC for natural language shift planning. Voice conversations are processed in real-time and are <strong>not</strong> used to train OpenAI models (as per OpenAI&apos;s API data usage policy). We do not send your shift data, fatigue scores, or personal information to OpenAI as part of this feature beyond what you voluntarily say during a voice planning session.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              12. Changes to This Privacy Policy
+              14. Changes to This Privacy Policy
             </h2>
             <p>
               We may update this Privacy Policy from time to time. We will notify you of material changes through the App or by email. We encourage you to review this policy periodically. The date of the latest revision is shown at the top of this page.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              13. How to Make a Complaint
+              15. How to Make a Complaint
             </h2>
             <p>
               If you have concerns about how we handle your personal data, please contact us first — we will do our best to resolve the issue:
@@ -395,7 +515,7 @@ export default function PrivacyPage() {
             </ul>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              14. Contact Us
+              16. Contact Us
             </h2>
             <p>
               If you have any questions about this Privacy Policy or how we handle your data, please contact us:

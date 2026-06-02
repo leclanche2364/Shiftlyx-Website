@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 
-const lastUpdated = "19 May 2026";
+const lastUpdated = "02 June 2026";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -286,11 +286,12 @@ export default function TermsPage() {
               Your use of the App is governed by our <Link href="/privacy" className="text-[#2563eb] hover:underline">Privacy Policy</Link>, which forms part of these Terms. The Privacy Policy sets out, in accordance with the UK General Data Protection Regulation (UK GDPR):
             </p>
             <ul className="list-disc pl-6 space-y-1">
-              <li><strong>Lawful basis for processing:</strong> We process personal data under the lawful bases set out in Article 6 of UK GDPR, including contract performance, legitimate interests, consent, and legal obligation.</li>
-              <li><strong>Your rights:</strong> You have rights including access, rectification, erasure, restriction, portability, and objection — exercisable through the App settings or by contacting us.</li>
+              <li><strong>UK GDPR:</strong> We process personal data under the lawful bases set out in Article 6 of UK GDPR, including contract performance, legitimate interests, consent, and legal obligation. Your rights under UK GDPR include access, rectification, erasure, restriction, portability, and objection.</li>
+              <li><strong>US privacy rights:</strong> If you are a resident of California, Virginia, Colorado, Connecticut, or Utah, you have additional rights under applicable US state privacy laws, including the California Consumer Privacy Act (CCPA/CPRA), and the rights to know, delete, correct, and opt out — all of which are described in our Privacy Policy.</li>
+              <li><strong>Health data:</strong> If you choose to connect Apple HealthKit (Apple Health) or Google Health Connect, sleep data is used solely for personalised fatigue and recovery analysis. Health data is never used for advertising, marketing, or data mining, and is never sold to third parties — in full compliance with Apple App Store Review Guidelines Section 5.1.3.</li>
               <li><strong>Data retention:</strong> We retain your personal data only as long as necessary to provide the App services. Data is permanently erased within 15 business days of account deletion.</li>
               <li><strong>International transfers:</strong> Where data is transferred outside the UK, we ensure appropriate safeguards are in place, including Standard Contractual Clauses approved by the ICO.</li>
-              <li><strong>Third-party processors:</strong> We use Supabase, Vercel, PostHog, and OpenAI as data processors, each contractually bound to comply with UK GDPR. See the Privacy Policy for full details.</li>
+              <li><strong>Third-party processors:</strong> We use Supabase, Vercel, PostHog, and OpenAI as data processors, each contractually bound to comply with UK GDPR and, where applicable, US data protection laws via Standard Contractual Clauses. See the Privacy Policy for full details.</li>
               <li><strong>Analytics:</strong> We use PostHog for anonymised analytics. No personal data is shared with analytics providers.</li>
               <li><strong>Deletion rights:</strong> You can delete your account and all associated personal data at any time through the App settings.</li>
             </ul>
