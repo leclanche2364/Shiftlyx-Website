@@ -119,12 +119,35 @@ export default function WaitlistPage() {
   const [copied, setCopied] = useState(false);
   const [referralCount, setReferralCount] = useState<number | null>(null);
   const [checkingReferral, setCheckingReferral] = useState(false);
+  const [savedReferralCode, setSavedReferralCode] = useState<string | null>(null);
+  const [savedReferralCount, setSavedReferralCount] = useState<number | null>(null);
+  const [checkingSaved, setCheckingSaved] = useState(false);
+  const [savedReferralCopied, setSavedReferralCopied] = useState(false);
+  const [savedReferralDismissed, setSavedReferralDismissed] = useState(false);
 
   // Grab ?ref=CODE from URL on mount
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const ref = params.get("ref");
     if (ref) setReferrerCode(ref);
+  }, []);
+
+  // Check localStorage for saved referral code on page load
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("shiftlyx_ref_code");
+      if (saved) {
+        setSavedReferralCode(saved);
+        setCheckingSaved(true);
+        fetch(`/api/referrals?code=${saved}`)
+          .then(r => r.json())
+          .then(d => setSavedReferralCount(d.count))
+          .catch(() => setSavedReferralCount(0))
+          .finally(() => setCheckingSaved(false));
+      }
+    } catch (e) {
+      // localStorage not available
+    }
   }, []);
 
   // Probe answers — null = not answered
@@ -174,6 +197,9 @@ export default function WaitlistPage() {
       const suffix = Math.random().toString(36).substring(2, 4);
       const code = `${baseCode}-${suffix}`;
       setMyReferralCode(code);
+      // Persist for returning visitors
+      localStorage.setItem("shiftlyx_ref_code", code);
+      setSavedReferralCode(code);
 
       // Save their referral code
       fetch("/api/waitlist", {
@@ -257,6 +283,50 @@ export default function WaitlistPage() {
       <section className="pb-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-md mx-auto">
+            {/* ── Persistent referral progress (from localStorage) ── */}
+            {!submitted && savedReferralCode && !savedReferralDismissed && (
+              <div className="bg-gradient-to-r from-[#f0fdf4] to-[#ecfdf5] border border-[#10b981]/20 rounded-xl p-4 mb-6 shadow-sm">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-semibold text-foreground flex items-center gap-2">
+                    🔄 Your referral progress
+                  </span>
+                  <span className={`text-sm font-bold ${(savedReferralCount ?? 0) >= 3 ? "text-[#10b981]" : "text-[#f59e0b]"}`}>
+                    {checkingSaved ? "..." : `${savedReferralCount ?? 0}/3`}
+                  </span>
+                </div>
+                <div className="flex gap-2 mb-2">
+                  {[0, 1, 2].map(i => (
+                    <div
+                      key={i}
+                      className={`flex-1 h-2 rounded-full ${i < (savedReferralCount ?? 0) ? "bg-[#10b981]" : "bg-[#e2e8f0]"}`}
+                    />
+                  ))}
+                </div>
+                <div className="flex items-center justify-between">
+                  <p className="text-xs text-[#64748b]">
+                    {(savedReferralCount ?? 0) >= 3
+                      ? "🎉 You've qualified! We'll move you up the queue."
+                      : `${3 - (savedReferralCount ?? 0)} more to go`}
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText(`https://shiftlyx.com/waitlist?ref=${savedReferralCode}`);
+                        setSavedReferralCopied(true);
+                        setTimeout(() => setSavedReferralCopied(false), 2000);
+                      }}
+                      className="text-xs font-semibold text-[#009688] underline"
+                    >
+                      {savedReferralCopied ? "Copied!" : "Copy link"}
+                    </button>
+                    <button onClick={() => setSavedReferralDismissed(true)} className="text-xs text-[#94a3b8] hover:text-[#64748b]">
+                      ✕
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {submitted ? (
               <motion.div
                 className="bg-white rounded-2xl border border-[#e2e8f0] p-8 text-center shadow-sm"
