@@ -49,6 +49,7 @@ async function writeToNotion(data: {
   name?: string;
   role?: string;
   features?: string[];
+  referrer_code?: string;
 }) {
   if (!NOTION_API_KEY) {
     console.warn("NOTION_API_KEY not configured, skipping Notion write");
@@ -84,6 +85,10 @@ async function writeToNotion(data: {
     properties["Anticipated Features"] = {
       multi_select: data.features.map((f: string) => ({ name: f })),
     };
+  }
+
+  if (data.referrer_code) {
+    properties["Referral Code"] = { rich_text: [{ text: { content: data.referrer_code } }] };
   }
 
   const response = await fetch("https://api.notion.com/v1/pages", {
@@ -176,7 +181,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { email, name, role, features } = body;
+    const { email, name, role, features, referrer_code } = body;
 
     if (!email || typeof email !== "string") {
       return NextResponse.json(
@@ -194,11 +199,14 @@ export async function POST(request: NextRequest) {
     if (features && Array.isArray(features) && features.length > 0) {
       attributes.FEATURES = features.join(", ");
     }
+    if (referrer_code) {
+      attributes.REFERRER_CODE = referrer_code;
+    }
 
     await upsertBrevoContact(email, attributes);
 
     // 2. Save to Notion (fire-and-forget — don't block the response)
-    writeToNotion({ email, name, role, features }).catch((err) =>
+    writeToNotion({ email, name, role, features, referrer_code }).catch((err) =>
       console.error("Notion write error:", err)
     );
 

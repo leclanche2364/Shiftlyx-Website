@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import WaitlistCounter from "@/components/waitlist-counter";
 import {
   Accordion,
   AccordionItem,
@@ -113,6 +114,14 @@ export default function WaitlistPage() {
   const [probeLoading, setProbeLoading] = useState(false);
   const [error, setError] = useState("");
   const [probeError, setProbeError] = useState("");
+  const [referrerCode, setReferrerCode] = useState("");
+
+  // Grab ?ref=CODE from URL on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get("ref");
+    if (ref) setReferrerCode(ref);
+  }, []);
 
   // Probe answers — null = not answered
   const [nightAffinity, setNightAffinity] = useState<string | null>(null);
@@ -145,7 +154,7 @@ export default function WaitlistPage() {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, name, role, features }),
+        body: JSON.stringify({ email, name, role, features, referrer_code: referrerCode }),
       });
 
       if (!res.ok) {
@@ -203,18 +212,21 @@ export default function WaitlistPage() {
   return (
     <div>
       {/* ── HERO ── */}
-      <section className="pt-24 pb-12 bg-gradient-to-b from-[#eff6ff] to-transparent">
+      <section className="pt-20 pb-8 bg-gradient-to-b from-[#eff6ff] to-transparent">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="mb-4 text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
-            Coming Soon
+          <Badge className="mb-4 text-xs font-medium text-[#f59e0b] border-[#f59e0b]/20 bg-[#fffbeb]">
+            🎯 3 Months Free — First 1,000 Only
           </Badge>
           <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4">
-            Shiftlyx is free. Always.
+            Shiftlyx is a must-have for shift workers.
           </h1>
-          <p className="text-base sm:text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed">
-            For shift workers tired of guessing. Fatigue score, voice planner, recovery coach — all included at no cost.
-            Premium from £3.99/month. Enter your email and be first to try it.
+          <p className="text-base sm:text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed mb-6">
+            First 1,000 signups get 3 months free. Fatigue score, voice planner, recovery coach.
+            Refer 3 colleagues to skip the waitlist.
           </p>
+
+          {/* Fake waitlist counter */}
+          <WaitlistCounter />
         </div>
       </section>
 
