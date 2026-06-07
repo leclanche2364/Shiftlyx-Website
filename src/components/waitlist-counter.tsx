@@ -57,24 +57,24 @@ export default function WaitlistCounter({
   return (
     <div className="w-full max-w-lg mx-auto space-y-4">
       {/* ── COUNTDOWN ── */}
-      <div className="bg-gradient-to-br from-[#0f172a] via-[#1a1a3e] to-[#0d0d2b] rounded-2xl p-6 shadow-[0_0_30px_rgba(0,150,136,0.15)] border border-[#009688]/40">
-        <div className="text-center mb-4">
-          <div className="inline-flex items-center gap-2 bg-[#009688]/20 px-4 py-1.5 rounded-full border border-[#009688]/30">
-            <span className="w-2 h-2 rounded-full bg-[#00BFA5] animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#AAE0D5]">
+      <div className="bg-gradient-to-br from-[#0f172a] via-[#1a1a3e] to-[#0d0d2b] rounded-2xl p-8 shadow-[0_0_40px_rgba(0,150,136,0.2)] border border-[#009688]/40">
+        <div className="text-center mb-5">
+          <div className="inline-flex items-center gap-2 bg-[#009688]/20 px-5 py-2 rounded-full border border-[#009688]/30">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#00BFA5] animate-pulse" />
+            <span className="text-xs font-bold uppercase tracking-[0.15em] text-[#AAE0D5]">
               Early Access closes
             </span>
           </div>
-          <h3 className="font-heading text-lg font-bold text-white mt-3 mb-1">
+          <h3 className="font-heading text-2xl font-extrabold text-white mt-4 mb-2">
             3 Months Free — First to Join
           </h3>
-          <p className="text-xs text-[#94a3b8]">
+          <p className="text-sm font-medium text-[#94a3b8]">
             Be among the first 1,000 shift workers to get Shiftlyx free. No risk. No catch.
           </p>
         </div>
 
         {/* Big countdown */}
-        <div className="flex justify-center gap-3 mb-5">
+        <div className="flex justify-center gap-4 mb-5">
           {[
             { label: "Days", value: timeLeft.days },
             { label: "Hours", value: timeLeft.hours },
@@ -82,12 +82,12 @@ export default function WaitlistCounter({
             { label: "Secs", value: timeLeft.seconds },
           ].map((unit) => (
             <div key={unit.label} className="text-center">
-              <div className="bg-[#1e1e4a]/80 rounded-xl px-4 py-3 min-w-[60px] border border-[#009688]/20 shadow-inner">
-                <span className="text-2xl sm:text-3xl font-bold text-white tabular-nums block leading-none">
+              <div className="bg-[#1e1e4a]/90 rounded-xl px-5 py-4 min-w-[72px] border border-[#009688]/30 shadow-inner">
+                <span className="text-3xl sm:text-4xl font-extrabold text-white tabular-nums block leading-none">
                   {String(unit.value).padStart(2, "0")}
                 </span>
               </div>
-              <span className="text-[10px] font-medium uppercase tracking-wider text-[#64748b] mt-1.5 block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#64748b] mt-2 block">
                 {unit.label}
               </span>
             </div>
@@ -96,13 +96,13 @@ export default function WaitlistCounter({
 
         {/* Progress bar */}
         <div className="relative">
-          <div className="flex justify-between text-xs mb-1.5">
-            <span className="text-[#94a3b8] font-medium">
-              <span className="text-white font-bold tabular-nums">{displayCount.toLocaleString()}</span> joined
+          <div className="flex justify-between text-sm mb-2">
+            <span className="text-[#94a3b8] font-semibold">
+              <span className="text-white font-extrabold tabular-nums text-base">{displayCount.toLocaleString()}</span> joined
             </span>
-            <span className="text-[#f59e0b] font-bold tabular-nums">{spotsLeft} left</span>
+            <span className="text-[#f59e0b] font-extrabold tabular-nums text-base">{spotsLeft} left</span>
           </div>
-          <div className="w-full h-3 bg-[#1e1e4a] rounded-full overflow-hidden border border-[#009688]/20">
+          <div className="w-full h-4 bg-[#1e1e4a] rounded-full overflow-hidden border border-[#009688]/20">
             <div
               className="h-full rounded-full transition-all duration-1000 ease-out relative"
               style={{
@@ -122,13 +122,13 @@ export default function WaitlistCounter({
         </div>
 
         {/* Referral CTA */}
-        <div className="mt-5 pt-4 border-t border-[#009688]/20 text-center">
-          <p className="text-xs text-[#94a3b8] mb-2">
-            Refer 3 colleagues → <span className="text-[#00BFA5] font-semibold">Skip the queue entirely</span>
+        <div className="mt-6 pt-5 border-t border-[#009688]/20 text-center">
+          <p className="text-sm font-semibold text-[#94a3b8] mb-2">
+            Refer 3 colleagues → <span className="text-[#00BFA5] font-bold">Skip the queue entirely</span>
           </p>
-          <div className="inline-flex items-center gap-1.5 bg-[#009688]/10 px-3 py-1.5 rounded-full">
-            <span className="text-[10px] text-[#AAE0D5]">🔗</span>
-            <span className="text-[10px] text-[#AAE0D5] font-mono">
+          <div className="inline-flex items-center gap-2 bg-[#009688]/10 px-4 py-2 rounded-full">
+            <span className="text-xs text-[#AAE0D5]">🔗</span>
+            <span className="text-sm text-[#AAE0D5] font-mono font-semibold">
               shiftlyx.com/waitlist?ref=YOUR_CODE
             </span>
           </div>

@@ -214,13 +214,13 @@ export default function WaitlistPage() {
       {/* ── HERO ── */}
       <section className="pt-20 pb-8 bg-gradient-to-b from-[#eff6ff] to-transparent">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="mb-4 text-xs font-medium text-[#f59e0b] border-[#f59e0b]/20 bg-[#fffbeb]">
+          <Badge className="mb-4 text-sm font-bold text-[#f59e0b] border-[#f59e0b]/20 bg-[#fffbeb]">
             🎯 3 Months Free — First 1,000 Only
           </Badge>
-          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4">
+          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-4">
             Shiftlyx is a must-have for shift workers.
           </h1>
-          <p className="text-base sm:text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed mb-6">
+          <p className="text-lg sm:text-xl font-medium text-[#475569] max-w-2xl mx-auto leading-relaxed mb-6">
             First 1,000 signups get 3 months free. Fatigue score, voice planner, recovery coach.
             Refer 3 colleagues to skip the waitlist.
           </p>
