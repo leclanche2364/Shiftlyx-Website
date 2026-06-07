@@ -2,13 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 // Notion config — reused from waitlist route
 const NOTION_API_KEY = process.env.NOTION_API_KEY;
-const NOTION_DATABASE_ID = "36f32d70-8844-8115-b7c2-cf22d26cad87";
+const NOTION_DATABASE_ID =
+  process.env.NOTION_DATABASE_ID || "36f32d70-8844-8115-b7c2-cf22d26cad87";
 const NOTION_VERSION = "2025-09-03";
-
-// ── Helper: strip UUID dashes ──
-function stripDashes(id: string) {
-  return id.replace(/-/g, "");
-}
 
 // ── GET: Check how many referrals a code has generated ──
 export async function GET(request: NextRequest) {
@@ -31,8 +27,9 @@ export async function GET(request: NextRequest) {
     }
 
     // Query Notion for pages where "Referral Code" rich_text contains this code
+    // NOTE: Use the full UUID with dashes — stripDashes breaks the /v1/databases/:id/query endpoint
     const response = await fetch(
-      `https://api.notion.com/v1/data_sources/${stripDashes(NOTION_DATABASE_ID)}/query`,
+      `https://api.notion.com/v1/databases/${NOTION_DATABASE_ID}/query`,
       {
         method: "POST",
         headers: {
@@ -54,7 +51,10 @@ export async function GET(request: NextRequest) {
     if (!response.ok) {
       const errorBody = await response.text();
       console.error("Notion query error:", response.status, errorBody);
-      throw new Error("Failed to query Notion");
+      return NextResponse.json(
+        { error: "Failed to query referral count" },
+        { status: 502 }
+      );
     }
 
     const data = await response.json();
