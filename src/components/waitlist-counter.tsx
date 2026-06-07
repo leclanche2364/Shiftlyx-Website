@@ -10,14 +10,15 @@ interface WaitlistCounterProps {
 }
 
 export default function WaitlistCounter({
-  baseCount = 847,
+  baseCount = 501,
   cap = 1000,
-  dailyRate = 40,
+  dailyRate = 24,
   targetDate = "2026-07-01T00:00:00+01:00",
 }: WaitlistCounterProps) {
   const [count, setCount] = useState(baseCount);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const [hourlyJoins, setHourlyJoins] = useState(3);
+  const [hourlyJoins, setHourlyJoins] = useState(2);
+  const [liveViewers, setLiveViewers] = useState(97);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -25,23 +26,36 @@ export default function WaitlistCounter({
     // Reference time for the fake counter: June 7 2026 00:00 BST
     const refTime = new Date("2026-06-06T23:00:00Z").getTime();
     const ratePerMs = dailyRate / 86400000;
-    let lastHourCount = 0;
     let hourlyTimer = 0;
 
     const tick = () => {
       const now = Date.now();
-      // Counter
+
+      // Counter — smooth growth with occasional batch bumps
       const elapsed = now - refTime;
-      const fakeGrowth = Math.floor(elapsed * ratePerMs);
-      const newCount = Math.min(baseCount + fakeGrowth, cap);
+      let fakeGrowth = elapsed * ratePerMs;
+
+      // Add occasional batch spike (2-3 joining together)
+      // Use a pseudo-random pattern seeded by time
+      const hr = Math.floor(elapsed / 3600000);
+      const batchMod = (hr * 7 + 13) % 11;
+      if (batchMod < 2) {
+        fakeGrowth += batchMod + 1; // +2 or +3 every few hours
+      }
+
+      const newCount = Math.min(baseCount + Math.floor(fakeGrowth), cap);
       setCount(newCount);
 
-      // Track last-hour joins
+      // Track last-hour joins (fluctuates)
       const hourElapsed = Math.floor(elapsed / 3600000);
       if (hourElapsed !== hourlyTimer) {
         hourlyTimer = hourElapsed;
-        setHourlyJoins(Math.max(1, Math.floor(dailyRate / 8) + Math.floor(Math.random() * 5)));
+        setHourlyJoins(Math.max(1, 2 + Math.floor(Math.sin(hourElapsed * 1.5) * 2 + Math.random() * 2)));
       }
+
+      // Live viewers — oscillates 80-130
+      const viewBase = 95 + Math.sin(elapsed / 10000) * 20 + Math.sin(elapsed / 7000) * 10;
+      setLiveViewers(Math.floor(Math.max(70, viewBase)));
 
       // Countdown
       const target = new Date(targetDate).getTime();
@@ -63,7 +77,7 @@ export default function WaitlistCounter({
   const spotsLeft = Math.max(0, cap - displayCount);
   const spotsPct = (spotsLeft / cap) * 100;
 
-  if (!mounted) return <div className="h-[520px]" />; // prevent hydration mismatch
+  if (!mounted) return <div className="h-[520px]" />;
 
   return (
     <div className="w-full max-w-lg mx-auto space-y-4">
@@ -77,7 +91,7 @@ export default function WaitlistCounter({
           </span>
           <span className="text-[#009688]/40">|</span>
           <span className="flex items-center gap-1">
-            📱 {Math.max(80, Math.floor(dailyRate * 2.5))} viewing now
+            📱 {liveViewers} viewing now
           </span>
         </div>
 
@@ -129,7 +143,7 @@ export default function WaitlistCounter({
         <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-amber-500/10 rounded-xl p-5 border border-amber-500/20 mb-5">
           <div className="flex items-start gap-3">
             <span className="text-2xl mt-0.5">⏩</span>
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
               <p className="text-sm font-bold text-white mb-1">
                 Refer 3 colleagues → skip the queue entirely
               </p>
@@ -137,9 +151,9 @@ export default function WaitlistCounter({
                 Everyone who signs up gets 3 months free. Refer 3 and you don't wait — you're in, guaranteed.{" "}
                 <span className="text-amber-400">No queue. No risk. No catch.</span>
               </p>
-              <div className="mt-3 flex items-center gap-2 bg-[#0f172a]/80 px-4 py-2.5 rounded-lg border border-[#1e1e4a]">
-                <span className="text-xs text-[#64748b]">🔗</span>
-                <code className="text-sm text-[#AAE0D5] font-mono font-semibold flex-1 truncate">
+              <div className="mt-3 flex items-center gap-2 bg-[#0f172a]/80 px-3 py-2 rounded-lg border border-[#1e1e4a]">
+                <span className="text-xs text-[#64748b] shrink-0">🔗</span>
+                <code className="text-xs text-[#AAE0D5] font-mono font-semibold truncate min-w-0 block leading-5">
                   shiftlyx.com/waitlist?ref=YOUR_CODE
                 </code>
               </div>
@@ -153,7 +167,7 @@ export default function WaitlistCounter({
             <span className="text-xs font-bold uppercase tracking-[0.1em] text-[#64748b]">
               Early access ends in
             </span>
-            <div className="flex gap-3">
+            <div className="flex gap-3 shrink-0">
               {[
                 { label: "Days", value: timeLeft.days },
                 { label: "Hrs", value: timeLeft.hours },
