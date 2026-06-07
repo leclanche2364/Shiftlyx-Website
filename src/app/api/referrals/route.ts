@@ -1,9 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// Notion config — reused from waitlist route
+// Notion config
 const NOTION_API_KEY = process.env.NOTION_API_KEY;
+// NOTE: in Notion API v2025-09-03, each database has TWO IDs:
+//   - database_id         → used when CREATING pages (parent: { database_id })
+//   - data_source_id      → used when QUERYING the database (/v1/data_sources/:id/query)
+// These are DIFFERENT UUIDs.
 const NOTION_DATABASE_ID =
   process.env.NOTION_DATABASE_ID || "36f32d70-8844-8115-b7c2-cf22d26cad87";
+const NOTION_DATA_SOURCE_ID =
+  process.env.NOTION_DATA_SOURCE_ID || "36f32d70-8844-8164-84d2-000b7c21882f";
 const NOTION_VERSION = "2025-09-03";
 
 // ── GET: Check how many referrals a code has generated ──
@@ -26,11 +32,11 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Query Notion for pages where "Referral Code" rich_text contains this code
-    // Note: /v1/databases/:id/query requires UUID without dashes in the URL path
-    const dbId = NOTION_DATABASE_ID.replace(/-/g, "");
+    // Query the data source for pages where "Referral Code" rich_text contains this code
+    // Using data_source_id (NOT database_id) because API v2025-09-03 separates them
+    const dsId = NOTION_DATA_SOURCE_ID.replace(/-/g, "");
     const response = await fetch(
-      `https://api.notion.com/v1/databases/${dbId}/query`,
+      `https://api.notion.com/v1/data_sources/${dsId}/query`,
       {
         method: "POST",
         headers: {
@@ -51,7 +57,7 @@ export async function GET(request: NextRequest) {
 
     if (!response.ok) {
       const errorBody = await response.text();
-      console.error("Notion query error:", response.status, errorBody);
+      console.error("Notion data source query error:", response.status, errorBody);
       return NextResponse.json(
         { error: "Failed to query referral count", detail: errorBody },
         { status: 502 }
