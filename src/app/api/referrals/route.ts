@@ -27,9 +27,10 @@ export async function GET(request: NextRequest) {
     }
 
     // Query Notion for pages where "Referral Code" rich_text contains this code
-    // NOTE: Use the full UUID with dashes — stripDashes breaks the /v1/databases/:id/query endpoint
+    // Note: /v1/databases/:id/query requires UUID without dashes in the URL path
+    const dbId = NOTION_DATABASE_ID.replace(/-/g, "");
     const response = await fetch(
-      `https://api.notion.com/v1/databases/${NOTION_DATABASE_ID}/query`,
+      `https://api.notion.com/v1/databases/${dbId}/query`,
       {
         method: "POST",
         headers: {
