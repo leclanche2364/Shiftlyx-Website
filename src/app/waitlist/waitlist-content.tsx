@@ -117,6 +117,8 @@ export default function WaitlistPage() {
   const [referrerCode, setReferrerCode] = useState("");
   const [myReferralCode, setMyReferralCode] = useState("");
   const [copied, setCopied] = useState(false);
+  const [referralCount, setReferralCount] = useState<number | null>(null);
+  const [checkingReferral, setCheckingReferral] = useState(false);
 
   // Grab ?ref=CODE from URL on mount
   useEffect(() => {
@@ -298,6 +300,63 @@ export default function WaitlistPage() {
                   <p className="text-[10px] text-[#64748b] mt-2">
                     Refer 3 colleagues — you both skip the waitlist entirely
                   </p>
+                </div>
+
+                {/* ── Referral progress tracker ── */}
+                <div className="mb-4">
+                  {referralCount === null ? (
+                    <button
+                      onClick={async () => {
+                        setCheckingReferral(true);
+                        try {
+                          const res = await fetch(`/api/referrals?code=${myReferralCode}`);
+                          const data = await res.json();
+                          setReferralCount(data.count);
+                        } catch {
+                          setReferralCount(0);
+                        } finally {
+                          setCheckingReferral(false);
+                        }
+                      }}
+                      disabled={checkingReferral}
+                      className="w-full text-xs font-semibold text-[#2563eb] bg-[#eff6ff] hover:bg-[#dbeafe] border border-[#2563eb]/20 rounded-lg py-2.5 transition-colors"
+                    >
+                      {checkingReferral ? "Checking..." : "🔍 Check your referral progress"}
+                    </button>
+                  ) : (
+                    <div className="bg-[#f8fafc] rounded-xl border border-[#e2e8f0] p-4">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-sm font-semibold text-foreground">Your referrals</span>
+                        <span className={`text-sm font-bold ${referralCount >= 3 ? "text-[#10b981]" : "text-[#f59e0b]"}`}>
+                          {referralCount}/3
+                        </span>
+                      </div>
+                      {/* Progress dots */}
+                      <div className="flex gap-2 mb-2">
+                        {[0, 1, 2].map((i) => (
+                          <div
+                            key={i}
+                            className={`flex-1 h-2.5 rounded-full transition-all ${
+                              i < referralCount
+                                ? "bg-[#10b981]"
+                                : "bg-[#e2e8f0]"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                      <p className={`text-xs ${referralCount >= 3 ? "text-[#10b981] font-semibold" : "text-[#64748b]"}`}>
+                        {referralCount >= 3
+                          ? "🎉 You've qualified to skip the queue!"
+                          : `Share your link — ${3 - referralCount} more colleague${3 - referralCount === 1 ? "" : "s"} to go`}
+                      </p>
+                      <button
+                        onClick={() => setReferralCount(null)}
+                        className="text-[10px] text-[#94a3b8] hover:text-[#64748b] mt-2 underline"
+                      >
+                        Check again
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 {/* Cold-start probes — shown after successful signup */}
