@@ -115,6 +115,8 @@ export default function WaitlistPage() {
   const [error, setError] = useState("");
   const [probeError, setProbeError] = useState("");
   const [referrerCode, setReferrerCode] = useState("");
+  const [myReferralCode, setMyReferralCode] = useState("");
+  const [copied, setCopied] = useState(false);
 
   // Grab ?ref=CODE from URL on mount
   useEffect(() => {
@@ -161,6 +163,25 @@ export default function WaitlistPage() {
         const data = await res.json();
         throw new Error(data.error || "Something went wrong");
       }
+
+      // Generate a referral code for this new signup
+      const baseCode = (name || email.split("@")[0])
+        .replace(/[^a-zA-Z0-9]/g, "")
+        .toLowerCase()
+        .slice(0, 12);
+      const suffix = Math.random().toString(36).substring(2, 4);
+      const code = `${baseCode}-${suffix}`;
+      setMyReferralCode(code);
+
+      // Save their referral code
+      fetch("/api/waitlist", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          my_referral_code: code,
+        }),
+      }).catch(() => {});
 
       setSubmitted(true);
     } catch (err: any) {
@@ -246,11 +267,38 @@ export default function WaitlistPage() {
                 <h2 className="font-heading text-xl font-bold text-foreground mb-2">
                   You&apos;re on the list!
                 </h2>
-                <p className="text-[#475569]">
+                <p className="text-[#475569] mb-4">
                   Thanks for joining{name ? `, ${name}` : ""}. We&apos;ll email you at{" "}
                   <span className="font-medium text-foreground">{email}</span> when
                   Shiftlyx launches.
                 </p>
+
+                {/* ── Referral link ── */}
+                <div className="bg-gradient-to-r from-[#0f172a] to-[#1a1a3e] rounded-xl p-4 mb-4 border border-[#009688]/30">
+                  <p className="text-xs font-semibold text-[#AAE0D5] mb-2">
+                    🔗 Your referral link — share to skip the queue
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <code className="flex-1 text-xs text-white bg-[#1e1e4a]/80 rounded-lg px-3 py-2 truncate font-mono border border-[#009688]/20">
+                      shiftlyx.com/waitlist?ref={myReferralCode}
+                    </code>
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText(
+                          `https://shiftlyx.com/waitlist?ref=${myReferralCode}`
+                        );
+                        setCopied(true);
+                        setTimeout(() => setCopied(false), 2000);
+                      }}
+                      className="shrink-0 bg-[#009688] hover:bg-[#00BFA5] text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors"
+                    >
+                      {copied ? "Copied!" : "Copy"}
+                    </button>
+                  </div>
+                  <p className="text-[10px] text-[#64748b] mt-2">
+                    Refer 3 colleagues — you both skip the waitlist entirely
+                  </p>
+                </div>
 
                 {/* Cold-start probes — shown after successful signup */}
                 {!probesCollected && (

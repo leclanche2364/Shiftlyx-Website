@@ -229,7 +229,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// ── PATCH: Save cold-start probe answers for an existing waitlister ──
+// ── PATCH: Save cold-start probe answers or referral code for an existing waitlister ──
 export async function PATCH(request: NextRequest) {
   try {
     if (!BREVO_API_KEY) {
@@ -240,7 +240,7 @@ export async function PATCH(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { email, probes } = body;
+    const { email, probes, my_referral_code } = body;
 
     if (!email || typeof email !== "string") {
       return NextResponse.json(
@@ -249,23 +249,22 @@ export async function PATCH(request: NextRequest) {
       );
     }
 
-    if (!probes || typeof probes !== "object") {
-      return NextResponse.json(
-        { error: "Probes object is required" },
-        { status: 400 }
-      );
-    }
-
     const attributes: Record<string, string> = {};
 
-    if (probes.night_affinity) attributes.NIGHT_AFFINITY = probes.night_affinity;
-    if (probes.stacking_pref) attributes.STACKING_PREF = probes.stacking_pref;
-    if (probes.income_vs_recovery) attributes.INCOME_VS_RECOVERY = probes.income_vs_recovery;
-    if (probes.max_nights) attributes.MAX_NIGHTS = probes.max_nights;
-    if (probes.fatigue_resilience) attributes.FATIGUE_RESILIENCE = probes.fatigue_resilience;
-    if (probes.income_track) attributes.INCOME_TRACK = probes.income_track;
-    if (probes.sleep_coach) attributes.SLEEP_COACH = probes.sleep_coach;
-    if (probes.recovery_habit) attributes.RECOVERY_HABIT = probes.recovery_habit;
+    if (my_referral_code) {
+      attributes.MY_REFERRAL_CODE = my_referral_code;
+    }
+
+    if (probes && typeof probes === "object") {
+      if (probes.night_affinity) attributes.NIGHT_AFFINITY = probes.night_affinity;
+      if (probes.stacking_pref) attributes.STACKING_PREF = probes.stacking_pref;
+      if (probes.income_vs_recovery) attributes.INCOME_VS_RECOVERY = probes.income_vs_recovery;
+      if (probes.max_nights) attributes.MAX_NIGHTS = probes.max_nights;
+      if (probes.fatigue_resilience) attributes.FATIGUE_RESILIENCE = probes.fatigue_resilience;
+      if (probes.income_track) attributes.INCOME_TRACK = probes.income_track;
+      if (probes.sleep_coach) attributes.SLEEP_COACH = probes.sleep_coach;
+      if (probes.recovery_habit) attributes.RECOVERY_HABIT = probes.recovery_habit;
+    }
 
     await upsertBrevoContact(email, attributes);
 
