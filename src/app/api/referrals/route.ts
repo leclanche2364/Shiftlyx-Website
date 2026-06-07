@@ -52,7 +52,7 @@ export async function GET(request: NextRequest) {
       const errorBody = await response.text();
       console.error("Notion query error:", response.status, errorBody);
       return NextResponse.json(
-        { error: "Failed to query referral count" },
+        { error: "Failed to query referral count", detail: errorBody },
         { status: 502 }
       );
     }
