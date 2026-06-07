@@ -230,49 +230,6 @@ export default function WaitlistPage() {
         </div>
       </section>
 
-      {/* ── DETAILED FEATURES ── */}
-      <section className="pb-12">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground">
-              Everything you need to manage shift work
-            </h2>
-            <p className="text-[#475569] mt-2">
-              One app. Your rota. No employer access. No hidden costs.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {FEATURES.map((feature, i) => (
-              <motion.div
-                key={feature.title}
-                className="bg-white rounded-xl border border-[#e2e8f0] p-5 hover:border-[#2563eb]/20 hover:shadow-sm transition-all"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.04 }}
-              >
-                <feature.icon className="w-6 h-6 text-[#2563eb] mb-3" />
-                <div className="flex items-start justify-between gap-2 mb-2">
-                  <h3 className="font-heading font-semibold text-foreground text-sm">
-                    {feature.title}
-                  </h3>
-                  <span
-                    className={`text-[10px] font-medium px-2 py-0.5 rounded-full shrink-0 ${
-                      feature.tag === "Free"
-                        ? "bg-[#10b981]/10 text-[#10b981]"
-                        : "bg-[#f59e0b]/10 text-[#f59e0b]"
-                    }`}
-                  >
-                    {feature.tag}
-                  </span>
-                </div>
-                <p className="text-xs text-[#64748b] leading-relaxed">{feature.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── FORM ── */}
       <section className="pb-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -667,6 +624,49 @@ export default function WaitlistPage() {
                 </p>
               </motion.form>
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* ── DETAILED FEATURES ── */}
+      <section className="pb-12">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground">
+              Everything you need to manage shift work
+            </h2>
+            <p className="text-[#475569] mt-2">
+              One app. Your rota. No employer access. No hidden costs.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {FEATURES.map((feature, i) => (
+              <motion.div
+                key={feature.title}
+                className="bg-white rounded-xl border border-[#e2e8f0] p-5 hover:border-[#2563eb]/20 hover:shadow-sm transition-all"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.04 }}
+              >
+                <feature.icon className="w-6 h-6 text-[#2563eb] mb-3" />
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <h3 className="font-heading font-semibold text-foreground text-sm">
+                    {feature.title}
+                  </h3>
+                  <span
+                    className={`text-[10px] font-medium px-2 py-0.5 rounded-full shrink-0 ${
+                      feature.tag === "Free"
+                        ? "bg-[#10b981]/10 text-[#10b981]"
+                        : "bg-[#f59e0b]/10 text-[#f59e0b]"
+                    }`}
+                  >
+                    {feature.tag}
+                  </span>
+                </div>
+                <p className="text-xs text-[#64748b] leading-relaxed">{feature.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
