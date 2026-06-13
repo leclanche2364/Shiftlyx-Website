@@ -67,23 +67,29 @@ export const siteConfig = {
     {
       id: "ai-voice-planner",
       icon: "Mic",
-      title: "AI Voice Planner",
+      title: "Florence — AI Voice Assistant",
       tagline: "Talk through your rota. Out loud.",
       description:
-        "Speak naturally: 'Plan my month with more nights.' The voice assistant generates shift patterns ranked for you. Two taps to choose. No typing required.",
-      heading: "Tell it what you want. Hear what works.",
+        "Meet Florence, your AI shift planning assistant. Speak naturally: 'Plan my month with more nights.' Florence generates shift patterns ranked for you, asks clarifying questions, and remembers your preferences. No typing required.",
+      heading: "Meet Florence. She gets shift work.",
       benefit:
-        "Typing is effort. Especially at 2am. The voice planner lets you speak naturally — 'Plan my month with more nights' or 'Show me the healthiest option' — and generates shift patterns ranked by how well they match your goal.",
+        "Typing is effort. Especially at 2am. Florence lets you speak naturally and generates shift patterns ranked by how well they match your goal.",
       howItWorks: [
-        "Tap the voice orb",
-        "Speak your preference",
+        "Tap the glowing orb",
+        "Speak your preference to Florence",
+        "Florence asks clarifying questions if needed",
         "Review ranked candidates",
         "Pick one. Two taps.",
       ],
+      modes: [
+        { name: "Voice Mode", description: "Full conversation with Florence. Speak, get options, decide. Powered by OpenAI Realtime WebRTC." },
+        { name: "Ask Mode", description: "Florence asks clarifying questions before building your plan. Never builds on assumptions." },
+        { name: "Session History", description: "Every conversation with Florence is saved. Pick up where you left off." },
+      ],
       whyItMatters:
-        "You're lying in bed after a double. Your partner needs next month's childcare plan. You don't want to read. Tap, speak, get options, choose. Done.",
+        "You're lying in bed after a double. Your partner needs next month's childcare plan. Tap, speak to Florence, get options, choose. Done. Premium includes 7 free minutes per month, with easy top-up from £10.",
       screenshot:
-        "Glowing orb at bottom (gradient blue). Waveform animation. Chat bubble: 'Plan my month with more nights'. Three candidate plans listed with earnings, fatigue, nights. Best match highlighted with 'Recommended' badge. 'Powered by OpenAI' at bottom.",
+        "Glowing orb with 'Florence' label. Credit tracker chip showing minutes remaining (amber at <2min). Waveform animation. Chat bubble: 'Plan my month with more nights'. Three candidate plans listed with earnings, fatigue, nights. Best match highlighted with 'Recommended' badge. 'Powered by OpenAI' at bottom.",
     },
     {
       id: "shift-planner",
@@ -206,13 +212,11 @@ export const siteConfig = {
       benefit:
         "Shiftlyx asks what it needs to be useful — and nothing more.",
       captures: [
-        "Profession: Nurse, Doctor, Midwife, Paramedic, HCA, ODP, Other healthcare",
-        "Band: 2–9",
-        "Work model: Assigned rota / Self-rostering",
-        "Region: UK NHS",
-        "Contracted hours: per week",
-        "Commute: minutes each way",
-        "Years of service",
+        "Staggered welcome: name, profession, avatar, CTA",
+        "50+ profession-specific avatars across 12 categories",
+        "Profile setup: Profession, Band, Region, Hours, Commute, Work model, Years",
+        "All 6 profile fields at once in dashboard cards",
+        "Anonymous mode: info-only cards with sign-up prompt",
         "Unit / Hospital (optional — never shared)",
       ],
       whyItMatters:
@@ -1538,7 +1542,10 @@ Shiftlyx calculates your fatigue across four dimensions. Consecutive days night 
       name: "Premium Monthly",
       price: "£3.99/month",
       features: [
-        "AI Voice Planner — just speak your rota",
+        "Florence — AI voice assistant with 7 free min/month",
+        "Florence Ask Mode — clarifying questions before planning",
+        "Florence Session History — resume conversations",
+        "Easy top-up: £10/20min when you need more",
         "Fatigue Intelligence Dashboard",
         "Annual Leave Optimiser",
         "Income Forecasting",

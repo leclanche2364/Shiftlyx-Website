@@ -190,8 +190,8 @@ export default function HomePage() {
       {/* SEO — server-rendered content for crawlers (visually hidden with sr-only) */}
       <div className="sr-only" aria-hidden="false">
         <h1>Shiftlyx — AI Shift Planner for NHS Nurses, Paramedics, Midwives and Healthcare Shift Workers</h1>
-        <h2>AI Voice Shift Planning</h2>
-        <p>Shiftlyx uses AI voice planning to help shift workers plan their schedule. Just say "Hey Shiftlyx, plan my month" and the app generates optimised shift patterns. The voice planner lets you speak naturally — "Plan my month with more nights" or "Show me the healthiest option" — and ranks shift patterns by how well they match your goal.</p>
+        <h2>Meet Florence — Your AI Shift Assistant</h2>
+        <p>Shiftlyx features Florence, an AI voice assistant built for shift workers. Just say "Hey Florence, plan my month" and the app generates optimised shift patterns. Florence lets you speak naturally, asks clarifying questions in Ask Mode, and remembers your preferences. Premium includes 7 free minutes per month with easy top-up.</p>
         <h2>Fatigue Score</h2>
         <p>Shiftlyx tracks fatigue across four dimensions: consecutive work days, night clustering, short recovery between shifts, and circadian disruption. Each dimension is scored and combined into an overall fatigue score from 0 to 100. Colours indicate severity: Danger (red), Warning (amber), Positive (green), and Neutral (grey).</p>
         <h2>Shift Planner with Five Strategies</h2>
@@ -226,8 +226,8 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                &ldquo;<span className="text-[#2563eb]">Hey Shiftlyx,</span><br />
-                plan my month.&rdquo;
+                Meet <span className="text-[#2563eb]">Florence</span>,<br />
+                your AI shift planner.
               </motion.h2>
 
               <motion.p
@@ -314,13 +314,13 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
           >
             <Badge variant="outline" className="mb-4 text-xs font-medium text-[#2563eb] border-[#2563eb]/20 bg-[#eff6ff]">
-              VOICE PLANNER
+              MEET FLORENCE
             </Badge>
             <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Say it. Your schedule adjusts.
+              Say it. Florence handles the rest.
             </h2>
             <p className="text-[#475569] text-lg max-w-2xl mx-auto">
-              No menus. No forms. Just talk to Shiftlyx like you would a colleague.
+              No menus. No forms. No typing. Just talk to Florence like you would a colleague who knows your preferences.
             </p>
           </motion.div>
 
@@ -340,10 +340,10 @@ export default function HomePage() {
                 1
               </div>
               <h3 className="font-heading text-base font-semibold text-foreground mb-2">
-                Talk naturally
+                Talk to Florence
               </h3>
               <p className="text-sm text-[#475569] leading-relaxed">
-                &ldquo;Hey Shiftlyx, plan my month. I&rsquo;m on nights first week, then I want a long weekend off.&rdquo; Just say it.
+                &ldquo;Hey Florence, plan my month. I&rsquo;m on nights first week, then I want a long weekend off.&rdquo; Just say it.
               </p>
             </motion.div>
 
@@ -362,10 +362,10 @@ export default function HomePage() {
                 2
               </div>
               <h3 className="font-heading text-base font-semibold text-foreground mb-2">
-                Gets you
+                Florence gets you
               </h3>
               <p className="text-sm text-[#475569] leading-relaxed">
-                Powered by OpenAI Realtime Voice. Shiftlyx asks clarifying questions, remembers what you like, and learns from every conversation.
+                Powered by OpenAI Realtime Voice. Florence asks clarifying questions in Ask Mode, remembers your preferences, and learns from every conversation.
               </p>
             </motion.div>
 
