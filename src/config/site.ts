@@ -1542,13 +1542,19 @@ But what if you do not?
 
 What if the bounce stops bouncing?
 
-A 2026 study published in *Nursing Open* dropped a phrase that should stop every shift worker cold. The researchers measured salivary cortisol in nurses working double shifts and found levels twice as high at midnight. That is the acute finding. The worrying one the Q&A editorial added almost as an afterthought:
+A 2026 study published in Nursing Open dropped a phrase that should stop every shift worker cold. The researchers measured salivary cortisol in nurses working double shifts and found levels twice as high at midnight. That is the acute finding. The worrying one the Q&A editorial added almost as an afterthought:
 
-*"Over time these repeated spikes can lead to permanent circadian misalignment where the body forgets how to regulate stress properly even on days off."*
+"Over time these repeated spikes can lead to permanent circadian misalignment where the body forgets how to regulate stress properly even on days off."
 
 Let that land. **Even on days off.** The body forgets.
 
 If you are a shift worker this is the most important health sentence you will read this year.
+
+Here is the problem. You cannot feel this happening. There is no ache in your joints when your cortisol rhythm flattens. No lump on your skin when your stress threshold shifts. By the time you notice something is wrong your body has already been paying the price for months or years.
+
+Shiftlyx exists to make the invisible visible. It tracks the exact dimensions that drive circadian damage consecutive night clusters short recovery windows quick returns cumulative hours and mismatched shift types. It scores every shift and every block of shifts against the thresholds that studies like this one identify as dangerous territory. You do not need a lab to measure your cortisol. You need a tool that watches the inputs and flags when your pattern is trending toward the zone where studies show real harm starts.
+
+This is not a wellness app. It is a fatigue intelligence system built by someone who has worked the same shifts you have. It does not tell you not to work. It shows you what the work is costing you. And it lets you decide.
 
 ## What Permanent Actually Means
 
@@ -1584,7 +1590,7 @@ A 22 year Nurses Health Study found that nurses working rotating night shifts ha
 
 The 2007 WHO classification of night shift work as a Group 2A probable carcinogen was not a political statement. It was a recognition that chronic circadian disruption creates conditions in the body that allow disease to take hold.
 
-The *Nursing Open* cortisol study added the mechanism: the hormonal pathway through which this damage travels. The two fold midnight cortisol spike is not a curiosity. It is the delivery mechanism for cumulative physiological harm.
+The Nursing Open cortisol study added the mechanism: the hormonal pathway through which this damage travels. The two fold midnight cortisol spike is not a curiosity. It is the delivery mechanism for cumulative physiological harm.
 
 And now the editorial has named the end state: **permanent misalignment.** The point where the system does not bounce back between shifts.
 
@@ -1640,7 +1646,7 @@ You do not have to spend your career hoping you will be one of the lucky ones wh
 
 ---
 
-*Based on: Ulupinar F. et al. (2026). The Effect of Single and Double Shift Works on Salivary Cortisol Levels in Nurses. Nursing Open. Editorial commentary published via Neuroscience News June 2026.*
+Based on: Ulupinar F. et al. (2026). The Effect of Single and Double Shift Works on Salivary Cortisol Levels in Nurses. Nursing Open. Editorial commentary published via Neuroscience News June 2026.
         `,
       },
     ],
