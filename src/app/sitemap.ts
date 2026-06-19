@@ -96,12 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.7,
     },
-    {
-      url: `${BASE_URL}/pricing.md`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
+    // TODO: Add /pricing once the page is built
   ];
 
   const blogArticles: MetadataRoute.Sitemap = siteConfig.blog.articles.map(

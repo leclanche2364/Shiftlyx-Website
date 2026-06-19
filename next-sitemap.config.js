@@ -38,7 +38,7 @@ module.exports = {
     };
   },
   additionalPaths: async (config) => {
-    // All 13 blog posts (from generateStaticParams in blog/[slug]/page.tsx)
+    // All 15 blog posts (from siteConfig.blog.articles)
     const blogs = [
       "fatigue-score-explained",
       "night-work-and-your-body-clock",
@@ -53,6 +53,8 @@ module.exports = {
       "hse-fatigue-guide-2026",
       "this-is-bigger-than-burnout",
       "why-shift-scheduling-tools-ignore-fatigue",
+      "double-shifts-cortisol-inversion",
+      "permanent-circadian-misalignment",
     ];
     return blogs.map((slug) => ({
       loc: `/blog/${slug}`,

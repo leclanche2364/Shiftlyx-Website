@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "shiftlyx.com"
+        }
+      ],
+      "destination": "https://www.shiftlyx.com/$1",
+      "permanent": true
+    }
+  ]
+}
