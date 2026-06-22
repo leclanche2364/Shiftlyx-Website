@@ -441,15 +441,15 @@ Unlike couples where one person works standard hours, shift workers cannot rely 
 
 Here is what makes the two shift worker dynamic uniquely challenging:
 
-**Rotas drop at different times.** Your rota comes out on the 15th. Theirs on the 20th. For five days you are planning blind. Any commitments you make during that window risk overlapping.
+→ Rotas drop at different times. Your rota comes out on the 15th. Theirs on the 20th. For five days you are planning blind. Any commitments you make during that window risk overlapping.
 
-**Patterns rarely align.** One of you might be on a 3 day 3 night pattern. The other on a 4 on 2 off rotation. The cycles never sync. You spend more time in overlap than in alignment.
+→ Patterns rarely align. One of you might be on a 3 day 3 night pattern. The other on a 4 on 2 off rotation. The cycles never sync. You spend more time in overlap than in alignment.
 
-**Recovery needs conflict.** After a block of nights you need quiet and sleep. So does your partner at completely different times. One of you is always recovering while the other is working or trying to rest.
+→ Recovery needs conflict. After a block of nights you need quiet and sleep. So does your partner at completely different times. One of you is always recovering while the other is working or trying to rest.
 
-**Baby handovers rather than quality time.** Many shift worker couples describe their relationship as a relay race. One parent arrives home exhausted as the other leaves for their shift. They pass children, keys, and information in the doorway. Quality time becomes a luxury they schedule weeks in advance.
+→ Baby handovers rather than quality time. Many shift worker couples describe their relationship as a relay race. One parent arrives home exhausted as the other leaves for their shift. They pass children, keys, and information in the doorway. Quality time becomes a luxury they schedule weeks in advance.
 
-**Childcare coordination becomes a second job.** For couples with children, organising who has the kids and when is as complex as the rotas themselves. It requires constant communication, constant adjustment, and constant mental energy.
+→ Childcare coordination becomes a second job. For couples with children, organising who has the kids and when is as complex as the rotas themselves. It requires constant communication, constant adjustment, and constant mental energy.
 
 ## Childcare for Two Shift Workers: The Hidden Labour
 
@@ -471,13 +471,13 @@ Partner Sync was designed specifically for this use case. It connects your Shift
 
 Once connected, you choose a coordination mode that matches your priorities:
 
-**Childcare First mode** is the one that NHS parents use most. It ensures one of you is always available for the kids. The algorithm automatically reranks your shift plans to minimise overlapping work hours. You never find out on Sunday night that you are both on earlies on Monday.
+Childcare First mode is the one that NHS parents use most. It ensures one of you is always available for the kids. The algorithm automatically reranks your shift plans to minimise overlapping work hours. You never find out on Sunday night that you are both on earlies on Monday.
 
-**Avoid Same Heavy Days** makes sure you and your partner are not both working punishing shifts on the same day. No more coming home after a 12 hour night to an empty house and a cold kitchen.
+Avoid Same Heavy Days makes sure you and your partner are not both working punishing shifts on the same day. No more coming home after a 12 hour night to an empty house and a cold kitchen.
 
-**Shared Off First** ranks plans so you get more days off together. If your relationship is struggling from lack of quality time, this mode prioritises the schedules that let you overlap.
+Shared Off First ranks plans so you get more days off together. If your relationship is struggling from lack of quality time, this mode prioritises the schedules that let you overlap.
 
-**Standard** gives you a combined calendar view with both schedules visible at once. Names are blurred for privacy. You see the patterns, not the assignments.
+Standard gives you a combined calendar view with both schedules visible at once. Names are blurred for privacy. You see the patterns, not the assignments.
 
 ## Key Events: The Feature That Saves Relationships
 
@@ -501,15 +501,15 @@ Coordination tools help with the logistics. But there is a human side that no ap
 
 After watching hundreds of shift worker couples navigate this, here is what matters most:
 
-**Protect your overlap time.** When you both have the same day off, treat it as sacred. Do not fill it with chores, errands, or family obligations. That day is for the two of you. It is oxygen for your relationship.
+→ Protect your overlap time. When you both have the same day off, treat it as sacred. Do not fill it with chores, errands, or family obligations. That day is for the two of you. It is oxygen for your relationship.
 
-**Communicate before the rota drops.** If you know your partner is coming into a block of nights, have the conversation before it starts. What do they need? What can you handle? Setting expectations early prevents resentment.
+→ Communicate before the rota drops. If you know your partner is coming into a block of nights, have the conversation before it starts. What do they need? What can you handle? Setting expectations early prevents resentment.
 
-**Build a handover routine.** For couples who pass each other in the doorway, create a proper handover. Five minutes to share what the kids need, what is in the fridge, and how you are doing. It transforms the relay race into a partnership.
+→ Build a handover routine. For couples who pass each other in the doorway, create a proper handover. Five minutes to share what the kids need, what is in the fridge, and how you are doing. It transforms the relay race into a partnership.
 
-**Acknowledge the cost out loud.** Shift work is hard on relationships. Saying it out loud makes it real. It also makes it shared. If both of you know the cost, you can carry it together instead of pretending it is not there.
+→ Acknowledge the cost out loud. Shift work is hard on relationships. Saying it out loud makes it real. It also makes it shared. If both of you know the cost, you can carry it together instead of pretending it is not there.
 
-**Use the data, not the guilt.** When you see that your schedules overlapped for four heavy days this month, that is data. Use it to plan differently next month. Do not use it to blame or guilt. The rotas are the problem. You are on the same side.
+→ Use the data, not the guilt. When you see that your schedules overlapped for four heavy days this month, that is data. Use it to plan differently next month. Do not use it to blame or guilt. The rotas are the problem. You are on the same side.
 
 ## Small Changes That Compound
 
@@ -539,11 +539,11 @@ The rotas will keep coming. But the coordination no longer has to be a second jo
 
 ---
 
-**Get started with Partner Sync**
+Get started with Partner Sync
 
 Partner Sync is a Premium feature at £3.99/month or £18.99/year (Day One Annual, 60% off) with a free 1 month trial.
 
-👉 [Learn more about Partner Sync](/partner-invite) or [join the waitlist](/download).
+Learn more at shiftlyx.com/partner-invite or join the waitlist at shiftlyx.com/download.
         `,
       },
       {
