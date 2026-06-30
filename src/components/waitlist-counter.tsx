@@ -11,7 +11,7 @@ interface WaitlistCounterProps {
 
 export default function WaitlistCounter({
   baseCount = 501,
-  cap = 1000,
+  cap = 1100,
   dailyRate = 24,
   targetDate = "2026-07-01T00:00:00+01:00",
 }: WaitlistCounterProps) {
