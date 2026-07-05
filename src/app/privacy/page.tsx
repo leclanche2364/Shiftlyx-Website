@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 
-const lastUpdated = "02 June 2026";
+const lastUpdated = "05 July 2026";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -101,7 +101,7 @@ export default function PrivacyPage() {
               <li><strong>Advertising analytics:</strong> We use <strong>Meta (Facebook) App Events</strong> to measure the effectiveness of our advertising campaigns and attribute app installs and in-app actions to specific ad campaigns. This involves sharing anonymised event data (e.g., app opens, sign-ups, premium feature usage) with Meta. No personal data (name, email, shift data) is shared with Meta for advertising purposes.</li>
               <li><strong>Firebase Analytics &amp; Crashlytics:</strong> We use <strong>Google Firebase</strong> for analytics and crash reporting. This collects: app usage events, session duration, device model, operating system version, and crash stack traces. Firebase Analytics data is anonymised. Crash reports may include device state at the time of crash but no personal data.</li>
               <li><strong>Technical data:</strong> Device model, operating system version, app version, and basic diagnostic logs for troubleshooting.</li>
-            </ul>
+              <li><strong>Location data (with your permission):</strong> If you enable the commute engine, we collect approximate location data to estimate commute time from home to work, send departure reminders, and provide real-time traffic alerts. Location is only accessed when the App is in use (background access for commute alerts). You can disable location access at any time through your device settings.</li>            </ul>
 
             <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
               2.3 Data We Do NOT Collect
@@ -111,7 +111,6 @@ export default function PrivacyPage() {
               <li>Employer or trust information</li>
               <li>Government identifiers (NHS number, National Insurance number)</li>
               <li>Medical records or clinical data</li>
-              <li>Location data (we do not track your location)</li>
               <li>Contacts list (we do not access your device contacts)</li>
               <li>Biometric data (fingerprint, face recognition data)</li>
             </ul>
