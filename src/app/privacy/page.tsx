@@ -101,7 +101,12 @@ export default function PrivacyPage() {
               <li><strong>Advertising analytics:</strong> We use <strong>Meta (Facebook) App Events</strong> to measure the effectiveness of our advertising campaigns and attribute app installs and in-app actions to specific ad campaigns. This involves sharing anonymised event data (e.g., app opens, sign-ups, premium feature usage) with Meta. No personal data (name, email, shift data) is shared with Meta for advertising purposes.</li>
               <li><strong>Firebase Analytics &amp; Crashlytics:</strong> We use <strong>Google Firebase</strong> for analytics and crash reporting. This collects: app usage events, session duration, device model, operating system version, and crash stack traces. Firebase Analytics data is anonymised. Crash reports may include device state at the time of crash but no personal data.</li>
               <li><strong>Technical data:</strong> Device model, operating system version, app version, and basic diagnostic logs for troubleshooting.</li>
-              <li><strong>Location data (with your permission):</strong> If you enable the commute engine, we collect approximate location data to estimate commute time from home to work, send departure reminders, and provide real-time traffic alerts. Location is only accessed when the App is in use (background access for commute alerts). You can disable location access at any time through your device settings.</li>            </ul>
+              <li><strong>Location data (with your permission):</strong> Shiftlyx requests location access solely for the commute engine — a feature designed to help shift workers arrive on time. With your permission:
+  <ul>
+    <li><strong>One-time access (When In Use):</strong> During commute setup, we use your location once to measure the distance between your home and workplace. This allows personalised departure time estimates. You can skip this and enter your address manually.</li>
+    <li><strong>Background access (Always — optional):</strong> If you opt in, Shiftlyx may check your location in the background shortly before your scheduled shift to send a departure alert with estimated travel time. You can disable this at any time through your device settings or within the App.</li>
+  </ul>
+  Location data is not tracked, stored, shared with third parties, or used for advertising. It is accessed only for the specific commute purpose described above.</li>            </ul>
 
             <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
               2.3 Data We Do NOT Collect
