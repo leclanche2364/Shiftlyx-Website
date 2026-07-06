@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 
-const lastUpdated = "05 July 2026";
+const lastUpdated = "07 July 2026";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -120,12 +120,7 @@ export default function PrivacyPage() {
               <li>Biometric data (fingerprint, face recognition data)</li>
             </ul>
 
-            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
-              2.4 Health Data You Choose to Connect
-            </h3>
-            <p>
-              With your permission, we may read <strong>sleep data</strong> from Apple Health (HealthKit) on iOS devices for the purpose of improving your fatigue and recovery analysis. This is entirely optional and you control this access at all times through your device Health settings. See <a href="#apple-healthkit" className="text-[#2563eb] hover:underline">Section 6 (Apple HealthKit &amp; Health Data)</a> for full details.
-            </p>
+
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
               3. Why We Collect Your Data and Our Lawful Basis
@@ -219,53 +214,11 @@ export default function PrivacyPage() {
             </ul>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
-              6. Apple HealthKit &amp; Health Data
+              6. Location Data
             </h2>
-            <p id="apple-healthkit">
-              Shiftlyx optionally reads <strong>sleep data</strong> from <strong>Apple HealthKit (Apple Health)</strong> to improve the accuracy of your fatigue and recovery analysis. This section explains how we handle health data in compliance with Apple&apos;s App Store Review Guidelines (Section 5.1.3), UK GDPR, and applicable US privacy laws.
+            <p id="location-data">
+              Shiftlyx requests location access solely for the <strong>commute engine</strong> — a feature designed to help shift workers arrive on time. Location data is not tracked, stored, shared with third parties, or used for advertising. It is accessed only for the specific commute purpose described in Section 2.2.
             </p>
-
-            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
-              6.1 Health Data We Read
-            </h3>
-            <ul className="list-disc pl-6 space-y-1">
-              <li><strong>Sleep data only:</strong> We read time-in-bed and asleep time intervals. We do <strong>not</strong> read heart rate, blood pressure, blood glucose, or any other health metrics.</li>
-              <li><strong>Read-only access:</strong> Shiftlyx requests read-only permission. We never write, modify, or delete data from Apple Health or Health Connect.</li>
-              <li><strong>Optional and revocable:</strong> You control this permission at any time through your device&apos;s Health settings. Revoking access has no impact on other App features.</li>
-              <li><strong>Prior explanation:</strong> Before the system HealthKit permission prompt appears, we explain exactly what data we read and why, so you can make an informed choice.</li>
-            </ul>
-
-            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
-              6.2 How We Use Health Data
-            </h3>
-            <ul className="list-disc pl-6 space-y-1">
-              <li><strong>Fatigue and recovery analysis only:</strong> Sleep data is used exclusively to personalise your fatigue score and recovery context calculations.</li>
-              <li><strong>No advertising or marketing:</strong> Health data is <strong>never</strong> used for advertising, marketing, data mining, or any other purpose.</li>
-              <li><strong>No third-party sharing:</strong> Health data read from Apple HealthKit is processed on-device where possible. Aggregated metrics (e.g., sleep efficiency) may be synced to our servers for cross-device use, but raw sleep timestamps remain on-device. Health data is <strong>never</strong> sold, shared, or disclosed to third parties for any purpose.</li>
-              <li><strong>No iCloud backup:</strong> Health data accessed through HealthKit is not stored in iCloud.</li>
-              <li><strong>No analytics:</strong> Health data is not included in analytics, session recordings, or crash reports.</li>
-            </ul>
-
-            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
-              6.3 Data Integrity
-            </h3>
-            <p>
-              We process health data as provided by Apple HealthKit. We do not fabricate, alter, or write inaccurate data to HealthKit. Our fatigue analysis is transparent and explainable — you can review how sleep data affects your scores within the App.
-            </p>
-
-            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
-              6.4 Compliance with Apple Guidelines (5.1.3)
-            </h3>
-            <p>
-              Shiftlyx complies with Apple&apos;s App Store Review Guidelines for HealthKit and health data:
-            </p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Health data is not used for advertising, marketing, or data mining.</li>
-              <li>Health data is not sold or disclosed to third parties.</li>
-              <li>Health data is not stored in iCloud.</li>
-              <li>We do not write false or inaccurate data to Apple HealthKit.</li>
-              <li>HealthKit access is not gated behind a paywall — the permission prompt is available to all users. Enhanced fatigue analysis using sleep data is a Premium feature.</li>
-            </ul>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
               7. Third-Party Processors
@@ -304,7 +257,7 @@ export default function PrivacyPage() {
                   </tr>
                   <tr>
                     <td className="border border-[#e2e8f0] p-3 font-medium">OpenAI</td>
-                    <td className="border border-[#e2e8f0] p-3">AI Voice Planner (Realtime API)</td>
+                    <td className="border border-[#e2e8f0] p-3">AI Voice Planner (Realtime API) — voice input, shift schedule, fatigue context</td>
                     <td className="border border-[#e2e8f0] p-3">US (data not used for training)</td>
                     <td className="border border-[#e2e8f0] p-3">OpenAI API data not used for model training; Standard DPA and SCCs in place</td>
                   </tr>
@@ -421,7 +374,7 @@ export default function PrivacyPage() {
               <li><strong>Right to Correct:</strong> You have the right to request correction of inaccurate personal information.</li>
               <li><strong>Right to Opt-Out:</strong> We do <strong>not</strong> sell your personal information as defined by the CCPA. We do <strong>not</strong> share personal information for cross-context behavioural advertising. You may opt out of analytics tracking at any time through the App settings.</li>
               <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising any of your CCPA rights.</li>
-              <li><strong>Right to Limit Use of Sensitive Personal Information:</strong> We only collect sleep data (a category of sensitive personal information under California law) with your explicit consent via Apple HealthKit&apos;s permission prompt. This data is used solely for fatigue analysis and is not subject to profiling that produces legal or similarly significant effects.</li>
+              <li><strong>Right to Limit Use of Sensitive Personal Information:</strong> We do not collect any categories of sensitive personal information as defined by California law. Shiftlyx is not a health or medical device and does not process health data.</li>
             </ul>
             <p>
               To exercise any of these rights, please contact us at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a>. We will respond within 45 days as required by the CCPA. You may also designate an authorised agent to make a request on your behalf.
@@ -490,7 +443,44 @@ export default function PrivacyPage() {
               13. AI Voice Planner and OpenAI
             </h2>
             <p>
-              The AI Voice Planner feature ("Florence") uses OpenAI&apos;s Realtime API via WebRTC for natural language shift planning. When you speak with Florence, your voice input and shift planning questions are sent to OpenAI, a third-party AI service. Voice conversations are processed in real-time and are <strong>not</strong> used to train OpenAI models (as per OpenAI&apos;s API data usage policy). We do not send your shift data, fatigue scores, or personal information to OpenAI beyond what you voluntarily say during a voice planning session. The app asks for your explicit consent before the first use of Florence, and you can disable the feature at any time in Settings.
+              The AI Voice Planner feature ("Florence") uses OpenAI&apos;s Realtime API via WebRTC for natural language shift planning.
+            </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              13.1 What Data Is Shared
+            </h3>
+            <p>
+              When you use Florence, the following data is sent to OpenAI:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li><strong>Voice input:</strong> Your spoken words during planning sessions.</li>
+              <li><strong>Shift schedule context:</strong> Your shift types, dates, and times (so Florence can answer planning questions intelligently).</li>
+              <li><strong>Fatigue context:</strong> Your current fatigue analysis and recovery status (so Florence can give informed advice about rest and scheduling).</li>
+              <li><strong>User preferences:</strong> Things you have told Florence about how you like to work (e.g., preferred shift types, day/night preference).</li>
+            </ul>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              13.2 Data Handling
+            </h3>
+            <ul className="list-disc pl-6 space-y-1">
+              <li><strong>Real-time only:</strong> Voice conversations are processed in real-time. They are not stored or recorded by us or OpenAI after the session ends.</li>
+              <li><strong>No training use:</strong> As per OpenAI&apos;s API data usage policy, data sent through their API is <strong>not</strong> used to train OpenAI models or improve their services.</li>
+              <li><strong>Third-party service:</strong> OpenAI is a third-party AI services provider. The data shared is necessary for Florence to function.</li>
+            </ul>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              13.3 Your Consent
+            </h3>
+            <p>
+              <strong>We ask for your explicit permission before any data is sent to OpenAI.</strong> Before your first use of Florence, you will see a consent dialog that explains:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>What data will be sent (voice input, shift schedule, fatigue context, preferences).</li>
+              <li>Who receives the data (OpenAI).</li>
+              <li>That your data is not used for training.</li>
+            </ul>
+            <p>
+              You must tap "Continue" to proceed. Your consent is remembered, and you can disable Florence at any time in App Settings.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
