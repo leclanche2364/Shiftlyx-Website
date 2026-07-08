@@ -466,13 +466,14 @@ export default function PrivacyPage() {
               <li><strong>Real-time only:</strong> Voice conversations are processed in real-time. They are not stored or recorded by us or OpenAI after the session ends.</li>
               <li><strong>No training use:</strong> As per OpenAI&apos;s API data usage policy, data sent through their API is <strong>not</strong> used to train OpenAI models or improve their services.</li>
               <li><strong>Third-party service:</strong> OpenAI is a third-party AI services provider. The data shared is necessary for Florence to function.</li>
+              <li><strong>Data protection:</strong> OpenAI maintains SOC 2 compliance and a Data Processing Agreement (DPA) that provides data protection standards equal to or exceeding industry requirements.</li>
             </ul>
 
             <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
               13.3 Your Consent
             </h3>
             <p>
-              <strong>We ask for your explicit permission before any data is sent to OpenAI.</strong> Before your first use of Florence, you will see a consent dialog that explains:
+              <strong>We ask for your explicit permission before any data is sent to OpenAI.</strong> Before your first use of Florence, you will see a permission dialog that explains:
             </p>
             <ul className="list-disc pl-6 space-y-1">
               <li>What data will be sent (voice input, shift schedule, fatigue context, preferences).</li>
@@ -480,7 +481,7 @@ export default function PrivacyPage() {
               <li>That your data is not used for training.</li>
             </ul>
             <p>
-              You must tap "Continue" to proceed. Your consent is remembered, and you can disable Florence at any time in App Settings.
+              You must tap "I Agree" to proceed and provide your explicit consent. Your consent is remembered, and you can disable Florence at any time in App Settings. You do not need to agree to use the rest of Shiftlyx.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
