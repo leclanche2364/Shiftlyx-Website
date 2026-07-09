@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "93759793201.com.shiftlyx.app",
+        "paths": [
+          "/partner-invite*",
+          "/deeplink*",
+          "/commute*",
+          "/planner*",
+          "/settings*",
+          "/profile*",
+          "/dashboard*"
+        ]
+      }
+    ]
+  }
+}

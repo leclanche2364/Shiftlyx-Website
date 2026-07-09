@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.shiftlyx.app",
+    "sha256_cert_fingerprints": [
+      "F4:AD:C4:04:46:67:85:B8:77:78:CF:75:CE:7B:6F:BC:95:79:35:DD:0C:F5:84:67:44:FA:F6:FD:16:10:9C:E4"
+    ]
+  }
+}]
