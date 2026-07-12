@@ -61,7 +61,7 @@ File: https://www.shiftlyx.com/pricing.md
 
 ### Free — £0/month
 - Fatigue Score (0-100)
-- Shift Planner (5 strategies)
+- Manual Shift Entry
 - Recovery Coach
 - Preference Learning
 - 1 user, no partner sync, no voice planning

@@ -145,7 +145,7 @@ export default function TermsPage() {
               6.2 Free Features
             </h3>
             <p>
-              The following features are available at no cost: Fatigue Score, Shift Planner (5 strategies), Recovery Coach, and Preference Learning.
+              The following features are available at no cost: Fatigue Score, Manual Shift Entry, Recovery Coach, and Preference Learning.
             </p>
 
             <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">

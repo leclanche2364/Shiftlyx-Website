@@ -121,17 +121,18 @@ const proFeaturesList = [
 
 const freeFeatures = [
   "Fatigue Score (0-100)",
-  "Shift Planner (5 strategies)",
-  
+  "Manual Shift Entry",
   "Recovery Coach",
   "Preference Learning",
 ];
 
 const premiumFeatures = [
   "AI schedule generation",
+  "Shift Planner (5 strategies)",
   "Fatigue intelligence / advanced risk analysis",
   "Annual leave optimiser",
   "Childcare-aware planning",
+  "Commute Engine",
   "Income forecasting",
   "Smart shift stacking",
   "Candidate comparison",

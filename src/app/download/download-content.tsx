@@ -45,6 +45,7 @@ const premiumIcons: Record<string, React.ReactNode> = {
   "Smart Shift Stacking": <Layers className="w-4 h-4" />,
   "Candidate Comparison": <TrendingUp className="w-4 h-4" />,
   "Import/Export": <Shield className="w-4 h-4" />,
+  "Commute Engine": <TrendingUp className="w-4 h-4" />,
   "Partner Sync (Premium)": <Users className="w-4 h-4" />,
   "Childcare-Aware Planning": <Users className="w-4 h-4" />,
 };

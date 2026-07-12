@@ -48,7 +48,7 @@ Healthcare shift workers (nurses, doctors, paramedics, midwives, HCAs) use Shift
 ${featuresLines}
 
 ## Pricing
-- **Free**: £0/month — Fatigue Score (0-100), Shift Planner (5 strategies), Recovery Coach, Preference Learning
+- **Free**: £0/month — Fatigue Score (0-100), Manual Shift Entry, Recovery Coach, Preference Learning
 - **Premium Monthly**: £3.99/month — All Free features + AI Voice Planner, Partner Sync (4 modes), Fatigue Intelligence, Income Estimator, Annual Leave Optimiser. Free 1-month trial.
 - **Day One Annual**: £18.99/year (60% off) — Same as Premium, locks in launch price for life. Free 1-month trial.
 - **Pricing detail**: https://www.shiftlyx.com/pricing.md

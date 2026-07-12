@@ -1796,7 +1796,7 @@ Based on: Ulupinar F. et al. (2026). The Effect of Single and Double Shift Works
       name: "Free",
       features: [
         "Fatigue Score (0-100)",
-        "Shift Planner (5 strategies)",
+        "Manual Shift Entry",
         "Recovery Coach",
         "Preference Learning",
       ],
@@ -1815,6 +1815,7 @@ Based on: Ulupinar F. et al. (2026). The Effect of Single and Double Shift Works
         "Income Forecasting",
         "Smart Shift Stacking",
         "Candidate Comparison",
+        "Commute Engine",
         "Import/Export",
       ],
     },

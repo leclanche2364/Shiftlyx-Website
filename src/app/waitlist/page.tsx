@@ -24,8 +24,8 @@ export default function WaitlistPage() {
         <p>Know your tired and why. Four measurable dimensions — consecutive work days, night clustering, short recovery, circadian disruption — combine into one score. No black box.</p>
         <h2>AI Voice Planner</h2>
         <p>Speak naturally to build your schedule. Say &ldquo;Plan my month with more nights&rdquo; or &ldquo;Show me the healthiest option.&rdquo; The voice assistant generates shift patterns ranked for you. Powered by OpenAI.</p>
-        <h2>Shift Planner &mdash; Five Strategies</h2>
-        <p>Income Optimised, Balanced, Health Optimised, Shift Stacked, and Annual Leave Maximised. Compare candidates side by side.</p>
+        <h2>Shift Planner</h2>
+        <p>Income Optimised, Balanced, Health Optimised, Shift Stacked, and Annual Leave Maximised. Compare candidates side by side. Powered AI shift scheduling is part of Premium. Free users can manually enter shifts to get their fatigue score.</p>
         <h2>Partner Sync</h2>
         <p>Link with your partner. See both rotas in one view. Four coordination modes including Childcare First. For shift-working couples.</p>
         <h2>Recovery Coach</h2>

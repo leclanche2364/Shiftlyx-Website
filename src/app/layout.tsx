@@ -111,7 +111,7 @@ const jsonLd = {
             price: 0,
             priceCurrency: "GBP",
             description:
-              "Fatigue Score, Shift Planner, Recovery Coach, Preference Learning",
+              "Fatigue Score, Manual Shift Entry, Recovery Coach, Preference Learning",
           },
           {
             "@type": "Offer",
