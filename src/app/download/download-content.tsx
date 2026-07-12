@@ -29,7 +29,7 @@ import { siteConfig } from "@/config/site";
 
 const freeIcons: Record<string, React.ReactNode> = {
   "Fatigue Score (0-100)": <Activity className="w-4 h-4" />,
-  "Shift Planner (5 strategies)": <Layers className="w-4 h-4" />,
+  "Manual Shift Entry": <CalendarDays className="w-4 h-4" />,
   "Recovery Coach": <Zap className="w-4 h-4" />,
   "Preference Learning": <TrendingUp className="w-4 h-4" />,
 };
