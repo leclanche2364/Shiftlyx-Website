@@ -153,7 +153,7 @@ export default function PartnerInvitePage() {
 
             {/* App store links below CTA */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-6">
-              <Link href="https://apps.apple.com/app/shiftlyx">
+              <Link href="https://apps.apple.com/id/app/shiftlyx-own-your-shift/id6767157095">
                 <Button
                   size="lg"
                   className="bg-[#0f172a] hover:bg-[#1e293b] text-white text-sm gap-2 px-6 h-12"
@@ -165,7 +165,7 @@ export default function PartnerInvitePage() {
                   </div>
                 </Button>
               </Link>
-              <Link href="https://play.google.com/store/apps/details?id=com.shiftlyx.app">
+              <Link href="https://play.google.com/store/apps/details?id=com.beemal.shiftlyxAI">
                 <Button
                   size="lg"
                   className="bg-[#0f172a] hover:bg-[#1e293b] text-white text-sm gap-2 px-6 h-12"

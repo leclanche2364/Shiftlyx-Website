@@ -150,34 +150,38 @@ export default function DownloadPage() {
             >
               {/* Store buttons */}
               <div className="flex flex-col gap-3 w-full max-w-xs">
-                <Button
-                  size="lg"
-                  className="bg-[#0f172a] hover:bg-[#1e293b] text-white text-base gap-3 px-6 h-14 rounded-2xl w-full disabled:opacity-60 disabled:cursor-not-allowed"
-                  disabled
+                <a
+                  href="https://apps.apple.com/id/app/shiftlyx-own-your-shift/id6767157095"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Apple className="w-6 h-6" />
-                  <div className="text-left">
-                    <div className="text-[10px] opacity-70">Download on the</div>
-                    <div className="text-base font-semibold -mt-0.5">App Store</div>
-                  </div>
-                  <Badge variant="outline" className="ml-auto text-[10px] text-amber-600 border-amber-200 bg-amber-50 shrink-0">
-                    Coming soon
-                  </Badge>
-                </Button>
-                <Button
-                  size="lg"
-                  className="bg-[#0f172a] hover:bg-[#1e293b] text-white text-base gap-3 px-6 h-14 rounded-2xl w-full disabled:opacity-60 disabled:cursor-not-allowed"
-                  disabled
+                  <Button
+                    size="lg"
+                    className="bg-[#0f172a] hover:bg-[#1e293b] text-white text-base gap-3 px-6 h-14 rounded-2xl w-full cursor-pointer"
+                  >
+                    <Apple className="w-6 h-6" />
+                    <div className="text-left">
+                      <div className="text-[10px] opacity-70">Download on the</div>
+                      <div className="text-base font-semibold -mt-0.5">App Store</div>
+                    </div>
+                  </Button>
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.beemal.shiftlyxAI"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Smartphone className="w-6 h-6" />
-                  <div className="text-left">
-                    <div className="text-[10px] opacity-70">Get it on</div>
-                    <div className="text-base font-semibold -mt-0.5">Google Play</div>
-                  </div>
-                  <Badge variant="outline" className="ml-auto text-[10px] text-amber-600 border-amber-200 bg-amber-50 shrink-0">
-                    Coming soon
-                  </Badge>
-                </Button>
+                  <Button
+                    size="lg"
+                    className="bg-[#0f172a] hover:bg-[#1e293b] text-white text-base gap-3 px-6 h-14 rounded-2xl w-full cursor-pointer"
+                  >
+                    <Smartphone className="w-6 h-6" />
+                    <div className="text-left">
+                      <div className="text-[10px] opacity-70">Get it on</div>
+                      <div className="text-base font-semibold -mt-0.5">Google Play</div>
+                    </div>
+                  </Button>
+                </a>
               </div>
 
               <p className="text-xs text-[#94a3b8] mt-3">iOS 16+ &bull; Android 10+</p>
