@@ -3204,27 +3204,21 @@ Good news: you do not have to. Shiftlyx can import your official rota directly f
 - Your NHS trust account credentials (the same ones you use to view your rota)
 - The Shiftlyx app (download from the App Store or Google Play)
 
-### Step 1: Find Your ICS Feed URL in the Loop App
+### Step 1: Generate Your iCal Link from the Loop Web Portal
 
-The Loop app (and the older Allocate/Metro apps) provides an ICS calendar feed URL. This is a link that contains your approved rota as a machine-readable calendar file.
+The correct way to get your roster into Shiftlyx is through the Loop web portal (not the mobile app). Here is the exact workflow:
 
-**On the Loop mobile app:**
+1. Go to your trust's Loop web portal (the website you use to view your rota on a computer)
+2. Log in with your NHS trust credentials
+3. In the sidebar menu, click **"Rostering"**
+4. Under **"Personal Rostering"**, find and click **"View and share your roster calendar on other devices"** — this links to the Calendar links section
+5. Click **"Calendar links"**
+6. Click **"Add new"** to create a new calendar link
+7. Give it a name (e.g. "Shiftlyx Sync" or "My Rota")
+8. Click submit/save — Loop generates a unique iCal link for you
+9. Copy the generated iCal link to your clipboard
 
-1. Open the Loop app and log in with your NHS trust credentials
-2. Go to your rota view
-3. Tap the menu icon (three dots or hamburger menu) in the corner
-4. Look for "Sync to Calendar", "Calendar Export", "ICS Feed", or "Export"
-5. You will see a URL that starts with \"webcal://\" or \"https://\" — this is your ICS feed URL
-6. Copy the full URL to your clipboard
-
-**On the Allocate/Metro web portal:**
-
-1. Log in to your trust's rostering portal (usually accessed via a browser on desktop or your phone)
-2. Navigate to your rota view
-3. Look for a "Subscribe" or "Export" button near the calendar
-4. Copy the ICS URL that appears
-
-> **If you cannot find the export option:** Some trusts hide this feature. Try searching for "export" or "sync" inside the app settings. If you still cannot find it, contact your rostering team and ask whether ICS calendar export is enabled for your trust. Many trusts have it, but it may need to be activated by an administrator.
+> That's it. This link contains your approved rota as a machine-readable calendar feed. It updates automatically when your trust publishes rota changes.
 
 ### Step 2: Import into Shiftlyx
 
@@ -3232,24 +3226,24 @@ Open Shiftlyx and navigate to the calendar view. Tap the **"Import Rota"** butto
 
 You have three ways to import:
 
-**Method 1: Paste the ICS URL (best method)**
+**Method 1: Paste the iCal URL (best method)**
 
 1. In the import sheet, select the "From URL" tab
-2. Paste the URL you copied from Loop
+2. Paste the iCal link you copied from the Loop portal
 3. Shiftlyx automatically normalises the URL (it handles webcal://, webcals://, and bare hostnames)
 4. Tap "Import"
-5. The app downloads and parses your rota
+5. The app downloads and parses your entire rota
 
 **Method 2: Upload an ICS file**
 
-1. Export your rota as an ICS file from Loop (look for "Download" or "Export File" in the menu)
+1. Download your rota as an ICS file from Loop (look for "Download" or "Export File" in the portal)
 2. In Shiftlyx, select the "From File" tab
 3. Browse and select the .ics file from your device
 4. Tap "Import"
 
 **Method 3: Paste the raw ICS content**
 
-1. If the URL method does not work (some trust portals block downloads), open the ICS URL in a browser on your device
+1. If the URL method does not work, open the iCal link in a browser on your device
 2. The browser will either download the file or show raw text starting with \"BEGIN:VCALENDAR\"
 3. Copy all of that text
 4. In Shiftlyx, select the "Paste ICS" tab
