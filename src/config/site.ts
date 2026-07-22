@@ -3184,6 +3184,140 @@ Your family may never fully understand what shift work feels like. But they can 
       `.trim(),
     },
     {
+      slug: "import-allocate-loop-rota-to-shiftlyx-guide",
+      title: "How to Import Your NHS Rota from Allocate/Metro into Shiftlyx (Complete Guide)",
+      excerpt: "Step-by-step guide for NHS staff: export your ICS rota feed from Allocate/Metro/Loop and import it into Shiftlyx for automatic fatigue tracking.",
+      category: "How-To Guides",
+      date: "July 23, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## How to Import Your NHS Rota from Allocate/Metro into Shiftlyx
+
+Your NHS rota is already approved. You have seen it in the Loop app (or Allocate or Metro) and you know which shifts you are working this month. The last thing you want to do is manually type every shift into another app.
+
+Good news: you do not have to. Shiftlyx can import your official rota directly from Loop's ICS feed. Here is exactly how to do it.
+
+### What You Need
+
+- An Android or iOS device with the Loop app installed
+- Your NHS trust account credentials (the same ones you use to view your rota)
+- The Shiftlyx app (download from the App Store or Google Play)
+
+### Step 1: Find Your ICS Feed URL in the Loop App
+
+The Loop app (and the older Allocate/Metro apps) provides an ICS calendar feed URL. This is a link that contains your approved rota as a machine-readable calendar file.
+
+**On the Loop mobile app:**
+
+1. Open the Loop app and log in with your NHS trust credentials
+2. Go to your rota view
+3. Tap the menu icon (three dots or hamburger menu) in the corner
+4. Look for "Sync to Calendar", "Calendar Export", "ICS Feed", or "Export"
+5. You will see a URL that starts with \"webcal://\" or \"https://\" — this is your ICS feed URL
+6. Copy the full URL to your clipboard
+
+**On the Allocate/Metro web portal:**
+
+1. Log in to your trust's rostering portal (usually accessed via a browser on desktop or your phone)
+2. Navigate to your rota view
+3. Look for a "Subscribe" or "Export" button near the calendar
+4. Copy the ICS URL that appears
+
+> **If you cannot find the export option:** Some trusts hide this feature. Try searching for "export" or "sync" inside the app settings. If you still cannot find it, contact your rostering team and ask whether ICS calendar export is enabled for your trust. Many trusts have it, but it may need to be activated by an administrator.
+
+### Step 2: Import into Shiftlyx
+
+Open Shiftlyx and navigate to the calendar view. Tap the **"Import Rota"** button in the top toolbar.
+
+You have three ways to import:
+
+**Method 1: Paste the ICS URL (best method)**
+
+1. In the import sheet, select the "From URL" tab
+2. Paste the URL you copied from Loop
+3. Shiftlyx automatically normalises the URL (it handles webcal://, webcals://, and bare hostnames)
+4. Tap "Import"
+5. The app downloads and parses your rota
+
+**Method 2: Upload an ICS file**
+
+1. Export your rota as an ICS file from Loop (look for "Download" or "Export File" in the menu)
+2. In Shiftlyx, select the "From File" tab
+3. Browse and select the .ics file from your device
+4. Tap "Import"
+
+**Method 3: Paste the raw ICS content**
+
+1. If the URL method does not work (some trust portals block downloads), open the ICS URL in a browser on your device
+2. The browser will either download the file or show raw text starting with \"BEGIN:VCALENDAR\"
+3. Copy all of that text
+4. In Shiftlyx, select the "Paste ICS" tab
+5. Paste the content and tap "Import"
+
+### Step 3: Review and Confirm
+
+After parsing, Shiftlyx shows a **Reconciliation Preview** summarising:
+
+- **Total shifts found:** The number of events detected in your ICS file
+- **Mapped shifts:** How each event was mapped to a Shiftlyx shift type (Long Day, Night, Twilight, etc.)
+- **Unrecognised events:** Any entries that could not be mapped (you can manually correct these)
+- **Excluded entries:** Days marked OFF, SICK, TRAINING etc. are skipped automatically
+
+Review the mapping and confirm the import. Your shifts are now loaded with the correct dates, times, and types.
+
+### How Shift Type Mapping Works
+
+Shiftlyx understands the standard shift codes used across NHS trusts:
+
+| Code | Shift Type | What Shiftlyx Maps To |
+|------|-----------|----------------------|
+| LD | Long Day | Long Day (7:00-19:30 typical) |
+| MLD | Medium Long Day | Medium Long Day |
+| TW | Twilight | Twilight (13:00-21:00 typical) |
+| N | Night | Night (19:00-07:30 typical) |
+| E | Early | Long Day |
+| L | Late | Twilight |
+| AL | Annual Leave | Annual Leave |
+| SL | Study Leave | Study Leave |
+
+If your trust uses non-standard codes, Shiftlyx will flag the unmapped shifts so you can correct them manually during the review step.
+
+### What Happens Next
+
+Once imported, your rota feeds into Shiftlyx's automatic fatigue analysis:
+
+- **Fatigue Score:** Every shift is scored against the four-dimension model (consecutive work, short recovery, cumulative hours, shift-type mismatch)
+- **Recovery Readiness:** Your body's recovery status is calculated based on upcoming and completed shifts
+- **Night Recovery Tracker:** If your imported rota includes night clusters, the Night Recovery Banner appears automatically
+- **Partner Sync:** If you have Premium, your imported rota can be shared with your partner's calendar
+
+### Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| "URL did not return a valid ICS file" | The URL may require authentication. Try opening it in a browser first, then use Method 3 to paste the content |
+| "No shifts found" | Your trust may use different event labels. Try the manual paste method and check the raw content starts with BEGIN:VCALENDAR |
+| Shift types are wrong | Some trusts use codes that differ from the standard. During the reconciliation preview, you can change any shift type before confirming |
+| Import button is not showing | Make sure you are on the calendar screen. The Import Rota button appears in the calendar toolbar |
+| "HTTP 403/401" | The ICS feed URL may be session-locked. Try exporting as a file (Method 2) instead |
+
+### Why Not Automatic Sync?
+
+You might wonder why Shiftlyx does not automatically sync with NHS rostering systems. The answer is intentional: Shiftlyx is a personal tool. Your employer should not control access to your shift analysis tool. Automatic sync would require either NHS trust APIs (which do not exist for third-party apps) or sharing your login credentials (which we will never ask for).
+
+The ICS import method gives you control. You choose when to update. You see exactly what is imported. No background access required.
+
+### Need Help?
+
+If your trust uses a different rostering system or the import does not work as expected, contact us via the app or email. We add support for new formats regularly based on user reports.
+
+---
+
+*Shiftlyx is a planning aid, not a medical device. Always follow your trust's policies and consult appropriate professionals for health concerns.*
+      `.trim(),
+    },
+    {
       slug: "shiftlyx-30-day-retrospective",
       title: "30 Days of Shiftlyx: What We Learned Building for NHS Shift Workers",
       excerpt: "Behind the scenes of building an app for people who work while the world sleeps. Lessons, data, and what's next.",
