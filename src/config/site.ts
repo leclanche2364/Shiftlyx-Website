@@ -1829,7 +1829,7 @@ Your rota already contains everything you need to know about your fatigue. The h
 
 **References:** Journal of Nursing Administration, 2016; Working Time Regulations 1998 (UK).
       `.trim(),
-    },,
+    },
     {
       slug: "what-happens-to-your-brain-after-3-night-shifts",
       title: "What Happens to Your Brain After 3 Night Shifts in a Row",
@@ -1871,7 +1871,7 @@ Three nights in a row is where research shows the biggest jumps in error rates. 
 
 **References:** BMJ Open, 2019; Journal of Neuroscience; Shiftlyx Night Recovery feature documentation.
       `.trim(),
-    },,
+    },
     {
       slug: "shift-worker-budget-guide-nhs-2026",
       title: "The Shift Worker's Budget Guide: Maximising Your NHS Pay in 2026",
@@ -1925,7 +1925,7 @@ Shiftlyx handles all of this automatically. Your pay breakdown per shift type ap
 
 **References:** NHS Employers, Agenda for Change Pay Rates 2026.
       `.trim(),
-    },,
+    },
     {
       slug: "short-turnaround-shifts-safety-risks",
       title: "Short Turnaround Shifts: The 11-Hour Gap Nobody Talks About",
@@ -1968,7 +1968,7 @@ The data is clear: these are the shifts where fatigue compounds faster than any 
 
 **References:** BMJ Open, 2020; Working Time Regulations 1998 (UK).
       `.trim(),
-    },,
+    },
     {
       slug: "partner-nurse-shift-sync-guide",
       title: "Nurse Couples: The Complete Guide to Syncing Your Shifts",
@@ -2019,7 +2019,7 @@ Shiftlyx's Partner Sync feature lets you share your proposed rota with your part
 
 No shared calendar built for 9-5 workers can handle shift work complexity. Shiftlyx can.
       `.trim(),
-    },,
+    },
     {
       slug: "circadian-rhythm-hacks-for-night-workers",
       title: "7 Circadian Rhythm Hacks That Actually Work for Night Workers",
@@ -2063,7 +2063,7 @@ Shiftlyx tracks your circadian disruption across every shift transition and show
 
 Pick two strategies. Build the habit. Then add more.
       `.trim(),
-    },,
+    },
     {
       slug: "annual-leave-hack-2026-nhs",
       title: "How to Get 50 Days Off Using Just 25 Annual Leave Days in 2026",
@@ -2108,7 +2108,7 @@ Shiftlyx's Annual Leave Maximised strategy analyses your rota and identifies the
 
 **Tip:** Submit your leave requests early. The best bridge positions go fast on popular wards.
       `.trim(),
-    },,
+    },
     {
       slug: "why-fatigue-is-worse-than-burnout-for-nurses",
       title: "Why Fatigue Is Different from Burnout (And Why That Matters)",
@@ -2153,7 +2153,7 @@ This is not a replacement for burnout awareness. It is a more complete picture o
 
 **References:** Maslach C. and Leiter M.P., The Truth About Burnout, 1997.
       `.trim(),
-    },,
+    },
     {
       slug: "what-is-a-good-fatigue-score",
       title: "What Is a Good Fatigue Score? Understanding Your Number",
@@ -2203,7 +2203,7 @@ The power of the score is not the number. It is understanding which of the four 
 
 **References:** Shiftlyx Fatigue Score Technical Documentation.
       `.trim(),
-    },,
+    },
     {
       slug: "shift-stacking-how-nurses-get-more-days-off",
       title: "Shift Stacking: How to Work the Same Hours but Get More Days Off",
@@ -2248,7 +2248,7 @@ More days off. Same hours. That is the whole point.
 
 **References:** Scandinavian Journal of Work, Environment and Health, 2018.
       `.trim(),
-    },,
+    },
     {
       slug: "nurse-commute-time-fatigue-impact",
       title: "Your Commute Is Adding 30% to Your Fatigue Load (Here's the Proof)",
@@ -2288,7 +2288,7 @@ A 2021 survey of NHS nurses published in Nursing Times found that 43 percent rep
 
 **References:** AAA Foundation for Traffic Safety, 2016; Nursing Times staff survey, 2021.
       `.trim(),
-    },,
+    },
     {
       slug: "6-consecutive-shifts-dangerous",
       title: "Is 6 Consecutive Shifts Really Dangerous? The Data Says Yes",
@@ -2330,7 +2330,7 @@ The 2019 NHS Staff Survey found that 42 percent of nurses reported working addit
 
 **References:** Rogers A.E. et al., Health Affairs, 2004; Journal of Sleep Research, 2015; NHS Staff Survey, 2019.
       `.trim(),
-    },,
+    },
     {
       slug: "shiftlyx-florence-voice-planner-review",
       title: "How Florence, the AI Voice Planner, Understands Shift Work",
@@ -2376,7 +2376,7 @@ Florence is available in the Shiftlyx app. Tap the microphone button on the home
 
 **References:** Shiftlyx Product Documentation, Florence Voice Planner Feature.
       `.trim(),
-    },,
+    },
     {
       slug: "three-recovery-tools-work-for-shift-workers",
       title: "Three Recovery Tools That Actually Work for Shift Workers",
@@ -2426,7 +2426,7 @@ Shiftlyx's Recovery Coach consolidates these three tools into one view. The Reco
 
 **References:** Shiftlyx Recovery Coach Feature Documentation; National Sleep Foundation shift work guidelines.
       `.trim(),
-    },,
+    },
     {
       slug: "nhs-long-weekend-rota-trick",
       title: "The NHS Rota Trick That Gives You a 4-Day Weekend Every Month",
@@ -2476,7 +2476,7 @@ Shiftlyx's planning strategies evaluate your pattern against your preferences. T
 
 **References:** Shiftlyx planning strategies documentation.
       `.trim(),
-    },,
+    },
     {
       slug: "preference-learning-how-shiftlyx-knows-you",
       title: "The More You Use Shiftlyx, the Better It Gets. Here's How",
@@ -2524,7 +2524,7 @@ The planner does not ask you to rank priorities every time. It uses your affinit
 
 **References:** Shiftlyx Preference Learning Technical Documentation.
       `.trim(),
-    },,
+    },
     {
       slug: "working-while-sick-nhs-culture",
       title: "Presenteeism in the NHS: Why Nurses Work Through Illness",
@@ -2566,7 +2566,7 @@ Shiftlyx cannot solve the staffing crisis that drives presenteeism. But it does 
 
 **References:** NHS Staff Survey, 2022; Centre for Mental Health, Presenteeism report, 2019.
       `.trim(),
-    },,
+    },
     {
       slug: "caffeine-strategy-for-night-shifts",
       title: "The Optimal Caffeine Strategy for Night Shift Workers",
@@ -2615,7 +2615,7 @@ Shiftlyx's sleep prep reminders can be configured to include caffeine cutoff ale
 
 **References:** Sleep Medicine Reviews, 2018; Centre for Chronobiology, University of Surrey shift work guidelines.
       `.trim(),
-    },,
+    },
     {
       slug: "my-first-month-using-shiftlyx",
       title: "My First Month Using Shiftlyx: A Nurse's Honest Review",
@@ -2659,7 +2659,7 @@ The app did not fix my shift work. Nothing does that. But it gave me something I
 
 I still feel tired. But now I know why. And I know what to do about it.
       `.trim(),
-    },,
+    },
     {
       slug: "nhs-roster-vs-shiftlyx",
       title: "Your NHS Rota System and Shiftlyx: How They Work Together",
@@ -2703,7 +2703,7 @@ The NHS system manages the organisation's needs. Shiftlyx manages yours. They ar
 
 **References:** Shiftlyx Product FAQ; NHS England Digital Workforce Solutions.
       `.trim(),
-    },,
+    },
     {
       slug: "dealing-with-shift-work-guilt",
       title: "The Guilt of Shift Work: Missing Events and Making Peace",
@@ -2751,7 +2751,7 @@ The guilt never fully goes away. But you can stop letting it drive your decision
 
 **References:** Shiftlyx Partner Sync feature documentation.
       `.trim(),
-    },,
+    },
     {
       slug: "five-strategies-for-shift-planning",
       title: "5 Ways to Plan Your Shifts: Which Strategy Fits Your Life?",
@@ -2813,7 +2813,7 @@ Switch strategies from the Planning screen. The planner will generate new candid
 
 **References:** Shiftlyx Planning Strategies Documentation.
       `.trim(),
-    },,
+    },
     {
       slug: "nhs-bank-shifts-fatigue-mistakes",
       title: "Watch Out: 3 Fatigue Mistakes Nurses Make with Bank Shifts",
@@ -2857,7 +2857,7 @@ The data is clear: bank shifts are a major contributor to fatigue spikes. Use th
 
 **References:** Shiftlyx Fatigue Impact Preview Feature; BMJ Open, 2020.
       `.trim(),
-    },,
+    },
     {
       slug: "recovery-coach-vs-health-apps",
       title: "Why Recovery Coach Doesn't Ping You at 3am (And Why That's the Point)",
@@ -2905,7 +2905,7 @@ Most health apps treat shift workers as edge cases. Shiftlyx was built for them.
 
 **References:** Shiftlyx Product Design Documentation, Notification Philosophy.
       `.trim(),
-    },,
+    },
     {
       slug: "long-term-health-effects-shift-work",
       title: "The Long-Term Health Effects of Shift Work: What the Research Really Says",
@@ -2959,7 +2959,7 @@ Shiftlyx cannot prevent the long-term health effects of shift work. No app can. 
 
 **References:** IARC Monograph, 2007; BMJ Meta-analysis, 2018; Diabetes Care, 2015.
       `.trim(),
-    },,
+    },
     {
       slug: "how-to-build-strong-habit-with-shiftlyx",
       title: "How to Build a 2-Minute Habit That Improves Every Shift",
@@ -3018,7 +3018,7 @@ One hour per month for that return is a good trade. The habit that pays for itse
 
 **References:** Clear J., Atomic Habits, 2018; Shiftlyx Florence Voice Planner Feature.
       `.trim(),
-    },,
+    },
     {
       slug: "paramedic-vs-nurse-shift-patterns",
       title: "Paramedic vs Nurse Shift Patterns: What's Different and What's the Same",
@@ -3071,7 +3071,7 @@ The fatigue score does not know whether you wear blue or green. It just knows wh
 
 **References:** Shiftlyx Shift Engine Technical Documentation.
       `.trim(),
-    },,
+    },
     {
       slug: "shiftlyx-privacy-data-security-nhs",
       title: "Where Does Your Shift Data Go? Shiftlyx's Privacy Approach Explained",
@@ -3132,7 +3132,7 @@ Every feature is designed with privacy by default. The fatigue engine runs local
 
 **References:** Shiftlyx Privacy Policy; UK GDPR; Data Protection Act 2018.
       `.trim(),
-    },,
+    },
     {
       slug: "how-to-explain-shift-work-fatigue-to-your-family",
       title: "How to Explain Shift Work Fatigue to People Who Don't Work Shifts",
@@ -3182,7 +3182,7 @@ Your family may never fully understand what shift work feels like. But they can 
 
 **References:** Shiftlyx Partner Sync feature.
       `.trim(),
-    },,
+    },
     {
       slug: "shiftlyx-30-day-retrospective",
       title: "30 Days of Shiftlyx: What We Learned Building for NHS Shift Workers",
