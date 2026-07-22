@@ -1,0 +1,309 @@
+{
+  "meta": {
+    "startDate": "2026-07-23",
+    "totalArticles": 30,
+    "category": "SEO Content Sprint"
+  },
+  "articles": [
+    {
+      "day": 1,
+      "date": "2026-07-23",
+      "slug": "how-to-read-your-nhs-rota-for-fatigue-risks",
+      "title": "How to Read Your NHS Rota for Fatigue Risks",
+      "excerpt": "Most nurses check their rota for pay, weekends, and nights — but miss the hidden fatigue traps that accumulate over weeks.",
+      "category": "Rota Planning",
+      "tags": ["rota", "nhs", "fatigue", "planning"],
+      "angle": "Practical guide showing exactly which rota patterns to watch for: short turnarounds, 6+ day stretches, day-night flips. Uses Shiftlyx terminology naturally."
+    },
+    {
+      "day": 2,
+      "date": "2026-07-24",
+      "slug": "what-happens-to-your-brain-after-3-night-shifts",
+      "title": "What Happens to Your Brain After 3 Night Shifts in a Row",
+      "excerpt": "Night shifts don't just disrupt sleep — they change how your brain processes information, regulates mood, and recovers.",
+      "category": "Fatigue & Recovery",
+      "tags": ["night-shifts", "brain", "circadian", "science"],
+      "angle": "Neuroscience explained for nurses. Covers cognitive decline across consecutive nights, with practical mitigation tips."
+    },
+    {
+      "day": 3,
+      "date": "2026-07-25",
+      "slug": "shift-worker-budget-guide-nhs-2026",
+      "title": "The Shift Worker's Budget Guide: Maximising Your NHS Pay in 2026",
+      "excerpt": "Know exactly what each enhancement is worth and how to plan your month around the shifts that pay more.",
+      "category": "NHS Life",
+      "tags": ["pay", "nhs", "budget", "finance"],
+      "angle": "Practical personal finance for shift workers. Break down night (+30%), Saturday (+30%), Sunday (+60%) enhancements into real earnings."
+    },
+    {
+      "day": 4,
+      "date": "2026-07-26",
+      "slug": "short-turnaround-shifts-safety-risks",
+      "title": "Short Turnaround Shifts: The 11-Hour Gap Nobody Talks About",
+      "excerpt": "When your finish and next start are less than 12 hours apart, fatigue compounds faster than you realise.",
+      "category": "Fatigue & Recovery",
+      "tags": ["turnaround", "short-recovery", "safety", "fatigue"],
+      "angle": "Data-driven look at short turnaround shifts. Reference research on error rates after <12h recovery. How Shiftlyx flags these."
+    },
+    {
+      "day": 5,
+      "date": "2026-07-27",
+      "slug": "partner-nurse-shift-sync-guide",
+      "title": "Nurse Couples: The Complete Guide to Syncing Your Shifts",
+      "excerpt": "When both partners work shifts, every month becomes a negotiation. Here's a system that actually works.",
+      "category": "NHS Life",
+      "tags": ["partner", "couples", "childcare", "shift-sync"],
+      "angle": "Real talk about shift worker relationships. Introduce the four coordination modes naturally. Use Shiftlyx feature as the solution."
+    },
+    {
+      "day": 6,
+      "date": "2026-07-28",
+      "slug": "circadian-rhythm-hacks-for-night-workers",
+      "title": "7 Circadian Rhythm Hacks That Actually Work for Night Workers",
+      "excerpt": "Science-backed strategies for managing your body clock when day and night blur together.",
+      "category": "Fatigue & Recovery",
+      "tags": ["circadian", "night-work", "sleep", "hacks"],
+      "angle": "Practical tips: light exposure timing, meal timing, strategic napping, blackout curtains, caffeine cutoff. Reference Shiftlyx's circadian disruption tracking."
+    },
+    {
+      "day": 7,
+      "date": "2026-07-29",
+      "slug": "annual-leave-hack-2026-nhs",
+      "title": "How to Get 50 Days Off Using Just 25 Annual Leave Days in 2026",
+      "excerpt": "Strategic annual leave placement can nearly double your time off. Here's the formula shift workers need.",
+      "category": "Rota Planning",
+      "tags": ["annual-leave", "planning", "hack", "time-off"],
+      "angle": "Step-by-step guide to maximising leave. Reference Shiftlyx Annual Leave Maximised strategy. Show the math."
+    },
+    {
+      "day": 8,
+      "date": "2026-07-30",
+      "slug": "why-fatigue-is-worse-than-burnout-for-nurses",
+      "title": "Why Fatigue Is Different from Burnout (And Why That Matters)",
+      "excerpt": "Burnout gets all the attention, but fatigue is the quiet danger that affects more nurses every single shift.",
+      "category": "Fatigue & Recovery",
+      "tags": ["fatigue", "burnout", "mental-health", "nursing"],
+      "angle": "Distinguish acute/chronic fatigue from burnout. Explain why the four-dimension model captures what burnout metrics miss."
+    },
+    {
+      "day": 9,
+      "date": "2026-07-31",
+      "slug": "what-is-a-good-fatigue-score",
+      "title": "What Is a Good Fatigue Score? Understanding Your Number",
+      "excerpt": "Green doesn't always mean safe, and red doesn't always mean danger. Here's how to interpret your fatigue score.",
+      "category": "Product & Updates",
+      "tags": ["fatigue-score", "product", "tutorial"],
+      "angle": "Deep dive into the Shiftlyx fatigue score scale (0-100). What each zone means, what drives changes, how to improve it."
+    },
+    {
+      "day": 10,
+      "date": "2026-08-01",
+      "slug": "shift-stacking-how-nurses-get-more-days-off",
+      "title": "Shift Stacking: How to Work the Same Hours but Get More Days Off",
+      "excerpt": "Cluster your shifts differently and gain entire extra days off each month without changing your contract.",
+      "category": "Rota Planning",
+      "tags": ["shift-stacking", "planning", "efficiency", "days-off"],
+      "angle": "Explain the concept of clustering vs spreading. Show real rota examples. Reference Shiftlyx Shift Stacked strategy."
+    },
+    {
+      "day": 11,
+      "date": "2026-08-02",
+      "slug": "nurse-commute-time-fatigue-impact",
+      "title": "Your Commute Is Adding 30% to Your Fatigue Load (Here's the Proof)",
+      "excerpt": "The drive home after a shift isn't just inconvenient — it's a measurable fatigue multiplier.",
+      "category": "NHS Life",
+      "tags": ["commute", "fatigue", "research", "safety"],
+      "angle": "Connect commute time to fatigue accumulation. Reference Shiftlyx commute engine. Include safety angle for driving after shifts."
+    },
+    {
+      "day": 12,
+      "date": "2026-08-03",
+      "slug": "6-consecutive-shifts-dangerous",
+      "title": "Is 6 Consecutive Shifts Really Dangerous? The Data Says Yes",
+      "excerpt": "Every nurse has done a six-day stretch. Here's what the research says about the last two days.",
+      "category": "Fatigue & Recovery",
+      "tags": ["consecutive-shifts", "research", "safety", "danger"],
+      "angle": "Cite specific studies on error rates after days 5-6 of consecutive work. Connect to NHS staffing realities."
+    },
+    {
+      "day": 13,
+      "date": "2026-08-04",
+      "slug": "shiftlyx-florence-voice-planner-review",
+      "title": "How Florence, the AI Voice Planner, Understands Shift Work",
+      "excerpt": "Voice planning isn't just convenient — it fundamentally changes how you interact with your rota.",
+      "category": "Product & Updates",
+      "tags": ["florence", "voice-planner", "product", "tutorial"],
+      "angle": "Feature deep-dive on Florence. How she processes natural speech, asks clarifying questions, generates ranked candidates."
+    },
+    {
+      "day": 14,
+      "date": "2026-08-05",
+      "slug": "three-recovery-tools-work-for-shift-workers",
+      "title": "Three Recovery Tools That Actually Work for Shift Workers",
+      "excerpt": "Forget ice baths and meditation apps. Here's what real shift workers use to recover between shifts.",
+      "category": "Fatigue & Recovery",
+      "tags": ["recovery", "sleep", "health", "practical"],
+      "angle": "Evidence-based recovery tools: strategic napping, nutrition timing, light management. Connect to Shiftlyx Recovery Coach."
+    },
+    {
+      "day": 15,
+      "date": "2026-08-06",
+      "slug": "nhs-long-weekend-rota-trick",
+      "title": "The NHS Rota Trick That Gives You a 4-Day Weekend Every Month",
+      "excerpt": "One simple pattern change in how you arrange 5 shifts can unlock consistent long weekends.",
+      "category": "Rota Planning",
+      "tags": ["weekend", "rota", "hack", "planning"],
+      "angle": "Practical rota engineering. Show the 5-on/2-off vs stacked patterns. Reference Shiftlyx planner strategies."
+    },
+    {
+      "day": 16,
+      "date": "2026-08-07",
+      "slug": "preference-learning-how-shiftlyx-knows-you",
+      "title": "The More You Use Shiftlyx, the Better It Gets — Here's How",
+      "excerpt": "Preference learning isn't magic. Here's exactly how Shiftlyx learns what matters to you, shift by shift.",
+      "category": "Product & Updates",
+      "tags": ["learning", "personalization", "product", "features"],
+      "angle": "Technical but accessible explainer on the four affinity scores: income, recovery, continuity, social. How each builds over time."
+    },
+    {
+      "day": 17,
+      "date": "2026-08-08",
+      "slug": "working-while-sick-nhs-culture",
+      "title": "Presenteeism in the NHS: Why Nurses Work Through Illness",
+      "excerpt": "The culture that makes nurses show up sick is the same culture that normalises working fatigued.",
+      "category": "NHS Life",
+      "tags": ["presenteeism", "culture", "nhs", "wellbeing"],
+      "angle": "Hard-hitting piece on NHS presenteeism culture. Connect to fatigue as the same underlying problem. Shiftlyx as the tool that documents what you already feel."
+    },
+    {
+      "day": 18,
+      "date": "2026-08-09",
+      "slug": "caffeine-strategy-for-night-shifts",
+      "title": "The Optimal Caffeine Strategy for Night Shift Workers",
+      "excerpt": "When you drink your coffee matters more than how much. Here's the evidence-based timing.",
+      "category": "Fatigue & Recovery",
+      "tags": ["caffeine", "night-shift", "sleep", "strategy"],
+      "angle": "Science of caffeine timing for shift workers. When to drink, when to stop. Caffeine half-life and sleep onset. Connect to Shiftlyx sleep prep reminders."
+    },
+    {
+      "day": 19,
+      "date": "2026-08-10",
+      "slug": "my-first-month-using-shiftlyx",
+      "title": "My First Month Using Shiftlyx: A Nurse's Honest Review",
+      "excerpt": "From sceptical download to daily habit — one nurse shares what changed after 30 days with Shiftlyx.",
+      "category": "NHS Life",
+      "tags": ["review", "testimonial", "story", "user-experience"],
+      "angle": "First-person narrative style (fictional but realistic). Discovery, initial doubts, first fatigue score, first aha moment. Organic feature mentions."
+    },
+    {
+      "day": 20,
+      "date": "2026-08-11",
+      "slug": "nhs-roster-vs-shiftlyx",
+      "title": "Your NHS Rota System and Shiftlyx: How They Work Together",
+      "excerpt": "HealthRoster, Allocate, and Shiftlyx aren't competitors. Here's exactly how they complement each other.",
+      "category": "Product & Updates",
+      "tags": ["nhs-software", "roster", "integration", "faq"],
+      "angle": "Clarify the relationship. Shiftlyx sits beside the NHS system, not in it. Private, personal, no employer access. Address common misconception."
+    },
+    {
+      "day": 21,
+      "date": "2026-08-12",
+      "slug": "dealing-with-shift-work-guilt",
+      "title": "The Guilt of Shift Work: Missing Events and Making Peace",
+      "excerpt": "You can't be at every birthday, school play, or family dinner. Here's how to stop carrying the weight.",
+      "category": "NHS Life",
+      "tags": ["guilt", "mental-health", "family", "coping"],
+      "angle": "Emotional/mental health piece. Normalise the guilt. Practical strategies for communicating with family. Partner Sync mentioned as practical tool."
+    },
+    {
+      "day": 22,
+      "date": "2026-08-13",
+      "slug": "five-strategies-for-shift-planning",
+      "title": "5 Ways to Plan Your Shifts: Which Strategy Fits Your Life?",
+      "excerpt": "There's no single right way to plan shifts. Here's how to match your strategy to your current priorities.",
+      "category": "Rota Planning",
+      "tags": ["planning", "strategies", "comparison", "guide"],
+      "angle": "Compare-all-five-strategies post. Income vs Health vs Stacking vs Leave vs Balanced. When each makes sense. Personality quiz style."
+    },
+    {
+      "day": 23,
+      "date": "2026-08-14",
+      "slug": "nhs-bank-shifts-fatigue-mistakes",
+      "title": "Watch Out: 3 Fatge Mistakes Nurses Make with Bank Shifts",
+      "excerpt": "Bank shifts pay well but can silently push your fatigue into dangerous territory. Here's what to check before picking one up.",
+      "category": "Fatigue & Recovery",
+      "tags": ["bank-shifts", "overtime", "fatigue", "mistakes"],
+      "angle": "Practical warning piece. Hidden costs of picking up bank shifts without checking fatigue load. How Shiftlyx shows the real trade-off."
+    },
+    {
+      "day": 24,
+      "date": "2026-08-15",
+      "slug": "recovery-coach-vs-health-apps",
+      "title": "Why Recovery Coach Doesn't Ping You at 3am (And Why That's the Point)",
+      "excerpt": "Most health apps treat every user like a 9-5 worker. Shiftlyx knows when to speak and when to stay silent.",
+      "category": "Product & Updates",
+      "tags": ["recovery", "notifications", "product", "design"],
+      "angle": "Design philosophy piece. Smart suppression rules: never during shifts, never after nights, never 9pm-9am. The anti-notification approach."
+    },
+    {
+      "day": 25,
+      "date": "2026-08-16",
+      "slug": "long-term-health-effects-shift-work",
+      "title": "The Long-Term Health Effects of Shift Work: What the Research Really Says",
+      "excerpt": "Cardiovascular disease, diabetes, cancer risks — here's the evidence without the fear-mongering.",
+      "category": "Fatigue & Recovery",
+      "tags": ["health", "research", "long-term", "risks"],
+      "angle": "Comprehensive but accessible review of the major studies. WHO/IARC cancer classification, cardiovascular risks, metabolic effects. End on empowerment/mitigation."
+    },
+    {
+      "day": 26,
+      "date": "2026-08-17",
+      "slug": "how-to-build-strong-habit-with-shiftlyx",
+      "title": "How to Build a 2-Minute Habit That Improves Every Shift",
+      "excerpt": "Entering your shifts into Shiftlyx takes less time than finding a parking spot. Here's how to make it stick.",
+      "category": "Product & Updates",
+      "tags": ["habits", "tutorial", "getting-started", "tips"],
+      "angle": "Habit formation guide specific to Shiftlyx. The 2-minute rule applied. What to do on day 1, day 7, day 30. Voice entry as friction killer."
+    },
+    {
+      "day": 27,
+      "date": "2026-08-18",
+      "slug": "paramedic-vs-nurse-shift-patterns",
+      "title": "Paramedic vs Nurse Shift Patterns: What's Different and What's the Same",
+      "excerpt": "Different uniforms, different rotas — but the fatigue physics are the same. Here's how Shiftlyx works for all healthcare shift workers.",
+      "category": "NHS Life",
+      "tags": ["paramedic", "nurse", "comparison", "healthcare"],
+      "angle": "Cross-profession comparison. Show Shiftlyx works for any shift pattern, not just ward rotas. Paramedic-specific examples (24h shifts, on-call, etc.)."
+    },
+    {
+      "day": 28,
+      "date": "2026-08-19",
+      "slug": "shiftlyx-privacy-data-security-nhs",
+      "title": "Where Does Your Shift Data Go? Shiftlyx's Privacy Approach Explained",
+      "excerpt": "No employer access. No NHS integration. No data selling. Here's exactly how Shiftlyx handles your data.",
+      "category": "Product & Updates",
+      "tags": ["privacy", "security", "trust", "data"],
+      "angle": "Transparency piece. Walk through data storage, encryption, GDPR compliance, device-first vs cloud. Address anxieties nurses have about app data."
+    },
+    {
+      "day": 29,
+      "date": "2026-08-20",
+      "slug": "how-to-explain-shift-work-fatigue-to-your-family",
+      "title": "How to Explain Shift Work Fatigue to People Who Don't Work Shifts",
+      "excerpt": "Your family wants to understand why you're exhausted, but they've never done a night shift. Here's how to bridge the gap.",
+      "category": "NHS Life",
+      "tags": ["family", "communication", "relationships", "support"],
+      "angle": "Empathy/communication piece. Metaphors and explanations non-shift-workers can grasp. Connect to Partner Sync as a practical tool."
+    },
+    {
+      "day": 30,
+      "date": "2026-08-21",
+      "slug": "shiftlyx-30-day-retrospective",
+      "title": "30 Days of Shiftlyx: What We Learned Building for NHS Shift Workers",
+      "excerpt": "Behind the scenes of building an app for people who work while the world sleeps. Lessons, data, and what's next.",
+      "category": "Product & Updates",
+      "tags": ["company", "retrospective", "learnings", "roadmap"],
+      "angle": "Founder voice (Habeeb's perspective). Share data points from waitlist, common requests, feature priorities. Community building."
+    }
+  ]
+}
