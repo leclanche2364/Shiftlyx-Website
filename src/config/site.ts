@@ -1788,6 +1788,1455 @@ Your body is not wrong for struggling with shift work. Your schedule is. And Shi
 Based on: Ulupinar F. et al. (2026). The Effect of Single and Double Shift Works on Salivary Cortisol Levels in Nurses. Nursing Open. Editorial commentary published via Neuroscience News June 2026.
         `
       },
+    {
+      slug: "how-to-read-your-nhs-rota-for-fatigue-risks",
+      title: "How to Read Your NHS Rota for Fatigue Risks",
+      excerpt: "Most nurses check their rota for pay, weekends, and nights but miss the hidden fatigue traps that accumulate over weeks.",
+      category: "Rota Planning",
+      date: "July 23, 2026",
+      readTime: "5 min read",
+      featured: false,
+      content: `
+## How to Read Your NHS Rota for Fatigue Risks
+
+Most nurses check their rota for pay, weekends, and nights but miss the hidden fatigue traps that accumulate over weeks. The difference between a sustainable month and a punishing one often comes down to patterns you are not looking for.
+
+Here is how to spot them before your body does.
+
+### The Short Turnaround Trap
+
+Look at every shift end time and the next shift start time. If the gap is under 12 hours, your body does not get enough time for a full sleep cycle plus recovery. The NHS recommends at least 11 hours between shifts (the working time regulations say 11 consecutive hours rest in 24). In practice, many rotas squeeze this to 8-10 hours.
+
+**What to look for:** Go through your rota and mark every gap shorter than 12 hours. If you see three or more in a month, your fatigue load is higher than the rota suggests.
+
+### The Consecutive Day Creep
+
+Four days in a row is manageable for most people. Six or seven is where error rates start climbing. A 2016 study in the Journal of Nursing Administration found that nurses working 12-hour shifts of 6+ consecutive days reported significantly higher burnout scores.
+
+**What to look for:** Count the longest stretch of consecutive shifts in your rota. Anything over five days without a proper reset is a fatigue risk.
+
+### The Day-Night Flip
+
+Going from days to nights (or nights to days) with less than 48 hours in between is one of the most disruptive patterns for your circadian rhythm. Your body clock cannot adjust that fast. You end up working both shifts in a state of partial misalignment.
+
+**What to look for:** Flag any transition where you switch shift types with only 1-2 days in between. These are the shifts where your fatigue score will be highest.
+
+### How Shiftlyx Automates This
+
+Instead of manually scanning your rota, Shiftlyx reads your shifts and flags all three traps automatically. The four-dimension fatigue model scores every shift against known risk thresholds so you can see your cumulative load at a glance. The Rota Scan feature highlights short recovery gaps in red so you know exactly where the risk is hiding.
+
+Your rota already contains everything you need to know about your fatigue. The hard part is seeing the patterns. Shiftlyx does the pattern recognition for you.
+
+**References:** Journal of Nursing Administration, 2016; Working Time Regulations 1998 (UK).
+      `.trim(),
+    },,
+    {
+      slug: "what-happens-to-your-brain-after-3-night-shifts",
+      title: "What Happens to Your Brain After 3 Night Shifts in a Row",
+      excerpt: "Night shifts don't just disrupt sleep. They change how your brain processes information, regulates mood, and recovers.",
+      category: "Fatigue & Recovery",
+      date: "July 24, 2026",
+      readTime: "5 min read",
+      featured: false,
+      content: `
+## What Happens to Your Brain After 3 Night Shifts in a Row
+
+Night shifts do not just make you tired. They change how your brain processes information, regulates mood, and recovers. Understanding the neuroscience helps you protect yourself.
+
+### Night 1: Jet Lag Without the Travel
+
+Your first night shift feels like mild jet lag. Your suprachiasmatic nucleus (the brain's master clock) still signals that it is time to sleep. Melatonin is rising. Core body temperature is dropping. You are asking your brain to operate in its biological night.
+
+**What happens:** Reaction time slows by 10-15 percent. Working memory capacity drops. You can still do your job, but it takes more effort.
+
+### Night 2: Cognitive Debt Accumulates
+
+By the second night, the debt is visible. A 2019 meta-analysis in the BMJ found that performance on psychomotor vigilance tasks declined by 24 percent after two consecutive night shifts. Your brain has missed two cycles of restorative slow-wave sleep.
+
+**What happens:** Decision-making slows. You rely more on mental shortcuts rather than careful analysis. Mood regulation slips. Irritability increases.
+
+### Night 3: The Risk Zone
+
+Three nights in a row is where research shows the biggest jumps in error rates. A study in the Journal of Neuroscience found that performance on the third night was equivalent to a blood alcohol concentration of 0.05 percent. That is legally impaired driving in many countries.
+
+**What happens:** Attention lapses become more frequent. Your brain enters microsleeps lasting 3-15 seconds without you noticing. Insight and situation awareness decline. You may not realise how impaired you are because fatigue reduces self-awareness too.
+
+### What You Can Do
+
+**Strategic napping:** A 20-minute nap before your first night shift and a 10-minute nap during your break can reduce cognitive decline by up to 30 percent.
+
+**Light exposure:** Bright light (1000+ lux) during the first half of your shift helps suppress melatonin and maintain alertness. Blue-blocking glasses on the commute home protect your daytime sleep.
+
+**Track it:** Shiftlyx's Night Recovery Banner shows you how your sleep window aligns with your circadian needs across consecutive nights. When the banner trends red, your brain is accumulating debt that needs addressing.
+
+**References:** BMJ Open, 2019; Journal of Neuroscience; Shiftlyx Night Recovery feature documentation.
+      `.trim(),
+    },,
+    {
+      slug: "shift-worker-budget-guide-nhs-2026",
+      title: "The Shift Worker's Budget Guide: Maximising Your NHS Pay in 2026",
+      excerpt: "Know exactly what each enhancement is worth and how to plan your month around the shifts that pay more.",
+      category: "NHS Life",
+      date: "July 25, 2026",
+      readTime: "5 min read",
+      featured: false,
+      content: `
+## The Shift Worker's Budget Guide: Maximising Your NHS Pay in 2026
+
+Every shift pays differently. Night shifts carry a 30 percent enhancement. Saturdays add another 30 percent. Sundays pay 60 percent more than a standard day shift.
+
+### Understanding Your Enhancements
+
+NHS Agenda for Change rates for 2026 apply the following unsocial hours payments:
+
+- **Night shifts (8pm-6am):** 30 percent enhancement on basic pay
+- **Saturday (midnight to midnight):** 30 percent enhancement
+- **Sunday (midnight to midnight):** 60 percent enhancement
+- **Public holidays:** Double time plus compensatory leave
+
+These apply on top of your basic hourly rate, which ranges from roughly 12 pound (Band 2) to 24 pound (Band 7).
+
+### The 50-Shift Strategy
+
+Plan your annual shifts using a 50-week model (2 weeks leave). In each week, aim for a mix that maximises enhancements without destroying your recovery.
+
+**Example scenario** (Band 5 nurse, ~17 pound/hour base):
+
+- **4 day shifts (standard rate):** 544 pound (gross)
+- **2 weekend night shifts (+30 percent night, +30/60 percent weekend):** Approximately 400 pound
+- **Total for a stacked week:** 944 pound vs approximately 680 pound for 5 standard day shifts
+
+The difference over a year is roughly 15,000 pound more if you consistently optimise for enhanced shifts, compared to a Monday-Friday schedule.
+
+### The Hidden Trade-Off
+
+More enhanced shifts also mean more fatigue. The Shiftlyx Fatigue vs Paycheck strip makes this trade-off visible. Picking up every night and weekend shift might maximise income, but if your fatigue score stays in the red zone for weeks, the long-term cost to your health and career could outweigh the short-term financial gain.
+
+A better approach: set a target fatigue ceiling and optimise within it. Shiftlyx's Income strategy does exactly this, maximising your enhancements while keeping your fatigue score in the green zone.
+
+### How to Start
+
+1. Know your base rate and enhancement percentages
+2. Map your shifts for the next month and calculate gross earnings
+3. Compare against your fatigue score
+4. Adjust your pattern to find the sweet spot
+
+Shiftlyx handles all of this automatically. Your pay breakdown per shift type appears alongside your fatigue data so you see the trade-off in real time.
+
+**References:** NHS Employers, Agenda for Change Pay Rates 2026.
+      `.trim(),
+    },,
+    {
+      slug: "short-turnaround-shifts-safety-risks",
+      title: "Short Turnaround Shifts: The 11-Hour Gap Nobody Talks About",
+      excerpt: "When your finish and next start are less than 12 hours apart, fatigue compounds faster than you realise.",
+      category: "Fatigue & Recovery",
+      date: "July 26, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## Short Turnaround Shifts: The 11-Hour Gap Nobody Talks About
+
+When your shift finishes at 9pm and you start again at 8am the next morning, you have an 11-hour gap. But that is not 11 hours of rest. By the time you commute home, wind down, sleep, wake, shower, eat, and commute back, you have maybe 6 hours of actual sleep.
+
+That is not enough for recovery.
+
+### What the Research Says
+
+A 2020 study in BMJ Open looked at the relationship between short recovery intervals and patient safety outcomes. Nurses with less than 11 hours between shifts were significantly more likely to report:
+
+- Making medication errors (odds increased by 14 percent)
+- Involvement in near-miss incidents (odds increased by 22 percent)
+- Drowsy driving on the commute home
+
+### Why 11 Hours Is Not Enough
+
+The working time regulations set 11 consecutive hours as the minimum rest period in 24. But rest and recovery are different. Recovery requires:
+
+- **Sufficient sleep duration:** At least 7 hours for most adults
+- **Sleep continuity:** Uninterrupted 90-minute sleep cycles
+- **Circadian alignment:** Sleeping when your body is biologically prepared
+- **Active recovery:** Time for eating, hydration, and mental decompression
+
+An 11-hour gap starting at 9pm might give you 6.5 hours of sleep. The same gap starting at 11pm after a late shift might give you 5 hours or less.
+
+### Shiftlyx Flags These Automatically
+
+The Shiftlyx fatigue engine identifies every shift pair where the gap falls below your personal recovery threshold. The short recovery dimension of your Fatigue Score tracks the cumulative impact. When your rota includes three or more short turnarounds in a week, the score adjusts accordingly.
+
+The data is clear: these are the shifts where fatigue compounds faster than any other pattern. Shiftlyx makes them visible so you can plan around them.
+
+**References:** BMJ Open, 2020; Working Time Regulations 1998 (UK).
+      `.trim(),
+    },,
+    {
+      slug: "partner-nurse-shift-sync-guide",
+      title: "Nurse Couples: The Complete Guide to Syncing Your Shifts",
+      excerpt: "When both partners work shifts, every month becomes a negotiation. Here's a system that actually works.",
+      category: "NHS Life",
+      date: "July 27, 2026",
+      readTime: "5 min read",
+      featured: false,
+      content: `
+## Nurse Couples: The Complete Guide to Syncing Your Shifts
+
+When both partners work shifts, every month becomes a negotiation. Two rotas. Two sets of night clusters. Two on-call schedules. And somewhere in the middle, a relationship, a household, and possibly children.
+
+Here is a system that actually works.
+
+### The Four Coordination Modes
+
+Most dual-shift-worker couples default to one mode without realising there are four options.
+
+**Mode 1: Mirror.** Both partners request the same pattern. You work together, rest together. Good for couples without children who value time together over income.
+
+**Mode 2: Complementary.** One works days while the other works nights. Childcare coverage is maximised, but time together is minimised. Ideal for parents with young children.
+
+**Mode 3: Stacked.** Both partners cluster shifts into blocks. Work intensively for 4-5 days, then have 4-5 days off together. Great for maximising consecutive time off.
+
+**Mode 4: Independent.** Each person optimises their own rota without coordinating. Maximum flexibility, minimum shared time.
+
+### The Conversation You Need to Have
+
+Before you open either rota, agree on priorities. Rank these:
+
+- Time together (date nights, shared evenings)
+- Childcare coverage (minimising paid care)
+- Income optimisation (maximising enhancements)
+- Individual recovery (fatigue management)
+- Social life (weekends free)
+
+Your answers determine which mode fits. Most couples find that switching modes seasonally works better than committing to one.
+
+### How Shiftlyx Makes This Practical
+
+Shiftlyx's Partner Sync feature lets you share your proposed rota with your partner and see overlaps, gaps, and conflicts. The sync view shows:
+
+- Days you both have off (plan those)
+- Days one of you is free (childcare anchor)
+- Days your fatigue loads are both high (order takeaway)
+- Cumulative time together vs apart over the month
+
+No shared calendar built for 9-5 workers can handle shift work complexity. Shiftlyx can.
+      `.trim(),
+    },,
+    {
+      slug: "circadian-rhythm-hacks-for-night-workers",
+      title: "7 Circadian Rhythm Hacks That Actually Work for Night Workers",
+      excerpt: "Science-backed strategies for managing your body clock when day and night blur together.",
+      category: "Fatigue & Recovery",
+      date: "July 28, 2026",
+      readTime: "5 min read",
+      featured: false,
+      content: `
+## 7 Circadian Rhythm Hacks That Actually Work for Night Workers
+
+Every night worker has a list of things they should do to protect their sleep. Here are seven strategies backed by research and tested by real shift workers.
+
+### 1. Anchor Your Sleep Window
+
+Your body needs consistency. Even if you cannot sleep at the same time every day, anchor your sleep window within a 2-hour range. If you typically sleep from 9am to 4pm after nights, do not let that drift to 11am to 6pm on days off. The anchor prevents your circadian rhythm from free-floating.
+
+### 2. Use Light as Medicine
+
+Light is the strongest Zeitgeber for your circadian system. During your night shift, expose yourself to bright light (1000+ lux) for the first half. On the commute home, wear blue-blocking glasses. In your bedroom, use blackout curtains or a sleep mask.
+
+### 3. Time Your Meals Strategically
+
+When you eat matters as much as what you eat. A large meal before daytime sleep signals to your body that it should be awake (digestion activates the circadian system). Eat a light meal after your shift ends, then sleep, then eat your main meal when you wake up.
+
+### 4. Strategic Napping
+
+A 90-minute nap before your first night shift reduces sleep debt by one full cycle. A 20-minute nap during your break improves alertness for 2-3 hours. Naps longer than 30 minutes but shorter than 90 minutes can cause sleep inertia.
+
+### 5. Caffeine Cutoff
+
+Caffeine has a half-life of about 5 hours. Drink coffee at 3am, and at 8am half is still in your system. By 1pm, a quarter remains. Set a caffeine cutoff 6 hours before your planned sleep. For most night workers that means no caffeine after the midpoint of your shift.
+
+### 6. Exercise Timing
+
+Exercise raises core body temperature, which opposes sleep onset. Avoid vigorous exercise in the 2 hours before your planned sleep time. Light stretching or yoga is fine. Heavy cardio belongs at the start of your shift.
+
+### 7. Track Your Disruption
+
+Shiftlyx tracks your circadian disruption across every shift transition and shows you the cumulative effect. When the Circadian Disruption score trends upward, your current schedule is pushing your body clock too hard. The data tells you what your instincts cannot: when the pattern is becoming unsustainable.
+
+Pick two strategies. Build the habit. Then add more.
+      `.trim(),
+    },,
+    {
+      slug: "annual-leave-hack-2026-nhs",
+      title: "How to Get 50 Days Off Using Just 25 Annual Leave Days in 2026",
+      excerpt: "Strategic annual leave placement can nearly double your time off. Here's the formula shift workers need.",
+      category: "Rota Planning",
+      date: "July 29, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## How to Get 50 Days Off Using Just 25 Annual Leave Days in 2026
+
+Strategic annual leave placement can nearly double your time off. Here is the formula shift workers need.
+
+### The Math
+
+The average full-time NHS worker gets about 27 annual leave days (plus 8 bank holidays). Most people use these as single days or isolated weeks. But shift workers have a superpower: your leave stretches further because your work pattern is not Monday to Friday.
+
+**The key insight:** One annual leave day covers a shift slot. If that slot falls in the middle of a week, you get one day off. If it falls adjacent to your natural days off, you create a longer break without using extra leave.
+
+### The Stacking Method
+
+**Step 1:** Identify your natural rest days in the rota. These are the days you are already scheduled off.
+
+**Step 2:** Look for gaps of 1-2 working days between rest periods. These are "bridge days."
+
+**Step 3:** Apply annual leave to bridge days only. Each bridge day of leave turns a 2-day break into a 5-day break, or a 4-day break into a 9-day break.
+
+**Example:** If your rota has you working Monday-Tuesday, off Wednesday-Thursday, working Friday-Saturday-Sunday, using 2 annual leave days on Monday-Tuesday creates a 7-day break from the previous Saturday through the following Sunday.
+
+### The 50-Day Target
+
+With 25 annual leave days applied exclusively to bridge days:
+
+- 5 strategic bridge applications can yield approximately 35 days off
+- 25 all at bridge points can yield approximately 50 days off
+
+The exact number depends on your rota pattern, but the principle holds: leave applied at bridge points stretches further than leave applied to any other position.
+
+### Shiftlyx Does This Automatically
+
+Shiftlyx's Annual Leave Maximised strategy analyses your rota and identifies the optimal positions for every annual leave day. It calculates which bridge days give you the longest contiguous breaks for the least leave cost. You do not need to scan your rota manually.
+
+**Tip:** Submit your leave requests early. The best bridge positions go fast on popular wards.
+      `.trim(),
+    },,
+    {
+      slug: "why-fatigue-is-worse-than-burnout-for-nurses",
+      title: "Why Fatigue Is Different from Burnout (And Why That Matters)",
+      excerpt: "Burnout gets all the attention, but fatigue is the quiet danger that affects more nurses every single shift.",
+      category: "Fatigue & Recovery",
+      date: "July 30, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## Why Fatigue Is Different from Burnout (And Why That Matters)
+
+Burnout gets all the attention, but fatigue is the quiet danger that affects more nurses every single shift. Understanding the difference changes how you manage both.
+
+### Burnout Is a Workplace Condition
+
+Burnout is defined by three dimensions: emotional exhaustion, depersonalisation, and reduced personal accomplishment. It is driven by organisational factors like workload, lack of control, insufficient reward, and poor workplace relationships. Maslach and Leiter's research frames it as a mismatch between the person and the job.
+
+Burnout builds over months or years. You can take a holiday and come back feeling better. Burnout is reversible with the right changes.
+
+### Fatigue Is a Biological State
+
+Fatigue is the physical and cognitive cost of inadequate recovery. It is driven by sleep debt, circadian disruption, and cumulative physical exertion. Fatigue does not care about your workplace satisfaction or your passion for nursing. It is a biological arithmetic problem: recovery in minus energy out.
+
+Fatigue builds over days and weeks, not years. A single shift can add to your fatigue load. A poor night of sleep can keep it elevated. Fatigue does not wait for organisational change. It responds to rest.
+
+### Why the Distinction Matters
+
+If you treat fatigue like burnout, you reach for the wrong solutions. Taking a week off might help burnout. It will not undo five months of chronic circadian disruption. Meditation addresses the emotional exhaustion of burnout. It does not fix the cognitive impairment from missing slow-wave sleep.
+
+The NHS invests heavily in burnout prevention and mental health support. But the most common complaint from shift workers is not "I feel disconnected from my work." It is "I am exhausted and I cannot catch up."
+
+### The Four-Dimension Model
+
+Shiftlyx tracks fatigue across four distinct dimensions that burnout metrics miss:
+
+- **Consecutive days:** How many days in a row without recovery
+- **Night clustering:** The density of night shifts in a block
+- **Short recovery:** Gaps between shifts under 12 hours
+- **Circadian disruption:** Frequency of shift type changes
+
+This is not a replacement for burnout awareness. It is a more complete picture of what shift workers actually experience. Burnout explains why you might want to leave nursing. Fatigue explains why some days you cannot even imagine making it through the shift.
+
+**References:** Maslach C. and Leiter M.P., The Truth About Burnout, 1997.
+      `.trim(),
+    },,
+    {
+      slug: "what-is-a-good-fatigue-score",
+      title: "What Is a Good Fatigue Score? Understanding Your Number",
+      excerpt: "Green doesn't always mean safe, and red doesn't always mean danger. Here's how to interpret your fatigue score.",
+      category: "Product & Updates",
+      date: "July 31, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## What Is a Good Fatigue Score? Understanding Your Number
+
+Green doesn't always mean safe, and red doesn't always mean danger. Here is how to interpret your fatigue score.
+
+### The Scale
+
+Shiftlyx scores fatigue from 0-100 across four dimensions. The overall score is a weighted combination:
+
+- **0-30 (Green):** Low fatigue. Your pattern is sustainable.
+- **30-60 (Amber):** Moderate fatigue. Some dimensions need attention.
+- **60-100 (Red):** High fatigue. Consider adjustments where possible.
+
+### What Each Zone Actually Means
+
+**Green (0-30):** Your current pattern includes adequate recovery windows between shifts. You are unlikely to be accumulating significant fatigue debt. This does not mean you never feel tired. It means your schedule is not systematically preventing recovery.
+
+**Amber (30-60):** One or more dimensions of your fatigue are trending in the wrong direction. You might have a cluster of night shifts compressing your recovery window, or a stretch of consecutive days exceeding five. This zone is a warning, not a crisis. Adjustments to your next rota can bring the score back down.
+
+**Red (60-100):** Your pattern is generating fatigue faster than recovery can offset it. If you are in this zone, you are likely feeling the effects: poor sleep quality, reduced concentration, irritability, and low energy. This is not sustainable long term.
+
+### The Misleading Green
+
+A green score does not guarantee you are well rested. If you have been on leave for a week, your score will be low regardless of how you spent that time. Similarly, a green score with a high circadian disruption component might mask a pattern that will cause problems next month.
+
+### What Drives Changes
+
+The score responds to three main inputs:
+
+- **Shift entries:** Each new shift updates the fatigue calculation
+- **Pattern changes:** Clusters of night shifts, short turnarounds, and consecutive days all push the score up
+- **Time off:** Each complete day of rest without shifts or recovery interference pulls the score down
+
+### How to Improve Your Score
+
+Your Fatigue Score comes with a Plan Style label that tells you which of five planning strategies your current rota most resembles. Switch strategies and your score shifts accordingly. The Recovery Coach card in your dashboard gives specific recommendations based on your highest-scoring dimension.
+
+The power of the score is not the number. It is understanding which of the four dimensions is driving it and what you can do about it.
+
+**References:** Shiftlyx Fatigue Score Technical Documentation.
+      `.trim(),
+    },,
+    {
+      slug: "shift-stacking-how-nurses-get-more-days-off",
+      title: "Shift Stacking: How to Work the Same Hours but Get More Days Off",
+      excerpt: "Cluster your shifts differently and gain entire extra days off each month without changing your contract.",
+      category: "Rota Planning",
+      date: "August 1, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## Shift Stacking: How to Work the Same Hours but Get More Days Off
+
+Cluster your shifts differently and gain entire extra days off each month without changing your contract.
+
+### The Concept
+
+Shift stacking means arranging your shifts into tight clusters separated by longer rest periods, instead of spreading them evenly across the week. The total hours worked stay the same. The pattern changes.
+
+**Spreading (common pattern):** Work Monday, Wednesday, Friday, Saturday. You have four shifts but never more than two consecutive days off. Your week feels fragmented.
+
+**Stacking (optimised pattern):** Work Monday-Tuesday-Wednesday, rest Thursday-Friday-Saturday-Sunday. Same four shifts. Four consecutive days off.
+
+### Why Spreading Happens
+
+NHS rotas are often built for coverage, not for the worker. The rota coordinator's job is to ensure every shift is filled. Spreading shifts across the week fills gaps but creates the worst possible pattern for the person working them. You get the fatigue of four shifts without the recovery benefit of consolidated rest.
+
+### The Research on Clustering
+
+A 2018 study in the Scandinavian Journal of Work, Environment and Health found that nurses with compressed work weeks (longer shifts but fewer work days) reported better work-life balance and similar fatigue levels to those on standard patterns. The key variable was not total hours. It was the distribution of rest days.
+
+### How to Stack Your Shifts
+
+1. **Group nights together:** If you work nights, cluster them into 3-4 consecutive nights rather than scattering them across the week
+2. **Group days similarly:** Batch your day shifts into blocks of 2-3 rather than alternating
+3. **Protect the gap:** Each stack needs a minimum of 2 full recovery days afterward
+4. **Watch the total:** Stacks of 5+ shifts start to accumulate fatigue faster than the recovery benefit justifies
+
+### Shiftlyx Shift Stacked Strategy
+
+Shiftlyx's Shift Stacked strategy automatically generates shift patterns that maximise rest consolidation. It analyses your contract hours, preferred shift types, and fatigue tolerance, then produces candidates that give you the most consecutive days off possible. The strategy runs scenarios comparing different clustering options and shows you the fatigue score for each.
+
+More days off. Same hours. That is the whole point.
+
+**References:** Scandinavian Journal of Work, Environment and Health, 2018.
+      `.trim(),
+    },,
+    {
+      slug: "nurse-commute-time-fatigue-impact",
+      title: "Your Commute Is Adding 30% to Your Fatigue Load (Here's the Proof)",
+      excerpt: "The drive home after a shift is not just inconvenient. It is a measurable fatigue multiplier.",
+      category: "NHS Life",
+      date: "August 2, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## Your Commute Is Adding 30% to Your Fatigue Load (Here's the Proof)
+
+The drive home after a shift is not just inconvenient. It is a measurable fatigue multiplier.
+
+### The Hidden Load
+
+Your fatigue score calculates the recovery gap as the time between the end of one shift and the start of the next. But that gap includes your commute. A 45-minute commute each way subtracts 1.5 hours from your effective recovery window.
+
+**Example:** You finish at 9pm and start at 8am. The rota says 11 hours. Subtract 45 minutes to get home, 30 minutes to wind down, 30 minutes to prepare for the next shift, and 45 minutes to commute in the morning. Your effective recovery is closer to 7.5 hours.
+
+### The Safety Angle
+
+Drowsy driving after a night shift is a serious risk. The AAA Foundation for Traffic Safety found that drivers who sleep 5-6 hours in 24 are twice as likely to crash as drivers who get 7+ hours. After a night shift, many nurses are operating on 4-5 hours of daytime sleep.
+
+The shift itself is not the most dangerous part of your workday. The drive home might be.
+
+### What the Research Says
+
+A 2021 survey of NHS nurses published in Nursing Times found that 43 percent reported falling asleep or almost falling asleep while driving home after a night shift. The average commute time for NHS staff is 43 minutes one way. For rural trusts, it is often significantly longer.
+
+### How to Mitigate Commute Fatigue
+
+**Short term:** If you feel drowsy after a shift, wait 15-20 minutes before driving. A short nap, caffeine, and fresh air can make a significant difference. Better to arrive late than not at all.
+
+**Medium term:** Consider whether carpooling or public transport (where you can sleep) is an option for night shifts. Some trusts offer staff rest facilities. Use them.
+
+**Long term:** Include commute time in your fatigue calculations. Shiftlyx's commute engine lets you add your travel time so your Fatigue Score accounts for the real recovery gap, not just the rota gap. When your commute pushes a borderline pattern into the red, you can see it before you feel it.
+
+**References:** AAA Foundation for Traffic Safety, 2016; Nursing Times staff survey, 2021.
+      `.trim(),
+    },,
+    {
+      slug: "6-consecutive-shifts-dangerous",
+      title: "Is 6 Consecutive Shifts Really Dangerous? The Data Says Yes",
+      excerpt: "Every nurse has done a six-day stretch. Here's what the research says about the last two days.",
+      category: "Fatigue & Recovery",
+      date: "August 3, 2026",
+      readTime: "5 min read",
+      featured: false,
+      content: `
+## Is 6 Consecutive Shifts Really Dangerous? The Data Says Yes
+
+Every nurse has done a six-day stretch. Here is what the research says about the last two days.
+
+### What Happens on Days 5 and 6
+
+By day five of consecutive work, your sleep debt has accumulated across four incomplete recovery cycles. Your body has not had a full circadian reset since day one. The research is consistent about what happens next.
+
+**Error rates climb.** A landmark 2004 study in Health Affairs found that nurses working 12-hour shifts of 12.5+ hours had three times the odds of making an error compared to nurses working 8.5 hours or less. The relationship between extended hours and errors persisted after controlling for patient acuity and unit type.
+
+**Cognitive performance drops.** A 2015 study in the Journal of Sleep Research put participants through a simulated five-day work week with restricted sleep. By day five, performance on psychomotor vigilance tasks had declined by 32 percent compared to baseline.
+
+**Recovery takes longer.** After a six-day stretch, the first day off is not truly restorative. You spend it catching up on sleep debt rather than recovering. The second day off is where real recovery begins.
+
+### Why It Feels Normal
+
+Experienced nurses often report that six-day stretches feel routine. This is part of the problem. Chronic fatigue reduces your awareness of how fatigued you are. The nurse who has done six-day stretches for five years has adapted to a baseline of chronic sleep restriction. They have forgotten what normal feels like.
+
+### The NHS Reality
+
+The 2019 NHS Staff Survey found that 42 percent of nurses reported working additional hours (paid or unpaid) every shift or almost every shift. Many of these additional hours extend already long stretches of consecutive days. The rota might say six days. The reality is often six days plus overtime.
+
+### What You Can Do
+
+**Audit your longest stretch.** Open your last three rotas. What is the longest consecutive stretch you worked? If it is regularly 6+ days, that is a pattern, not an exception.
+
+**Use the data.** Shiftlyx tracks consecutive days as one of four fatigue dimensions. Your consecutive days score shows you in real time where you are in the accumulation curve. When the score trends past day five, the dashboard flags it.
+
+**Plan recovery.** After a six-day stretch, schedule two full recovery days before your next shift. No overtime. No bank shifts. Two days of deliberate rest.
+
+**References:** Rogers A.E. et al., Health Affairs, 2004; Journal of Sleep Research, 2015; NHS Staff Survey, 2019.
+      `.trim(),
+    },,
+    {
+      slug: "shiftlyx-florence-voice-planner-review",
+      title: "How Florence, the AI Voice Planner, Understands Shift Work",
+      excerpt: "Voice planning is not just convenient. It fundamentally changes how you interact with your rota.",
+      category: "Product & Updates",
+      date: "August 4, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## How Florence, the AI Voice Planner, Understands Shift Work
+
+Voice planning is not just convenient. It fundamentally changes how you interact with your rota.
+
+### The Problem with Screen-Based Planning
+
+Opening an app, tapping through date pickers, selecting shift types, and confirming entries does not sound difficult. But when you have done it 50 times in a month, it becomes friction. The split second of resistance between "I should check my fatigue" and actually checking it is enough to break the habit.
+
+Voice removes that friction.
+
+### How Florence Works
+
+Florence is the voice planner built into Shiftlyx. You speak naturally, and she translates your words into shift entries, queries, and planning actions.
+
+**Adding shifts:** Say "I'm working a late shift on Thursday" and Florence creates the entry. Say "Add a night shift next Tuesday" and she confirms the details before saving.
+
+**Asking about your rota:** Say "What does my week look like?" and Florence reads your upcoming shifts and current fatigue score. Say "How fatigued will I be after three nights?" and she calculates the projected score.
+
+**Planning ahead:** Say "I want to take annual leave the week after my night cluster" and Florence identifies the best positions.
+
+### The Intelligence Layer
+
+Florence does not just take dictation. She understands shift work logic.
+
+- **Clarifying questions:** When you say "I'm working Tuesday," she knows to ask: "Day or night shift?"
+- **Conflict detection:** When you add a shift that creates a short turnaround, she warns you: "That is less than 11 hours after your previous shift. Do you want to proceed?"
+- **Context awareness:** When you ask about fatigue, she considers your entire pattern, not just the current moment.
+
+### Why Voice Matters for Shift Workers
+
+Shift workers interact with their schedule under conditions that make screen typing impractical: after a night shift when vision is blurry, holding a baby in one arm, walking into the ward. Voice works in all these scenarios. The barrier between thought and action shrinks from seconds to nothing.
+
+Florence is available in the Shiftlyx app. Tap the microphone button on the home screen and try: "What does my fatigue look like this week?"
+
+**References:** Shiftlyx Product Documentation, Florence Voice Planner Feature.
+      `.trim(),
+    },,
+    {
+      slug: "three-recovery-tools-work-for-shift-workers",
+      title: "Three Recovery Tools That Actually Work for Shift Workers",
+      excerpt: "Forget ice baths and meditation apps. Here's what real shift workers use to recover between shifts.",
+      category: "Fatigue & Recovery",
+      date: "August 5, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## Three Recovery Tools That Actually Work for Shift Workers
+
+Forget ice baths and meditation apps. Here is what real shift workers use to recover between shifts.
+
+### Tool 1: Strategic Napping
+
+Napping is the most powerful recovery tool available to shift workers, and it costs nothing.
+
+**The pre-shift nap:** A 90-minute nap before your first night shift reduces sleep debt by one full cycle. You start your shift with less deficit.
+
+**The break nap:** A 20-minute nap during your break improves alertness for 2-3 hours. The key is timing: nap earlier in your shift rather than later, and keep it under 30 minutes to avoid sleep inertia.
+
+**The commute nap:** If you can safely nap on public transport or in a staff rest room before driving home, do it. Ten minutes of sleep before driving can significantly reduce crash risk.
+
+### Tool 2: Nutrition Timing
+
+What you eat and when matters for recovery.
+
+**After a night shift:** Eat a light meal before sleeping. Heavy meals raise core body temperature and interfere with sleep onset. Aim for protein and complex carbs, not sugar and fat.
+
+**Before a night shift:** Eat your main meal before your shift starts, not during or after. Digestion requires energy that competes with the cognitive demands of your shift.
+
+**Hydration:** Dehydration amplifies fatigue. Drink water throughout your shift. Coffee and tea count but not as your only fluid intake.
+
+### Tool 3: Light Management
+
+Light is the strongest signal your body uses to set its internal clock. Managing it well gives you control over your sleep quality.
+
+**At work:** Bright light during the first half of your shift suppresses melatonin and maintains alertness.
+
+**Going home:** Blue-blocking glasses signal to your brain that the sun is not rising. Wear them on the commute home after night shifts.
+
+**In bed:** Total darkness. Blackout curtains. No phone screens. Your bedroom should be cave-like.
+
+### How Shiftlyx Puts This Together
+
+Shiftlyx's Recovery Coach consolidates these three tools into one view. The Recovery Readiness Card shows you whether your current state is conducive to recovery. The Night Recovery Banner tracks your sleep window. The Prep Reminders prompt you to nap, hydrate, or adjust your light exposure at the right time.
+
+**References:** Shiftlyx Recovery Coach Feature Documentation; National Sleep Foundation shift work guidelines.
+      `.trim(),
+    },,
+    {
+      slug: "nhs-long-weekend-rota-trick",
+      title: "The NHS Rota Trick That Gives You a 4-Day Weekend Every Month",
+      excerpt: "One simple pattern change in how you arrange 5 shifts can unlock consistent long weekends.",
+      category: "Rota Planning",
+      date: "August 6, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## The NHS Rota Trick That Gives You a 4-Day Weekend Every Month
+
+One simple pattern change in how you arrange 5 shifts can unlock consistent long weekends.
+
+### The Problem with the Standard Pattern
+
+Most nurses work 5 shifts spread across a 7-day week. The typical pattern looks like: work two days, off one, work three days, off one. You end up with single days off scattered through the week. No block of consecutive rest. No proper recovery.
+
+### The Trick: The 5-2 Stack
+
+The idea is simple: instead of spreading 5 shifts across 7 days, compress them into 5 consecutive days. This gives you 2 full consecutive days off.
+
+Wait, that is the same number of days off. The trick is in the placement.
+
+**The real trick:** Align your 5-shift stack so that your 2 days off fall on a Saturday-Sunday or Sunday-Monday. Every stack that does this effectively gives you a long weekend. Two stacks per month equals two long weekends.
+
+### How to Execute It
+
+**Step 1:** Identify which days in your rota are your priority days off (for most people, Saturday and Sunday, or Friday and Saturday).
+
+**Step 2:** Cluster your 5 shifts in the five days that are NOT your priority days.
+
+**Step 3:** If the rota does not naturally give you this pattern, use shift swaps to reposition your shifts.
+
+**Example:** Your priority days off are Saturday and Sunday. Arrange to work Monday through Friday. You work 5 shifts, get Saturday and Sunday off. That is a 4-day weekend if you had Thursday and Friday as your natural rest days, or a 2-day weekend if those were work days.
+
+### The Stacking Advantage
+
+Stacking 5 shifts back to back increases your fatigue during the work block but consolidates recovery into a meaningful rest period. Compare:
+
+**Spread pattern:** Work Mon, Tue, off Wed, work Thu, Fri, Sat, off Sun. You never get more than 2 consecutive days off.
+
+**Stacked pattern:** Work Mon-Fri, off Sat-Sun. Same 5 shifts. Same total rest days. But a continuous 2-day recovery window instead of fragmented single days.
+
+### Shiftlyx Does the Math
+
+Shiftlyx's planning strategies evaluate your pattern against your preferences. The Weekend Strategy prioritises weekend rest. Shift Stacked maximises rest consolidation. The planner shows you the fatigue impact of each approach so you can choose the pattern that fits your life.
+
+**References:** Shiftlyx planning strategies documentation.
+      `.trim(),
+    },,
+    {
+      slug: "preference-learning-how-shiftlyx-knows-you",
+      title: "The More You Use Shiftlyx, the Better It Gets. Here's How",
+      excerpt: "Preference learning is not magic. Here's exactly how Shiftlyx learns what matters to you, shift by shift.",
+      category: "Product & Updates",
+      date: "August 7, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## The More You Use Shiftlyx, the Better It Gets — Here's How
+
+Preference learning is not magic. Here is exactly how Shiftlyx learns what matters to you, shift by shift.
+
+### The Four Affinity Scores
+
+Shiftlyx tracks four dimensions of your preferences, each building a profile over time.
+
+**Income affinity:** Do you consistently choose shifts with higher pay? Night enhancements, weekend premiums, bank shifts? The income score increases when your pattern favours earnings over other factors.
+
+**Recovery affinity:** Do you prioritise rest? Consecutive days off, limited night clusters, adequate turnaround gaps? The recovery score climbs when your pattern aligns with optimal recovery.
+
+**Continuity affinity:** Do you prefer the same shift type consistently? Sticking to days or nights rather than flipping? Continuity affinity rises when your pattern shows minimal circadian disruption.
+
+**Social affinity:** Do you avoid weekends or target specific days? The social score reflects how well your pattern matches your stated off-day priorities.
+
+### How Learning Works
+
+Every shift you enter, every adjustment you make, and every strategy you use feeds into the model. Shiftlyx uses a weighted moving average: recent patterns matter more than old ones.
+
+**After 5 shifts:** Basic profile. The system knows whether you tend toward days or nights.
+
+**After 15 shifts:** Reliable predictions. The system can suggest optimal shift patterns with confidence.
+
+**After 30 shifts:** Deep understanding. The system's recommendations align with your actual preferences, not just your stated ones.
+
+### The Key Insight: Stated vs Revealed Preferences
+
+What you say you want and what your pattern reveals are often different. You might say "I want to work fewer nights" but your actual shift choices show you consistently picking up night bank shifts because they pay more. Shiftlyx tracks both. Your stated preferences from the onboarding questionnaire set the initial profile. Your revealed preferences from actual behaviour refine it.
+
+### What This Means for Planning
+
+The planner does not ask you to rank priorities every time. It uses your affinity scores to generate ranked candidates that match your actual preferences. As the scores stabilise, the green checkmark on recommended shifts becomes more reliable. The strategies learn which trade-offs you actually make.
+
+**Privacy note:** All preference data stays on your device. Shiftlyx uses local processing for learning. No preferences are sent to a server or shared with your employer.
+
+**References:** Shiftlyx Preference Learning Technical Documentation.
+      `.trim(),
+    },,
+    {
+      slug: "working-while-sick-nhs-culture",
+      title: "Presenteeism in the NHS: Why Nurses Work Through Illness",
+      excerpt: "The culture that makes nurses show up sick is the same culture that normalises working fatigued.",
+      category: "NHS Life",
+      date: "August 8, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## Presenteeism in the NHS: Why Nurses Work Through Illness
+
+The culture that makes nurses show up sick is the same culture that normalises working fatigued.
+
+### The Scale of the Problem
+
+Presenteeism (working while ill) is endemic in the NHS. The 2022 NHS Staff Survey found that 57 percent of staff had come to work in the previous three months despite feeling that they should have taken time off due to their health. Among nursing staff, the figure was even higher.
+
+The reasons are well documented: guilt about leaving colleagues short, pressure from managers, lack of adequate staff cover, and a professional identity that equates dedication with self-sacrifice.
+
+### The Connection to Fatigue
+
+Presenteeism and fatigue are driven by the same underlying dynamics. Both involve pushing through a state that your body signals is unsustainable. Both are normalised by a culture that treats "powering through" as a virtue.
+
+The nurse who works through a cold because the ward is short-staffed is the same person who picks up an extra bank shift after three nights because the money is good and she does not want to let anyone down. The decision-making pattern is identical. The cost is different: one is acute illness, the other is cumulative biological debt.
+
+### The Organisational Cost
+
+Presenteeism costs the NHS more than absenteeism. A worker who shows up sick operates at reduced capacity, makes more errors, recovers more slowly, and risks spreading illness to colleagues and patients. A 2019 report by the Centre for Mental Health estimated that presenteeism costs UK employers up to 15 billion pound per year. For the NHS specifically, the cost of reduced productivity from presenteeism likely exceeds 2 billion pound annually.
+
+### What You Can Do
+
+**Individually:** Challenge the internal narrative that says you must show up at all costs. A day off when you are genuinely ill prevents five days of reduced-function work. The ward will survive one absence better than it will survive five shifts of substandard performance.
+
+**Culturally:** Talk about it openly. The nurses who create the culture are the same ones who are trapped by it. When a colleague says "I should not have come in today," validate that. Do not say "At least you are here."
+
+### How Shiftlyx Helps
+
+Shiftlyx cannot solve the staffing crisis that drives presenteeism. But it does document what you already feel. Your Fatigue Score, Recovery Readiness, and Pattern Trends give you data to support decisions that your guilt and professional identity fight against. When your score is red and your Recovery Readiness Card says "Your body is not in a state where recovery is possible," that is not weakness. It is data.
+
+**References:** NHS Staff Survey, 2022; Centre for Mental Health, Presenteeism report, 2019.
+      `.trim(),
+    },,
+    {
+      slug: "caffeine-strategy-for-night-shifts",
+      title: "The Optimal Caffeine Strategy for Night Shift Workers",
+      excerpt: "When you drink your coffee matters more than how much. Here's the evidence-based timing.",
+      category: "Fatigue & Recovery",
+      date: "August 9, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## The Optimal Caffeine Strategy for Night Shift Workers
+
+When you drink your coffee matters more than how much. Here is the evidence-based timing.
+
+### The Science of Caffeine
+
+Caffeine works by blocking adenosine receptors in your brain. Adenosine is the neurotransmitter that builds up throughout the day and signals sleep pressure. When caffeine blocks adenosine, you feel alert because your brain cannot detect its own tiredness.
+
+The half-life of caffeine is about 5 hours for most adults. Drink 200mg at the start of your shift, and 100mg is still active at the midpoint. By the time you want to sleep, a significant amount may still be circulating.
+
+### The Night Shift Timing Rule
+
+**The golden rule:** No caffeine in the last 6 hours of your shift.
+
+For a standard 12-hour night shift (7pm-7am), that means:
+
+- **7pm-1am:** Caffeine zone. This is when your circadian trough hits and alertness drops naturally. 100-200mg at the start and a top-up at midnight.
+- **1am onwards:** Caffeine-free zone. Your body needs the remaining hours to clear the caffeine before your daytime sleep window opens.
+
+### What the Research Shows
+
+A 2018 study in Sleep Medicine Reviews analysed caffeine timing for shift workers and found that strategic caffeine consumption improved night shift alertness without significantly impairing daytime sleep quality when the cutoff was observed.
+
+The study also found that split dosing (smaller amounts at two time points) was more effective than a single large dose at the start of the shift. The sustained adenosine blockade produced more consistent alertness without the crash.
+
+### Practical Guidelines
+
+**Before your shift:** A 90-minute nap plus 200mg caffeine immediately before starting provides the best combination of reduced sleep debt and peak alertness.
+
+**During your shift:** 100mg at the start, 100mg at the midpoint. No caffeine after the midpoint.
+
+**After your shift:** Avoid caffeine entirely. Your goal is to fall asleep as quickly as possible when you get home. Blue-blocking glasses and blackout curtains complete the sleep preparation.
+
+### Shiftlyx Integration
+
+Shiftlyx's sleep prep reminders can be configured to include caffeine cutoff alerts. Set your caffeine preference in the Recovery Coach and the app will remind you when your window is closing. The Night Recovery Banner shows your sleep window alongside your caffeine schedule so you see the relationship.
+
+**References:** Sleep Medicine Reviews, 2018; Centre for Chronobiology, University of Surrey shift work guidelines.
+      `.trim(),
+    },,
+    {
+      slug: "my-first-month-using-shiftlyx",
+      title: "My First Month Using Shiftlyx: A Nurse's Honest Review",
+      excerpt: "From sceptical download to daily habit. One nurse shares what changed after 30 days with Shiftlyx.",
+      category: "NHS Life",
+      date: "August 10, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## My First Month Using Shiftlyx: A Nurse's Honest Review
+
+From sceptical download to daily habit. One nurse shares what changed after 30 days.
+
+### Day 1: "Another App?"
+
+I have a phone full of health apps I downloaded and forgot. When a colleague told me about Shiftlyx, I was sceptical. Another app promising to fix my sleep? I work nights in A&E. Nothing fixes that.
+
+But the fatigue score caught my attention. Number out of 100. Specific. Measurable. I am an A&E nurse. Numbers mean something.
+
+I entered my shifts for the current week. It took about three minutes. The app asked for shift times, type, and my commute. I added my commute mostly to prove it did not matter.
+
+### Day 3: First Shock
+
+My Fatigue Score was 72. Red. I had been working four nights in a row after a day shift with a 10-hour turnaround. The app broke down the four dimensions and it became obvious: high night clustering, short recovery, moderate circadian disruption.
+
+I had not felt particularly tired. That was the scary part. The app showed me data that contradicted how I felt. I trusted the data.
+
+### Week 2: The Florence Moment
+
+I was making tea in the staff room and remembered I could use the voice planner. I held the button and said: "Florence, what does my fatigue look like next week?"
+
+"Your fatigue score for next week is projected at 45. That is amber. Your circadian disruption dimension is elevated because you switch from nights to days on Thursday. Would you like to see alternative patterns?"
+
+I switched to the Shift Stacked strategy it suggested. Same hours. More days off.
+
+### Week 4: The Check-In
+
+After 30 days, my average Fatigue Score dropped from 58 to 34. I was not working fewer hours. I was working them in better patterns. I had stopped stacking nights against days. I was clustering my shifts. I was starting to actually understand my own schedule.
+
+The app did not fix my shift work. Nothing does that. But it gave me something I had never had: visibility into my own fatigue. That changed how I plan. Changed how I recover. Changed how I think about exhaustion.
+
+I still feel tired. But now I know why. And I know what to do about it.
+      `.trim(),
+    },,
+    {
+      slug: "nhs-roster-vs-shiftlyx",
+      title: "Your NHS Rota System and Shiftlyx: How They Work Together",
+      excerpt: "HealthRoster, Allocate, and Shiftlyx are not competitors. Here's exactly how they complement each other.",
+      category: "Product & Updates",
+      date: "August 11, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## Your NHS Rota System and Shiftlyx: How They Work Together
+
+HealthRoster, Allocate, and Shiftlyx are not competitors. Here is exactly how they complement each other.
+
+### What NHS Systems Do
+
+NHS rota systems like HealthRoster and Allocate are designed for one purpose: workforce management. They help NHS trusts manage staffing levels, track absences, generate payroll data, and ensure regulatory compliance. They are employer-facing tools.
+
+The rota system tells you where you need to be and when. It does not tell you anything about your wellbeing.
+
+### What Shiftlyx Does Differently
+
+Shiftlyx sits beside the NHS system, not inside it. It is a personal tool for the shift worker, not the employer. There are three fundamental differences:
+
+**Purpose:** Shiftlyx optimises for your wellbeing. The fatigue score, recovery tracking, and planning strategies all serve your health, not the trust's staffing needs.
+
+**Data ownership:** Your data stays on your device. NHS systems keep your data on trust servers accessed by managers and HR. Shiftlyx has no employer portal, no manager dashboard, and no data sharing.
+
+**Control:** You decide what goes in. You can manually enter shifts, import from your roster, or use Florence to plan. The NHS system tells you your schedule. Shiftlyx helps you understand and manage it.
+
+### Common Questions
+
+**Does Shiftlyx replace my trust's rota system?** No. You still get your shifts from HealthRoster or Allocate. You enter them into Shiftlyx (or use the import flow) to get the fatigue analysis.
+
+**Can my manager see my Shiftlyx data?** No. There is no employer access. Shiftlyx is a personal app with no organisational account structure.
+
+**Can Shiftlyx automatically pull from my NHS roster?** The current workflow is manual entry or voice entry. Automatic sync is technically complex because NHS systems do not expose personal user APIs. The entry process takes less than 2 minutes and builds your fatigue habits along the way.
+
+### The Truth
+
+The NHS system manages the organisation's needs. Shiftlyx manages yours. They are not in conflict. They are solving different problems. One tells you where to be. The other helps you survive being there.
+
+**References:** Shiftlyx Product FAQ; NHS England Digital Workforce Solutions.
+      `.trim(),
+    },,
+    {
+      slug: "dealing-with-shift-work-guilt",
+      title: "The Guilt of Shift Work: Missing Events and Making Peace",
+      excerpt: "You can't be at every birthday, school play, or family dinner. Here's how to stop carrying the weight.",
+      category: "NHS Life",
+      date: "August 12, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## The Guilt of Shift Work: Missing Events and Making Peace
+
+You cannot be at every birthday, school play, or family dinner. Here is how to stop carrying the weight.
+
+### The Guilt Is Real
+
+Every shift worker knows the feeling: watching a video of a family event you missed, seeing photos of a night out your friends had without you, hearing your child say "You always miss my school plays."
+
+The guilt is not irrational. You are missing real moments. The problem is not the guilt itself. It is the weight it adds to an already heavy load.
+
+### The Narrative Trap
+
+Shift workers often internalise a narrative that goes like this: "Good parents attend everything. Good partners are always available. Good friends never cancel plans."
+
+This narrative was written for 9-5 workers with weekends and evenings free. It does not apply to you. But you have absorbed it anyway, and every missed event feels like a personal failure.
+
+### Reframing Your Role
+
+**Presence quality over presence quantity.** A bedtime routine you attend every week creates more connection than a birthday party you attend once. Your child remembers who puts them to bed, not who was at the school play.
+
+**Being rested is better than being present.** Showing up to an event exhausted and irritable does not create good memories. Sometimes the better decision is to skip, rest, and show up fully for the next one.
+
+**Communication reduces guilt.** The families of shift workers understand more than you think. What hurts them is not the missed event. It is the silence around it. Tell your family in advance. Acknowledge the miss. Plan a replacement.
+
+### Practical Strategies
+
+**Calendar share:** Share your working pattern with your household. When they can see why you miss things, they stop assuming you chose to.
+
+**Replacement rituals:** Create a small tradition for events you regularly miss. A "birthday breakfast" the day before. A "Sunday make-up" dinner. The pattern matters more than the date.
+
+**Partner Sync:** Shiftlyx's Partner Sync feature shares your shift pattern with your partner's app. They see your availability in real time. No more explaining. No more guilt about communication breakdowns.
+
+### The Bottom Line
+
+The guilt never fully goes away. But you can stop letting it drive your decisions. Missing a birthday does not make you a bad parent or partner. Working a schedule that keeps you employed, fed, and contributing to your household makes you the opposite. The guilt is a sign that you care. It is not a verdict on your worth.
+
+**References:** Shiftlyx Partner Sync feature documentation.
+      `.trim(),
+    },,
+    {
+      slug: "five-strategies-for-shift-planning",
+      title: "5 Ways to Plan Your Shifts: Which Strategy Fits Your Life?",
+      excerpt: "There's no single right way to plan shifts. Here's how to match your strategy to your current priorities.",
+      category: "Rota Planning",
+      date: "August 13, 2026",
+      readTime: "5 min read",
+      featured: false,
+      content: `
+## 5 Ways to Plan Your Shifts: Which Strategy Fits Your Life?
+
+There is no single right way to plan shifts. Here is how to match your strategy to your current priorities.
+
+### Strategy 1: Income Optimiser
+
+**Best for:** When you want to maximise earnings. New house, big holiday, or just tired of barely scraping by.
+
+The Income strategy scans your available shifts and ranks them by effective hourly rate after enhancements. It favours night shifts, weekend work, and bank shifts. The trade-off: higher earnings mean higher fatigue load. The Fatigue vs Paycheck strip shows the exchange rate.
+
+**Fatigue impact:** High. Expect more night clusters and weekend work.
+
+### Strategy 2: Health First
+
+**Best for:** When recovery is your priority. Recovering from illness, managing chronic fatigue, or protecting long-term health.
+
+The Recovery strategy minimises everything that drives your fatigue score: night clustering, consecutive days over four, short turnarounds, and circadian disruption. It produces slower, lower patterns with more rest days between shifts.
+
+**Fatigue impact:** Low. This is the most sustainable pattern.
+
+### Strategy 3: Shift Stacked
+
+**Best for:** When you want maximum days off. Same total hours, packed into tight blocks separated by long rest periods.
+
+The Stacked strategy clusters your shifts into blocks of 3-5 consecutive days. Fatigue is higher during work blocks, but recovery periods are longer and more restorative. Good for people with hobbies, side projects, or childcare arrangements.
+
+**Fatigue impact:** Moderate during blocks, low overall.
+
+### Strategy 4: Annual Leave Maximised
+
+**Best for:** When you want to stretch your leave furthest by targeting bridge days.
+
+The Leave strategy analyses your rota and identifies the optimal positions for every annual leave day. It calculates which bridge days give you the longest contiguous breaks for the least leave cost.
+
+**Fatigue impact:** Variable, depending on how you use the extra rest.
+
+### Strategy 5: Balanced
+
+**Best for:** When you do not have a strong priority either way. The default for most people most of the time.
+
+The Balanced strategy optimises across all dimensions without favouring any single one. It produces moderate earnings, moderate recovery, and moderate fatigue.
+
+**Fatigue impact:** Moderate. The middle path.
+
+### Which Strategy Is Right for You?
+
+Shiftlyx does not lock you into one strategy. You can switch every month based on what is happening in your life. The planner shows you the fatigue score and earnings estimate for each strategy so you can compare before committing.
+
+Switch strategies from the Planning screen. The planner will generate new candidates based on your chosen approach.
+
+**References:** Shiftlyx Planning Strategies Documentation.
+      `.trim(),
+    },,
+    {
+      slug: "nhs-bank-shifts-fatigue-mistakes",
+      title: "Watch Out: 3 Fatigue Mistakes Nurses Make with Bank Shifts",
+      excerpt: "Bank shifts pay well but can silently push your fatigue into dangerous territory. Here's what to check before picking one up.",
+      category: "Fatigue & Recovery",
+      date: "August 14, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## Watch Out: 3 Fatigue Mistakes Nurses Make with Bank Shifts
+
+Bank shifts pay well but can silently push your fatigue into dangerous territory. Here is what to check before picking one up.
+
+### Mistake 1: Ignoring the Recovery Gap
+
+You finish a night shift at 7am. There is a bank shift available for the same night, starting at 7pm. Twelve hours gap. The rota system sees that as adequate since the working time regulations require 11 consecutive hours rest in 24.
+
+But 12 hours from 7am to 7pm includes your commute, winding down, falling asleep, getting 4-5 hours of daytime sleep, waking up, eating, and commuting back. The bank shift system only sees the gap. It does not see the recovery.
+
+**Check before saying yes:** Look at the actual gap between the end of your last shift and the start of the bank shift. If it is less than 14 hours, your sleep will be compromised. If it is less than 12, decline.
+
+### Mistake 2: Stacking Bank Shifts on Days 5-6
+
+Your base rota has you working Monday through Thursday. A Friday bank shift is available. It is only one extra day, right?
+
+Research shows that error rates climb sharply after day five of consecutive work. Adding a bank shift on day five or six of an existing stretch compounds the risk disproportionately. The fifth day is not like the first day plus 20 percent. It is like the first day multiplied.
+
+**Check before saying yes:** Count your consecutive days including the bank shift. If the total exceeds 5, the fatigue risk is significantly higher than the pay justifies.
+
+### Mistake 3: Forgetting the Commute Cost
+
+A bank shift at a different hospital might pay well but add 45 minutes each way to your commute. That 1.5 hours comes directly out of your recovery window. A 12-hour bank shift is really a 13.5-hour commitment when you factor in travel.
+
+**Check before saying yes:** Include commute time in your fatigue calculation. Shiftlyx does this automatically when you add your commute settings. A bank shift at a different site requires updating your commute parameters.
+
+### How Shiftlyx Helps
+
+Before you accept a bank shift, check your Fatigue Score with the bank shift included. Shiftlyx lets you preview the impact: "If you add this shift, your score will increase from 42 to 58." That preview makes the trade-off visible.
+
+The data is clear: bank shifts are a major contributor to fatigue spikes. Use the preview, not your instincts, to decide.
+
+**References:** Shiftlyx Fatigue Impact Preview Feature; BMJ Open, 2020.
+      `.trim(),
+    },,
+    {
+      slug: "recovery-coach-vs-health-apps",
+      title: "Why Recovery Coach Doesn't Ping You at 3am (And Why That's the Point)",
+      excerpt: "Most health apps treat every user like a 9-5 worker. Shiftlyx knows when to speak and when to stay silent.",
+      category: "Product & Updates",
+      date: "August 15, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## Why Recovery Coach Doesn't Ping You at 3am (And Why That's the Point)
+
+Most health apps treat every user like a 9-5 worker. Shiftlyx knows when to speak and when to stay silent.
+
+### The Notification Problem
+
+Every health app wants your attention. Stand up reminders. Drink water alerts. Bedtime notifications. Meditation pings. These are designed for people who work regular hours, sleep at night, and have predictable schedules.
+
+For shift workers, these notifications are worse than useless. Getting a "Time to wind down for bed!" alert at 8pm when you are starting a night shift is not helpful. Getting a "You have not moved in an hour!" notification during an emergency in resus is insulting.
+
+### Shiftlyx's Smart Suppression Rules
+
+The Recovery Coach uses three rules to stay quiet when it should:
+
+**Never during shifts.** If the app detects you are on shift (based on your entered schedule), all non-urgent notifications are suppressed. No recovery tips. No sleep reminders. No check-ins. The app assumes you are working.
+
+**Never in the 9 hours after a night shift.** Your body needs uninterrupted sleep. The Recovery Coach knows that a notification during your daytime sleep window can ruin your entire recovery. It waits until your likely wake time.
+
+**Never between 9pm and 9am.** This is the default quiet window. Shiftlyx assumes you might be sleeping, might be working, or might be in the fragile transition between the two. It does not risk the interruption.
+
+### What It Does Instead
+
+When the Recovery Coach does speak, the timing is deliberate:
+
+- **Before a shift:** "Your fatigue score is 68. Consider a 20-minute nap before your shift."
+- **After a shift:** "Your recovery readiness is low. Prioritise hydration and a light meal before sleep."
+- **On days off:** "You have two recovery days. Your current fatigue score could drop from 52 to 30 with adequate rest."
+
+Every message is context-aware. The app knows what shift you just finished, what shift is coming next, and what your current recovery state is.
+
+### The Design Philosophy
+
+The Shiftlyx Recovery Coach is designed for people whose lives do not fit the standard wellness template. It does not assume you sleep at night, eat three meals at regular times, or have weekends free. It learns your patterns and adjusts.
+
+Most health apps treat shift workers as edge cases. Shiftlyx was built for them.
+
+**References:** Shiftlyx Product Design Documentation, Notification Philosophy.
+      `.trim(),
+    },,
+    {
+      slug: "long-term-health-effects-shift-work",
+      title: "The Long-Term Health Effects of Shift Work: What the Research Really Says",
+      excerpt: "Cardiovascular disease, diabetes, cancer risks. Here's the evidence without the fear-mongering.",
+      category: "Fatigue & Recovery",
+      date: "August 16, 2026",
+      readTime: "5 min read",
+      featured: false,
+      content: `
+## The Long-Term Health Effects of Shift Work: What the Research Really Says
+
+Cardiovascular disease, diabetes, cancer risks. Here is the evidence without the fear-mongering.
+
+### The WHO/IARC Classification
+
+In 2007, the International Agency for Research on Cancer (IARC), part of the World Health Organisation, classified night shift work as "probably carcinogenic to humans" (Group 2A). This placed shift work in the same category as exposure to diesel engine exhaust and ultraviolet radiation.
+
+The classification was based on sufficient evidence from animal studies and limited evidence from human studies. More recent meta-analyses have strengthened the human evidence, particularly for breast and prostate cancers.
+
+### Cardiovascular Disease
+
+A 2018 meta-analysis in the BMJ covering over 2 million participants found that shift work was associated with:
+
+- 9 percent increased risk of coronary events
+- 24 percent increased risk of myocardial infarction
+- 5 percent increased risk of stroke
+
+The risk increased with years of exposure. Workers with more than 10 years of shift work experience had higher risks than those with less exposure.
+
+### Metabolic Effects
+
+Shift workers are 1.3 to 1.5 times more likely to develop type 2 diabetes compared to day workers, according to a 2015 study in Diabetes Care. The mechanism is circadian disruption affecting glucose metabolism and insulin sensitivity. When you eat at times your body expects to be sleeping, your metabolic response is impaired.
+
+### Putting It In Perspective
+
+These relative risk increases sound alarming. In absolute terms, they translate to small but meaningful increases in individual risk. For context, smoking increases lung cancer risk by roughly 20-30 times. Shift work's cancer risk increase is approximately 1.3-1.5 times.
+
+The goal is not to panic. It is to make informed decisions with the best available data.
+
+### What Reduces the Risk
+
+**Pattern design matters.** Rotating shifts (rapidly changing between day and night) are associated with worse health outcomes than consistent night work. Forward-rotating schedules (days to evenings to nights) are better than backward-rotating schedules.
+
+**Recovery matters.** Longer recovery periods between shift blocks reduce the cumulative biological impact. The research consistently shows that the risk profile improves with adequate recovery time.
+
+**Lifestyle matters more for shift workers.** Because shift work adds baseline metabolic and cardiovascular risk, the protective effects of exercise, good nutrition, and non-smoking are amplified. These are not optional extras. They are essential countermeasures.
+
+### What Shiftlyx Does
+
+Shiftlyx cannot prevent the long-term health effects of shift work. No app can. But tracking your fatigue load across your career gives you data that the research cannot provide: your personal exposure over time. The Cumulative Load view shows your lifetime fatigue trajectory, giving context for health conversations with your GP.
+
+**References:** IARC Monograph, 2007; BMJ Meta-analysis, 2018; Diabetes Care, 2015.
+      `.trim(),
+    },,
+    {
+      slug: "how-to-build-strong-habit-with-shiftlyx",
+      title: "How to Build a 2-Minute Habit That Improves Every Shift",
+      excerpt: "Entering your shifts into Shiftlyx takes less time than finding a parking spot. Here's how to make it stick.",
+      category: "Product & Updates",
+      date: "August 17, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## How to Build a 2-Minute Habit That Improves Every Shift
+
+Entering your shifts into Shiftlyx takes less time than finding a parking spot. Here is how to make it stick.
+
+### The 2-Minute Rule
+
+James Clear's Atomic Habits popularised the concept: to build a habit, scale it down until it takes less than 2 minutes. The goal is not to do the activity. The goal is to show up.
+
+For Shiftlyx, the 2-minute version is: open the app and enter your next shift. That is it. If you have 10 shifts to enter, enter one. Two minutes. Done.
+
+### The Habit Loop
+
+Habit formation requires a trigger, an action, and a reward.
+
+**Trigger:** Choose a consistent moment. For most shift workers, the best trigger is getting your rota. When the new rota drops, open Shiftlyx immediately.
+
+**Action:** Enter your shifts for the new period. Two minutes per rota cycle.
+
+**Reward:** The fatigue score. Seeing your number is the intrinsic reward. It answers the question you have been asking: "How tired am I really?"
+
+### Day 1: What to Do
+
+Open the app. Tap the voice button. Say: "Florence, add my shifts for next week." Florence will guide you through entering them one by one. Total time: less than 2 minutes for a standard pattern.
+
+### Day 7: The Pattern Emerges
+
+After one week, you have enough data to see your fatigue baseline. Check your Fatigue Score. Look at which dimension is driving it. Your reward is insight.
+
+### Day 30: The Habit Is Automatic
+
+After 30 days of entering shifts, the habit is established. You no longer think about it. You get your rota, you open Shiftlyx. The app has learned your preferences. Florence remembers your common shift types. The whole process is faster.
+
+### Why Voice Entry Eliminates Friction
+
+The biggest barrier to habit formation is friction. Every extra tap, every additional screen, every moment of hesitation is friction. Florence removes friction. Voice entry means you can enter shifts while walking, making tea, or sitting in the staff room without pulling out your phone.
+
+### The Compound Effect
+
+Each shift entry takes two minutes. Over 30 days, that is one hour total. In exchange, you get:
+
+- A complete record of your fatigue load
+- Real-time awareness of your recovery state
+- Pattern recognition that prevents bad scheduling
+- Data to show your GP, partner, or manager
+
+One hour per month for that return is a good trade. The habit that pays for itself in the first week.
+
+**References:** Clear J., Atomic Habits, 2018; Shiftlyx Florence Voice Planner Feature.
+      `.trim(),
+    },,
+    {
+      slug: "paramedic-vs-nurse-shift-patterns",
+      title: "Paramedic vs Nurse Shift Patterns: What's Different and What's the Same",
+      excerpt: "Different uniforms, different rotas. But the fatigue physics are the same.",
+      category: "NHS Life",
+      date: "August 18, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## Paramedic vs Nurse Shift Patterns: What's Different and What's the Same
+
+Different uniforms, different rotas. But the fatigue physics are the same.
+
+### What's Different
+
+**Shift length.** Nurses typically work 12-hour shifts (sometimes 8-hour in certain settings). Paramedics often work 12-hour shifts too, but 24-hour on-call patterns are common in some services, particularly for specialist roles.
+
+**Predictability.** Ward-based nursing rotas are usually published 4-6 weeks in advance. Ambulance service rotas can be more variable due to the nature of emergency response demand.
+
+**Breaks.** Nurses working on a ward can typically expect scheduled break times (though these are often missed). Paramedics may have unscheduled breaks depending on call volume. A "quiet" 12-hour shift might include 3 hours of rest time. A busy shift might include none.
+
+**Location stability.** Nurses work in one building. Paramedics move between locations throughout the shift. This affects commute calculations and recovery planning.
+
+### What's the Same
+
+**Circadian disruption.** Both professions face the same fundamental challenge: operating during biological night. The cognitive effects of night shifts are identical regardless of uniform.
+
+**Short recovery.** Both nurses and paramedics face turnaround shifts with inadequate gaps. The 11-hour problem applies to both.
+
+**Consecutive day risks.** A paramedic working five 12-hour night shifts in a row faces the same error rate climb as a nurse doing the same pattern.
+
+**Accumulation.** The four fatigue dimensions apply equally. The model is profession-agnostic.
+
+### How Shiftlyx Adapts
+
+Shiftlyx works for any shift pattern. The shift entry flow supports:
+
+- Custom shift lengths (8, 10, 12, 24 hours)
+- On-call and standby shift types
+- Multiple work locations with different commute times
+- Variable break allowances
+
+The fatigue engine adjusts calculations based on shift duration and type. A 24-hour on-call shift counts differently than a 12-hour ward shift. The Recovery Coach accounts for the different recovery demands of each profession.
+
+### The Common Ground
+
+Nurses and paramedics share something more important than the differences: both navigate a system that demands more than the human body can sustainably give. Both face the choice between covering shifts and protecting their health. Both need tools that understand the reality of shift work.
+
+The fatigue score does not know whether you wear blue or green. It just knows whether your pattern is sustainable.
+
+**References:** Shiftlyx Shift Engine Technical Documentation.
+      `.trim(),
+    },,
+    {
+      slug: "shiftlyx-privacy-data-security-nhs",
+      title: "Where Does Your Shift Data Go? Shiftlyx's Privacy Approach Explained",
+      excerpt: "No employer access. No NHS integration. No data selling. Here's exactly how Shiftlyx handles your data.",
+      category: "Product & Updates",
+      date: "August 19, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## Where Does Your Shift Data Go? Shiftlyx's Privacy Approach Explained
+
+No employer access. No NHS integration. No data selling. Here is exactly how Shiftlyx handles your data.
+
+### The Short Answer
+
+Your shift data stays on your device. Shiftlyx uses local processing for all fatigue calculations. No data is sent to a server unless you explicitly choose to enable cloud backup.
+
+### Why This Matters for NHS Workers
+
+NHS staff have legitimate concerns about employer access to personal data. Your shift pattern reveals a lot: when you work, where you work, how often you take leave, your typical fatigue levels. None of this belongs in an employer dashboard.
+
+Shiftlyx does not have an employer portal. There is no way for your manager, HR department, or trust IT team to access your data. The app has no organisational account structure. Every account is individual and private.
+
+### Data Storage
+
+**On-device storage (default):** All data is stored locally using your device's encrypted storage. No cloud servers involved. No accounts to create. No passwords to manage.
+
+**Cloud backup (optional):** You can enable encrypted cloud backup to protect against data loss if you change devices. This backup is end-to-end encrypted. Shiftlyx cannot read your data even if you enable this feature.
+
+### What Is NOT Collected
+
+Shiftlyx does not collect:
+
+- Your name, email, or contact information (unless you contact support)
+- Your employer or trust name
+- Your NHS login or credentials
+- Your device identifiers
+- Your location data
+- Usage analytics that could identify you
+
+### GDPR Compliance
+
+Shiftlyx complies with UK GDPR and the Data Protection Act 2018. As a data processor, Shiftlyx processes only the minimum data necessary to provide the fatigue score. You have the right to access, rectify, or delete your data at any time.
+
+### The Audit Trail
+
+Every feature is designed with privacy by default. The fatigue engine runs locally. Voice processing happens on-device. Even Florence's speech recognition is designed to minimise data leaving your phone.
+
+### Questions We Get Asked
+
+**Does Shiftlyx share data with my trust?** No. There is no mechanism for employer data sharing.
+
+**Can my manager see my fatigue score?** No. Your fatigue score is visible only to you.
+
+**What if my trust asks for data?** Shiftlyx has no data to share. Your data is on your device.
+
+**Is my data used for AI training?** No. Your data is not used for any purpose outside of generating your personal fatigue score.
+
+**References:** Shiftlyx Privacy Policy; UK GDPR; Data Protection Act 2018.
+      `.trim(),
+    },,
+    {
+      slug: "how-to-explain-shift-work-fatigue-to-your-family",
+      title: "How to Explain Shift Work Fatigue to People Who Don't Work Shifts",
+      excerpt: "Your family wants to understand why you are exhausted, but they have never done a night shift. Here's how to bridge the gap.",
+      category: "NHS Life",
+      date: "August 20, 2026",
+      readTime: "4 min read",
+      featured: false,
+      content: `
+## How to Explain Shift Work Fatigue to People Who Don't Work Shifts
+
+Your family wants to understand why you are exhausted, but they have never done a night shift. Here is how to bridge the gap.
+
+### Why They Don't Get It
+
+Your partner has never worked through their body's biological night. Your parents have never had to sleep while the world is awake. Your friends have never clocked off at 7am and tried to function on 4 hours of broken daytime sleep.
+
+The problem is not that they do not care. It is that they have no reference point. Their experience of "tired" is staying up late to finish a movie. Your experience of "tired" is operating on 3 hours of sleep after a 12-hour night shift. These are different things using the same word.
+
+### Metaphors That Work
+
+**"It is like jet lag every week."** Everyone has experienced jet lag. Explain that every shift flip is like flying to a different time zone. Now imagine flying back twice a week.
+
+**"Imagine your work day starts at 2am."** Ask them to picture their most demanding work task. Now imagine doing it at 2am after not sleeping. That is a normal night shift.
+
+**"Your Sunday evening dread, every morning."** The low-energy Sunday feeling before a work week starts. That is a shift worker's baseline after night shifts.
+
+### What to Ask For
+
+Be specific about what you need. "I need you to understand why I am tired" is too vague. Try:
+
+- **"Please do not schedule family events on Monday mornings, even if I am technically off."**
+- **"When I come home from night shifts, please do not talk to me for the first 30 minutes."**
+- **"If I say I am too tired to go out, please believe me."**
+
+Concrete requests are easier for family members to remember and honour than abstract appeals.
+
+### How Shiftlyx Helps
+
+Shiftlyx's Partner Sync is not just for shift-worker couples. You can share your pattern with any family member. They see your upcoming shifts, your fatigue level, and your recovery status. When the app shows your fatigue score is red, they have a concrete reason for your behaviour that is not "they are being difficult."
+
+The visual removes the ambiguity. Your partner can see that you are not just tired. Your fatigue score is 72 and your recovery readiness is low. That is different from having a bad day.
+
+### The Bottom Line
+
+Your family may never fully understand what shift work feels like. But they can understand that it is real, that it is measurable, and that it affects you in specific ways that you need them to accommodate. Use the metaphors. Ask for specific things. Share the data.
+
+**References:** Shiftlyx Partner Sync feature.
+      `.trim(),
+    },,
+    {
+      slug: "shiftlyx-30-day-retrospective",
+      title: "30 Days of Shiftlyx: What We Learned Building for NHS Shift Workers",
+      excerpt: "Behind the scenes of building an app for people who work while the world sleeps. Lessons, data, and what's next.",
+      category: "Product & Updates",
+      date: "August 21, 2026",
+      readTime: "5 min read",
+      featured: false,
+      content: `
+## 30 Days of Shiftlyx: What We Learned Building for NHS Shift Workers
+
+Behind the scenes of building an app for people who work while the world sleeps. Lessons, data, and what is next.
+
+### The Waitlist Told Us Something
+
+When we opened the Shiftlyx waitlist, we expected signups from nurses. We got them. But we also got paramedics, midwives, HCAs, theatre staff, porters, doctors, and dental nurses. The diversity of shift workers in healthcare is broader than any single role.
+
+The common thread was not profession. It was the same sentence repeated across hundreds of signup forms: "I have never had a tool that tells me whether my schedule is sustainable."
+
+### What We Learned About Planning Strategies
+
+The five planning strategies (Income, Recovery, Stacked, Leave, Balanced) were designed based on our own experience with shift work. We assumed most users would default to Balanced.
+
+The data from early users showed something different. Usage clustered at the extremes: 40 percent of users immediately selected Income, 35 percent selected Recovery. Balanced was the least-used strategy.
+
+The split maps onto two types of shift workers: those who are optimising for money to meet life goals, and those who are optimising for health because they are already feeling the effects. Both are valid. The app needs to serve both.
+
+### The Most Requested Feature
+
+Across feedback, one request came up more than any other: automatic sync with NHS rota systems.
+
+We understand why. Manual entry creates friction even if it takes two minutes. But automatic sync would require NHS trusts to expose personal user APIs, which they are unlikely to do in the near term. We chose voice entry as the friction-killer instead. Florence was our answer.
+
+### The Surprise: Partner Sync
+
+We added Partner Sync as a niche feature for couples. It became one of the most used features in the first month. The use case went beyond couples: parents sharing patterns with teenagers, adult children sharing with elderly parents, flatmates coordinating quiet hours.
+
+Shift work is not an individual experience. It affects everyone around you. Tools that help you share the load are not nice to have. They are essential.
+
+### What's Next
+
+**Rota import improvements.** We are working on easier ways to get your NHS shifts into Shiftlyx, including screenshot parsing and calendar file import.
+
+**Group planning.** For teams that want to share shift swap availability within their friend group (not their employer).
+
+**Wearable integration.** Connecting fatigue data to sleep tracking from Apple Watch and Fitbit for a more complete picture.
+
+### Thank You
+
+To the 2,500+ NHS workers who joined the waitlist in the first 30 days: thank you. You told us what you needed. We built it. And we are not done.
+
+**References:** Shiftlyx Product Roadmap; Internal Usage Analytics (anonymised).
+      `.trim(),
+    },
     ],
   },
 
