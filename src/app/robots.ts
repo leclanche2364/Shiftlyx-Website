@@ -1,5 +1,21 @@
 import type { MetadataRoute } from "next";
 
+/**
+ * NOTE: Cloudflare's managed Scrape Shield injects its OWN rules at
+ * the TOP of the served robots.txt (visible via curl/Browser). Since
+ * robots.txt uses first-match wins, Cloudflare's blocks on AI crawlers
+ * (GPTBot, ClaudeBot, Google-Extended, etc.) take precedence over
+ * the Allow rules below.
+ *
+ * Fix applied: next.config.ts now serves Content-Signal HTTP headers:
+ *   Content-Signal: search=yes,ai-input=yes,ai-train=no,use=reference
+ *
+ * Cloudflare respects origin-served Content-Signal headers instead of
+ * its managed defaults. If crawlers are still blocked:
+ * 1. Disable "AI Content-Signal" in Cloudflare Dashboard > Scrape Shield
+ * 2. OR switch DNS to grey cloud (DNS-only) so raw Vercel robots.txt serves
+ */
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [

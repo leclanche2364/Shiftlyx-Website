@@ -1,6 +1,12 @@
 # robots.txt for Shiftlyx
 # https://www.shiftlyx.com
 # See also: /llms.txt, /llms-full.txt, /ai.txt
+#
+# WARNING: Cloudflare may inject its own managed rules at the top of this file
+# when served via proxied (orange cloud) DNS. Those rules block AI crawlers.
+# To verify the live file: curl https://www.shiftlyx.com/robots.txt
+# If Cloudflare blocks persist, disable "AI Content-Signal" in Cloudflare
+# Dashboard > Scrape Shield, or switch DNS to grey cloud (DNS-only).
 
 # Allow all AI crawlers — we want to be cited by AI search and assistant tools
 User-agent: GPTBot

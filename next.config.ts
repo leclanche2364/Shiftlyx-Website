@@ -20,6 +20,15 @@ const nextConfig: NextConfig = {
             key: "X-Robots-Tag",
             value: "all",
           },
+          // Cloudflare Content-Signal headers
+          // These tell Cloudflare's AI Content-Signal feature NOT to inject
+          // its own managed robots.txt rules that block AI crawlers.
+          // Per Cloudflare docs: origin-served Content-Signal takes precedence
+          // over managed defaults.
+          {
+            key: "Content-Signal",
+            value: "search=yes,ai-input=yes,ai-train=no,use=reference",
+          },
         ],
       },
       {
