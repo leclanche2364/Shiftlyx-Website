@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Activity, ChevronRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Free Tools for Shift Workers",
+  description:
+    "Free tools for NHS shift workers — Fatigue Score Validator to analyse your rota, and more tools coming soon. No signup required.",
+  alternates: {
+    canonical: "https://www.shiftlyx.com/tools",
+  },
+};
 
 const tools = [
   {
