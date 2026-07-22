@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PartnerInviteContent from "./partner-invite-content";
 
 export const metadata: Metadata = {
-  title: "Partner Sync — Shiftlyx",
+  title: "Partner Sync", // Layout template adds " — Shiftlyx"
   description:
     "Sync your shift schedules with your partner. QR code or tap-to-connect. See combined rotas, avoid overlapping heavy days, and plan time off together.",
   alternates: {
