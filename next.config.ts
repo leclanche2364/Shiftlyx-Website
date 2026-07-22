@@ -29,6 +29,17 @@ const nextConfig: NextConfig = {
             key: "Content-Signal",
             value: "search=yes,ai-input=yes,ai-train=no,use=reference",
           },
+          // Link headers (RFC 8288) for agent/AI discovery
+          // Advertise AI-readable content endpoints to autonomous agents
+          {
+            key: "Link",
+            value: [
+              "</llms.txt>; rel=\"alternate\"; type=\"text/plain\"; title=\"Shiftlyx AI Summary\"",
+              "</llms-full.txt>; rel=\"alternate\"; type=\"text/plain\"; title=\"Shiftlyx Full AI Content\"",
+              "</ai.txt>; rel=\"ai-txt\"; type=\"text/plain\"; title=\"AI Crawling Preferences\"",
+              "</sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\"",
+            ].join(", "),
+          },
         ],
       },
       {
