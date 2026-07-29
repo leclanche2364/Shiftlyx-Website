@@ -198,7 +198,7 @@ export default function PrivacyPage() {
               <li><strong>Encryption at rest:</strong> Data stored on our servers is encrypted using industry-standard AES-256 encryption.</li>
               <li><strong>Local-first architecture:</strong> Wherever possible, your data stays on your device. Cloud sync is optional.</li>
               <li><strong>Access controls:</strong> Only authorised personnel with a legitimate need can access server data.</li>
-              <li><strong>UK-based hosting:</strong> Our primary data storage is in UK-based servers (via Supabase and Vercel).</li>
+              <li><strong>EU-based hosting:</strong> Our primary data storage is in EU-based servers (via Supabase and Vercel).</li>
             </ul>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
@@ -240,7 +240,7 @@ export default function PrivacyPage() {
                   <tr>
                     <td className="border border-[#e2e8f0] p-3 font-medium">Supabase</td>
                     <td className="border border-[#e2e8f0] p-3">Database &amp; authentication</td>
-                    <td className="border border-[#e2e8f0] p-3">UK (London)</td>
+                    <td className="border border-[#e2e8f0] p-3">EU (Frankfurt)</td>
                     <td className="border border-[#e2e8f0] p-3">SOC 2 certified, DPA in place</td>
                   </tr>
                   <tr>
@@ -298,7 +298,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-1">
               <li>Transfers to the EU are covered by the UK&apos;s adequacy decision for EU countries.</li>
               <li>Transfers to the US are covered by Standard Contractual Clauses (SCCs) approved by the ICO, together with supplementary measures where required.</li>
-              <li>We always choose UK or EU data centres where possible.</li>
+              <li>We always choose EU data centres where possible.</li>
             </ul>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
