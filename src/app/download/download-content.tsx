@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import {
@@ -72,9 +72,50 @@ function FadeIn({
   );
 }
 
+// ── Helper: read UTM params + referrer from the current page URL ──
+function getTrackingParams() {
+  if (typeof window === "undefined") {
+    return { utm_source: "", utm_medium: "", utm_campaign: "", utm_content: "", referrer: "" };
+  }
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get("utm_source") || "",
+    utm_medium: params.get("utm_medium") || "",
+    utm_campaign: params.get("utm_campaign") || "",
+    utm_content: params.get("utm_content") || "",
+    referrer: document.referrer || "",
+  };
+}
+
+// ── Helper: fire a track-download event (best-effort) ──
+async function trackDownload(platform: string, page: string) {
+  try {
+    const t = getTrackingParams();
+    await fetch("/api/track-download", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        platform,
+        page,
+        utm_source: t.utm_source,
+        utm_medium: t.utm_medium,
+        utm_campaign: t.utm_campaign,
+        utm_content: t.utm_content,
+        referrer: t.referrer,
+      }),
+    });
+  } catch (err) {
+    console.error("track-download error:", err);
+  }
+}
+
 export default function DownloadPage() {
   const { free, monthly, annual } = siteConfig.pricing;
   const [billing, setBilling] = useState<"monthly" | "annual">("annual");
+
+  // Capture the page URL once on mount so tracking always works even if
+  // the user navigates client-side before clicking a store button.
+  useEffect(() => {}, []);
 
   return (
     <div>
@@ -154,6 +195,7 @@ export default function DownloadPage() {
                   href="https://apps.apple.com/id/app/shiftlyx-own-your-shift/id6767157095"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackDownload("iOS", "/download")}
                 >
                   <Button
                     size="lg"
@@ -170,6 +212,7 @@ export default function DownloadPage() {
                   href="https://play.google.com/store/apps/details?id=com.beemal.shiftlyxAI"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackDownload("Android", "/download")}
                 >
                   <Button
                     size="lg"
