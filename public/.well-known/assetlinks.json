@@ -2,9 +2,9 @@
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target": {
     "namespace": "android_app",
-    "package_name": "com.shiftlyx.app",
+    "package_name": "com.beemal.shiftlyxAI",
     "sha256_cert_fingerprints": [
-      "F4:AD:C4:04:46:67:85:B8:77:78:CF:75:CE:7B:6F:BC:95:79:35:DD:0C:F5:84:67:44:FA:F6:FD:16:10:9C:E4"
+      "15:F4:45:46:1C:CA:D4:33:FB:DC:CC:0D:AA:60:2F:56:47:55:C5:7E:71:34:0E:9F:09:74:6B:25:58:07:09:34"
     ]
   }
 }]
