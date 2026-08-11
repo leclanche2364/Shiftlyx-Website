@@ -19,6 +19,7 @@ import { Badge } from "@/components/ui/badge";
 export default function JoinContent() {
   const [inviteToken, setInviteToken] = useState<string | null>(null);
   const [attemptedDeepLink, setAttemptedDeepLink] = useState(false);
+  const [storeRedirecting, setStoreRedirecting] = useState(false);
 
   useEffect(() => {
     // Extract invite token. Crew invites use the path form /join/{token},
@@ -36,21 +37,76 @@ export default function JoinContent() {
       setInviteToken(token);
     }
 
-    // Attempt to open the app after a short delay.
-    // If the app doesn't open, the user stays on this page to download.
-    const hasApp = document.cookie.includes("shiftlyx_app_installed");
-    if (token && !hasApp) {
-      const timer = setTimeout(() => {
-        setAttemptedDeepLink(true);
-        // Universal link first (opens app if installed). If we're still here
-        // shortly after, the app isn't installed -> user uses the download CTAs.
-        window.location.href = `https://shiftlyx.com/join/${token}`;
-        setTimeout(() => {
-          setAttemptedDeepLink(false);
-        }, 3000);
-      }, 500);
-      return () => clearTimeout(timer);
-    }
+    if (!token) return;
+
+    // ── Expected workflow ──────────────────────────────────────────────────
+    //  1. User scans the barcode or clicks the sent link -> they land here.
+    //  2. If the app is installed, the universal link hands off to it, opening
+    //     the join screen so the user can join the group.
+    //  3. If the app is NOT installed, route the device to its OS store.
+    //     - iOS    -> App Store
+    //     - Android-> Google Play
+    // ────────────────────────────────────────────────────────────────────────
+    const ua = navigator.userAgent || navigator.vendor || (window as any).opera || "";
+    const isIOS = /iPad|iPhone|iPod/.test(ua) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const isAndroid = /Android/i.test(ua);
+
+    // Only attempt the app handoff on a mobile OS that supports universal
+    // links. Desktop browsers cannot open the app via a link, so skip the
+    // attempt and just show the page with store CTAs.
+    if (!isIOS && !isAndroid) return;
+
+    const deeplinkUrl = `https://www.shiftlyx.com/join/${token}`;
+    const storeUrl = isIOS
+      ? `https://apps.apple.com/id/app/shiftlyx-own-your-shift/id6767157095`
+      : `https://play.google.com/store/apps/details?id=com.beemal.shiftlyxAI`;
+
+    // If the app takes over, the page loses visibility. Begin with the app
+    // assumed to be installed; clear the assumption if it's still hidden.
+    let appTookOver = false;
+    let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
+    let redirectDone = false;
+
+    const onVisibility = () => {
+      if (document.hidden || !document.hasFocus()) {
+        appTookOver = true;
+        if (fallbackTimer) clearTimeout(fallbackTimer);
+      } else if (appTookOver) {
+        // The app brought the user back (or it never opened) -> stop.
+        appTookOver = false;
+      }
+    };
+
+    const sendToStore = () => {
+      if (redirectDone) return;
+      redirectDone = true;
+      setStoreRedirecting(true);
+      window.location.replace(storeUrl);
+    };
+
+    // Attempt the universal link on a short delay so the page paints first.
+    const attemptTimer = setTimeout(() => {
+      setAttemptedDeepLink(true);
+      document.addEventListener("visibilitychange", onVisibility);
+      window.addEventListener("blur", onVisibility);
+
+      // Navigate to the app's universal link. If the app is installed the OS
+      // intercepts and hands off; if not, the browser stays on the page and
+      // the fallback timer below routes to the store.
+      window.location.href = deeplinkUrl;
+
+      // Give the OS time to hand off. If we're still visible (app not
+      // installed), route to the correct store.
+      fallbackTimer = setTimeout(sendToStore, 1800);
+    }, 500);
+
+    return () => {
+      clearTimeout(attemptTimer);
+      if (fallbackTimer) clearTimeout(fallbackTimer);
+      document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener("blur", onVisibility);
+    };
   }, []);
 
   const steps = [
@@ -130,7 +186,7 @@ export default function JoinContent() {
               <Link
                 href={
                   inviteToken
-                    ? `https://shiftlyx.com/join/${inviteToken}`
+                    ? `https://www.shiftlyx.com/join/${inviteToken}`
                     : "/download"
                 }
               >
