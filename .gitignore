@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# next-sitemap build artifact (generated at build time, never commit)
+/public/sitemap.xml
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
