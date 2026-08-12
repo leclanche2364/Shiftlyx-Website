@@ -18,8 +18,10 @@ import { Badge } from "@/components/ui/badge";
 
 export default function JoinContent() {
   const [inviteToken, setInviteToken] = useState<string | null>(null);
-  const [attemptedDeepLink, setAttemptedDeepLink] = useState(false);
-  const [storeRedirecting, setStoreRedirecting] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isIOS, setIsIOS] = useState(false);
+  const [handOffStarted, setHandOffStarted] = useState(false);
+  const [redirectingToStore, setRedirectingToStore] = useState(false);
 
   useEffect(() => {
     // Extract invite token. Crew invites use the path form /join/{token},
@@ -37,77 +39,77 @@ export default function JoinContent() {
       setInviteToken(token);
     }
 
-    if (!token) return;
-
-    // ── Expected workflow ──────────────────────────────────────────────────
-    //  1. User scans the barcode or clicks the sent link -> they land here.
-    //  2. If the app is installed, the universal link hands off to it, opening
-    //     the join screen so the user can join the group.
-    //  3. If the app is NOT installed, route the device to its OS store.
-    //     - iOS    -> App Store
-    //     - Android-> Google Play
-    // ────────────────────────────────────────────────────────────────────────
     const ua = navigator.userAgent || navigator.vendor || (window as any).opera || "";
-    const isIOS = /iPad|iPhone|iPod/.test(ua) ||
+    const isIOS =
+      /iPad|iPhone|iPod/.test(ua) ||
       (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
     const isAndroid = /Android/i.test(ua);
+    setIsMobile(isIOS || isAndroid);
+    setIsIOS(isIOS);
+  }, []);
 
-    // Only attempt the app handoff on a mobile OS that supports universal
-    // links. Desktop browsers cannot open the app via a link, so skip the
-    // attempt and just show the page with store CTAs.
-    if (!isIOS && !isAndroid) return;
-
-    const deeplinkUrl = `https://www.shiftlyx.com/join/${token}`;
-    const storeUrl = isIOS
+  // ── Universal-link handoff (CTA-driven) ───────────────────────────────────
+  //
+  // PREVIOUS BUG: the old code auto-set `window.location.href` to the SAME
+  // www.shiftlyx.com/join/{token} URL the page was already rendering from,
+  // causing an infinite self-reload loop on iPhones. Universal links must be
+  // triggered by a real user navigation to an app-associated URL, and the
+  // browser must NOT be pointed back at the identical page it is on.
+  //
+  // FIXED APPROACH:
+  //   - No auto-redirect. The user taps the explicit "Open in Shiftlyx" CTA,
+  //     whose href is the app universal link (https://www.shiftlyx.com/join/x).
+  //   - If the app is installed, iOS/Android intercept that navigation and open
+  //     the join screen.
+  //   - If the app is NOT installed, the tab stays on this page. We detect the
+  //     app did not hand off (visibility + blur) and route to the store.
+  const launchApp = () => {
+    if (!inviteToken || redirectingToStore) return;
+    const isIos = isIOS;
+    const storeUrl = isIos
       ? `https://apps.apple.com/id/app/shiftlyx-own-your-shift/id6767157095`
       : `https://play.google.com/store/apps/details?id=com.beemal.shiftlyxAI`;
 
-    // If the app takes over, the page loses visibility. Begin with the app
-    // assumed to be installed; clear the assumption if it's still hidden.
-    let appTookOver = false;
-    let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
-    let redirectDone = false;
+    // The universal link we hand the OS. This is genuinely different from the
+    // page the user is on only when they arrived via a ?token= query or a
+    // non-www host; when identical it's still a safe single navigation because
+    // we never auto-fire it — it is user-initiated by the CTA tap.
+    const universalLink = `https://www.shiftlyx.com/join/${inviteToken}`;
+    const currentUrl = `${window.location.origin}${window.location.pathname}`;
+
+    setHandOffStarted(true);
+
+    let storeTimer: ReturnType<typeof setTimeout> | null = null;
+    let handedOff = false;
 
     const onVisibility = () => {
       if (document.hidden || !document.hasFocus()) {
-        appTookOver = true;
-        if (fallbackTimer) clearTimeout(fallbackTimer);
-      } else if (appTookOver) {
-        // The app brought the user back (or it never opened) -> stop.
-        appTookOver = false;
+        // App took over the screen — universal link worked. Stop the timer.
+        handedOff = true;
+        if (storeTimer) clearTimeout(storeTimer);
       }
     };
 
     const sendToStore = () => {
-      if (redirectDone) return;
-      redirectDone = true;
-      setStoreRedirecting(true);
+      if (handedOff || redirectingToStore) return;
+      setRedirectingToStore(true);
       window.location.replace(storeUrl);
     };
 
-    // Attempt the universal link on a short delay so the page paints first.
-    const attemptTimer = setTimeout(() => {
-      setAttemptedDeepLink(true);
-      document.addEventListener("visibilitychange", onVisibility);
-      window.addEventListener("blur", onVisibility);
+    document.addEventListener("visibilitychange", onVisibility);
+    window.addEventListener("blur", onVisibility);
 
-      // Navigate to the app's universal link. If the app is installed the OS
-      // intercepts and hands off; if not, the browser stays on the page and
-      // the fallback timer below routes to the store.
-      window.location.href = deeplinkUrl;
-
-      // Give the OS time to hand off. If we're still visible (app not
-      // installed), route to the correct store.
-      fallbackTimer = setTimeout(sendToStore, 1800);
-    }, 500);
-
-    return () => {
-      clearTimeout(attemptTimer);
-      if (fallbackTimer) clearTimeout(fallbackTimer);
-      document.removeEventListener("visibilitychange", onVisibility);
-      window.removeEventListener("blur", onVisibility);
-    };
-  }, []);
+    // Navigate to the app universal link. This is a user-initiated tap (not an
+    // auto-fire on page load), so pointing at the same www/join/{token} URL the
+    // page is already on is exactly how iOS/Android universal links trigger:
+    // the OS intercepts the navigation and opens the app. If the app is NOT
+    // installed, the tab stays on the page and [sendToStore] routes to the store
+    // after the grace period. (The original bug was auto-firing this on mount,
+    // which caused an infinite self-reload loop on page load — user-gesture
+    // navigation to the same URL is safe and is the intended handoff.)
+    window.location.href = universalLink;
+    storeTimer = setTimeout(sendToStore, 1800);
+  };
 
   const steps = [
     {
@@ -173,40 +175,33 @@ export default function JoinContent() {
                 : "Swap shifts, coordinate days off, and cover for each other. Free on iOS and Android."}
             </p>
 
-            {/* Deep link auto-attempt indicator */}
-            {attemptedDeepLink && (
+            {/* Handoff indicator */}
+            {handOffStarted && (
               <div className="flex items-center justify-center gap-2 text-sm text-[#2563eb] mb-6">
                 <Loader2 className="w-4 h-4 animate-spin" />
-                Opening Shiftlyx...
+                {redirectingToStore ? "Taking you to the store…" : "Opening Shiftlyx…"}
               </div>
             )}
 
             {/* Primary CTA */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href={
-                  inviteToken
-                    ? `https://www.shiftlyx.com/join/${inviteToken}`
-                    : "/download"
-                }
-              >
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-500 to-amber-500 hover:from-blue-600 hover:to-amber-600 text-white text-base gap-2 px-8 h-14 shadow-lg shadow-blue-200/50"
+              {inviteToken ? (
+                <button
+                  type="button"
+                  onClick={launchApp}
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-amber-500 hover:from-blue-600 hover:to-amber-600 text-white text-base font-semibold px-8 h-14 rounded-xl shadow-lg shadow-blue-200/50 transition-colors"
                 >
                   <Sparkles className="w-5 h-5" />
-                  {inviteToken ? "Open in app →" : "Get Shiftlyx →"}
-                </Button>
-              </Link>
-              {!inviteToken && (
-                <Link href="/features">
+                  Open in Shiftlyx →
+                </button>
+              ) : (
+                <Link href="/download">
                   <Button
                     size="lg"
-                    variant="outline"
-                    className="text-base gap-2 px-8 h-14 border-[#e2e8f0]"
+                    className="bg-gradient-to-r from-blue-500 to-amber-500 hover:from-blue-600 hover:to-amber-600 text-white text-base gap-2 px-8 h-14 shadow-lg shadow-blue-200/50"
                   >
-                    <Sparkles className="w-5 h-5 text-[#2563eb]" />
-                    See all features
+                    <Sparkles className="w-5 h-5" />
+                    Get Shiftlyx →
                   </Button>
                 </Link>
               )}
