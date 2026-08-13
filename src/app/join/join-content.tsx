@@ -23,6 +23,9 @@ export default function JoinContent() {
   const [handOffStarted, setHandOffStarted] = useState(false);
   const [redirectingToStore, setRedirectingToStore] = useState(false);
   const autoAttemptedRef = useRef(false);
+  // Set as soon as the OS hands off to the app, so no queued timer can bounce
+  // a successfully-launched user to the store afterwards.
+  const handedOffRef = useRef(false);
 
   useEffect(() => {
     // Extract invite token. Crew invites use the path form /join/{token},
@@ -65,7 +68,7 @@ export default function JoinContent() {
   //   - If the app is NOT installed, the tab stays on this page. We detect the
   //     app did not hand off (visibility + blur) and route to the store.
   const launchApp = () => {
-    if (!inviteToken || redirectingToStore) return;
+    if (!inviteToken || redirectingToStore || handedOffRef.current) return;
     const isIos = isIOS;
     const storeUrl = isIos
       ? `https://apps.apple.com/id/app/shiftlyx-own-your-shift/id6767157095`
@@ -89,25 +92,48 @@ export default function JoinContent() {
 
     setHandOffStarted(true);
 
-    let storeTimer: ReturnType<typeof setTimeout> | null = null;
-    let handedOff = false;
+    // Track EVERY timer. The old code reassigned a single `storeTimer`
+    // variable, so the first timeout was orphaned and could still fire after
+    // the app had taken over — bouncing the user to the store even on success.
+    const timers: ReturnType<typeof setTimeout>[] = [];
+    const clearTimers = () => {
+      timers.forEach(clearTimeout);
+      timers.length = 0;
+    };
 
-    const onVisibility = () => {
-      if (document.hidden || !document.hasFocus()) {
-        // App took over the screen — handoff worked. Stop the timer.
-        handedOff = true;
-        if (storeTimer) clearTimeout(storeTimer);
+    const onHandedOff = () => {
+      // The app took over the screen, so the handoff worked. Cancel the
+      // store fallback. `pagehide` is the reliable signal on iOS Safari;
+      // visibilitychange covers Android and Chrome.
+      if (document.hidden || document.visibilityState === "hidden") {
+        handedOffRef.current = true;
+        clearTimers();
+        cleanup();
       }
     };
 
+    const onPageHide = () => {
+      handedOffRef.current = true;
+      clearTimers();
+      cleanup();
+    };
+
+    const cleanup = () => {
+      document.removeEventListener("visibilitychange", onHandedOff);
+      window.removeEventListener("pagehide", onPageHide);
+      window.removeEventListener("blur", onPageHide);
+    };
+
     const sendToStore = () => {
-      if (handedOff || redirectingToStore) return;
+      if (handedOffRef.current) return;
+      cleanup();
       setRedirectingToStore(true);
       window.location.replace(storeUrl);
     };
 
-    document.addEventListener("visibilitychange", onVisibility);
-    window.addEventListener("blur", onVisibility);
+    document.addEventListener("visibilitychange", onHandedOff);
+    window.addEventListener("pagehide", onPageHide);
+    window.addEventListener("blur", onPageHide);
 
     // If the page is ALREADY showing the universal-link URL (the common case:
     // user tapped https://www.shiftlyx.com/join/{token} and iOS let it render
@@ -123,21 +149,25 @@ export default function JoinContent() {
       document.body.appendChild(iframe);
       // Some browsers need a location change too (and a short delay so the
       // scheme has a chance to fire first).
-      storeTimer = setTimeout(() => {
-        if (handedOff || redirectingToStore) return;
-        window.location.href = schemeLink;
-      }, 50);
+      timers.push(
+        setTimeout(() => {
+          if (handedOffRef.current) return;
+          window.location.href = schemeLink;
+        }, 50)
+      );
       // Store fallback after the grace period.
-      storeTimer = setTimeout(sendToStore, 1800);
+      timers.push(setTimeout(sendToStore, 1800));
     } else {
       // Page arrived via a different URL (e.g. ?token= or bare host) — try the
       // universal link first (best practice), scheme second, store last.
       window.location.href = universalLink;
-      storeTimer = setTimeout(() => {
-        if (handedOff || redirectingToStore) return;
-        window.location.href = schemeLink;
-      }, 1200);
-      storeTimer = setTimeout(sendToStore, 3000);
+      timers.push(
+        setTimeout(() => {
+          if (handedOffRef.current) return;
+          window.location.href = schemeLink;
+        }, 1200)
+      );
+      timers.push(setTimeout(sendToStore, 3000));
     }
   };
 
@@ -161,25 +191,28 @@ export default function JoinContent() {
 
   // ── Automatic handoff on load ──────────────────────────────────────────────
   //
-  // Attempt the universal-link handoff automatically once the page loads (no
-  // CTA tap required), but ONLY once and ONLY if a handoff hasn't been started
-  // by the user. This gives the "it just opens the app" behaviour while
-  // remaining safe vs. the old reload-loop bug:
+  // Opens the app automatically, and falls through to the correct app store if
+  // it is not installed. No tap required.
   //
-  //   - [autoAttemptedRef] guarantees we fire at most once, so a subsequent
-  //     render (e.g. state update) can't retrigger it.
-  //   - We only fire on mobile with an invite token.
-  //   - [launchApp] navigates to the app universal link, which iOS/Android
-  //     intercept and open the app with. If the app isn't installed, the page
-  //     stays put and the store-timer in [launchApp] routes to the store.
+  // PREVIOUS BUG (why this was effectively manual): `autoAttemptedRef` was set
+  // to true BEFORE the `!inviteToken` guard. On the first render the token is
+  // still null (it is parsed in a separate effect), so the ref was burned on
+  // that first pass and the effect returned early. When the token arrived and
+  // the effect re-ran, the ref was already true, so it bailed immediately and
+  // the automatic attempt NEVER fired. Only the CTA worked.
+  //
+  // Now the ref is only consumed once we actually commit to launching.
   useEffect(() => {
     if (autoAttemptedRef.current || handOffStarted) return;
-    autoAttemptedRef.current = true;
+    // Wait for the token before burning the one-shot guard.
     if (!inviteToken) return;
     // Only attempt automatically on mobile; desktop has no app to open.
     const isMobileUa = isIOS || /Android/i.test(navigator.userAgent || "");
     if (!isMobileUa) return;
-    // Small delay so the page paints and the token state has settled.
+
+    autoAttemptedRef.current = true;
+    // Small delay so the page paints first — otherwise a successful app
+    // handoff leaves a blank flash behind in the browser tab.
     const t = setTimeout(() => {
       launchApp();
     }, 700);
