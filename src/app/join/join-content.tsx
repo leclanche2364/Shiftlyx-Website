@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Users,
@@ -22,6 +22,7 @@ export default function JoinContent() {
   const [isIOS, setIsIOS] = useState(false);
   const [handOffStarted, setHandOffStarted] = useState(false);
   const [redirectingToStore, setRedirectingToStore] = useState(false);
+  const autoAttemptedRef = useRef(false);
 
   useEffect(() => {
     // Extract invite token. Crew invites use the path form /join/{token},
@@ -128,6 +129,34 @@ export default function JoinContent() {
       sub: "Swap shifts, cover childcare, coordinate days off",
     },
   ];
+
+  // ── Automatic handoff on load ──────────────────────────────────────────────
+  //
+  // Attempt the universal-link handoff automatically once the page loads (no
+  // CTA tap required), but ONLY once and ONLY if a handoff hasn't been started
+  // by the user. This gives the "it just opens the app" behaviour while
+  // remaining safe vs. the old reload-loop bug:
+  //
+  //   - [autoAttemptedRef] guarantees we fire at most once, so a subsequent
+  //     render (e.g. state update) can't retrigger it.
+  //   - We only fire on mobile with an invite token.
+  //   - [launchApp] navigates to the app universal link, which iOS/Android
+  //     intercept and open the app with. If the app isn't installed, the page
+  //     stays put and the store-timer in [launchApp] routes to the store.
+  useEffect(() => {
+    if (autoAttemptedRef.current || handOffStarted) return;
+    autoAttemptedRef.current = true;
+    if (!inviteToken) return;
+    // Only attempt automatically on mobile; desktop has no app to open.
+    const isMobileUa = isIOS || /Android/i.test(navigator.userAgent || "");
+    if (!isMobileUa) return;
+    // Small delay so the page paints and the token state has settled.
+    const t = setTimeout(() => {
+      launchApp();
+    }, 700);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inviteToken, isIOS, handOffStarted]);
 
   return (
     <>
