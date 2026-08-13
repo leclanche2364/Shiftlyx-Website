@@ -71,12 +71,21 @@ export default function JoinContent() {
       ? `https://apps.apple.com/id/app/shiftlyx-own-your-shift/id6767157095`
       : `https://play.google.com/store/apps/details?id=com.beemal.shiftlyxAI`;
 
-    // The universal link we hand the OS. This is genuinely different from the
-    // page the user is on only when they arrived via a ?token= query or a
-    // non-www host; when identical it's still a safe single navigation because
-    // we never auto-fire it — it is user-initiated by the CTA tap.
+    // Primary handoff: the universal link. Handing this to the OS is the correct
+    // way to open an installed app — iOS/Android intercept the navigation. But it
+    // ONLY works when the AASA + Associated Domains are correctly configured AND
+    // the target URL differs from what the page is currently showing. If the OS
+    // failed to intercept (our situation) or the URL equals the page's own URL,
+    // navigation here just reloads the page and never opens the app.
     const universalLink = `https://www.shiftlyx.com/join/${inviteToken}`;
+    // Fallback handoff: the custom scheme. This is what actually opens an
+    // installed app when universal-link interception failed. The app already
+    // maps shiftlyx://my-people/join/{token} → /my-people/join/{token}. If the
+    // app is NOT installed, the scheme URL silently fails and we fall to the
+    // store timer.
+    const schemeLink = `shiftlyx://my-people/join/${inviteToken}`;
     const currentUrl = `${window.location.origin}${window.location.pathname}`;
+    const sameUrl = currentUrl === universalLink;
 
     setHandOffStarted(true);
 
@@ -85,7 +94,7 @@ export default function JoinContent() {
 
     const onVisibility = () => {
       if (document.hidden || !document.hasFocus()) {
-        // App took over the screen — universal link worked. Stop the timer.
+        // App took over the screen — handoff worked. Stop the timer.
         handedOff = true;
         if (storeTimer) clearTimeout(storeTimer);
       }
@@ -100,16 +109,36 @@ export default function JoinContent() {
     document.addEventListener("visibilitychange", onVisibility);
     window.addEventListener("blur", onVisibility);
 
-    // Navigate to the app universal link. This is a user-initiated tap (not an
-    // auto-fire on page load), so pointing at the same www/join/{token} URL the
-    // page is already on is exactly how iOS/Android universal links trigger:
-    // the OS intercepts the navigation and opens the app. If the app is NOT
-    // installed, the tab stays on the page and [sendToStore] routes to the store
-    // after the grace period. (The original bug was auto-firing this on mount,
-    // which caused an infinite self-reload loop on page load — user-gesture
-    // navigation to the same URL is safe and is the intended handoff.)
-    window.location.href = universalLink;
-    storeTimer = setTimeout(sendToStore, 1800);
+    // If the page is ALREADY showing the universal-link URL (the common case:
+    // user tapped https://www.shiftlyx.com/join/{token} and iOS let it render
+    // instead of intercepting), navigating to that same URL will NOT hand off to
+    // the app — it just reloads. In that case go straight to the custom scheme,
+    // which opens an installed app reliably. Otherwise, try the universal link
+    // first and let the scheme be the fallback.
+    if (sameUrl) {
+      // Drive via custom scheme so an installed app actually opens.
+      const iframe = document.createElement("iframe");
+      iframe.style.display = "none";
+      iframe.src = schemeLink;
+      document.body.appendChild(iframe);
+      // Some browsers need a location change too (and a short delay so the
+      // scheme has a chance to fire first).
+      storeTimer = setTimeout(() => {
+        if (handedOff || redirectingToStore) return;
+        window.location.href = schemeLink;
+      }, 50);
+      // Store fallback after the grace period.
+      storeTimer = setTimeout(sendToStore, 1800);
+    } else {
+      // Page arrived via a different URL (e.g. ?token= or bare host) — try the
+      // universal link first (best practice), scheme second, store last.
+      window.location.href = universalLink;
+      storeTimer = setTimeout(() => {
+        if (handedOff || redirectingToStore) return;
+        window.location.href = schemeLink;
+      }, 1200);
+      storeTimer = setTimeout(sendToStore, 3000);
+    }
   };
 
   const steps = [
