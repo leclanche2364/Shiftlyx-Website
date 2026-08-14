@@ -10,6 +10,25 @@ const nextConfig: NextConfig = {
   // Increase header size limit for structured data scripts
   serverExternalPackages: [],
 
+  // The waitlist page is retired now that the app has launched. 301 it to the
+  // download page so store CTA replaces the old signup barrier, and search
+  // engines consolidate any waitlist link equity onto /download.
+  async redirects() {
+    return [
+      {
+        source: "/waitlist",
+        destination: "/download",
+        permanent: true,
+      },
+      // Catch any /waitlist/* subpaths just in case one was ever shared.
+      {
+        source: "/waitlist/:path*",
+        destination: "/download",
+        permanent: true,
+      },
+    ];
+  },
+
   // Headers for better crawl behavior
   async headers() {
     return [

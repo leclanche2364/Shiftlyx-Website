@@ -154,15 +154,41 @@ export default function DownloadPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                {/* Waitlist CTA */}
-                <Link href="/waitlist">
+                {/* Store CTA */}
+                <a
+                  href="https://apps.apple.com/id/app/shiftlyx-own-your-shift/id6767157095"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackDownload("iOS", "/download")}
+                >
                   <Button
                     size="lg"
-                    className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 h-14 shadow-lg shadow-amber-200/50 w-full sm:w-auto"
+                    className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-8 h-14 shadow-lg shadow-amber-200/50 w-full sm:w-auto cursor-pointer"
                   >
-                    Join waitlist, lock in Day One pricing →
+                    <Apple className="w-6 h-6" />
+                    <div className="text-left">
+                      <div className="text-[10px] opacity-70">Download on the</div>
+                      <div className="text-base font-semibold -mt-0.5">App Store</div>
+                    </div>
                   </Button>
-                </Link>
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.beemal.shiftlyxAI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackDownload("Android", "/download")}
+                >
+                  <Button
+                    size="lg"
+                    className="bg-[#0f172a] hover:bg-[#1e293b] text-white font-semibold text-base px-8 h-14 shadow-lg shadow-amber-200/50 w-full sm:w-auto cursor-pointer"
+                  >
+                    <Smartphone className="w-6 h-6" />
+                    <div className="text-left">
+                      <div className="text-[10px] opacity-70">Get it on</div>
+                      <div className="text-base font-semibold -mt-0.5">Google Play</div>
+                    </div>
+                  </Button>
+                </a>
               </div>
 
               {/* Trust badges */}
@@ -316,14 +342,34 @@ export default function DownloadPage() {
                   ))}
                 </ul>
 
-                <Link href="/waitlist">
+                <a
+                  href="https://apps.apple.com/id/app/shiftlyx-own-your-shift/id6767157095"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackDownload("iOS", "/download")}
+                >
                   <Button
                     variant="outline"
-                    className="w-full h-12 text-sm font-semibold rounded-xl"
+                    className="w-full h-12 text-sm font-semibold rounded-xl cursor-pointer"
                   >
-                    Get started free
+                    <Apple className="w-5 h-5 mr-2" />
+                    Download on the App Store
                   </Button>
-                </Link>
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.beemal.shiftlyxAI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackDownload("Android", "/download")}
+                >
+                  <Button
+                    variant="outline"
+                    className="w-full h-12 text-sm font-semibold rounded-xl cursor-pointer"
+                  >
+                    <Smartphone className="w-5 h-5 mr-2" />
+                    Get it on Google Play
+                  </Button>
+                </a>
               </motion.div>
 
               {/* Premium / Day One Annual */}
@@ -394,13 +440,28 @@ export default function DownloadPage() {
                   ))}
                 </ul>
 
-                <Link href="/waitlist">
-                  <Button className="w-full h-12 text-sm font-semibold rounded-xl bg-[#f59e0b] hover:bg-[#d97706] text-white shadow-lg shadow-amber-200/50">
-                    {billing === "annual"
-                      ? "Get Day One Annual — £18.99"
-                      : "Start free trial — £3.99/month"}
+                <a
+                  href="https://apps.apple.com/id/app/shiftlyx-own-your-shift/id6767157095"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackDownload("iOS", "/download")}
+                >
+                  <Button className="w-full h-12 text-sm font-semibold rounded-xl bg-[#f59e0b] hover:bg-[#d97706] text-white shadow-lg shadow-amber-200/50 cursor-pointer">
+                    <Apple className="w-5 h-5 mr-2" />
+                    Download on the App Store
                   </Button>
-                </Link>
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.beemal.shiftlyxAI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackDownload("Android", "/download")}
+                >
+                  <Button className="w-full h-12 text-sm font-semibold rounded-xl bg-[#0f172a] hover:bg-[#1e293b] text-white shadow-lg shadow-amber-200/50 cursor-pointer">
+                    <Smartphone className="w-5 h-5 mr-2" />
+                    Get it on Google Play
+                  </Button>
+                </a>
               </motion.div>
             </div>
 
@@ -559,14 +620,36 @@ export default function DownloadPage() {
               No credit card required for free tier. Premium starts with a free 1-month trial.
             </p>
 
-            <Link href="/waitlist">
-              <Button
-                size="lg"
-                className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-10 h-14 rounded-2xl shadow-xl shadow-amber-200/50"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://apps.apple.com/id/app/shiftlyx-own-your-shift/id6767157095"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackDownload("iOS", "/download")}
               >
-                Join waitlist, lock in Day One pricing <ChevronRight className="w-5 h-5 ml-1" />
-              </Button>
-            </Link>
+                <Button
+                  size="lg"
+                  className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-semibold text-base px-10 h-14 rounded-2xl shadow-xl shadow-amber-200/50 cursor-pointer"
+                >
+                  <Apple className="w-6 h-6 mr-2" />
+                  Download on the App Store
+                </Button>
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.beemal.shiftlyxAI"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackDownload("Android", "/download")}
+              >
+                <Button
+                  size="lg"
+                  className="bg-[#0f172a] hover:bg-[#1e293b] text-white font-semibold text-base px-10 h-14 rounded-2xl shadow-xl shadow-amber-200/50 cursor-pointer"
+                >
+                  <Smartphone className="w-6 h-6 mr-2" />
+                  Get it on Google Play
+                </Button>
+              </a>
+            </div>
 
             <p className="text-xs text-[#94a3b8] mt-4">
               iOS 16+ &bull; Android 10+ &bull; Free tier available &bull; Cancel anytime
