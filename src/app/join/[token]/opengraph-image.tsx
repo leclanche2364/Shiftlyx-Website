@@ -203,7 +203,7 @@ export default async function Image({
               display: "flex",
             }}
           />
-          <span>Swap shifts · Coordinate days off · Plan as a crew</span>
+          <span>Swap shifts · Plan outings · Coordinate days off</span>
         </div>
       </div>
     ),
