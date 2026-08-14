@@ -1,14 +1,12 @@
 import { ImageResponse } from "next/og";
-import { NextRequest } from "next/server";
 
 // Dynamic Open Graph image for crew invite links.
 //
-// Earlier the WhatsApp/Telegram/iMessage link preview for
-// https://shiftlyx.com/join/{token} fell back to the site-wide default card
-// ("Shiftlyx — AI Shift Planner for Shift Workers", generic tagline) because
-// the /join/[token] page had no dynamic OG image. This generator fetches the
-// crew preview and renders the invite context straight into the 1200x630 card:
-// who invited you, and which crew.
+// WHY THIS IS DYNAMIC:
+//   https://shiftlyx.com/join/{token} used to render the site-wide default
+//   card ("Shiftlyx — AI Shift Planner", og-default.jpg). This generator
+//   fetches the crew preview and bakes the invite context straight into the
+//   1200x630 card: WHO invited you, and WHICH crew.
 //
 // The preview-crew-invite edge function is open by design (the token in the
 // URL is the auth) and only returns the crew name, creator name and member
@@ -16,6 +14,11 @@ import { NextRequest } from "next/server";
 
 const SUPABASE_URL =
   process.env.SUPABASE_URL || "https://otzyqghfozevhhrcewnm.supabase.co";
+
+// The real Shiftlyx app icon / brand mark. Served from the site's own public
+// dir. ImageResponse fetches it by absolute URL at render time.
+const LOGO_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.shiftlyx.com";
 
 interface CrewPreview {
   crew_name: string | null;
@@ -32,8 +35,8 @@ async function fetchPreview(token: string): Promise<CrewPreview | null> {
         apikey: process.env.SUPABASE_ANON_KEY || "",
       },
       body: JSON.stringify({ token }),
-      // OG crawlers (WhatsApp/Telegram) wait on this before rendering the
-      // card — keep it snappy.
+      // OG crawlers (WhatsApp/Telegram/iMessage) wait on this before rendering
+      // the card — keep it snappy.
       signal: AbortSignal.timeout(4000),
     });
     if (!res.ok) return null;
@@ -48,9 +51,8 @@ async function fetchPreview(token: string): Promise<CrewPreview | null> {
   }
 }
 
-// Route segment config: cache the image briefly to avoid hammering the edge
-// function on every preview render, but keep it fresh enough that a brand-new
-// invite shows correctly.
+// Cache the image briefly to avoid hammering the edge function on every
+// preview render, but keep it fresh enough that a brand-new invite shows right.
 export const revalidate = 60;
 
 export const size = {
@@ -79,19 +81,18 @@ export default async function Image({
 
   return new ImageResponse(
     (
-      // Outer frame
       <div
         style={{
           width: "100%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          background: "linear-gradient(135deg, #0f172a 0%, #1e3a5f 55%, #7c3aed 130%)",
-          padding: "64px 72px",
+          background: "linear-gradient(135deg, #0f172a 0%, #1e3a5f 55%, #6d28d9 135%)",
+          padding: "72px 80px",
           fontFamily: "sans-serif",
         }}
       >
-        {/* Top row: wordmark + crew badge */}
+        {/* Top row: real Shiftlyx logo + crew badge */}
         <div
           style={{
             display: "flex",
@@ -100,24 +101,19 @@ export default async function Image({
             width: "100%",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-            <div
-              style={{
-                width: "52px",
-                height: "52px",
-                borderRadius: "14px",
-                background: "linear-gradient(135deg, #3b82f6, #f59e0b)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <span style={{ fontSize: "30px", fontWeight: 900 }}>S</span>
-            </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${LOGO_URL}/app-icon.jpg`}
+              alt="Shiftlyx"
+              width={64}
+              height={64}
+              style={{ borderRadius: "16px" }}
+            />
             <span
               style={{
-                fontSize: "30px",
-                fontWeight: 800,
+                fontSize: "40px",
+                fontWeight: 900,
                 color: "#ffffff",
                 letterSpacing: "-0.5px",
               }}
@@ -130,32 +126,32 @@ export default async function Image({
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "8px",
+              gap: "10px",
               background: "rgba(255,255,255,0.12)",
-              border: "1px solid rgba(255,255,255,0.25)",
+              border: "2px solid rgba(255,255,255,0.3)",
               borderRadius: "999px",
-              padding: "10px 20px",
+              padding: "12px 26px",
             }}
           >
             <span
               style={{
-                width: "14px",
-                height: "14px",
+                width: "16px",
+                height: "16px",
                 borderRadius: "999px",
                 background: "#34d399",
                 display: "flex",
               }}
             />
-            <span style={{ fontSize: "22px", color: "#ffffff", fontWeight: 600 }}>
+            <span style={{ fontSize: "26px", color: "#ffffff", fontWeight: 800 }}>
               Crew Invite
             </span>
           </div>
         </div>
 
         {/* Spacer */}
-        <div style={{ height: "48px" }} />
+        <div style={{ height: "56px" }} />
 
-        {/* Headline: who invited you */}
+        {/* Headline: WHO invited you */}
         <div
           style={{
             display: "flex",
@@ -163,16 +159,24 @@ export default async function Image({
             alignItems: "flex-start",
           }}
         >
-          <span style={{ fontSize: "34px", color: "#93c5fd", fontWeight: 600 }}>
+          <span
+            style={{
+              fontSize: "44px",
+              color: "#93c5fd",
+              fontWeight: 800,
+              letterSpacing: "-0.5px",
+            }}
+          >
             {creatorName} invited you to join
           </span>
           <span
             style={{
-              fontSize: "72px",
+              fontSize: "92px",
               color: "#ffffff",
               fontWeight: 900,
-              lineHeight: 1.1,
-              marginTop: "6px",
+              lineHeight: 1.05,
+              marginTop: "8px",
+              letterSpacing: "-1px",
             }}
           >
             {crewName}
@@ -180,24 +184,24 @@ export default async function Image({
         </div>
 
         {/* Spacer */}
-        <div style={{ height: "40px" }} />
+        <div style={{ height: "44px" }} />
 
         {/* Sub-line: member count + tagline */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "16px",
-            color: "#cbd5e1",
-            fontSize: "26px",
-            fontWeight: 500,
+            gap: "20px",
+            color: "#e2e8f0",
+            fontSize: "32px",
+            fontWeight: 700,
           }}
         >
           <span>{memberLine}</span>
           <span
             style={{
-              width: "7px",
-              height: "7px",
+              width: "9px",
+              height: "9px",
               borderRadius: "999px",
               background: "#64748b",
               display: "flex",

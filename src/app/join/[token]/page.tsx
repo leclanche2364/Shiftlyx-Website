@@ -79,13 +79,25 @@ export async function generateMetadata(
       siteName: "Shiftlyx",
       type: "website",
       url: `https://www.shiftlyx.com/join/${token}`,
-      // The custom OG image lives at /join/[token]/opengraph-image and is
-      // served automatically by Next.js for this route.
+      // CRITICAL: Next.js merges route metadata with the root layout's
+      // openGraph, and the layout declares `og-default.jpg`. If we do NOT set
+      // images here, the merged og:image falls back to that generic card and
+      // the whole point of this dynamic OG is lost. Pin it to the route's own
+      // generated opengraph-image so crawlers get the crew-invite card.
+      images: [
+        {
+          url: `https://www.shiftlyx.com/join/${token}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${title}`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [`https://www.shiftlyx.com/join/${token}/opengraph-image`],
     },
     robots: { index: false, follow: false },
   };
