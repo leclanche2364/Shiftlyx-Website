@@ -70,9 +70,12 @@ export const runtime = "edge";
 export default async function Image({
   params,
 }: {
-  params: { token: string };
+  params: Promise<{ token: string }>;
 }) {
-  const token = (params?.token ?? "").trim();
+  // Next.js 16: `params` is a Promise. Reading `.token` off it synchronously
+  // yields undefined, which silently forced the generic fallback card.
+  const { token: rawToken } = await params;
+  const token = (rawToken ?? "").trim();
   const preview = token ? await fetchPreview(token) : null;
 
   const crewName = preview?.crew_name || "a crew";

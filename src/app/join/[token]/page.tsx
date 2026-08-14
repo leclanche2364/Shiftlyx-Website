@@ -44,7 +44,7 @@ async function fetchPreview(token: string): Promise<CrewPreview | null> {
 }
 
 type Props = {
-  params: { token: string };
+  params: Promise<{ token: string }>;
 };
 
 // Dynamic metadata built from the crew preview so the WhatsApp/Telegram/iMessage
@@ -54,7 +54,10 @@ export async function generateMetadata(
   { params }: Props,
   _parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const token = (params?.token ?? "").trim();
+  // Next.js 16: `params` is a Promise. Reading `.token` off it synchronously
+  // yields undefined, which silently forced the generic fallback card.
+  const { token: rawToken } = await params;
+  const token = (rawToken ?? "").trim();
   const preview = token ? await fetchPreview(token) : null;
 
   if (!preview) {
@@ -114,7 +117,10 @@ export async function generateMetadata(
 
 export default async function JoinTokenPage({ params }: Props) {
   // The auto-redirect + handoff logic lives in JoinContent and stays untouched.
-  const token = (params?.token ?? "").trim();
+  // Next.js 16: `params` is a Promise. Reading `.token` off it synchronously
+  // yields undefined, which silently forced the generic fallback card.
+  const { token: rawToken } = await params;
+  const token = (rawToken ?? "").trim();
   const preview = token ? await fetchPreview(token) : null;
   return <JoinContent token={token} preview={preview} />;
 }
