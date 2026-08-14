@@ -65,7 +65,10 @@ export const size = {
 
 export const contentType = "image/png";
 
-export const runtime = "edge";
+// Node runtime, NOT edge: the edge runtime always streams its response,
+// which strips Content-Length and forces transfer-encoding: chunked.
+// WhatsApp's crawler needs a declared length to fetch the thumbnail.
+export const runtime = "nodejs";
 
 export default async function Image({
   params,
@@ -85,7 +88,7 @@ export default async function Image({
   const memberLine =
     memberCount > 0 ? `${memberCount} member${memberCount === 1 ? "" : "s"}` : "New crew";
 
-  return new ImageResponse(
+  const image = new ImageResponse(
     (
       <div
         style={{
@@ -219,4 +222,24 @@ export default async function Image({
     ),
     size
   );
+
+  // WhatsApp's link-preview crawler will not render a thumbnail from a
+  // chunked response — it requires a declared Content-Length. ImageResponse
+  // streams by default, which is why Telegram and iMessage showed the full
+  // card while WhatsApp showed text only. Buffer the PNG so we can declare
+  // its exact byte length.
+  //
+  // The explicit Cache-Control also replaces Next's default
+  // `max-age=0, must-revalidate`, which was silently overriding `revalidate`
+  // and forcing a full re-render (3 network hops) on every single scrape.
+  const png = await image.arrayBuffer();
+
+  return new Response(png, {
+    headers: {
+      "Content-Type": "image/png",
+      "Content-Length": String(png.byteLength),
+      "Cache-Control":
+        "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800",
+    },
+  });
 }
