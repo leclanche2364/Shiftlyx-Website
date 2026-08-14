@@ -98,9 +98,9 @@ export async function generateMetadata(
       // generated opengraph-image so crawlers get the crew-invite card.
       images: [
         {
-          url: `https://www.shiftlyx.com/join/${token}/opengraph-image`,
-          width: 1200,
-          height: 630,
+          url: `https://www.shiftlyx.com/join/${token}/og.png`,
+          width: 600,
+          height: 315,
           alt: `${title}`,
         },
       ],
@@ -109,7 +109,7 @@ export async function generateMetadata(
       card: "summary_large_image",
       title,
       description,
-      images: [`https://www.shiftlyx.com/join/${token}/opengraph-image`],
+      images: [`https://www.shiftlyx.com/join/${token}/og.png`],
     },
     robots: { index: false, follow: false },
   };
