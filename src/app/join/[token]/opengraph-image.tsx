@@ -32,7 +32,12 @@ async function fetchPreview(token: string): Promise<CrewPreview | null> {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        // Must mirror the api route: the edge function needs BOTH auth headers
+        // (apikey + Authorization: Bearer). Missing Authorization → 401/502 →
+        // the card silently falls back to generic text. This was the bug that
+        // hid crew + inviter names on Telegram/WhatsApp/SMS.
         apikey: process.env.SUPABASE_ANON_KEY || "",
+        Authorization: `Bearer ${process.env.SUPABASE_ANON_KEY || ""}`,
       },
       body: JSON.stringify({ token }),
       // OG crawlers (WhatsApp/Telegram/iMessage) wait on this before rendering

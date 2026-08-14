@@ -33,8 +33,12 @@ export async function GET(request: NextRequest) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // Allow the call through with the project's anon key.
+          // The edge function demands BOTH auth headers. Sending only `apikey`
+          // yields UNAUTHORIZED_NO_AUTH_HEADER (the missing Authorization
+          // header), which made this route 502 and forced the OG card back to
+          // generic fallback text on every platform (Telegram/WhatsApp/SMS).
           apikey: process.env.SUPABASE_ANON_KEY || "",
+          Authorization: `Bearer ${process.env.SUPABASE_ANON_KEY || ""}`,
         },
         body: JSON.stringify({ token }),
         // Keep server-side fetch snappy; the OG crawler (WhatsApp/Telegram)
