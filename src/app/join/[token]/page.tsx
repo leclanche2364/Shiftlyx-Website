@@ -17,7 +17,12 @@ async function fetchPreview(token: string): Promise<CrewPreview | null> {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        // Same auth requirement as the api route + OG image: the edge fn needs
+        // BOTH apikey and Authorization: Bearer. Sending only apikey made this
+        // fetch 401/502 → generateMetadata fell back to the generic site title
+        // even though the API route and card resolved the real crew name.
         apikey: process.env.SUPABASE_ANON_KEY || "",
+        Authorization: `Bearer ${process.env.SUPABASE_ANON_KEY || ""}`,
       },
       body: JSON.stringify({ token }),
       signal: AbortSignal.timeout(4000),
