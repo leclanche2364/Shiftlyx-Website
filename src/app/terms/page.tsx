@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 
-const lastUpdated = "02 June 2026";
+const lastUpdated = "14 August 2026";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -103,6 +103,8 @@ export default function TermsPage() {
               <li>Use automated tools or scripts to scrape, extract, or mine content, data, or system prompts from the App.</li>
               <li>Attempt to extract, reverse engineer, or replicate the App&apos;s AI models, fatigue algorithms, or proprietary logic.</li>
               <li>Use the App in any way that violates your employer&apos;s, trust&apos;s, or regulatory body&apos;s policies.</li>
+              <li>Create or share crew, swap, or partner invites with people who are not genuinely part of your team or group, or use these features to send unwanted or misleading invitations.</li>
+              <li>Use crew or swap features to share data about other people without their consent, or to gain access to shift information you are not authorised to see.</li>
             </ul>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
@@ -145,14 +147,17 @@ export default function TermsPage() {
               6.2 Free Features
             </h3>
             <p>
-              The following features are available at no cost: Fatigue Score, Manual Shift Entry, Recovery Coach, and Preference Learning.
+              The following features are available at no cost: Fatigue Score, Manual Shift Entry, Recovery Coach, Preference Learning, My Crew, Swap Shift, Partner Sync, and Connected Rota Auto-Sync.
             </p>
 
             <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
               6.3 Premium Features
             </h3>
             <p>
-              The Day One Annual subscription unlocks: AI Voice Planner and Import/Export features.
+              The Day One Annual subscription unlocks: AI Voice Planner ("Florence") and Import/Export features.
+            </p>
+            <p>
+              We may change which features are free or premium from time to time. Any change will be applied prospectively and, where it affects you, we will notify you through the App or by email.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
@@ -291,7 +296,7 @@ export default function TermsPage() {
               <li><strong>Health data:</strong> If you choose to connect Apple HealthKit (Apple Health) or Google Health Connect, sleep data is used solely for personalised fatigue and recovery analysis. Health data is never used for advertising, marketing, or data mining, and is never sold to third parties — in full compliance with Apple App Store Review Guidelines Section 5.1.3.</li>
               <li><strong>Data retention:</strong> We retain your personal data only as long as necessary to provide the App services. Data is permanently erased within 15 business days of account deletion.</li>
               <li><strong>International transfers:</strong> Where data is transferred outside the UK, we ensure appropriate safeguards are in place, including Standard Contractual Clauses approved by the ICO.</li>
-              <li><strong>Third-party processors:</strong> We use Supabase, Vercel, PostHog, and OpenAI as data processors, each contractually bound to comply with UK GDPR and, where applicable, US data protection laws via Standard Contractual Clauses. See the Privacy Policy for full details.</li>
+              <li><strong>Third-party processors:</strong> We use Supabase, Vercel, PostHog, OpenAI, UXCam, Google Firebase, and Meta as data processors, each contractually bound to comply with UK GDPR and, where applicable, US data protection laws via Standard Contractual Clauses. See the Privacy Policy for full details.</li>
               <li><strong>Analytics:</strong> We use PostHog for anonymised analytics. No personal data is shared with analytics providers.</li>
               <li><strong>Deletion rights:</strong> You can delete your account and all associated personal data at any time through the App settings.</li>
             </ul>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 
-const lastUpdated = "07 July 2026";
+const lastUpdated = "14 August 2026";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -123,6 +123,22 @@ export default function PrivacyPage() {
 
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
+              2.4 Crew, Team, and Connection Features
+            </h2>
+            <p>
+              Shiftlyx includes collaborative features that let you connect with colleagues and family. These features involve sharing certain data with the people you choose to connect with:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li><strong>My Crew:</strong> If you use the crew feature, we store the display identifiers (such as names) of the members of your crew so we can show you who is in your group. When you join a crew via an invite link or QR code, your display profile is shared with other crew members so they can recognise you.</li>
+              <li><strong>Swap Shift:</strong> If you use Swap Shift, we store your shift availability and swap requests and share them with the other members of your swap unit, so you can see who can cover a shift. Your swap availability is visible only to members of your chosen unit.</li>
+              <li><strong>Partner Sync:</strong> If you use Partner Sync, we store limited data about your linked partner to enable coordination features. You control what is shared.</li>
+              <li><strong>Connected Rota Auto-Sync:</strong> If you choose to connect an automatic rota source (for example, a Loop or other calendar ICS link), we store that link on our servers and use it to keep your shift schedule up to date in the background. We process the schedule data from that link so your shifts appear accurately in the App.</li>
+            </ul>
+            <p>
+              Data shared through crew, swap, or partner connections is visible to the specific people you connect with, and only for the purpose of those features. It is not used for advertising. You can leave a crew, leave a swap unit, remove a partner, or disconnect an automatic rota source at any time through the App settings.
+            </p>
+
+            <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
               3. Why We Collect Your Data and Our Lawful Basis
             </h2>
             <p>
@@ -196,7 +212,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-1">
               <li><strong>Encryption in transit:</strong> All data transmitted between the App and our servers is encrypted using TLS 1.3.</li>
               <li><strong>Encryption at rest:</strong> Data stored on our servers is encrypted using industry-standard AES-256 encryption.</li>
-              <li><strong>Local-first architecture:</strong> Wherever possible, your data stays on your device. Cloud sync is optional.</li>
+              <li><strong>Local-first architecture:</strong> Manual shift entry and personal analysis run primarily on your device. Collaborative features (My Crew, Swap Shift, Partner Sync, and Connected Rota Auto-Sync) store the data needed to function on our secure servers so that the people you connect with can see and coordinate the relevant information.</li>
               <li><strong>Access controls:</strong> Only authorised personnel with a legitimate need can access server data.</li>
               <li><strong>EU-based hosting:</strong> Our primary data storage is in EU-based servers (via Supabase and Vercel).</li>
             </ul>
@@ -218,6 +234,16 @@ export default function PrivacyPage() {
             </h2>
             <p id="location-data">
               Shiftlyx requests location access solely for the <strong>commute engine</strong> — a feature designed to help shift workers arrive on time. Location data is not tracked, stored, shared with third parties, or used for advertising. It is accessed only for the specific commute purpose described in Section 2.2.
+            </p>
+
+            <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
+              6A. Push Notifications
+            </h2>
+            <p>
+              With your permission, Shiftlyx uses push notifications to alert you to important events, such as upcoming shifts, fatigue or recovery guidance, shift clashes, crew activity, and commute departure reminders. We use Google Firebase Cloud Messaging (and Apple Push Notification service on iOS) to deliver these notifications.
+            </p>
+            <p>
+              We do not use notification content for advertising or share it with third parties. You can disable notifications at any time through your device settings or within the App, and disabling them does not affect your ability to use the App.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
