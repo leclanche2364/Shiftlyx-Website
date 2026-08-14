@@ -1,34 +1,38 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import JoinContent from "../join-content";
 
-// Supabase project (public values)
-const SUPABASE_URL =
-  process.env.SUPABASE_URL || "https://otzyqghfozevhhrcewnm.supabase.co";
-
 interface CrewPreview {
   crew_name: string | null;
   creator_name: string | null;
   member_count: number;
 }
 
+// Fetch the crew preview through the site's OWN api route (/api/crew-preview)
+// rather than calling the Supabase edge function directly.
+//
+// WHY: the edge function demands apikey + Authorization headers AND the env
+// vars differ between runtimes. The /api/crew-preview route (Node runtime)
+// is PROVEN to work — it returns 200 with the real crew name for a real
+// token. generateMetadata + opengraph-image run in the edge runtime where
+// process.env.ANON_KEY resolution is unreliable, so their direct edge-fn
+// fetch silently failed and fell back to generic text. Routing all three
+// through the single working API seam removes that ambiguity.
 async function fetchPreview(token: string): Promise<CrewPreview | null> {
   try {
-    const res = await fetch(`${SUPABASE_URL}/functions/v1/preview-crew-invite`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        // Same auth requirement as the api route + OG image: the edge fn needs
-        // BOTH apikey and Authorization: Bearer. Sending only apikey made this
-        // fetch 401/502 → generateMetadata fell back to the generic site title
-        // even though the API route and card resolved the real crew name.
-        apikey: process.env.SUPABASE_ANON_KEY || "",
-        Authorization: `Bearer ${process.env.SUPABASE_ANON_KEY || ""}`,
-      },
-      body: JSON.stringify({ token }),
-      signal: AbortSignal.timeout(4000),
-    });
+    const origin =
+      process.env.NEXT_PUBLIC_SITE_URL ||
+      "https://www.shiftlyx.com";
+    const res = await fetch(
+      `${origin}/api/crew-preview?token=${encodeURIComponent(token)}`,
+      {
+        // Reuse the edge-function fetch pattern; the api route sets its own
+        // auth headers server-side.
+        signal: AbortSignal.timeout(4000),
+      }
+    );
     if (!res.ok) return null;
     const data = await res.json();
+    if (data?.error) return null;
     return {
       crew_name: data?.crew_name ?? null,
       creator_name: data?.creator_name ?? null,

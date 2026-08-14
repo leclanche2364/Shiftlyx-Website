@@ -12,12 +12,9 @@ import { ImageResponse } from "next/og";
 // URL is the auth) and only returns the crew name, creator name and member
 // count — no member data leaks into the card.
 
-const SUPABASE_URL =
-  process.env.SUPABASE_URL || "https://otzyqghfozevhhrcewnm.supabase.co";
-
 // The real Shiftlyx app icon / brand mark. Served from the site's own public
 // dir. ImageResponse fetches it by absolute URL at render time.
-const LOGO_URL =
+const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://www.shiftlyx.com";
 
 interface CrewPreview {
@@ -26,26 +23,27 @@ interface CrewPreview {
   member_count: number;
 }
 
+// Fetch the crew preview through the site's OWN api route (/api/crew-preview)
+// rather than calling the Supabase edge function directly from the edge
+// runtime.
+//
+// WHY: /api/crew-preview (Node runtime) is PROVEN to return 200 with the real
+// crew name for a real token. The edge runtime here does NOT reliably resolve
+// process.env.SUPABASE_ANON_KEY, so a direct edge-fn call silently failed and
+// the card rendered generic fallback text. Routing through the single working
+// API seam removes the runtime/env ambiguity entirely.
 async function fetchPreview(token: string): Promise<CrewPreview | null> {
   try {
-    const res = await fetch(`${SUPABASE_URL}/functions/v1/preview-crew-invite`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        // Must mirror the api route: the edge function needs BOTH auth headers
-        // (apikey + Authorization: Bearer). Missing Authorization → 401/502 →
-        // the card silently falls back to generic text. This was the bug that
-        // hid crew + inviter names on Telegram/WhatsApp/SMS.
-        apikey: process.env.SUPABASE_ANON_KEY || "",
-        Authorization: `Bearer ${process.env.SUPABASE_ANON_KEY || ""}`,
-      },
-      body: JSON.stringify({ token }),
-      // OG crawlers (WhatsApp/Telegram/iMessage) wait on this before rendering
-      // the card — keep it snappy.
-      signal: AbortSignal.timeout(4000),
-    });
+    const res = await fetch(
+      `${SITE_URL}/api/crew-preview?token=${encodeURIComponent(token)}`,
+      {
+        // The api route sets its own Supabase auth headers server-side.
+        signal: AbortSignal.timeout(4000),
+      }
+    );
     if (!res.ok) return null;
     const data = await res.json();
+    if (data?.error) return null;
     return {
       crew_name: data?.crew_name ?? null,
       creator_name: data?.creator_name ?? null,
@@ -109,7 +107,7 @@ export default async function Image({
           <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`${LOGO_URL}/app-icon.jpg`}
+              src={`${SITE_URL}/app-icon.jpg`}
               alt="Shiftlyx"
               width={64}
               height={64}
