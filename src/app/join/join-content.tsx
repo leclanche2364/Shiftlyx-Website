@@ -16,8 +16,21 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-export default function JoinContent() {
-  const [inviteToken, setInviteToken] = useState<string | null>(null);
+export interface CrewPreview {
+  crew_name: string | null;
+  creator_name: string | null;
+  member_count: number;
+}
+
+interface JoinContentProps {
+  /** Server-resolved preview for this invite (may be null on error). */
+  preview?: CrewPreview | null;
+  /** Token extracted by the server page; null when no /join/:token path. */
+  token?: string | null;
+}
+
+export default function JoinContent({ preview, token: serverToken }: JoinContentProps) {
+  const [inviteToken, setInviteToken] = useState<string | null>(serverToken || null);
   const [isMobile, setIsMobile] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
   const [handOffStarted, setHandOffStarted] = useState(false);
@@ -246,7 +259,9 @@ export default function JoinContent() {
                   You've been invited
                   <br />
                   <span className="bg-gradient-to-r from-blue-500 to-amber-500 bg-clip-text text-transparent">
-                    to join a crew
+                    {preview?.crew_name
+                      ? `to join ${preview.crew_name}`
+                      : "to join a crew"}
                   </span>
                 </>
               ) : (
@@ -260,9 +275,27 @@ export default function JoinContent() {
               )}
             </h1>
 
+            {/* Inviter + crew context — pulled from the server-resolved preview */}
+            {inviteToken && preview?.crew_name && (
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <span className="text-base text-[#2563eb] font-medium">
+                  {preview.creator_name
+                    ? `${preview.creator_name} invited you`
+                    : "You've been invited"}{" "}
+                  {preview.member_count > 0 && (
+                    <span className="text-[#94a3b8] font-normal">
+                      · {preview.member_count} member{preview.member_count === 1 ? "" : "s"}
+                    </span>
+                  )}
+                </span>
+              </div>
+            )}
+
             <p className="text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed mb-8">
               {inviteToken
-                ? "Your teammate is waiting for you. Open Shiftlyx to accept the invite and start syncing your rotas."
+                ? preview?.creator_name
+                  ? `${preview.creator_name} is waiting for you. Open Shiftlyx to accept the invite and start syncing your rotas.`
+                  : "Your teammate is waiting for you. Open Shiftlyx to accept the invite and start syncing your rotas."
                 : "Swap shifts, coordinate days off, and cover for each other. Free on iOS and Android."}
             </p>
 
