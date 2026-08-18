@@ -54,7 +54,7 @@ export default function PrivacyPage() {
             </p>
 
             <p>
-              If you are a resident of California, Virginia, Colorado, Connecticut, Utah, or another US state with privacy laws, please see <a href="#us-privacy-rights" className="text-[#2563eb] hover:underline">Section 9 (US Privacy Rights)</a> for additional information about your rights.
+              If you are a resident of California, Virginia, Colorado, Connecticut, Utah, or another US state with privacy laws, please see <a href="#us-privacy-rights" className="text-[#2563eb] hover:underline">Section 10 (US Privacy Rights)</a> for additional information about your rights. If you are a resident of Australia, please see <a href="#australia-privacy-rights" className="text-[#2563eb] hover:underline">Section 10A (Australia)</a> for information about your rights under the Privacy Act 1988 (Cth).
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
               <li>Website: <a href="https://beemalinnovation.co.uk" className="text-[#2563eb] hover:underline" target="_blank" rel="noopener noreferrer">beemalinnovation.co.uk</a></li>
               <li>Registered address: 29 Arden Place, Luton, LU2 7YE</li>
               <li>Company registration number: 17048693</li>
-              <li>Contact email: <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a></li>
+              <li>Contact email(s): <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a> or <a href="mailto:support@shiftlyx.com" className="text-[#2563eb] hover:underline">support@shiftlyx.com</a></li>
             </ul>
             <p>
               We are the data controller for your personal data collected through the App.
@@ -378,7 +378,7 @@ export default function PrivacyPage() {
               </table>
             </div>
             <p>
-              To exercise any of these rights, contact us at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a>. We will respond within one month.
+              To exercise any of these rights, contact us at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a> or <a href="mailto:support@shiftlyx.com" className="text-[#2563eb] hover:underline">support@shiftlyx.com</a>. We will respond within one month.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4" id="us-privacy-rights">
@@ -400,10 +400,10 @@ export default function PrivacyPage() {
               <li><strong>Right to Correct:</strong> You have the right to request correction of inaccurate personal information.</li>
               <li><strong>Right to Opt-Out:</strong> We do <strong>not</strong> sell your personal information as defined by the CCPA. We do <strong>not</strong> share personal information for cross-context behavioural advertising. You may opt out of analytics tracking at any time through the App settings.</li>
               <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising any of your CCPA rights.</li>
-              <li><strong>Right to Limit Use of Sensitive Personal Information:</strong> We do not collect any categories of sensitive personal information as defined by California law. Shiftlyx is not a health or medical device and does not process health data.</li>
+              <li><strong>Right to Limit Use of Sensitive Personal Information:</strong> We do not collect or process sensitive personal information as defined by California law (we do not collect precise geolocation, race, religion, health, biometric, or similar sensitive categories; Shiftlyx is not a health or medical device and does not process health data). Where you grant location permission, it is used solely for the commute engine described in Section 6 and is not sold, shared, or retained after its limited purpose is complete.</li>
             </ul>
             <p>
-              To exercise any of these rights, please contact us at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a>. We will respond within 45 days as required by the CCPA. You may also designate an authorised agent to make a request on your behalf.
+              To exercise any of these rights, please contact us at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a> or <a href="mailto:support@shiftlyx.com" className="text-[#2563eb] hover:underline">support@shiftlyx.com</a>. We will respond within 45 days as required by the CCPA. You may also designate an authorised agent to make a request on your behalf.
             </p>
 
             <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
@@ -441,6 +441,67 @@ export default function PrivacyPage() {
               We do not currently respond to browser &quot;Do Not Track&quot; (DNT) signals. On the App, we only use analytics with your consent via the App Tracking Transparency prompt on iOS and through your App settings on Android.
             </p>
 
+            <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4" id="australia-privacy-rights">
+              10A. Australia (Privacy Act 1988 &amp; Australian Privacy Principles)
+            </h2>
+            <p>
+              If you are a resident of Australia, this section describes how we handle your personal information under the <strong>Privacy Act 1988 (Cth)</strong> and the <strong>Australian Privacy Principles (APPs)</strong>. Where anything in this section differs from the rest of this policy, this section applies to you.
+            </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              10A.1 What We Collect and Why
+            </h3>
+            <p>
+              We collect the personal information described in Section 2 of this policy (such as your name, profession, shift schedules, and optional commute/location data) only where it is reasonably necessary for the functions and activities of the App, as set out in this policy. Where we collect personal information we will, at or before the time of collection (or as soon as practicable afterwards), take reasonable steps to notify you of the matters required under APP 5.
+            </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              10A.2 Use and Disclosure (APP 6)
+            </h3>
+            <p>
+              We use and disclose personal information only for the purposes for which it was collected (or a directly related secondary purpose) or as otherwise permitted by the Privacy Act. We do not sell your personal information. Where you consent to sharing data as part of collaborative features (such as My Crew, Swap Shift, or Partner Sync), that data is disclosed only to the people you choose to connect with, for the purpose of those features.
+            </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              10A.3 Cross-Border Disclosure (APP 8)
+            </h3>
+            <p>
+              Some of our service providers (for example OpenAI, Supabase, Google Firebase, Meta, and UXCam) are located or store data outside Australia (including in the US and the EU). Before disclosing your personal information to an overseas recipient, we take reasonable steps to ensure the recipient handles your information consistently with the Australian Privacy Principles. Where we disclose your information to an overseas recipient, we remain accountable under APP 8.1 for that recipient&apos;s handling of your information, unless an exception in the Privacy Act applies.
+            </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              10A.4 Data Security and Quality (APP 10 &amp; 11)
+            </h3>
+            <p>
+              We take reasonable steps to protect the personal information we hold from misuse, interference, loss, and unauthorised access, modification, or disclosure (including the encryption and access-control measures described in Section 4). We also take reasonable steps to ensure the personal information we collect, use, and disclose is accurate, up to date, and complete.
+            </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              10A.5 Access and Correction (APP 12 &amp; 13)
+            </h3>
+            <p>
+              You have the right to request access to the personal information we hold about you, and to request correction of that information if it is inaccurate, out of date, incomplete, irrelevant, or misleading. You can exercise these rights through the App settings or by contacting us at the details in Section 16. We will respond within a reasonable period (generally within 30 days) and may need to verify your identity before responding.
+            </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              10A.6 Notifiable Data Breaches
+            </h3>
+            <p>
+              If we experience an eligible data breach involving your personal information, we will comply with the <strong>Notifiable Data Breaches (NDB) scheme</strong> under Part IIIC of the Privacy Act. This means we will contain the breach, assess its likely impact, and notify you and the <strong>Office of the Australian Information Commissioner (OAIC)</strong> where required.
+            </p>
+
+            <h3 className="font-heading text-lg font-semibold text-foreground mt-6 mb-3">
+              10A.7 Privacy Complaints (OAIC)
+            </h3>
+            <p>
+              If you have a concern about how we handle your personal information, please contact us first at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a> or <a href="mailto:support@shiftlyx.com" className="text-[#2563eb] hover:underline">support@shiftlyx.com</a>, and we will do our best to resolve it. If you are not satisfied with our response, you may make a complaint to the <strong>Office of the Australian Information Commissioner (OAIC)</strong>:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>Website: <a href="https://www.oaic.gov.au" className="text-[#2563eb] hover:underline" target="_blank" rel="noopener noreferrer">oaic.gov.au</a></li>
+              <li>Phone: 1300 363 992</li>
+              <li>Address: GPO Box 5288, Sydney NSW 2001</li>
+            </ul>
+
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
               11. Cookies, Tracking, and Analytics
             </h2>
@@ -455,14 +516,14 @@ export default function PrivacyPage() {
               <li><strong>Firebase Crashlytics:</strong> Crash reporting — automatically captures crash logs and device state when the app crashes. No personal data is included in crash reports.</li>
             </ul>
             <p>
-              You can opt out of analytics tracking at any time through the App settings or by contacting us at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a>. Opting out will not affect your ability to use the App.
+              You can opt out of analytics tracking at any time through the App settings or by contacting us at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a> or <a href="mailto:support@shiftlyx.com" className="text-[#2563eb] hover:underline">support@shiftlyx.com</a>. Opting out will not affect your ability to use the App.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
               12. Children&apos;s Privacy
             </h2>
             <p>
-              Shiftlyx is not intended for use by individuals under the age of 18. We do not knowingly collect personal data from children. If you believe a child has provided us with personal data, please contact us immediately at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a>.
+              Shiftlyx is not intended for use by individuals under the age of 18. We do not knowingly collect personal data from children. If you believe a child has provided us with personal data, please contact us immediately at <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a> or <a href="mailto:support@shiftlyx.com" className="text-[#2563eb] hover:underline">support@shiftlyx.com</a>.
             </p>
 
             <h2 className="font-heading text-xl font-bold text-foreground mt-10 mb-4">
@@ -524,7 +585,7 @@ export default function PrivacyPage() {
               If you have concerns about how we handle your personal data, please contact us first — we will do our best to resolve the issue:
             </p>
             <ul className="list-disc pl-6 space-y-1">
-              <li>Email: <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a></li>
+              <li>Email: <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a> or <a href="mailto:support@shiftlyx.com" className="text-[#2563eb] hover:underline">support@shiftlyx.com</a></li>
             </ul>
             <p>
               If you are not satisfied with our response, you have the right to lodge a complaint with the <strong>Information Commissioner&apos;s Office (ICO)</strong>, the UK&apos;s data protection regulator:
@@ -542,7 +603,7 @@ export default function PrivacyPage() {
               If you have any questions about this Privacy Policy or how we handle your data, please contact us:
             </p>
             <ul className="list-disc pl-6 space-y-1">
-              <li>Email: <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a></li>
+              <li>Email: <a href="mailto:admin@beemalinnovation.co.uk" className="text-[#2563eb] hover:underline">admin@beemalinnovation.co.uk</a> or <a href="mailto:support@shiftlyx.com" className="text-[#2563eb] hover:underline">support@shiftlyx.com</a></li>
               <li>Company: Beemal Innovation Ltd</li>
               <li>Company registration number: 17048693</li>
               <li>Address: 29 Arden Place, Luton, LU2 7YE</li>
