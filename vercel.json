@@ -1,7 +1,7 @@
 {
   "redirects": [
     {
-      "source": "/((?!join(?:/|$)|\\.well-known/).*)",
+      "source": "/((?!join(?:/|$)|partner-invite(?:/|$)|\\.well-known/).*)",
       "has": [
         {
           "type": "host",

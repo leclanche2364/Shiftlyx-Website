@@ -25,10 +25,16 @@ export const metadata: Metadata = {
 };
 
 type Props = {
-  params: { token: string };
+  // Next 16: `params` is a Promise. Typing it as a plain object and reading
+  // `.token` off it synchronously yields undefined, which is why this page
+  // only worked at all — the client component happens to re-parse the token
+  // out of window.location.pathname, so the server prop being dead never
+  // showed up. See node_modules/next/dist/docs/01-app/01-getting-started/
+  // 03-layouts-and-pages.md.
+  params: Promise<{ token: string }>;
 };
 
-export default function PartnerInviteTokenPage({ params }: Props) {
-  const token = (params?.token ?? "").trim();
-  return <PartnerInviteTokenContent token={token} />;
+export default async function PartnerInviteTokenPage({ params }: Props) {
+  const { token: rawToken } = await params;
+  return <PartnerInviteTokenContent token={(rawToken ?? "").trim()} />;
 }
